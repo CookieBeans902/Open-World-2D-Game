@@ -1,0 +1,18 @@
+# Ignore these things:
+Library/
+Temp/
+Obj/
+Build/
+Logs/
+*.csproj
+*.sln
+*.userprefs
+.DS_Store
+UserSettings/
+MemoryCaptures/
+Builds/
+# Do not ignore these things as we track them using Git LFS (just in case):
+!*.png
+!*.jpg
+!*.psd
+!*.wav

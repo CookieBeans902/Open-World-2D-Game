@@ -512,8 +512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f4b61bca3b70144bfaaeb6586de428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 0
+  moveDir: {x: 0, y: 0}
+  dashSpeed: 6000
   dashState: {fileID: 1433732360}
+  dashCooldownSeconds: 2
   leftRightState: {fileID: 336688264}
   topState: {fileID: 1594069776}
   bottomState: {fileID: 1741446635}

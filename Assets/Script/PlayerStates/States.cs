@@ -11,17 +11,29 @@ namespace States
     {
         protected Rigidbody2D _rigidBody;
         protected Animator _anim;
-        public virtual void Enter()
+        protected Movement player;
+        protected float moveSpeed;
+        public virtual void Enter() //Creating a virtual function to be overriden in the base classes.
         {
-
+            //Code here is used to run the required stuff when a player enters a new state, such as 
+            // changing animations, or starting vfx, timers, etc.
+        }
+        public virtual void Execute() //Defining an execute method to be executed during the duration of the state.
+        {
+            // The general movement, as it is common for 3 states, and if necessary can be overriden
+            float moveDist = moveSpeed * Time.fixedDeltaTime;
+            _rigidBody.MovePosition(_rigidBody.position + (player.moveDir * moveDist));
         }
         public virtual void Exit()
         {
-
+            //An exit method, that is implemented if necessary. As of now, basically useless
         }
-        public void Setup(Movement player)
+        public void Setup(Movement variable) // A setup method to be called during the start of the movement script.
         {
-            _rigidBody = player.rigidBody;
+            _rigidBody = variable.rigidBody;
+            //Assigning a variable to reference the script passed through the code,(remember 'this' was used as input)
+            player = variable;
+            moveSpeed = variable.GetMoveSpeed(); // Getting the movespeed 
         }
     }
     public enum PlayerDirection //This is to identify the direction the player is facing.
@@ -31,7 +43,7 @@ namespace States
         Top,
         Bottom,
     }
-    public abstract class NPCstate : MonoBehaviour
+    public abstract class NPCstate : MonoBehaviour // NPC states for future, if they exist
     {
 
     }

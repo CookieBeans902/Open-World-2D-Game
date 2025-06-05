@@ -522,6 +522,8 @@ MonoBehaviour:
   idleState: {fileID: 733231387}
   playerDirection: 0
   rigidBody: {fileID: 0}
+  canDash: 1
+  inDash: 0
   moveSpeed: 6
 --- !u!1 &733231385
 GameObject:
@@ -655,6 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ed31c9afad24ca2fff5bbc8e66f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashSpeed: 20
+  dashDuration: 0.1
 --- !u!1 &1594069774
 GameObject:
   m_ObjectHideFlags: 0

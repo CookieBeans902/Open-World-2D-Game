@@ -5,7 +5,7 @@ using System.Collections;
 public class Dash : PlayerState
 {
     private float latestDashTime;
-    [SerializeField] private float dashSpeed = 15f;
+    [SerializeField] private float dashSpeed = 20f;
     private Transform startPosition;
     private float elapsedTime;
     private Vector2 dashDirection;

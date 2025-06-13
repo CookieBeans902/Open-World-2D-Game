@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 699642125}
   - component: {fileID: 699642123}
   - component: {fileID: 699642127}
+  - component: {fileID: 699642128}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -512,16 +513,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f4b61bca3b70144bfaaeb6586de428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDir: {x: 0, y: 0}
-  dashState: {fileID: 1433732360}
-  moveState: {fileID: 0}
-  idleState: {fileID: 733231387}
-  anim: {fileID: 0}
-  playerDirection: 0
   rigidBody: {fileID: 0}
+  anim: {fileID: 0}
+  moveDir: {x: 0, y: 0}
+  playerDirection: 0
   canDash: 1
   inDash: 0
   moveSpeed: 6
+--- !u!114 &699642128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699642122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa64bb6d1c12b340bac9f1dd6f66757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashState: {fileID: 1433732360}
+  moveState: {fileID: 336688264}
+  idleState: {fileID: 733231387}
 --- !u!1 &733231385
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,53 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ad178bdf020a9479479fe6dbae5919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &788733911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 788733912}
-  - component: {fileID: 788733913}
-  m_Layer: 0
-  m_Name: PlayerStateManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &788733912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788733911}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &788733913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788733911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aa64bb6d1c12b340bac9f1dd6f66757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashState: {fileID: 1433732360}
-  moveState: {fileID: 336688264}
-  idleState: {fileID: 733231387}
 --- !u!1 &1256189546
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 20
+  dashCooldownSeconds: 2
   dashDuration: 0.1
 --- !u!1 &1864035755
 GameObject:
@@ -745,5 +712,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 699642126}
   - {fileID: 1256189548}
-  - {fileID: 788733912}
   - {fileID: 1864035756}

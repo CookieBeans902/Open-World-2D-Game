@@ -20,7 +20,6 @@ namespace States
         }
         public virtual void Execute() //Defining an execute method to be executed during the duration of the state.
         {
-            // The general movement, as it is common for 3 states, and if necessary can be overriden
             float moveDist = moveSpeed * Time.fixedDeltaTime;
             _rigidBody.MovePosition(_rigidBody.position + (player.moveDir * moveDist));
         }
@@ -31,6 +30,7 @@ namespace States
         public void Setup(Movement variable) // A setup method to be called during the start of the movement script.
         {
             _rigidBody = variable.rigidBody;
+            _anim = variable.anim;
             //Assigning a variable to reference the script passed through the code,(remember 'this' was used as input)
             player = variable;
             moveSpeed = variable.GetMoveSpeed(); // Getting the movespeed 

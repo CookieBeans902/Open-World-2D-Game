@@ -9,6 +9,7 @@ public class Dash : PlayerState
     private Transform startPosition;
     private float elapsedTime;
     private Vector2 dashDirection;
+    private float dashCooldownSeconds;
     [SerializeField] public float dashDuration = 0.1f;
     public float timeSinceLastDash => Time.time - latestDashTime;
     public override void Enter()
@@ -21,6 +22,10 @@ public class Dash : PlayerState
         StartCoroutine(doDash()); //StartCoroutine
         // The next line is written, just to handle idle dashing - if the player dashes without moving
     }
+    public override void Execute()
+    {
+        if (timeSinceLastDash > dashCooldownSeconds) player.canDash = true;
+    }
     public IEnumerator doDash()
     {
         while (elapsedTime <= dashDuration)
@@ -28,7 +33,7 @@ public class Dash : PlayerState
             float t = timeSinceLastDash / dashDuration;
             Vector2 dashDistance = dashSpeed * dashDuration * dashDirection;
             Vector3 dashDistance3D = new Vector3(dashDistance.x, dashDistance.y, 0);
-            player.transform.position = Vector2.Lerp(startPosition.position, startPosition.position + dashDistance3D,Mathf.Pow(t,5));
+            player.transform.position = Vector2.Lerp(startPosition.position, startPosition.position + dashDistance3D, Mathf.Pow(t, 5));
             elapsedTime += Time.deltaTime;
             yield return null; //Sends the while logic to the next frame update.
         }

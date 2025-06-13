@@ -9,8 +9,9 @@ public class Dash : PlayerState
     private Transform startPosition;
     private float elapsedTime;
     private Vector2 dashDirection;
-    private float dashCooldownSeconds;
-    [SerializeField] public float dashDuration = 0.1f;
+    [Header("Variables")]
+    public float dashCooldownSeconds = 2f;
+    [SerializeField] private float dashDuration = 0.1f;
     public float timeSinceLastDash => Time.time - latestDashTime;
     public override void Enter()
     {
@@ -21,10 +22,6 @@ public class Dash : PlayerState
         dashDirection = player.moveDir != Vector2.zero ? player.moveDir : FindDirection();
         StartCoroutine(doDash()); //StartCoroutine
         // The next line is written, just to handle idle dashing - if the player dashes without moving
-    }
-    public override void Execute()
-    {
-        if (timeSinceLastDash > dashCooldownSeconds) player.canDash = true;
     }
     public IEnumerator doDash()
     {

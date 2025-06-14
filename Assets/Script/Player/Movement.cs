@@ -1,3 +1,4 @@
+using Game.Utils;
 using UnityEngine;
 using States;
 using Unity.VisualScripting;
@@ -32,8 +33,8 @@ public class Movement : MonoBehaviour
         instance to handle the inputs which change every frame, and hence we need a reference and not a 
         value(which remains constant)*/
         PlayerState.Setup(this);
-
     }
+
     private void Update()
     {
         newDir = input.GetMovementVectorNormalized(); //Getting the direction of the input
@@ -51,6 +52,7 @@ public class Movement : MonoBehaviour
     {
         return moveSpeed;
     }
+    
     void FixDirection()
     {
         if (newDir.x != 0 && newDir.y != 0)
@@ -61,5 +63,9 @@ public class Movement : MonoBehaviour
                 newDir.x = 0;
         }
         newDir = newDir.normalized;
+}
+
+    public Vector3 GetPlayerDir() {
+        return currDir;
     }
 }

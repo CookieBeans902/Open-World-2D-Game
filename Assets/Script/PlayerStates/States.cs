@@ -20,8 +20,7 @@ namespace States
         }
         public virtual void Execute() //Defining an execute method to be executed during the duration of the state.
         {
-            float moveDist = moveSpeed * Time.fixedDeltaTime;
-            _rigidBody.MovePosition(_rigidBody.position + (player.moveDir * moveDist));
+            
         }
         public virtual void Exit()
         {

@@ -10,7 +10,8 @@ public class MoveState : PlayerState
     public override void Execute()
     {
         float moveDist = moveSpeed * Time.fixedDeltaTime;
-        _rigidBody.MovePosition(_rigidBody.position + (player.moveDir * moveDist));
+        _rigidBody.MovePosition(_rigidBody.position + (player.newDir * moveDist));
+        if (player.newDir != Vector2.zero) player.currDir = player.newDir;
     }
     public override void Exit()
     {

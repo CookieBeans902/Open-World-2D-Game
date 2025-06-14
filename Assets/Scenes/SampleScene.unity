@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 699642123}
   - component: {fileID: 699642127}
   - component: {fileID: 699642128}
+  - component: {fileID: 699642129}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -515,7 +516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
   anim: {fileID: 0}
-  moveDir: {x: 0, y: 0}
+  newDir: {x: 0, y: 0}
+  currDir: {x: 0, y: 0}
   playerDirection: 0
   canDash: 1
   inDash: 0
@@ -535,6 +537,28 @@ MonoBehaviour:
   dashState: {fileID: 1433732360}
   moveState: {fileID: 336688264}
   idleState: {fileID: 733231387}
+--- !u!95 &699642129
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699642122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &733231385
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,9 +691,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ed31c9afad24ca2fff5bbc8e66f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 20
   dashCooldownSeconds: 2
   dashDuration: 0.1
+  dashDistanceMul: 1
+  ModifiedLerp: 0
 --- !u!1 &1864035755
 GameObject:
   m_ObjectHideFlags: 0

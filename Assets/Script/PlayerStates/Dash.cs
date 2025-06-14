@@ -5,35 +5,37 @@ using System.Collections;
 public class Dash : PlayerState
 {
     private float latestDashTime;
-    [SerializeField] private float dashSpeed = 20f;
-    private Transform startPosition;
-    private float elapsedTime;
+    private Vector2 startPosition;
+    private float currentDashTime;
     private Vector2 dashDirection;
     [Header("Variables")]
     public float dashCooldownSeconds = 2f;
     [SerializeField] private float dashDuration = 0.1f;
+    public float dashDistanceMul = 1f;
+    [SerializeField] bool ModifiedLerp;
     public float timeSinceLastDash => Time.time - latestDashTime;
     public override void Enter()
     {
-        startPosition = player.transform; //Store the position at which the player calls the dash
+        startPosition = player.transform.position; //Store the position at which the player calls the dash
         latestDashTime = Time.time; //Keep record of the time, to initiate cooldown logic
         player.canDash = false; //canDash is the variable that keeps track of the cooldwown
-        elapsedTime = 0f;
-        dashDirection = player.moveDir != Vector2.zero ? player.moveDir : FindDirection();
+        dashDirection = player.newDir != Vector2.zero ? player.newDir : FindDirection();
         StartCoroutine(doDash()); //StartCoroutine
         // The next line is written, just to handle idle dashing - if the player dashes without moving
     }
     public IEnumerator doDash()
     {
-        while (elapsedTime <= dashDuration)
+        currentDashTime = 0f;
+        Vector2 dashDistance = dashDirection * dashDistanceMul * 4;
+        Vector3 targetPosition = startPosition + dashDistance;
+        while (currentDashTime <= dashDuration)
         {
-            float t = timeSinceLastDash / dashDuration;
-            Vector2 dashDistance = dashSpeed * dashDuration * dashDirection;
-            Vector3 dashDistance3D = new Vector3(dashDistance.x, dashDistance.y, 0);
-            player.transform.position = Vector2.Lerp(startPosition.position, startPosition.position + dashDistance3D, Mathf.Pow(t, 5));
-            elapsedTime += Time.deltaTime;
+            float t = currentDashTime / dashDuration;
+            player.transform.position = Vector2.Lerp(startPosition, targetPosition, Mathf.Sqrt(t));
+            currentDashTime += Time.deltaTime;
             yield return null; //Sends the while logic to the next frame update.
         }
+        player.transform.position = targetPosition;
         player.inDash = false; //After the while loop finishes, the dash finishes, so player is not in dash state anymore
     }
     private Vector2 FindDirection() // Just read this code, it really isn't that hard.

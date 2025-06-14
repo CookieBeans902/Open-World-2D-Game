@@ -23,7 +23,7 @@ public class PlayerStateManager : MonoBehaviour
         {
             State = dashState;
         }
-        else if (player.moveDir != Vector2.zero) //If the player has a movement input, enter any of the moving states
+        else if (player.newDir != Vector2.zero) //If the player has a movement input, enter any of the moving states
         {
             State = moveState;
         }

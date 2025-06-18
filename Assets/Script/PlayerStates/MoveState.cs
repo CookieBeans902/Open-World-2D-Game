@@ -1,7 +1,7 @@
 using UnityEngine;
 using States;
 
-public class MoveState : PlayerState
+public class MovementState : PlayerState
 {
     public override void Enter()
     {

@@ -25,7 +25,6 @@ public class QuestUI : MonoBehaviour
         sideQuestContainer.SetParent(button.transform);
         buttonScript = button.GetComponent<QuestButton>();
         buttonScript.Setup(quest, displayName, displayDesc);
-        buttonScript.DisplayUpdate();
         sideButtonList.Add(quest.QuestID, button);
         quest.questState = QuestState.onGoing;
     }
@@ -33,10 +32,14 @@ public class QuestUI : MonoBehaviour
     {
         var button = Instantiate(buttonPrefab, mainQuestContainer);
         mainQuestContainer.SetParent(button.transform);
-        button.name = quest.name;
+        button.transform.SetAsLastSibling();
+        if (mainQuestContainer.childCount != 1)
+        {
+            Destroy(mainQuestContainer.GetChild(0).gameObject);
+        }
+        button.name = quest.QuestName;
         buttonScript = button.GetComponent<QuestButton>();
         buttonScript.Setup(quest, displayName, displayDesc);
-        buttonScript.DisplayUpdate();
         quest.questState = QuestState.onGoing;
     }
     public void Destroy(QuestSO quest)

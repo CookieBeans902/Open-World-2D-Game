@@ -70,6 +70,7 @@ public class QuestManager : MonoBehaviour
     }
     public void BeginMainQuest(int questID)
     {
+        if(activeMainQuest!=null) activeMainQuest.questState = QuestState.Complete;
         for (int i = 1; i < questID; i++)
         {
             allMainQuests.TryGetValue(i, out QuestSO previousQuest);
@@ -82,6 +83,7 @@ public class QuestManager : MonoBehaviour
         allMainQuests.TryGetValue(questID, out QuestSO newMainQuest);
         if (activeMainQuest == newMainQuest) return;
         activeMainQuest = newMainQuest;
+        newMainQuest.questState = QuestState.onGoing;
         questUI.MainQuestUpdate(newMainQuest);
     }
     public void QuestError(List<QuestSO> errorQuests)

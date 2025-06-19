@@ -793,6 +793,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bab86baf8c041b44b8cbee133dda25e0, type: 2}
   mainQuestList:
   - {fileID: 11400000, guid: c46630490c300ec48a8b455318275cca, type: 2}
+  - {fileID: 11400000, guid: 0cc507f57a5912445a30292eae58f97f, type: 2}
   activeSideQuests: []
   activeMainQuest: {fileID: 0}
 --- !u!114 &700146741
@@ -2178,7 +2179,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5989974974068800356}
   m_HandleRect: {fileID: 1630894291641632302}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

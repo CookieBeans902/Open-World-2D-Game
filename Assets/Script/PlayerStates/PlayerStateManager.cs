@@ -1,23 +1,20 @@
 using UnityEngine;
 using States;
 
-public class PlayerStateManager : MonoBehaviour
-{
-    [SerializeField] Dash dashState;
-    [SerializeField] MoveState moveState;
-    [SerializeField] IdleState idleState;
-    PlayerState oldstate;
-    Movement player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Setup(Movement transfer)
-    {
-        dashState.Setup(transfer);
-        idleState.Setup(transfer);
-        moveState.Setup(transfer);
-        player = transfer;
+public class PlayerStateManager : MonoBehaviour {
+    [SerializeField] private DashState dashState;
+    [SerializeField] private MoveState moveState;
+    [SerializeField] private IdleState idleState;
+    private PlayerState oldstate;
+    private Movement player;
+
+    public void Setup(PlayerShared shared) {
+        dashState.Setup(shared);
+        idleState.Setup(shared);
+        moveState.Setup(shared);
+        player = shared.playerMove;
     }
-    public void SelectState(ref PlayerState State)
-    {
+    public void SelectState(ref PlayerState State) {
         oldstate = State;
         if (player.inDash) //If player is in dashing, enter the dash State
         {
@@ -35,8 +32,7 @@ public class PlayerStateManager : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (dashState.timeSinceLastDash > dashState.dashCooldownSeconds) player.canDash = true;
     }
 }

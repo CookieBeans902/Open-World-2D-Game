@@ -3,9 +3,8 @@ using States;
 
 public class MoveState : PlayerState
 {
-    public override void Enter()
-    {
-        
+    public override void Enter() {
+
     }
     public override void Execute()
     {

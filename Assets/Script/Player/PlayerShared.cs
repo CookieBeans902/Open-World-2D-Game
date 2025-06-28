@@ -3,13 +3,18 @@ using UnityEngine;
 public class PlayerShared : MonoBehaviour {
     public Transform visual;
     public Transform healthbar;
-    public Collider2D pCollider;
-    public Vector3 playerDir;
-    public float baseMoveSpeed = 8;
-    public float moveSpeed = 8;
+    public Rigidbody2D rb;
+    public Collider2D collider2d;
+    public Animator animator;
+
+    public Movement playerMove;
+    public  Animations playerAnim;
+    public  PlayerInteractions playerInteract;
 
 
     private void Start() {
-        playerDir = Vector2.right;
+        playerMove = GetComponent<Movement>();
+        playerAnim = GetComponent<Animations>();
+        playerInteract = GetComponent<PlayerInteractions>();
     }
 }

@@ -18,7 +18,7 @@ public class PlayerInteractions : MonoBehaviour {
 
     /// <summary>TO check if there is any interactable object infront of the player</summary>
     private void CheckInteractions() {
-        Vector2 dir = shared.playerDir;
+        Vector2 dir = shared.playerMove.playerDir;
         float r = 2;
         int layerMask = ~LayerMask.GetMask("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, r, layerMask);

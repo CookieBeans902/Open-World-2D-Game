@@ -6,7 +6,7 @@ public enum MoveType {
     Follow,
 }
 
-public enum MoveState {
+public enum MoveStates {
     Random,
     Chasing,
     Patrolling,

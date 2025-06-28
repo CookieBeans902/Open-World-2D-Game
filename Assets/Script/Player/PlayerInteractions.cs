@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour {
+    // To get the shared data for player gameobject
+    private PlayerShared shared;
     private GameInputManager input;
 
     private void Start() {

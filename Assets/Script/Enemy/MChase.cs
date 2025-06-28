@@ -2,7 +2,7 @@ using Game.Utils;
 using UnityEngine;
 
 public class MChase : MovementBase {
-    private MoveState moveState;
+    private MoveStates moveState;
     private Transform player;
     private FunctionTimer chaseTimer;
     private string chaseTimerName;
@@ -21,7 +21,7 @@ public class MChase : MovementBase {
         InitBasicComponents();
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
         chaseTimerName = "ChaseTimer" + gameObject.GetInstanceID();
-        moveState = MoveState.Random;
+        moveState = MoveStates.Random;
         agent.maxSpeed = speed;
     }
 
@@ -31,10 +31,10 @@ public class MChase : MovementBase {
 
     private void Update() {
         switch (moveState) {
-            case MoveState.Random:
+            case MoveStates.Random:
                 MoveRandom(centre.position, radius, waitTime, waitTimerName);
                 break;
-            case MoveState.Chasing:
+            case MoveStates.Chasing:
                 MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
                 break;
         }
@@ -44,16 +44,16 @@ public class MChase : MovementBase {
 
     private void UpdateState() {
         if (VectorHandler.GetDistance(transform.position, player.position) < chaseRadius) {
-            if (moveState != MoveState.Chasing) {
+            if (moveState != MoveStates.Chasing) {
                 agent.maxSpeed = chaseSpeed;
-                moveState = MoveState.Chasing;
+                moveState = MoveStates.Chasing;
             }
             // FunctionTimer.DestroyTimer(waitTimerName);
         }
         else {
-            if (moveState != MoveState.Random) {
+            if (moveState != MoveStates.Random) {
                 agent.maxSpeed = speed;
-                moveState = MoveState.Random;
+                moveState = MoveStates.Random;
                 if (!moveBackToCentre) centre.position = transform.position;
                 seeker.StartPath(transform.position, transform.position);
                 hasStarted = true;

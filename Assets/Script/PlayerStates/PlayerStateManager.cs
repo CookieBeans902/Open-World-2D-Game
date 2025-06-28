@@ -4,7 +4,7 @@ using States;
 public class PlayerStateManager : MonoBehaviour
 {
     [SerializeField] Dash dashState;
-    [SerializeField] MoveState moveState;
+    [SerializeField] MovementState moveState;
     [SerializeField] IdleState idleState;
     PlayerState oldstate;
     Movement player;

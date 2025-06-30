@@ -1,14 +1,15 @@
 using UnityEditor.Rendering;
+
 using UnityEngine;
 
 namespace Game.Utils {
     static class MeshHandler {
-        public static void DrawLineMesh(Vector3 startPos, Vector3 targetPos, float time, float startWidth = 0.006f, float endWidth = 0.006f, Material material = null) {
-            float length = (targetPos - startPos).magnitude;
+        public static void DrawLineMesh(Vector3 startPos, Vector3 endPos, float time, float startWidth = 0.006f, float endWidth = 0.006f, Material material = null) {
+            float length = Vector2.Distance(startPos, endPos);
 
             GameObject obj = new GameObject("Line");
             obj.transform.position = startPos;
-            obj.transform.eulerAngles = VectorHandler.AngleFromVector(targetPos - startPos);
+            obj.transform.rotation = VectorHandler.RotationFromVector(endPos - startPos);
             MeshFilter filter = obj.gameObject.AddComponent<MeshFilter>();
             MeshRenderer renderer = obj.gameObject.AddComponent<MeshRenderer>();
             renderer.material = material != null ? material : new Material(Shader.Find("Sprites/Default"));

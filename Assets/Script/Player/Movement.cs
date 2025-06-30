@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour {
     [Header("Variables")]
     public Vector2 newDir;
     public Vector2 currDir;
+    private Vector2 prevInput;
     private bool m_Dash;
     private PlayerStateManager PlayerState;
     private PlayerState state;
@@ -36,7 +37,6 @@ public class Movement : MonoBehaviour {
     }
 
     private void Update() {
-        newDir = input.GetMovementVectorNormalized(); //Getting the direction of the input
         FixDirection(); //Removes diagonal movement by checking with previous direction inputs
         m_Dash = input.GetDashBool();   //To check whether the button is pressed or not
         if (canDash && m_Dash) inDash = true; //Player enters DashState only when he presses button and cooldown finishes
@@ -49,13 +49,26 @@ public class Movement : MonoBehaviour {
 
 
     void FixDirection() {
-        if (newDir.x != 0 && newDir.y != 0) {
-            if (currDir.x != 0)
-                newDir.y = 0;
-            else if (currDir.y != 0)
-                newDir.x = 0;
+        newDir = input.GetMovementVectorNormalized(); //Getting the direction of the input
+
+        if (prevInput.x != 0 && prevInput.y != 0) {
+            if (newDir.x != 0 && newDir.y != 0) {
+                if (currDir.x != 0)
+                    newDir.y = 0;
+                else if (currDir.y != 0)
+                    newDir.x = 0;
+            }
+        }
+        else {
+            if (newDir.x != 0 && newDir.y != 0) {
+                if (currDir.x != 0)
+                    newDir.x = 0;
+                else if (currDir.y != 0)
+                    newDir.y = 0;
+            }
         }
         newDir = newDir.normalized;
+        prevInput = input.GetMovementVectorNormalized();
         if (newDir != Vector2.zero) playerDir = newDir;
     }
 }

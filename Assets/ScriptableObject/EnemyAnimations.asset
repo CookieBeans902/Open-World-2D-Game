@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: EnemyAnimations
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 4aaa5a047b529a940bbc211565eb9bd6, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 109f8c5e72f3540488548255e862ddb8, type: 2}
+  IdleRight: {fileID: 7400000, guid: 476fd9064d2954946b9f4f36c562d291, type: 2}
+  IdleUp: {fileID: 7400000, guid: fefbc79d2e7baaa45810ab0941632f54, type: 2}
+  MoveDown: {fileID: 7400000, guid: a062223f8b3541a40ad309b1c88f61ef, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 4822c16614c724947b90e298a1819da4, type: 2}
+  MoveRight: {fileID: 7400000, guid: 14f4c78669f92374bbaa03a0de0512c9, type: 2}
+  MoveUp: {fileID: 7400000, guid: d2f4c05f5cbf15a40848cd8e5fcd05c9, type: 2}

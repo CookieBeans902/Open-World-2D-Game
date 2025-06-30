@@ -1,11 +1,18 @@
 using UnityEditor.Rendering;
+
 using UnityEngine;
 
 namespace Game.Utils {
     static class VectorHandler {
-        public static Vector3 AngleFromVector(Vector3 v) {
+        public static float AngleFromVector(Vector3 v) {
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-            return new Vector3(0, 0, angle);
+            angle = angle < 0 ? 360 + angle : angle;
+            return angle;
+        }
+
+        public static Quaternion RotationFromVector(Vector3 v) {
+            float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+            return Quaternion.Euler(0, 0, angle);
         }
 
         public static Vector3 GenerateRandomDir(Vector3 baseDir, float del) {

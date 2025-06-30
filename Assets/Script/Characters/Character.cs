@@ -1,0 +1,196 @@
+using System.Collections.Generic;
+using System.Linq;
+
+using UnityEngine;
+
+[System.Serializable]
+public class Character {
+    public Class characterClass { get; private set; }
+    public string characterName { get; private set; }
+    public int curLvl { get; private set; }
+    public int maxLvl { get; private set; }
+    public int curExp { get; private set; }
+    public int curHp { get; private set; }
+    public bool canDualWeild { get; private set; }
+
+    public StatField<int, int> maxExp { get; private set; }
+    public StatField<int, int> baseMhp { get; private set; }
+    public StatField<int, int> baseAtk { get; private set; }
+    public StatField<int, int> baseMatk { get; private set; }
+    public StatField<int, int> baseDef { get; private set; }
+    public StatField<int, int> baseMdef { get; private set; }
+    public StatField<int, int> baseAgi { get; private set; }
+    public StatField<int, int> baseLuck { get; private set; }
+
+    // Dictionary to mantain list of currently equiped equipments
+    public Dictionary<string, Equipment> equipments { get; private set; }
+    public List<string> slots { get; private set; }
+
+    // Getters for base properties
+    public int MaxExp => (int)(maxExp.init + (maxExp.final - maxExp.init) * Mathf.Pow((float)curLvl / maxLvl, maxExp.pow));
+    public int BaseMHP => (int)(baseMhp.init + (baseMhp.final - baseMhp.init) * Mathf.Pow((float)curLvl / maxLvl, baseMhp.pow));
+    public int BaseATK => (int)(baseAtk.init + (baseAtk.final - baseAtk.init) * Mathf.Pow((float)curLvl / maxLvl, baseAtk.pow));
+    public int BaseMATK => (int)(baseMatk.init + (baseMatk.final - baseMatk.init) * Mathf.Pow((float)curLvl / maxLvl, baseMatk.pow));
+    public int BaseDEF => (int)(baseDef.init + (baseDef.final - baseDef.init) * Mathf.Pow((float)curLvl / maxLvl, baseDef.pow));
+    public int BaseMDEF => (int)(baseMdef.init + (baseMdef.final - baseMdef.init) * Mathf.Pow((float)curLvl / maxLvl, baseMdef.pow));
+    public int BaseAGI => (int)(baseAgi.init + (baseAgi.final - baseAgi.init) * Mathf.Pow((float)curLvl / maxLvl, baseAgi.pow));
+    public int BaseLUCK => (int)(baseLuck.init + (baseLuck.final - baseLuck.init) * Mathf.Pow((float)curLvl / maxLvl, baseLuck.pow));
+
+    // Getters for buffs
+    public int MHPBuff => equipments.Values.Sum(e => e?.hpBuff ?? 0);
+    public int ATKBuff => equipments.Values.Sum(e => e?.atkBuff ?? 0);
+    public int MATKBuff => equipments.Values.Sum(e => e?.matkBuff ?? 0);
+    public int DEFBuff => equipments.Values.Sum(e => e?.defBuff ?? 0);
+    public int MDEFBuff => equipments.Values.Sum(e => e?.mdefBuff ?? 0);
+    public int AGIBuff => equipments.Values.Sum(e => e?.agiBuff ?? 0);
+    public int LUCKBuff => equipments.Values.Sum(e => e?.luckBuff ?? 0);
+
+    // Getters for properties with buff
+    public int MHP => BaseMHP + MHPBuff;
+    public int ATK => BaseATK + ATKBuff;
+    public int MATK => BaseMATK + MATKBuff;
+    public int DEF => BaseDEF + DEFBuff;
+    public int MDEF => BaseMDEF + MDEFBuff;
+    public int AGI => BaseAGI + AGIBuff;
+    public int LUCK => BaseLUCK + LUCKBuff;
+
+
+    /// <summary> To create a character object from a SO</summary>
+    /// <param name="character"> The SO of the character you want to create</param>
+    public Character(CharacterSO character) {
+
+        characterName = character.characterName;
+        characterClass = character.characterClass;
+
+        curLvl = character.curLvl;
+        maxLvl = character.maxLvl;
+
+        maxExp = character.maxExp;
+
+        baseMhp = character.baseMhp;
+        baseAtk = character.baseAtk;
+        baseMatk = character.baseMatk;
+        baseDef = character.baseDef;
+        baseMdef = character.baseMdef;
+        baseAgi = character.baseAgi;
+        baseLuck = character.baseLuck;
+
+        canDualWeild = character.canDualWeild;
+
+        slots = new List<string> { "head", "body", "hand1", "hand2", "boots", "accessory", };
+
+        equipments = new Dictionary<string, Equipment>();
+        equipments["head"] = Equipment.Create(character.head);
+        equipments["body"] = Equipment.Create(character.body);
+        equipments["hand1"] = Equipment.Create(character.hand1);
+        equipments["hand2"] = Equipment.Create(character.hand2);
+        equipments["boots"] = Equipment.Create(character.boots);
+        equipments["accessory"] = Equipment.Create(character.accessory);
+
+        curExp = 0;
+        curHp = MHP;
+    }
+
+
+    /// <summary>To take damage on hit</summary>
+    /// <param name="damage">Value of damage</param>
+    public void TakeDamage(int damage) {
+        if (damage < 0) return;
+        if (damage == 0) damage = 1;
+
+        curHp -= damage;
+        if (curHp < 0) curHp = 0;
+    }
+
+
+    /// <summary>To equip an equipment</summary>
+    /// <param name="equipment">Equipment you want it to equip</param>
+    public void Equip(Equipment equipment) {
+        if (InventoryManager.Instance.SlotCount(equipment.equipmentName) == 0)
+            return;
+        if (equipment == null)
+            return;
+        bool canEquip = false;
+        foreach (Class c in equipment.validClasses) {
+            if (c == characterClass) {
+                canEquip = true;
+                break;
+            }
+        }
+        if (!canEquip) {
+            Debug.Log("This character can't equip" + equipment.equipmentName);
+            return;
+        }
+
+        switch (equipment.slot) {
+            case EquipmentSlot.Head:
+                equipments["head"] = equipment;
+                break;
+            case EquipmentSlot.Body:
+                equipments["body"] = equipment;
+                break;
+            case EquipmentSlot.Hand1:
+                equipments["hand1"] = equipment;
+                break;
+            case EquipmentSlot.Hand2:
+                equipments["hand2"] = equipment;
+                break;
+            case EquipmentSlot.Boots:
+                equipments["boots"] = equipment;
+                break;
+            case EquipmentSlot.Accessory:
+                equipments["accessory"] = equipment;
+                break;
+        }
+        // equipment.isEquiped = true;
+    }
+
+    /// <summary>To unequip an equipment</summary>
+    /// <param name="slot">Equipment slot you want it to unequip</param>
+    public void Unequip(EquipmentSlot slot) {
+        switch (slot) {
+            case EquipmentSlot.Head:
+                if (equipments["head"] == null) return;
+                equipments["head"] = null;
+                // equipments["head"].isEquiped = false;
+                break;
+            case EquipmentSlot.Body:
+                if (equipments["body"] == null) return;
+                equipments["body"] = null;
+                // equipments["body"].isEquiped = false;
+                break;
+            case EquipmentSlot.Hand1:
+                if (equipments["hand1"] == null) return;
+                equipments["hand1"] = null;
+                // equipments["hand1"].isEquiped = false;
+                break;
+            case EquipmentSlot.Hand2:
+                if (equipments["hand2"] == null) return;
+                equipments["hand2"] = null;
+                // equipments["hand2"].isEquiped = false;
+                break;
+            case EquipmentSlot.Boots:
+                if (equipments["boots"] == null) return;
+                equipments["boots"] = null;
+                // equipments["boots"].isEquiped = false;
+                break;
+            case EquipmentSlot.Accessory:
+                if (equipments["accessory"] == null) return;
+                equipments["accessory"] = null;
+                // equipments["accessory"].isEquiped = false;
+                break;
+        }
+    }
+
+
+    /// <summary>To show stats of the character, useful while debugging</summary>
+    public void ShowStats() {
+        Debug.Log("maxHealth: " + BaseMHP + " + " + MHPBuff);
+        Debug.Log("attack: " + BaseATK + " + " + ATKBuff);
+        Debug.Log("magicAttack: " + BaseMATK + " + " + MATKBuff);
+        Debug.Log("defence: " + BaseDEF + " + " + DEFBuff);
+        Debug.Log("magicDefence: " + BaseMDEF + " + " + MDEFBuff);
+        Debug.Log("agility: " + BaseAGI + " + " + AGIBuff);
+        Debug.Log("luck: " + BaseLUCK + " + " + LUCKBuff);
+    }
+}

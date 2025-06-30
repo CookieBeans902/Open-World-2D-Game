@@ -1,18 +1,19 @@
 using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour {
-    private Animator animator;
     private MovementBase enemyMovement;
-    private Vector2 currDir;
+    private Vector2 prevDir;
+    private Vector2 curDir;
     private string currAnimation;
     private string newAnimation;
     private bool isMoving;
 
-    [SerializeField] PlayerAnimationsSO animationData;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AnimationsSO animationData;
     private void Start() {
         enemyMovement = GetComponent<MovementBase>();
-        animator = GetComponent<Animator>();
-        currDir = Vector2.zero;
+        curDir = Vector2.right;
+        prevDir = Vector2.right;
     }
 
     private void Update() {
@@ -27,20 +28,22 @@ public class EnemyAnimation : MonoBehaviour {
         if (isMoving) {
             if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) dir.y = 0;
             else dir.x = 0;
-            currDir = dir;
+            curDir = dir.normalized;
         }
+        if (dir != Vector2.zero) prevDir = curDir;
         Debug.Log(dir);
+        // Debug.Log(dir);
         if (!isMoving) {
-            if (currDir.y < 0) newAnimation = animationData.IdleDown.name;
-            else if (currDir.y > 0) newAnimation = animationData.IdleUp.name;
-            else if (currDir.x > 0) newAnimation = animationData.IdleRight.name;
-            else if (currDir.x < 0) newAnimation = animationData.IdleLeft.name;
+            if (prevDir == Vector2.down) newAnimation = animationData.IdleDown.name;
+            else if (prevDir == Vector2.up) newAnimation = animationData.IdleUp.name;
+            else if (prevDir == Vector2.right) newAnimation = animationData.IdleRight.name;
+            else if (prevDir == Vector2.left) newAnimation = animationData.IdleLeft.name;
         }
         else {
-            if (currDir.y < 0) newAnimation = animationData.MoveDown.name;
-            else if (currDir.y > 0) newAnimation = animationData.MoveUp.name;
-            else if (currDir.x > 0) newAnimation = animationData.MoveRight.name;
-            else if (currDir.x < 0) newAnimation = animationData.MoveLeft.name;
+            if (curDir == Vector2.down) newAnimation = animationData.MoveDown.name;
+            else if (curDir == Vector2.up) newAnimation = animationData.MoveUp.name;
+            else if (curDir == Vector2.right) newAnimation = animationData.MoveRight.name;
+            else if (curDir == Vector2.left) newAnimation = animationData.MoveLeft.name;
         }
     }
 

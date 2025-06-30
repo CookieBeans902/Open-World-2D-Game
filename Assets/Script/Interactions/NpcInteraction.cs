@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
+
 using UnityEngine;
 
 public class NpcInteraction : InteractionBase {
     private enum id {
-        Welcome = 0,
-        Test1 = 1,
-        Test2 = 2,
-        Test3 = 3,
+        Test1 = 0,
+        Test2 = 1,
+        Test3 = 2,
+        Test4 = 3,
     }
     private List<NpcInteraction> npcs;
     private MessageManager msg;
@@ -25,10 +26,10 @@ public class NpcInteraction : InteractionBase {
     private void ShowMessage() {
         if (msg == null) {
             NpcInteraction npc = null;
-            if (i == (int)id.Welcome) npc = this;
-            if (i == (int)id.Test1) npc = GetNpc("Villager2");
-            else if (i == (int)id.Test2) npc = GetNpc("Villager3");
-            else if (i == (int)id.Test3) npc = GetNpc("Player");
+            if (i == (int)id.Test1) npc = this;
+            if (i == (int)id.Test2) npc = GetNpc("Test2");
+            else if (i == (int)id.Test3) npc = GetNpc("Test3");
+            else if (i == (int)id.Test4) npc = GetNpc("Player");
 
             if (npc != null) {
                 msg = Instantiate(messagePref).GetComponent<MessageManager>();

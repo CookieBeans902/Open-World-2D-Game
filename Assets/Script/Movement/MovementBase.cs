@@ -40,7 +40,7 @@ public abstract class MovementBase : MonoBehaviour {
                 hasStarted = false;
             }
 
-            FunctionTimer.Create(() => {
+            FunctionTimer.CreateSceneTimer(() => {
                 Vector3 target = GenerateRandomTarget(centre, radius);
                 seeker.StartPath(transform.position, target, (Path p) => ValidatePathLength(p, radius * 1.2f));
             }, time, waitTimerName);
@@ -54,7 +54,7 @@ public abstract class MovementBase : MonoBehaviour {
     ///<param name="timerName">Nmae of the timer for more control ovet it</param>
     protected void MoveToTarget(Transform target, float updateTime, ref FunctionTimer timer, string timerName = "MoveTimer") {
         if (timer == null || timer.TimeLeft() < 0) {
-            timer = FunctionTimer.Create(() => {
+            timer = FunctionTimer.CreateSceneTimer(() => {
                 Vector3 targetPos = target.position;
                 seeker.StartPath(transform.position, targetPos, UpdatePathData);
             }, updateTime, timerName);
@@ -202,7 +202,7 @@ public abstract class MovementBase : MonoBehaviour {
     /// <summary>To get the current move direction of the object</summary>
     ///<returns>Current move direction of the object</returns>
     public Vector2 GetMoveDir() {
-        if (agent != null) {
+        if (agent != null && agent.hasPath) {
             Vector3 moveDir = agent.desiredVelocity.normalized;
             return moveDir;
         }

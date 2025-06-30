@@ -3,7 +3,7 @@ using States;
 using UnityEngine;
 
 public class Animations : MonoBehaviour {
-    [SerializeField] PlayerAnimationsSO playerAnimations;
+    [SerializeField] AnimationsSO playerAnimations;
 
     private GameInputManager input;
     private PlayerShared shared;

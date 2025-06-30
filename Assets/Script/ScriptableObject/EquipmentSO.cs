@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "EquipmentSO", menuName = "Scriptable Objects/EquipmentSO")]
+public class EquipmentSO : ScriptableObject {
+    public EquipmentSlot slot;
+    public EquipmentType type;
+    public EquipmentRange range;
+    public EquipmentWield weild;
+    public List<Class> validClasses;
+    public Sprite icon;
+    public string equipmentName;
+    public int hpBuff;
+    public int atkBuff;
+    public int matkBuff;
+    public int defBuff;
+    public int mdefBuff;
+    public int agiBuff;
+    public int luckBuff;
+    public ItemSO item;
+}

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
   m_Name: MainQuest1
   m_EditorClassIdentifier: 
-  QuestID: 1
-  QuestName: Complete the Game
-  QuestDesc: Your main quest is to start and complete the main game. Obviously you
-    have to do this at some point, so get to it. There is only one main quest.
-  coinReward: 1000000
-  experienceReward: 100000
+  questID: 1
+  questName: Where's my Boost?
+  questDesc: You feel tired, perhaps you need to find a place to rest. Find for suitable
+    locations
+  coinReward: 10000000
+  experienceReward: 1100000
   extraReward: {fileID: 0}
   extraRewardQuantity: 0
-  questState: 1
+  objectives:
+  - {fileID: 11400000, guid: bdf194e1f8b7944458bad54d6da9c13a, type: 2}
   questDependancies: 

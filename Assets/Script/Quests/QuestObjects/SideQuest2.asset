@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
   m_Name: SideQuest2
   m_EditorClassIdentifier: 
-  QuestID: 2
-  QuestName: A Hero's Work
-  QuestDesc: Rescue the Mayor's daughter from the monsters that lurk in the dark
-    forests.
+  questID: 1
+  questName: 
+  questDesc: 
   coinReward: 100000
   experienceReward: 10000
   extraReward: {fileID: 0}
   extraRewardQuantity: 0
-  questState: 2
+  objectives: []
   questDependancies: 

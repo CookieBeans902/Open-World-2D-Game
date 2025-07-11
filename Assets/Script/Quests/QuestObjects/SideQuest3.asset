@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
   m_Name: SideQuest3
   m_EditorClassIdentifier: 
-  QuestID: 3
-  QuestName: A Safe Place
-  QuestDesc: 'Find a location that is safe from any major incidents, this could be
-    useful for any events where you might need to take refuge. Hint: Place a marker
-    to note the location'
+  questID: 1
+  questName: 
+  questDesc: 
   coinReward: 10000
   experienceReward: 5000
   extraReward: {fileID: 0}
   extraRewardQuantity: 0
-  questState: 1
+  objectives: []
   questDependancies: 

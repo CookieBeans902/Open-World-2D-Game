@@ -4,27 +4,30 @@ using UnityEngine.UI;
 
 public class QuestButton : MonoBehaviour
 {
-    [SerializeField] QuestSO displayQuest;
-    [SerializeField] TMP_Text questName;
-    [SerializeField] TMP_Text questDesc;
+    [SerializeField] QuestInstance displayQuest;
+    [SerializeField] TMP_Text displayName;
+    [SerializeField] TMP_Text displayDesc;
     [SerializeField] TMP_Text buttonName;
     [SerializeField] TMP_Text buttonDesc;
     [SerializeField] Sprite coinSprite;
     [SerializeField] Sprite expSprite;
 
 
-    public void Setup(QuestSO quest,TMP_Text Name,TMP_Text Desc)
+    public void Setup(QuestInstance quest, TMP_Text Name, TMP_Text Desc)
     {
         displayQuest = quest;
-        questName = Name;
-        questDesc = Desc;
-        buttonName.text = displayQuest.QuestName;
-        buttonDesc.text = displayQuest.QuestDesc;
+        displayName = Name;
+        displayDesc = Desc;
+        buttonName.text = displayQuest.questData.questName;
+        buttonDesc.text = displayQuest.questData.questDesc;
     }
     public void DisplayUpdate()
     {
-        questName.text = displayQuest.QuestName;
-        questDesc.text = displayQuest.QuestDesc;
+        displayName.text = displayQuest.questData.questName;
+        displayDesc.text = displayQuest.questData.questDesc;
     }
-    
+    public void SelectQuest()
+    {
+        QuestManager.Instance.SetAsActiveQuest(displayQuest);
+    }
 }

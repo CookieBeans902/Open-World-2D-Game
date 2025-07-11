@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
-  m_Name: MainQuest2
+  m_Name: MainQuest0
   m_EditorClassIdentifier: 
-  QuestID: 2
-  QuestName: Game Complete
-  QuestDesc: Congratulations! You have complete the game. Now play more and grind
-    more!
-  coinReward: 10000000
-  experienceReward: 1100000
+  questID: 0
+  questName: Volatile Memory
+  questDesc: You have forgotten your past and why you are here.. perhaps others might
+    know?
+  coinReward: 1000000
+  experienceReward: 100000
   extraReward: {fileID: 0}
   extraRewardQuantity: 0
-  questState: 1
+  objectives:
+  - {fileID: 11400000, guid: 49785b7da58427647b97aba23f86fe9b, type: 2}
+  - {fileID: 11400000, guid: 2d85492973f4c4f46a413690ef4dc813, type: 2}
   questDependancies: 

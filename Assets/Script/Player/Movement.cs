@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour {
     private PlayerStateManager PlayerState;
     private PlayerState state;
     public Vector2 playerDir;
+    public bool canMove { get; private set; }
     public bool canDash = true;
     public bool inDash = false;
     public float baseMoveSpeed;
@@ -24,6 +25,7 @@ public class Movement : MonoBehaviour {
         newDir = Vector2.right;
         currDir = Vector2.right;
         playerDir = Vector2.right;
+        canMove = true;
     }
     private void Start() {
         input = GameInputManager.Instance;
@@ -44,7 +46,8 @@ public class Movement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (state != null) state.Execute(); //Call the execute method to execute the necessary functions
+
+        if (state != null && canMove) state.Execute(); //Call the execute method to execute the necessary functions
     }
 
 
@@ -70,5 +73,13 @@ public class Movement : MonoBehaviour {
         newDir = newDir.normalized;
         prevInput = input.GetMovementVectorNormalized();
         if (newDir != Vector2.zero) playerDir = newDir;
+    }
+
+    public void DisableMovement() {
+        canMove = false;
+    }
+
+    public void EnableMovement() {
+        canMove = true;
     }
 }

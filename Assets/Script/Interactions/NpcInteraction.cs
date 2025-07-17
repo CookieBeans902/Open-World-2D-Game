@@ -27,8 +27,8 @@ public class NpcInteraction : InteractionBase {
         if (msg == null) {
             NpcInteraction npc = null;
             if (i == (int)id.Test1) npc = this;
-            if (i == (int)id.Test2) npc = GetNpc("Test2");
-            else if (i == (int)id.Test3) npc = GetNpc("Test3");
+            if (i == (int)id.Test2) npc = GetNpc("NPC_2");
+            else if (i == (int)id.Test3) npc = GetNpc("NPC_3");
             else if (i == (int)id.Test4) npc = GetNpc("Player");
 
             if (npc != null) {

@@ -38,25 +38,6 @@ public class CharacterManager : MonoBehaviour {
     }
 
     private void Update() {
-        // if (Input.GetKeyDown(KeyCode.S)) {
-        //     Debug.Log("Health " + characters[0].currHealth);
-        //     characters[0].ShowStats();
-        // }
-        // if (Input.GetKeyDown(KeyCode.E)) {
-        //     Equipment weaponTest = new Equipment(EquipmentSlot.Weapon, EquipmentType.Physical, EquipmentRange.Melee, EquipmentWield.Single, Class.Assissin, "dagger", 0, 3);
-        //     characters[0].Weapon1 = weaponTest;
-        // }
-        // if (Input.GetKeyDown(KeyCode.D)) {
-        //     characters[0].TakeDamage(2);
-        // }
-        if (Input.GetKeyDown(KeyCode.N)) {
-            string nextScene = "StatsTest2";
-            SceneManager.LoadScene(nextScene);
-        }
-        if (Input.GetKeyDown(KeyCode.P)) {
-            string nextScene = "StatsTest1";
-            SceneManager.LoadScene(nextScene);
-        }
         if (Input.GetKeyDown(KeyCode.S)) {
             // string nextScene = "StatsTest1";
             characters[0].ShowStats();

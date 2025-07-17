@@ -1,9 +1,10 @@
+using Game.Utils;
+
 using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour {
     private MovementBase enemyMovement;
     private Vector2 prevDir;
-    private Vector2 curDir;
     private string currAnimation;
     private string newAnimation;
     private bool isMoving;
@@ -12,7 +13,6 @@ public class EnemyAnimation : MonoBehaviour {
     [SerializeField] private AnimationsSO animationData;
     private void Start() {
         enemyMovement = GetComponent<MovementBase>();
-        curDir = Vector2.right;
         prevDir = Vector2.right;
     }
 
@@ -25,14 +25,8 @@ public class EnemyAnimation : MonoBehaviour {
     private void HandleMoveAnimation() {
         Vector2 dir = enemyMovement.GetMoveDir();
         isMoving = dir != Vector2.zero;
-        if (isMoving) {
-            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) dir.y = 0;
-            else dir.x = 0;
-            curDir = dir.normalized;
-        }
-        if (dir != Vector2.zero) prevDir = curDir;
-        Debug.Log(dir);
-        // Debug.Log(dir);
+        if (!enemyMovement.canMove) return;
+
         if (!isMoving) {
             if (prevDir == Vector2.down) newAnimation = animationData.IdleDown.name;
             else if (prevDir == Vector2.up) newAnimation = animationData.IdleUp.name;
@@ -40,11 +34,39 @@ public class EnemyAnimation : MonoBehaviour {
             else if (prevDir == Vector2.left) newAnimation = animationData.IdleLeft.name;
         }
         else {
-            if (curDir == Vector2.down) newAnimation = animationData.MoveDown.name;
-            else if (curDir == Vector2.up) newAnimation = animationData.MoveUp.name;
-            else if (curDir == Vector2.right) newAnimation = animationData.MoveRight.name;
-            else if (curDir == Vector2.left) newAnimation = animationData.MoveLeft.name;
+            if (dir == Vector2.down) newAnimation = animationData.MoveDown.name;
+            else if (dir == Vector2.up) newAnimation = animationData.MoveUp.name;
+            else if (dir == Vector2.right) newAnimation = animationData.MoveRight.name;
+            else if (dir == Vector2.left) newAnimation = animationData.MoveLeft.name;
+            prevDir = dir;
         }
+    }
+
+    public void PlaySlashAnimation(float waitTime) {
+        enemyMovement.DisableMovement();
+        float animTime = 0;
+        Vector2 dir = enemyMovement.GetMoveDir();
+
+        if (dir == Vector2.right) {
+            newAnimation = animationData.SlashRight.name;
+            animTime = animationData.SlashRight.length;
+        }
+        else if (dir == Vector2.left) {
+            newAnimation = animationData.SlashLeft.name;
+            animTime = animationData.SlashLeft.length;
+        }
+        else if (dir == Vector2.down) {
+            newAnimation = animationData.SlashDown.name;
+            animTime = animationData.SlashDown.length;
+        }
+        else if (dir == Vector2.up) {
+            newAnimation = animationData.SlashUp.name;
+            animTime = animationData.SlashUp.length;
+        }
+
+        FunctionTimer.CreateSceneTimer(() => {
+            enemyMovement.EnableMovement();
+        }, animTime + waitTime);
     }
 
     private void UpdateAnimation() {

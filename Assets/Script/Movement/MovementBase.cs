@@ -2,7 +2,7 @@ using Pathfinding;
 using UnityEngine;
 using Game.Utils;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public abstract class MovementBase : MonoBehaviour {
     // Needed for the MoveRandom function to work properly
@@ -20,7 +20,9 @@ public abstract class MovementBase : MonoBehaviour {
     protected float pathLength;
 
     // Final separation between from the target
-    [SerializeField] protected float endSep = 0.3f;
+    [SerializeField] protected float endSep = 0f;
+
+    public bool canMove;
 
 
 
@@ -32,6 +34,7 @@ public abstract class MovementBase : MonoBehaviour {
     protected void MoveRandom(Vector3 centre, float radius, float waitTime, string waitTimerName = "WaitTimer") {
         if (agent.reachedEndOfPath) {
             agent.SetPath(null);
+            agent.canMove = false;
 
             float time = Random.Range(waitTime, waitTime + 1);
             time = waitTime == 0 ? 0 : time;
@@ -149,7 +152,6 @@ public abstract class MovementBase : MonoBehaviour {
     ///<param name="p">The path to be checked, usually recieved from the seeker when the path is calculated</param>
     ///<param name="length">Max length of the path</param>
     protected void ValidatePathLength(Path p, float length) {
-        agent.canMove = false;
         if (!p.error) {
             List<Vector3> newPath = new List<Vector3>(p.vectorPath);
             float dist = p.GetTotalLength();
@@ -162,6 +164,8 @@ public abstract class MovementBase : MonoBehaviour {
                 dist -= d;
             }
 
+            agent.destination = newPath[newPath.Count - 1];
+            agent.canMove = true;
             seeker.StartPath(newPath[0], newPath[newPath.Count - 1], (Path p) => { agent.canMove = true; UpdatePathData(p); });
         }
     }
@@ -186,7 +190,7 @@ public abstract class MovementBase : MonoBehaviour {
         agent.maxAcceleration = float.PositiveInfinity;
         agent.slowdownDistance = endSep;
         agent.endReachedDistance = endSep;
-        agent.radius = 1f;
+        agent.radius = 0.5f;
         agent.enableRotation = false;
         agent.pickNextWaypointDist = 1;
         agent.orientation = OrientationMode.YAxisForward;
@@ -197,15 +201,32 @@ public abstract class MovementBase : MonoBehaviour {
 
         seeker.StartPath(transform.position, transform.position);
         hasStarted = true;
+        canMove = true;
     }
 
     /// <summary>To get the current move direction of the object</summary>
     ///<returns>Current move direction of the object</returns>
     public Vector2 GetMoveDir() {
         if (agent != null && agent.hasPath) {
-            Vector3 moveDir = agent.desiredVelocity.normalized;
-            return moveDir;
+            Vector3 dir = agent.desiredVelocity;
+            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) dir.y = 0;
+            else dir.x = 0;
+
+            if (dir.magnitude < 0.3) return Vector2.zero;
+            else return dir.normalized;
         }
         return Vector2.zero;
+    }
+
+    /// <summary>To disable movement</summary>
+    public void DisableMovement() {
+        canMove = false;
+        agent.canMove = false;
+    }
+
+    /// <summary>To enable movement</summary>
+    public void EnableMovement() {
+        canMove = true;
+        agent.canMove = true;
     }
 }

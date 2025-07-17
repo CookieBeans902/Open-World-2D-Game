@@ -8,13 +8,15 @@ public class PlayerShared : MonoBehaviour {
     public Animator animator;
 
     public Movement playerMove;
-    public  Animations playerAnim;
-    public  PlayerInteractions playerInteract;
+    public Animations playerAnim;
+    public PlayerInteractions playerInteract;
+    public PlayerAttack attack;
 
 
     private void Start() {
         playerMove = GetComponent<Movement>();
         playerAnim = GetComponent<Animations>();
         playerInteract = GetComponent<PlayerInteractions>();
+        attack = GetComponent<PlayerAttack>();
     }
 }

@@ -12,6 +12,7 @@ UserSettings/
 MemoryCaptures/
 Builds/
 Assets/TextMesh Pro
+Assets/ArtAssetsOnline/*
 # Do not ignore these things as we track them using Git LFS (just in case):
 !*.png
 !*.jpg
@@ -19,3 +20,4 @@ Assets/TextMesh Pro
 !*.wav
 .editorconfig
 .config
+!Assets/ArtAssetsOnline/Links.txt

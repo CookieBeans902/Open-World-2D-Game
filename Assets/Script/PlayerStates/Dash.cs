@@ -20,10 +20,10 @@ public class Dash : PlayerState
         latestDashTime = Time.time; //Keep record of the time, to initiate cooldown logic
         player.canDash = false; //canDash is the variable that keeps track of the cooldwown
         dashDirection = player.newDir != Vector2.zero ? player.newDir : FindDirection();
-        StartCoroutine(doDash()); //StartCoroutine
+        StartCoroutine(DoDash()); //StartCoroutine
         // The next line is written, just to handle idle dashing - if the player dashes without moving
     }
-    public IEnumerator doDash()
+    public IEnumerator DoDash()
     {
         currentDashTime = 0f;
         Vector2 dashDistance = dashDirection * dashDistanceMul * 4;

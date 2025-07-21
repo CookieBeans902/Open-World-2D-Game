@@ -1,23 +1,25 @@
 using System.ComponentModel;
 using UnityEngine;
 using System.Collections.Generic;
-using Pathfinding;
 using System;
 
 public class QuestManager : MonoBehaviour
 {
-    public static QuestManager Instance { get; private set; }
-    public Dictionary<int, QuestSO> availableSideQuests;
-    public Dictionary<int, QuestSO> allMainQuests;
+    public static QuestManager Instance { get; private set; } //Global Instance
+    private Dictionary<QuestID, QuestInstance> availableSideQuests;  //List of All SideQuests
     [SerializeField] QuestUI questUI;
-    [Header("List of the Side Quests")]
-    public List<QuestSO> sideQuestList;
+    [Header("List of the Side Quests")] //To make use of Lists in inspector to create the dictionary
+    [SerializeField] private List<QuestSO> sideQuestList;
     [Header("List of the Main Quests")]
-    public List<QuestSO> mainQuestList;
+    [SerializeField] private List<QuestSO> mainQuestList;
     [Header("The Current Active Side Quests")]
-    [SerializeField] List<QuestSO> activeSideQuests = new(); //Tracks ON GOING side quests
-    [SerializeField] QuestSO activeMainQuest;
-    void Start()
+    [SerializeField] List<QuestInstance> activeSideQuests = new(); //Tracks ON GOING side quests
+    [SerializeField] QuestInstance activeMainQuest;
+    public QuestInstance currentQuest;
+    public QuestInstance selectedQuest;
+    private bool inQuestWindow = false;
+    [SerializeField] private GameObject QuestUIPanel;
+    void Awake()
     {
         // Singleton Instance
         if (Instance != null && Instance != this)
@@ -31,73 +33,103 @@ public class QuestManager : MonoBehaviour
         }
         // Creating the list of available Quests
         availableSideQuests ??= new();
-        allMainQuests ??= new();
         foreach (QuestSO quest in sideQuestList)
         {
-            availableSideQuests.Add(quest.QuestID, quest);
+            var questInstance = new QuestInstance(quest);
+            availableSideQuests.Add(quest.questID, questInstance);
         }
-        foreach (QuestSO quest in mainQuestList)
+        if (mainQuestList.Count > 0)
         {
-            allMainQuests.Add(quest.QuestID, quest);
+            activeMainQuest = new QuestInstance(mainQuestList[0]);
+            questUI.MainQuestUpdate(activeMainQuest);
+            currentQuest = activeMainQuest;
         }
     }
-    public void BeginSideQuest(int questID)
+    QuestInstance GetQuestByID(QuestID questID)
     {
-        Debug.Log("It works");
-        availableSideQuests.TryGetValue(questID, out QuestSO newQuest);
+        availableSideQuests.TryGetValue(questID, out QuestInstance quest);
+        return quest;
+    }
+    /// <summary>
+    /// Uses the QuestID of the list of Sidequests to begin the sidequest
+    /// <br> It also verifies the dependancies before starting.
+    /// </br>
+    /// </summary>
+    /// <param name="QuestID">The integer ID of the quest</param>
+    public void BeginSideQuest(QuestID id)
+    {
+        QuestInstance sideQuest = GetQuestByID(id);
         bool previousIncomplete = false;
-        List<QuestSO> previousIncompleteQuests = new();
-        foreach (int val in newQuest.questDependancies)
+        foreach (QuestID val in sideQuest.questData.questDependancies)
         {
-            availableSideQuests.TryGetValue(val, out QuestSO dependancy);
-            if (dependancy.questState != QuestState.Complete)
+            QuestInstance dependancy = GetQuestByID(val);
+            if (dependancy.QuestState != QuestState.Complete)
             {
-                previousIncompleteQuests.Add(dependancy);
                 previousIncomplete = true;
             }
-            else continue;
         }
         if (previousIncomplete)
         {
-            QuestError(previousIncompleteQuests);
+            // QuestError();
             return;
         }
-        if (!activeSideQuests.Contains(newQuest))
+        if (!activeSideQuests.Contains(sideQuest))
         {
-            activeSideQuests.Add(newQuest);
-            questUI.SideQuestUpdate(newQuest);
+            activeSideQuests.Add(sideQuest);
+            questUI.SideQuestUpdate(sideQuest);
         }
     }
-    public void BeginMainQuest(int questID)
+    /// <summary>
+    /// This function starts the next MainQuest with its QuestID while verifying previous completed
+    /// main quests.
+    /// </summary>
+    /// <param name="QuestID">Interger id of the Quest</param>
+    public void NextMainQuest()
     {
-        if(activeMainQuest!=null) activeMainQuest.questState = QuestState.Complete;
-        for (int i = 1; i < questID; i++)
+        QuestID currentQuestID = activeMainQuest.QuestID;
+        if ((int)currentQuestID + 1 < mainQuestList.Count)
         {
-            allMainQuests.TryGetValue(i, out QuestSO previousQuest);
-            if (previousQuest.questState != QuestState.Complete)
-            {
-                QuestError(previousQuest);
-                return;
-            }
+            var newMainQuest = new QuestInstance(mainQuestList[(int)currentQuestID + 1]);
+            activeMainQuest = newMainQuest;
+            questUI.MainQuestUpdate(activeMainQuest);
         }
-        allMainQuests.TryGetValue(questID, out QuestSO newMainQuest);
-        if (activeMainQuest == newMainQuest) return;
-        activeMainQuest = newMainQuest;
-        newMainQuest.questState = QuestState.onGoing;
-        questUI.MainQuestUpdate(newMainQuest);
+        else
+        {
+            questUI.AllMainQuestsComplete();
+        }
+        questUI.MainQuestUpdate(activeMainQuest);
     }
-    public void QuestError(List<QuestSO> errorQuests)
+    public void SideQuestComplete(QuestID questID)
     {
-        // FlashScreen();
+        availableSideQuests.TryGetValue(questID, out QuestInstance quest);
+        questUI.UIDestroy(quest);
     }
-    public void QuestError(QuestSO errorMainQuest)
+    public void SetAsActiveQuest()
     {
-        // FlashScreen();
+        currentQuest = selectedQuest;
     }
-    public void SideQuestComplete(int questID)
+    public void IncrementCount(Countables id)
     {
-        availableSideQuests.TryGetValue(questID, out QuestSO quest);
-        quest.questState = QuestState.Complete;
-        questUI.Destroy(quest);
+        currentQuest.CurrObjective.Increment(id);
+        currentQuest.MarkObjectiveComplete();
+        questUI.CurrentQuestUpdateUI();
+    }
+    public bool CanInteract(NpcID npcID)
+    {
+        NpcID target = currentQuest.CurrObjective.objective.targetNpcID;
+        if (target == npcID)
+        {
+            return true;
+        }
+        return false;
+    }
+    public void OpenQuestUI()
+    {
+        inQuestWindow = true;
+        QuestUIPanel.SetActive(true);
+    }
+    public void CurrentQuestUpdateUI()
+    {
+        questUI.CurrentQuestUpdateUI();
     }
 }

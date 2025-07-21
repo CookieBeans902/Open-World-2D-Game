@@ -42,8 +42,4 @@ namespace States
         Top,
         Bottom,
     }
-    public abstract class NPCstate : MonoBehaviour // NPC states for future, if they exist
-    {
-
-    }
 }

@@ -7,11 +7,16 @@ public class QuestUI : MonoBehaviour
 {
     [SerializeField] private Transform mainQuestContainer;
     [SerializeField] private Transform sideQuestContainer;
+    [Header("Display In Quest Window")]
     [SerializeField] private TMP_Text displayName;
     [SerializeField] private TMP_Text displayDesc;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private QuestButton buttonScript;
-    Dictionary<int, GameObject> sideButtonList = new();
+    [Header("Displaying as Current Quest")]
+    [SerializeField] private TMP_Text CurrentQuestNameText;
+    [SerializeField] private TMP_Text CurrrentObjectiveDesc;
+    readonly Dictionary<QuestID, GameObject> sideButtonList = new();
+
     public void SideQuestUpdate(QuestInstance quest)
     {
         var button = Instantiate(buttonPrefab, sideQuestContainer);
@@ -47,5 +52,16 @@ public class QuestUI : MonoBehaviour
             sideButtonList.Remove(quest.QuestID);
             Destroy(btn);
         }
+    }
+    public void AllMainQuestsComplete()
+    {
+        Destroy(mainQuestContainer.GetChild(0).gameObject);
+        //Some logic for displaying end of all main quests.
+    }
+    public void CurrentQuestUpdateUI()
+    {
+        var currentQuest = QuestManager.Instance.currentQuest;
+        CurrentQuestNameText.text = currentQuest.questData.questName;
+        CurrrentObjectiveDesc.text = currentQuest.CurrObjective.GetObjectiveDesc();
     }
 }

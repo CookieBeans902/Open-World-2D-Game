@@ -11,8 +11,9 @@ public class QuestInstance
     [SerializeField] private List<ObjectiveState> runtimeObj; //Obj is shorthand for objectives here
     private int currentObjectiveIndex = 0;
     //Some helper methods for ease of access
-    public int QuestID => questData.questID;
+    public QuestID QuestID => questData.questID;
     public QuestState QuestState => questState;
+    public ObjectiveState CurrObjective => runtimeObj[currentObjectiveIndex];
     public QuestInstance(QuestSO questSO)
     {
         questData = questSO;
@@ -29,46 +30,40 @@ public class QuestInstance
             currentObjectiveIndex = 0;
         }
     }
-    public void ObjectiveTracker() //This is for linear and ordered quests.
+    public void ObjectiveTracker()
     {
         if (runtimeObj[currentObjectiveIndex].isComplete)
         {
             currentObjectiveIndex++;
+            QuestManager.Instance.CurrentQuestUpdateUI();
         }
         if (currentObjectiveIndex >= runtimeObj.Count)
         {
             QuestComplete();
         }
     }
-    public void ObjectiveComplete() //For linear and ordered quests
+    public void MarkObjectiveComplete()
     {
-        var currObj = runtimeObj[currentObjectiveIndex];
-        if (currObj.objective is CollectibleObjSO collectible)
+        if (CurrObjective.objective is CountableObjSO countable)
         {
-            if (currObj.currentAmount < collectible.desiredAmount) return;
+            if (CurrObjective.currentAmount < countable.desiredAmount) return;
         }
-        currObj.isComplete = true;
-    }
-    void MarkObjectiveComplete(string objective) //Marking certain objectives complete, for unordered quests
-    {
-        foreach (var obj in runtimeObj)
-        {
-            if (obj.Name == objective)
-            {
-                obj.isComplete = true;
-                break;
-            }
-        }
-    }
-    void GetCount(string id)
-    {
-
+        CurrObjective.isComplete = true;
+        ObjectiveTracker();
     }
     void QuestComplete()
     {
         if (runtimeObj.All(obj => obj.isComplete))
         {
             questState = QuestState.Complete;
+            if ((int)QuestID < 100) //It is a mainQuest
+            {
+                QuestManager.Instance.NextMainQuest();
+            }
+            else
+            {
+                QuestManager.Instance.SideQuestComplete(QuestID);
+            }
         }
     }
 }

@@ -33,7 +33,9 @@ public class EnemyStats : MonoBehaviour, IStats {
         // }
         curHp -= atk;
 
+        curHp = Mathf.Clamp(curHp, 0, mhp);
         float val = (float)curHp / mhp;
         healthbar.SetFill(val);
+        // if (curHp <= 0) Destroy(gameObject);
     }
 }

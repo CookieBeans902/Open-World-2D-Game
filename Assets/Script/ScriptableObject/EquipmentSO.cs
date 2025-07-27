@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "EquipmentSO", menuName = "Scriptable Objects/EquipmentSO")]
 public class EquipmentSO : ScriptableObject {
-    public EquipmentSlot slot;
+    public SlotType slot;
     public EquipmentType type;
     public EquipmentRange range;
     public EquipmentWield weild;

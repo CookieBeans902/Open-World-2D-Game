@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 3
   icon: {fileID: -3753825769889500098, guid: b8f0e7d3e26f9034a88496169e83ca79, type: 3}
   itemName: Steel Sword
-  itemDesc: 
   canConsume: 0
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 11400000, guid: 39ff168b650d8c24e9a1428eb5285e2e, type: 2}
+  itemDesc: Steel sword which provides buffs.

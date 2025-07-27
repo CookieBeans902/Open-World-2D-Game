@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 3
   icon: {fileID: 6943535168657398750, guid: b7a71f2ebd39c5443ad92e6e8c86f70a, type: 3}
   itemName: Steel Helmet
-  itemDesc: 
   canConsume: 0
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 11400000, guid: 53681922fae6fb94a905de28d68984c0, type: 2}
+  itemDesc: Steel helmet which provides buffs.

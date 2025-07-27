@@ -5,7 +5,6 @@ public class ItemSO : ScriptableObject {
     public ItemType itemType;
     public Sprite icon;
     public string itemName;
-    public string itemDesc;
     public bool canConsume;
     public bool canDestroy;
     public bool canSell;
@@ -13,4 +12,7 @@ public class ItemSO : ScriptableObject {
     public int buyPrice;
     public int sellPrice;
     public EquipmentSO equipment;
+
+    [TextArea]
+    public string itemDesc;
 }

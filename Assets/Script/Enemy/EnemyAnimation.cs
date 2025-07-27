@@ -66,6 +66,7 @@ public class EnemyAnimation : MonoBehaviour {
 
         FunctionTimer.CreateSceneTimer(() => {
             enemyMovement.EnableMovement();
+            // enemyMovement.targetReached = false;
         }, animTime + waitTime);
     }
 

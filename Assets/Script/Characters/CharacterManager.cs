@@ -49,12 +49,12 @@ public class CharacterManager : MonoBehaviour {
     /// <param name="cahracter">The character you want to add</param>
     private void AddCharacter(CharacterSO character) {
         Character c = new Character(character);
-        InventoryManager.Instance.AddItem(character.head != null ? InventoryItem.Create(character.head.item) : null, 1);
-        InventoryManager.Instance.AddItem(character.body != null ? InventoryItem.Create(character.body.item) : null, 1);
-        InventoryManager.Instance.AddItem(character.hand1 != null ? InventoryItem.Create(character.hand1.item) : null, 1);
-        InventoryManager.Instance.AddItem(character.hand2 != null ? InventoryItem.Create(character.hand2.item) : null, 1);
-        InventoryManager.Instance.AddItem(character.boots != null ? InventoryItem.Create(character.boots.item) : null, 1);
-        InventoryManager.Instance.AddItem(character.accessory != null ? InventoryItem.Create(character.accessory.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.head != null ? InventoryItem.Create(character.head.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.body != null ? InventoryItem.Create(character.body.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.hand1 != null ? InventoryItem.Create(character.hand1.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.hand2 != null ? InventoryItem.Create(character.hand2.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.boots != null ? InventoryItem.Create(character.boots.item) : null, 1);
+        // InventoryManager.Instance.AddItem(character.accessory != null ? InventoryItem.Create(character.accessory.item) : null, 1);
 
         characters.Add(c);
     }

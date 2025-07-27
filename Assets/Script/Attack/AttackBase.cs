@@ -1,23 +1,6 @@
-using Game.Utils;
-
-using UnityEditor.Build.Content;
-
 using UnityEngine;
 
 public class AttackBase : MonoBehaviour {
-    private void Start() {
-        // move = GetComponent<MovementBase>();
-    }
-
-    private void Update() {
-        // if (Input.GetKeyDown(KeyCode.Q)) {
-        //     Debug.Log(move.GetRemainingDistance());
-        // }
-        // if (Input.GetKeyDown(KeyCode.Space)) {
-        //     PerformSlash(dir, spread);
-        // }
-    }
-
     protected void PerformSlash(Vector2 dir, float spread, int layerMask) {
         float height = 0, width = 0;
         float elongationFactor = 1.2f;

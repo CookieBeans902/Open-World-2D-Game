@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 3
   icon: {fileID: -1880120661550918566, guid: 7206d387f88b3d74187195f619fd0265, type: 3}
   itemName: Steel Armor
-  itemDesc: 
   canConsume: 0
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 11400000, guid: 9e75867187b0d9b4fa1964d58a853c6a, type: 2}
+  itemDesc: Steel armor which provides buffs.

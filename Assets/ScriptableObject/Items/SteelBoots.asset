@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 3
   icon: {fileID: -8630435554779211992, guid: d5bc5e6a5e50eb541bba979b3f0d6faf, type: 3}
   itemName: Steel Boots
-  itemDesc: 
   canConsume: 0
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 11400000, guid: 1e0a5c1b35b09cf4dade60728d29696d, type: 2}
+  itemDesc: Steel boots which provides buffs.

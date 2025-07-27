@@ -7,12 +7,12 @@ using UnityEngine;
 
 [System.Serializable]
 public class Equipment {
-    public EquipmentSlot slot;
+    public SlotType slot;
     public EquipmentType type;
     public EquipmentRange range;
     public EquipmentWield weild;
+    public GameObject equipmentUI;
     public List<Class> validClasses;
-    public Sprite icon;
     public string equipmentName;
     public bool isEquiped;
 
@@ -41,7 +41,7 @@ public class Equipment {
             range = equipment.range,
             weild = equipment.weild,
             validClasses = equipment.validClasses,
-            icon = equipment.icon,
+            // icon = equipment.icon,
             equipmentName = equipment.equipmentName,
             hpBuff = equipment.hpBuff,
             atkBuff = equipment.atkBuff,

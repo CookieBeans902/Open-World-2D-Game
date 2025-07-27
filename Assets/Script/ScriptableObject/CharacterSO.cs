@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterSO", menuName = "Scriptable Objects/CharacterSO")]
@@ -24,4 +26,6 @@ public class CharacterSO : ScriptableObject {
     public EquipmentSO hand1;
     public EquipmentSO hand2;
     public EquipmentSO accessory;
+
+    public List<SkillSO> skills;
 }

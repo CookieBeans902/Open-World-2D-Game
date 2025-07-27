@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data;
+
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
@@ -72,7 +73,7 @@ public class InventoryManager : MonoBehaviour {
                 Debug.Log("Inventory is full");
             }
         }
-        InventoryUIManager.Instance.UpdateUI();
+        StatsUIManager.Instance.UpdateUI();
     }
 
 
@@ -90,7 +91,7 @@ public class InventoryManager : MonoBehaviour {
         else {
             Debug.Log(name + " ins't in the inventory");
         }
-        InventoryUIManager.Instance.UpdateUI();
+        StatsUIManager.Instance.UpdateUI();
     }
 
 

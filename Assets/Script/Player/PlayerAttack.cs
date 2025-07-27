@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerAttack : AttackBase {
+    [SerializeField] private bool isRanged;
     [SerializeField] private float waitTime;
     [SerializeField] private GameObject arrowPref;
 
@@ -20,8 +21,8 @@ public class PlayerAttack : AttackBase {
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            // Slash();
-            Shoot();
+            if (isRanged) Shoot();
+            else Slash();
         }
     }
 
@@ -30,7 +31,7 @@ public class PlayerAttack : AttackBase {
         Vector2 dir = shared.playerMove.playerDir;
         float spread = 1.5f;
         float range = 1.8f;
-        int layerMask = LayerMask.GetMask("Player");
+        int layerMask = LayerMask.GetMask("Enemy");
         switch (state) {
             case 1:
                 PerformSlash(dir, spread, layerMask);

@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 1
   icon: {fileID: -7832214784768987486, guid: c230b9324e96ed24b9f88b9c5115aaa9, type: 3}
   itemName: Apple
-  itemDesc: 
   canConsume: 1
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 0}
+  itemDesc: It could recover hp when consumed.

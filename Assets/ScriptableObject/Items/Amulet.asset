@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 3
   icon: {fileID: 4706723764130231828, guid: 3b3c58f1e6d47c9438d04871189cfc29, type: 3}
   itemName: Amulet
-  itemDesc: 
   canConsume: 0
   canDestroy: 1
   canSell: 1
@@ -23,3 +22,4 @@ MonoBehaviour:
   buyPrice: 10
   sellPrice: 5
   equipment: {fileID: 11400000, guid: 6986ddc70b917c145a31a30145c35202, type: 2}
+  itemDesc: Amulet which provides buffs.

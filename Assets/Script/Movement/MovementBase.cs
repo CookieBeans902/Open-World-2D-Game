@@ -20,11 +20,10 @@ public abstract class MovementBase : MonoBehaviour {
     protected float pathLength;
 
     // Final separation between from the target
-    [SerializeField] protected float endSep = 0f;
+    [SerializeField] protected float endSep = 0.1f;
 
     public bool canMove;
-
-
+    public bool targetReached;
 
     /// <summary>Makes the object move randomly within a range</summary>>
     /// <param name="centre">Centre about which we want the object to move, set to tranform.position for free movement</param>
@@ -56,12 +55,20 @@ public abstract class MovementBase : MonoBehaviour {
     ///<param name="timer">Timer to control update rate</param>
     ///<param name="timerName">Nmae of the timer for more control ovet it</param>
     protected void MoveToTarget(Transform target, float updateTime, ref FunctionTimer timer, string timerName = "MoveTimer") {
-        if (timer == null || timer.TimeLeft() < 0) {
-            timer = FunctionTimer.CreateSceneTimer(() => {
-                Vector3 targetPos = target.position;
-                seeker.StartPath(transform.position, targetPos, UpdatePathData);
-            }, updateTime, timerName);
-        }
+        if (timer != null && timer.TimeLeft() > 0) return;
+
+        timer = FunctionTimer.CreateSceneTimer(() => {
+            Vector3 targetPos = target.position;
+            seeker.StartPath(transform.position, targetPos, UpdatePathData);
+        }, updateTime, timerName);
+
+    }
+
+    /// <summary>To force a new path to a target</summary>
+    ///<param name="target">Transform of the target</param>
+    protected void ForceNewPath(Transform target) {
+        Vector3 targetPos = target.position;
+        seeker.StartPath(transform.position, targetPos, UpdatePathData);
     }
 
 
@@ -120,31 +127,32 @@ public abstract class MovementBase : MonoBehaviour {
 
     /// <summary>To check is a target is present in a paricular direction and angular range</summary>
     ///<param name="start">position of the current object</param>
-    ///<param name="dir">DIrection in which you want to check for the target</param>
-    ///<param name="spread">Angular spread of the valid runaway zone in degrees</param>
     ///<param name="radius">Radius of the search zone</param>
-    ///<param name="findTag">Tag of the object you want to find</param>
-    ///<param name="blockTag">Tage of walls that block the sight, set to empty string if you want to see throuh walls</param>
-    /// <returns>A run away target</returns>
-    protected bool CheckForTarget(Vector3 start, Vector3 dir, float spread, float radius, string searchTag, string blockTag = "Obstacle") {
-        for (float a = -spread * 0.5f; a <= spread * 0.5f; a += 0.5f) {
-            Vector3 checkDir = Quaternion.Euler(0, 0, a) * dir;
-            RaycastHit2D[] hits = Physics2D.RaycastAll(start, checkDir, radius);
-            Vector3 end = start + checkDir * radius;
+    ///<param name="searchLayer">Layer of the target</param>
+    ///<param name="ostacleLayer">Layer of obstacles</param>
+    ///<param name="dir">DIrection in which you want to check for the target</param>
+    ///<param name="angularSpread">Angular spread of the valid runaway zone in degrees</param>
+    /// <returns>Position of the target if present, null otherwise</returns>
+    protected Vector2? CheckForTarget(Vector2 start, float radius, string searchLayer, string obstacleLayer = null, Vector2 dir = new Vector2(), float angularSpread = 360) {
+        int player = LayerMask.GetMask(searchLayer);
+        Collider2D hit = Physics2D.OverlapCircle(start, radius, player);
 
-            foreach (RaycastHit2D hit in hits) {
-                Collider2D collider = hit.collider;
-                if (collider != null) {
-                    if (blockTag != "" && collider.CompareTag(blockTag))
-                        break;
-                    if (collider != null && collider.CompareTag(searchTag))
-                        return true;
-                }
-            }
-            // Debug.DrawLine(start, end, Color.white, 0.5f);
+        if (hit == null) return null;
+
+        Vector2 d = ((Vector2)hit.transform.position - start).normalized;
+        float r = ((Vector2)hit.transform.position - start).magnitude;
+
+        int layer = obstacleLayer != null ? LayerMask.GetMask(obstacleLayer) : 0;
+        RaycastHit2D obstacle = Physics2D.Raycast(start, d, r, layer);
+        if (obstacle.collider != null) return null;
+
+        if (dir != Vector2.zero) {
+            angularSpread = Mathf.Clamp(angularSpread, 0, 360);
+            float angle = Vector2.Angle(dir, d);
+            if (angle > angularSpread / 2) return null;
         }
 
-        return false;
+        return hit.transform.position;
     }
 
 

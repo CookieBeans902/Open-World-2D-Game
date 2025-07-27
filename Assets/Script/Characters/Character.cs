@@ -26,6 +26,11 @@ public class Character {
     public Dictionary<string, Equipment> equipments { get; private set; }
     public List<string> slots { get; private set; }
 
+    public List<Skill> skills;
+    public Skill skill1 { get; private set; }
+    public Skill skill2 { get; private set; }
+    public Skill skill3 { get; private set; }
+
     // Getters for base properties
     public int MaxExp => (int)(maxExp.init + (maxExp.final - maxExp.init) * Mathf.Pow((float)curLvl / maxLvl, maxExp.pow));
     public int BaseMHP => (int)(baseMhp.init + (baseMhp.final - baseMhp.init) * Mathf.Pow((float)curLvl / maxLvl, baseMhp.pow));
@@ -78,6 +83,7 @@ public class Character {
         canDualWeild = character.canDualWeild;
 
         slots = new List<string> { "head", "body", "hand1", "hand2", "boots", "accessory", };
+        skills = character.skills.Select(s => Skill.Create(s)).ToList();
 
         equipments = new Dictionary<string, Equipment>();
         equipments["head"] = Equipment.Create(character.head);
@@ -123,22 +129,22 @@ public class Character {
         }
 
         switch (equipment.slot) {
-            case EquipmentSlot.Head:
+            case SlotType.Head:
                 equipments["head"] = equipment;
                 break;
-            case EquipmentSlot.Body:
+            case SlotType.Body:
                 equipments["body"] = equipment;
                 break;
-            case EquipmentSlot.Hand1:
+            case SlotType.Hand1:
                 equipments["hand1"] = equipment;
                 break;
-            case EquipmentSlot.Hand2:
+            case SlotType.Hand2:
                 equipments["hand2"] = equipment;
                 break;
-            case EquipmentSlot.Boots:
+            case SlotType.Boots:
                 equipments["boots"] = equipment;
                 break;
-            case EquipmentSlot.Accessory:
+            case SlotType.Accessory:
                 equipments["accessory"] = equipment;
                 break;
         }
@@ -147,38 +153,88 @@ public class Character {
 
     /// <summary>To unequip an equipment</summary>
     /// <param name="slot">Equipment slot you want it to unequip</param>
-    public void Unequip(EquipmentSlot slot) {
+    public void Unequip(SlotType slot) {
         switch (slot) {
-            case EquipmentSlot.Head:
+            case SlotType.Head:
                 if (equipments["head"] == null) return;
                 equipments["head"] = null;
                 // equipments["head"].isEquiped = false;
                 break;
-            case EquipmentSlot.Body:
+            case SlotType.Body:
                 if (equipments["body"] == null) return;
                 equipments["body"] = null;
                 // equipments["body"].isEquiped = false;
                 break;
-            case EquipmentSlot.Hand1:
+            case SlotType.Hand1:
                 if (equipments["hand1"] == null) return;
                 equipments["hand1"] = null;
                 // equipments["hand1"].isEquiped = false;
                 break;
-            case EquipmentSlot.Hand2:
+            case SlotType.Hand2:
                 if (equipments["hand2"] == null) return;
                 equipments["hand2"] = null;
                 // equipments["hand2"].isEquiped = false;
                 break;
-            case EquipmentSlot.Boots:
+            case SlotType.Boots:
                 if (equipments["boots"] == null) return;
                 equipments["boots"] = null;
                 // equipments["boots"].isEquiped = false;
                 break;
-            case EquipmentSlot.Accessory:
+            case SlotType.Accessory:
                 if (equipments["accessory"] == null) return;
                 equipments["accessory"] = null;
                 // equipments["accessory"].isEquiped = false;
                 break;
+        }
+    }
+
+    public void EquipSkill(int slot, Skill skill) {
+        if (slot == 1) skill1 = skill;
+        else if (slot == 2) skill2 = skill;
+        else if (slot == 3) skill3 = skill;
+
+        foreach (Skill s in skills) {
+            if (s.skillName == skill.skillName) s.isActive = true;
+        }
+    }
+
+    public void UnequipSkill(int slot) {
+        Skill skill = null;
+        if (slot == 1) {
+            skill = skill1;
+            skill1 = null;
+        }
+        else if (slot == 2) {
+            skill = skill2;
+            skill2 = null;
+        }
+        else if (slot == 3) {
+            skill = skill3;
+            skill3 = null;
+        }
+
+        if (skill == null) return;
+        foreach (Skill s in skills) {
+            if (s.skillName == skill.skillName) s.isActive = true;
+        }
+    }
+
+    public Equipment GetEquipment(SlotType slot) {
+        switch (slot) {
+            case SlotType.Head:
+                return equipments["head"];
+            case SlotType.Body:
+                return equipments["body"];
+            case SlotType.Boots:
+                return equipments["boots"];
+            case SlotType.Accessory:
+                return equipments["accessory"];
+            case SlotType.Hand1:
+                return equipments["hand1"];
+            case SlotType.Hand2:
+                return equipments["hand2"];
+            default:
+                return null;
         }
     }
 

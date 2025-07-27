@@ -27,17 +27,17 @@ MonoBehaviour:
     frameRate: 12
     canLoop: 1
   slash:
-    columns: 8
+    columns: 5
     rows: 4
-    height: 192
-    width: 192
+    height: 64
+    width: 64
     frameRate: 12
     canLoop: 0
   islash:
-    columns: 8
+    columns: 5
     rows: 4
-    height: 192
-    width: 192
+    height: 64
+    width: 64
     frameRate: 12
     canLoop: 0
   thrust:

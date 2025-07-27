@@ -1,4 +1,4 @@
-public enum EquipmentSlot {
+public enum SlotType {
     Head,
     Body,
     Hand1,

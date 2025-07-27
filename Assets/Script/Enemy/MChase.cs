@@ -3,12 +3,13 @@ using Game.Utils;
 using UnityEngine;
 
 public class MChase : MovementBase {
-    private MoveStates moveState;
+    [SerializeField] private MoveStates moveState;
     private Transform player;
     private MeleeAttack meleeAttack;
     private FunctionTimer chaseTimer;
     private string chaseTimerName;
     private string waitTimerName;
+    private string reachedTimerName;
 
     [SerializeField] private bool moveBackToCentre;
     [SerializeField] private float speed;
@@ -24,9 +25,10 @@ public class MChase : MovementBase {
         InitBasicComponents();
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
         chaseTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        reachedTimerName = "ReachedTimer" + gameObject.GetInstanceID();
         moveState = MoveStates.Random;
         agent.maxSpeed = speed;
-        updateTime = 0.2f;
+        updateTime = 0.02f;
     }
 
     private void Start() {
@@ -35,31 +37,33 @@ public class MChase : MovementBase {
     }
 
     private void Update() {
-        switch (moveState) {
-            case MoveStates.Random:
-                if (!canMove) return;
-                MoveRandom(centre.position, radius, waitTime, waitTimerName);
-                break;
-            case MoveStates.Chasing:
-                if (!canMove) return;
-                MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
-                break;
+        Vector2? pos = CheckForTarget(transform.position, radius, "Player", "Wall", Vector2.right, 120);
+        if (pos != null) {
+            Debug.Log(pos);
         }
+        // switch (moveState) {
+        //     case MoveStates.Random:
+        //         // if (!canMove) return;
+        //         MoveRandom(centre.position, radius, waitTime, waitTimerName);
+        //         break;
+        //     case MoveStates.Chasing:
+        //         // if (!canMove) return;
+        //         MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
+        //         break;
+        // }
 
-        UpdateState();
+        // UpdateState();
     }
 
     private void UpdateState() {
         float dist = VectorHandler.GetDistance(transform.position, player.position);
 
-        if (dist < endSep + 0.6f) meleeAttack.canAttack = true;
-        else meleeAttack.canAttack = false;
-
         if (dist < chaseRadius && moveState != MoveStates.Chasing) {
             agent.maxSpeed = chaseSpeed;
             moveState = MoveStates.Chasing;
+            seeker.StartPath(transform.position, player.position);
         }
-        else if (dist >= chaseRadius && moveState != MoveStates.Random) {
+        if (dist >= chaseRadius && moveState != MoveStates.Random) {
             agent.maxSpeed = speed;
             moveState = MoveStates.Random;
             if (!moveBackToCentre) centre.position = transform.position;

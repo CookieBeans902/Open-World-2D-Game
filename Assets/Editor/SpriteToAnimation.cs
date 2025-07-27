@@ -102,7 +102,7 @@ public class SpriteToAnimationWindow : EditorWindow {
             ClipSettings settings = settingsDatabase.Get(s);
             if (s != "hurt") {
                 string spriteSheetPath = $"{sourcePathRoot}/{sourceFolder}/{baseName}_{s}.png";
-                SliceSpriteSheet(spriteSheetPath, $"{baseName}_{s}", settings);
+                SliceSpriteSheet(spriteSheetPath, s, settings);
 
                 List<Sprite> sprites = new List<Sprite>();
                 Object[] assets = AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath);
@@ -111,6 +111,10 @@ public class SpriteToAnimationWindow : EditorWindow {
                 }
 
                 if (sprites.Count == 0) continue;
+                if (sprites.Count != settings.columns * settings.rows) {
+                    Debug.Log($"Could not generate animation, {s} has settings that don't match the sprite");
+                    return;
+                }
 
                 AnimationClip clip_up = CreateAnimationClip($"{s}_up", sprites.GetRange(0 * settings.columns, settings.columns), settings);
                 AnimationClip clip_left = CreateAnimationClip($"{s}_left", sprites.GetRange(1 * settings.columns, settings.columns), settings);

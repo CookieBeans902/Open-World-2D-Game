@@ -62,7 +62,7 @@ public class CharacterManager : MonoBehaviour {
 
 
     /// <summary>To add a character to the team</summary>
-    /// <param name="cahracter">The character you want to add</param>
+    /// <param name="character">The character you want to add</param>
     private void AddCharacter(CharacterSO character) {
         Character c = new Character(character);
         InventoryManager.Instance.AddItem(character.head != null ? InventoryItem.Create(character.head.item) : null, 1);

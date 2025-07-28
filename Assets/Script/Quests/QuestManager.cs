@@ -2,8 +2,9 @@ using System.ComponentModel;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.InputSystem;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : MonoBehaviour,IDataPersistence
 {
     public static QuestManager Instance { get; private set; } //Global Instance
     private Dictionary<QuestID, QuestInstance> availableSideQuests;  //List of All SideQuests
@@ -17,7 +18,6 @@ public class QuestManager : MonoBehaviour
     [SerializeField] QuestInstance activeMainQuest;
     public QuestInstance currentQuest;
     public QuestInstance selectedQuest;
-    private bool inQuestWindow = false;
     [SerializeField] private GameObject QuestUIPanel;
     void Awake()
     {
@@ -123,13 +123,32 @@ public class QuestManager : MonoBehaviour
         }
         return false;
     }
-    public void OpenQuestUI()
-    {
-        inQuestWindow = true;
-        QuestUIPanel.SetActive(true);
-    }
     public void CurrentQuestUpdateUI()
     {
         questUI.CurrentQuestUpdateUI();
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        sideQuestList.Clear();
+        foreach (KeyValuePair<int, int> pair in gameData.sideQuestIDs)
+        {
+            QuestInstance quest = GetQuestByID((QuestID)pair.Key);
+            quest.SetObjIndex(pair.Value);
+            activeSideQuests.Add(quest);
+        }
+        //TO-DO, LOAD THE TO-DO STUFF THAT HAS BEEN SAVED
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        gameData.sideQuestIDs.Clear();
+        foreach (var quest in activeSideQuests)
+        {
+            gameData.sideQuestIDs.Add((int)quest.QuestID, quest.currObjIndex);
+        }
+        //TO-DO, SAVE OBJECTIVE AMOUNTS
+        //SAVE THE OBJECTIVE STATES AND THE CURRENT AMOUNT
+        
     }
 }

@@ -13,6 +13,7 @@ public class MovementState : PlayerState
         _rigidBody.MovePosition(_rigidBody.position + (player.newDir * moveDist));
         if (player.newDir != Vector2.zero) player.currDir = player.newDir;
     }
+    
     public override void Exit()
     {
         // I sometimes like commenting and i sometimes don't. It helps me practice typing but sometimes i 

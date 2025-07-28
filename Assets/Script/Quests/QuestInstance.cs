@@ -14,6 +14,8 @@ public class QuestInstance
     public QuestID QuestID => questData.questID;
     public QuestState QuestState => questState;
     public ObjectiveState CurrObjective => runtimeObj[currentObjectiveIndex];
+    public int currObjIndex => currentObjectiveIndex;
+    public void SetObjIndex(int i) => currentObjectiveIndex = i;
     public QuestInstance(QuestSO questSO)
     {
         questData = questSO;

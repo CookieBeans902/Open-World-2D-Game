@@ -3,7 +3,7 @@ using UnityEngine;
 using States;
 using Unity.VisualScripting;
 
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IDataPersistence
 {
     [Header("References")]
     public Rigidbody2D rigidBody;
@@ -67,5 +67,15 @@ public class Movement : MonoBehaviour
 
     public Vector3 GetPlayerDir() {
         return currDir;
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        gameObject.transform.position = gameData.pos;
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        gameData.pos = gameObject.transform.position;
     }
 }

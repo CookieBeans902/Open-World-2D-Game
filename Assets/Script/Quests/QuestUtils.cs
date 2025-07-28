@@ -25,7 +25,7 @@ public class ObjectiveState
     public string GetObjectiveDesc()
     {
         if(objective is CountableObjSO countable) {
-            return countable.objectiveDesc + $"<{currentAmount}/{countable.desiredAmount}>";
+            return countable.objectiveDesc + $" <{currentAmount}/{countable.desiredAmount}>";
         }
         return objective.objectiveDesc;
     }
@@ -50,10 +50,10 @@ public enum QuestID
     Exhaustion = 1,
     Illness = 2,
     HerbSearch = 3,
-    ReturnToFriend = 4,
-
-
-
+    Prince = 4,
+    Evidence = 5,
+    
+    
     //Using 100+ for Side Quests
     FlowerCollection = 100,
     CrytalMining = 101,

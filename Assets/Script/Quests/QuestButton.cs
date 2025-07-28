@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class QuestButton : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class QuestButton : MonoBehaviour
 {
     [SerializeField] QuestInstance displayQuest;
     [SerializeField] TMP_Text displayName;
@@ -12,9 +12,6 @@ public class QuestButton : MonoBehaviour, ISelectHandler, IDeselectHandler
     [SerializeField] TMP_Text buttonDesc;
     [SerializeField] Sprite coinSprite;
     [SerializeField] Sprite expSprite;
-    [SerializeField] Sprite selectedSprite;
-    [SerializeField] Sprite defaultSprite;
-    [SerializeField] Image image;
     public void Setup(QuestInstance quest, TMP_Text Name, TMP_Text Desc)
     {
         displayQuest = quest;
@@ -31,15 +28,5 @@ public class QuestButton : MonoBehaviour, ISelectHandler, IDeselectHandler
     public void SelectQuest()
     {
         QuestManager.Instance.selectedQuest = displayQuest;
-    }
-    //Logic For Switching Sprites Or Any Custom Logic when Selecting a Button in the UI
-
-    public void OnDeselect(BaseEventData eventData)
-    {
-        image.sprite = defaultSprite;
-    }
-    public void OnSelect(BaseEventData eventData)
-    {
-        image.sprite = selectedSprite;
     }
 }

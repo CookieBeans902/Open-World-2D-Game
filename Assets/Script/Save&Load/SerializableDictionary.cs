@@ -4,8 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey,TValue>,ISerializationCallbackReceiver
 {
-    List<TKey> keyList;
-    List<TValue> valueList;
+    List<TKey> keyList = new();
+    List<TValue> valueList = new();
     public void OnBeforeSerialize()
     {
         keyList.Clear();

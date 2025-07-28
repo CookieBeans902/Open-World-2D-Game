@@ -15,8 +15,7 @@ public class QuestInstance
     public QuestState QuestState => questState;
     public ObjectiveState CurrObjective => runtimeObj[currentObjectiveIndex];
     public int currObjIndex => currentObjectiveIndex;
-    public void SetObjIndex(int i) => currentObjectiveIndex = i;
-    public QuestInstance(QuestSO questSO)
+        public QuestInstance(QuestSO questSO)
     {
         questData = questSO;
         runtimeObj = new();
@@ -68,4 +67,14 @@ public class QuestInstance
             }
         }
     }
+    public void SetObjectiveStates(int[] info)
+    {
+        currentObjectiveIndex = info[0];
+        for (int k = 0; k < currentObjectiveIndex; k++)
+        {
+            runtimeObj[k].isComplete = true;
+        }
+        runtimeObj[currentObjectiveIndex].currentAmount = info[1];
+    }
 }
+

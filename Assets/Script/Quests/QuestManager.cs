@@ -131,10 +131,10 @@ public class QuestManager : MonoBehaviour,IDataPersistence
     public void LoadData(GameData gameData)
     {
         sideQuestList.Clear();
-        foreach (KeyValuePair<int, int> pair in gameData.sideQuestIDs)
+        foreach (KeyValuePair<int, int[]> pair in gameData.sideQuestInfo)
         {
             QuestInstance quest = GetQuestByID((QuestID)pair.Key);
-            quest.SetObjIndex(pair.Value);
+            quest.SetObjectiveStates(pair.Value);
             activeSideQuests.Add(quest);
         }
         //TO-DO, LOAD THE TO-DO STUFF THAT HAS BEEN SAVED
@@ -142,13 +142,13 @@ public class QuestManager : MonoBehaviour,IDataPersistence
 
     public void SaveData(GameData gameData)
     {
-        gameData.sideQuestIDs.Clear();
+        gameData.sideQuestInfo.Clear();
         foreach (var quest in activeSideQuests)
         {
-            gameData.sideQuestIDs.Add((int)quest.QuestID, quest.currObjIndex);
+            int[] info = { quest.currObjIndex,quest.CurrObjective.currentAmount};
+            gameData.sideQuestInfo.Add((int)quest.QuestID,info);
         }
-        //TO-DO, SAVE OBJECTIVE AMOUNTS
-        //SAVE THE OBJECTIVE STATES AND THE CURRENT AMOUNT
+        
         
     }
 }

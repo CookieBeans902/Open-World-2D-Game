@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3746e49dd0d986142aa56eb4d36a623b, type: 3}
   m_Name: SteelShield
   m_EditorClassIdentifier: 
-  slot: 2
+  slot: 4
   type: 1
   range: 0
   weild: 0
   validClasses: 0000000002000000
-  icon: {fileID: 2389193319765324094, guid: 5eb726e6e9de9094689d38e350b8983c, type: 3}
   equipmentName: Steel Shield
+  itemSO: {fileID: 11400000, guid: f4948921b9429c44ba3d52d63910b27f, type: 2}
   hpBuff: 5
   atkBuff: 0
   matkBuff: 0
@@ -26,4 +26,3 @@ MonoBehaviour:
   mdefBuff: 0
   agiBuff: 0
   luckBuff: 0
-  item: {fileID: 11400000, guid: f4948921b9429c44ba3d52d63910b27f, type: 2}

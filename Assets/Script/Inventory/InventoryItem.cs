@@ -1,4 +1,5 @@
 using Microsoft.Unity.VisualStudio.Editor;
+
 using UnityEngine;
 
 [System.Serializable]
@@ -15,6 +16,9 @@ public class InventoryItem {
     public int buyPrice;
     public int sellPrice;
 
+    public int slotNumber = -1;
+    public bool isActive = false;
+
     // corresponding equipment it represents
     public EquipmentSO equipment;
 
@@ -23,7 +27,7 @@ public class InventoryItem {
     public static InventoryItem Create(ItemSO item) {
         if (item == null) return null;
 
-        return new InventoryItem {
+        InventoryItem i = new InventoryItem {
             itemType = item.itemType,
             icon = item.icon,
             itemName = item.itemName,
@@ -37,6 +41,8 @@ public class InventoryItem {
             sellPrice = item.sellPrice,
             equipment = item.equipment
         };
+
+        return i;
     }
 
 }

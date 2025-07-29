@@ -1,10 +1,10 @@
 public enum SlotType {
-    Head,
-    Body,
-    Hand1,
-    Hand2,
-    Boots,
-    Accessory,
+    Head = 0,
+    Body = 1,
+    Boots = 2,
+    Accessory = 3,
+    Hand1 = 4,
+    Hand2 = 5,
 }
 
 public enum EquipmentType {

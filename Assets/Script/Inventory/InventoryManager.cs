@@ -35,6 +35,10 @@ public class InventoryManager : MonoBehaviour {
             InventoryItem item = InventoryItem.Create(initItemList.Apple);
             AddItem(item, 1);
         }
+        if (Input.GetKeyDown(KeyCode.B)) {
+            InventoryItem item = InventoryItem.Create(initItemList.Banana);
+            AddItem(item, 1);
+        }
         if (Input.GetKeyDown(KeyCode.R)) {
             RemoveItem("Apple", 1);
         }
@@ -63,7 +67,7 @@ public class InventoryManager : MonoBehaviour {
                 Debug.Log("Inventory is full");
         }
         else {
-            int slotsRequired = (int)Mathf.Ceil(amount / item.maxStack * 1.0f);
+            int slotsRequired = (int)Mathf.Ceil(amount / (item.maxStack != 0 ? item.maxStack : 1) * 1.0f);
             int slotsPresent = maxSlots - TotalSlotCount();
 
             if (slotsPresent >= slotsRequired) {

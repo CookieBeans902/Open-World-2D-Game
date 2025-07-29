@@ -5,7 +5,8 @@ public class Skill {
     public Sprite icon;
     public string skillName;
     public string skillDesc;
-    public bool isActive;
+
+    public int slot = -1;
 
     public static Skill Create(SkillSO skillSO) {
         if (skillSO == null) return null;

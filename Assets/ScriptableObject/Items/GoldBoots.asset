@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f6e23583cbe1a34ea920b5e26fb6260, type: 3}
-  m_Name: SteelSword
+  m_Name: GoldBoots
   m_EditorClassIdentifier: 
   itemType: 3
-  icon: {fileID: -3753825769889500098, guid: b8f0e7d3e26f9034a88496169e83ca79, type: 3}
-  itemName: Steel Sword
-  canConsume: 0
+  icon: {fileID: 21300000, guid: 7d64ba45dfe5d224f862a13361ddbb2c, type: 3}
+  itemName: Gold Boots
+  canConsume: 1
   canDestroy: 1
   canSell: 1
   maxStack: 1
   buyPrice: 10
   sellPrice: 5
-  equipment: {fileID: 11400000, guid: be8efc8f97b049d4088cfafd805f8f5a, type: 2}
-  itemDesc: Steel sword which provides buffs.
+  equipment: {fileID: 11400000, guid: d94634b746a4be5468b8d3c84133cf85, type: 2}
+  itemDesc: Steel boots which provides buffs.

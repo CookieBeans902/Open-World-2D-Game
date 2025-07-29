@@ -17,8 +17,8 @@ MonoBehaviour:
   range: 0
   weild: 0
   validClasses: 0000000002000000
-  icon: {fileID: 6943535168657398750, guid: b7a71f2ebd39c5443ad92e6e8c86f70a, type: 3}
   equipmentName: Steel Helmet
+  itemSO: {fileID: 11400000, guid: c9c6c68fd8d10114bb6d1b46cb0688a0, type: 2}
   hpBuff: 10
   atkBuff: 0
   matkBuff: 0
@@ -26,4 +26,3 @@ MonoBehaviour:
   mdefBuff: 0
   agiBuff: 0
   luckBuff: 0
-  item: {fileID: 11400000, guid: c9c6c68fd8d10114bb6d1b46cb0688a0, type: 2}

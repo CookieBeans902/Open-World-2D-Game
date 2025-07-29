@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3496814168599981680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2347371001476473531}
+  - component: {fileID: 1252418475343482633}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2347371001476473531
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496814168599981680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2007828828387881205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1252418475343482633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496814168599981680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 80, y: 80}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &3709760918247548227
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +71,6 @@ GameObject:
   - component: {fileID: 2007828828387881205}
   - component: {fileID: 1978062303569128639}
   - component: {fileID: 2420222071166769529}
-  - component: {fileID: 3295914657009208018}
   - component: {fileID: -1063366564348395308}
   m_Layer: 5
   m_Name: ItemSlot
@@ -37,6 +96,7 @@ RectTransform:
   - {fileID: 7221788884090448416}
   - {fileID: 6234686213629455068}
   - {fileID: 1006760529230586641}
+  - {fileID: 2347371001476473531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -82,28 +142,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &3295914657009208018
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3709760918247548227}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 703c410c6d6246641a1f6e0afd9f78bd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-1063366564348395308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,18 +154,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054dc24897172d548b5de66291670b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 8650904368610023675}
-  button: {fileID: 3282765187082975048}
   count: {fileID: 4964859390734947653}
-  selected: {fileID: 5382134636716814877}
-  animator: {fileID: 3295914657009208018}
-  onSingleClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
-  doubleClickThreshold: 0.3
+  contentBox: {fileID: 2347371001476473531}
+  item:
+    itemType: 0
+    itemUI: {fileID: 0}
+    icon: {fileID: 0}
+    itemName: 
+    itemDesc: 
+    canConsume: 0
+    canDestroy: 0
+    canSell: 0
+    maxStack: 0
+    count: 0
+    buyPrice: 0
+    sellPrice: 0
+    equipment: {fileID: 0}
+  slotType: 0
 --- !u!1 &5213984739341686632
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7221788884090448416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -296,7 +339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1006760529230586641
 RectTransform:
   m_ObjectHideFlags: 0

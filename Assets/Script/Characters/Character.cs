@@ -82,16 +82,10 @@ public class Character {
 
         canDualWeild = character.canDualWeild;
 
-        slots = new List<string> { "head", "body", "hand1", "hand2", "boots", "accessory", };
         skills = character.skills.Select(s => Skill.Create(s)).ToList();
 
         equipments = new Dictionary<string, Equipment>();
-        equipments["head"] = Equipment.Create(character.head);
-        equipments["body"] = Equipment.Create(character.body);
-        equipments["hand1"] = Equipment.Create(character.hand1);
-        equipments["hand2"] = Equipment.Create(character.hand2);
-        equipments["boots"] = Equipment.Create(character.boots);
-        equipments["accessory"] = Equipment.Create(character.accessory);
+        initEqupments(character);
 
         curExp = 0;
         curHp = MHP;
@@ -112,18 +106,12 @@ public class Character {
     /// <summary>To equip an equipment</summary>
     /// <param name="equipment">Equipment you want it to equip</param>
     public void Equip(Equipment equipment) {
-        if (InventoryManager.Instance.SlotCount(equipment.equipmentName) == 0)
-            return;
+        // if (InventoryManager.Instance.SlotCount(equipment.equipmentName) == 0)
+        //     return;
         if (equipment == null)
             return;
-        bool canEquip = false;
-        foreach (Class c in equipment.validClasses) {
-            if (c == characterClass) {
-                canEquip = true;
-                break;
-            }
-        }
-        if (!canEquip) {
+
+        if (!CanEquip(equipment)) {
             Debug.Log("This character can't equip" + equipment.equipmentName);
             return;
         }
@@ -188,13 +176,13 @@ public class Character {
         }
     }
 
-    public void EquipSkill(int slot, Skill skill) {
+    public void EquipSkill(Skill skill, int slot) {
         if (slot == 1) skill1 = skill;
         else if (slot == 2) skill2 = skill;
         else if (slot == 3) skill3 = skill;
 
         foreach (Skill s in skills) {
-            if (s.skillName == skill.skillName) s.isActive = true;
+            if (s.skillName == skill.skillName) s.slot = slot;
         }
     }
 
@@ -215,8 +203,18 @@ public class Character {
 
         if (skill == null) return;
         foreach (Skill s in skills) {
-            if (s.skillName == skill.skillName) s.isActive = true;
+            if (s.skillName == skill.skillName) s.slot = -1;
         }
+    }
+
+    public bool CanEquip(Equipment e) {
+        if (e == null) return false;
+
+        foreach (Class c in e.validClasses) {
+            if (c == characterClass) return true;
+        }
+
+        return false;
     }
 
     public Equipment GetEquipment(SlotType slot) {
@@ -248,5 +246,69 @@ public class Character {
         Debug.Log("magicDefence: " + BaseMDEF + " + " + MDEFBuff);
         Debug.Log("agility: " + BaseAGI + " + " + AGIBuff);
         Debug.Log("luck: " + BaseLUCK + " + " + LUCKBuff);
+    }
+
+    private void initEqupments(CharacterSO character) {
+        equipments["head"] = Equipment.Create(character.head, true);
+        equipments["body"] = Equipment.Create(character.body, true);
+        equipments["hand1"] = Equipment.Create(character.hand1, true);
+        equipments["hand2"] = Equipment.Create(character.hand2, true);
+        equipments["boots"] = Equipment.Create(character.boots, true);
+        equipments["accessory"] = Equipment.Create(character.accessory, true);
+
+        // if (character.head != null) {
+        //     InventoryItem headItem = InventoryItem.Create(character.head.itemSO);
+        //     headItem.isActive = true;
+        //     InventoryManager.Instance.AddItem(headItem, 1);
+        //     equipments["head"] = Equipment.Create(character.head);
+        // }
+
+        // if (character.body != null) {
+        //     InventoryItem bodyItem = InventoryItem.Create(character.body.itemSO);
+        //     bodyItem.isActive = true;
+        //     InventoryManager.Instance.AddItem(bodyItem, 1);
+        //     equipments["body"] = Equipment.Create(character.body);
+        // }
+
+        // if (character.hand1 != null) {
+        //     InventoryItem hand1Item = InventoryItem.Create(character.hand1.itemSO);
+        //     hand1Item.isActive = true;
+        //     InventoryManager.Instance.AddItem(hand1Item, 1);
+        //     equipments["hand1"] = Equipment.Create(character.hand1);
+        // }
+
+        // if (character.hand2 != null) {
+        //     InventoryItem hand2Item = InventoryItem.Create(character.hand2.itemSO);
+        //     hand2Item.isActive = true;
+        //     InventoryManager.Instance.AddItem(hand2Item, 1);
+        //     equipments["hand2"] = Equipment.Create(character.hand2);
+        // }
+
+        // if (character.boots != null) {
+        //     InventoryItem bootsItem = InventoryItem.Create(character.boots.itemSO);
+        //     bootsItem.isActive = true;
+        //     InventoryManager.Instance.AddItem(bootsItem, 1);
+        //     equipments["boots"] = Equipment.Create(character.boots);
+        // }
+
+        // if (character.accessory != null) {
+        //     InventoryItem accessoryItem = InventoryItem.Create(character.accessory.itemSO);
+        //     accessoryItem.isActive = true;
+        //     InventoryManager.Instance.AddItem(accessoryItem, 1);
+        //     equipments["accessory"] = Equipment.Create(character.accessory);
+        // }
+    }
+
+    public List<Equipment> GetEquipmentsList() {
+        List<Equipment> e = Enumerable.Repeat<Equipment>(null, 6).ToList();
+
+        e[(int)SlotType.Head] = equipments.ContainsKey("head") ? equipments["head"] : null;
+        e[(int)SlotType.Body] = equipments.ContainsKey("body") ? equipments["body"] : null;
+        e[(int)SlotType.Boots] = equipments.ContainsKey("boots") ? equipments["boots"] : null;
+        e[(int)SlotType.Accessory] = equipments.ContainsKey("accessory") ? equipments["accessory"] : null;
+        e[(int)SlotType.Hand1] = equipments.ContainsKey("hand1") ? equipments["hand1"] : null;
+        e[(int)SlotType.Hand2] = equipments.ContainsKey("hand2") ? equipments["hand2"] : null;
+
+        return e;
     }
 }

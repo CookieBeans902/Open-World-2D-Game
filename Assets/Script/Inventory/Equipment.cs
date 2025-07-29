@@ -11,7 +11,6 @@ public class Equipment {
     public EquipmentType type;
     public EquipmentRange range;
     public EquipmentWield weild;
-    public GameObject equipmentUI;
     public List<Class> validClasses;
     public string equipmentName;
     public bool isEquiped;
@@ -32,8 +31,11 @@ public class Equipment {
 
     /// <summary> To create an equipment object from a SO</summary>
     /// <param name="equipment"> The SO of the equipment you want to create</param>
-    public static Equipment Create(EquipmentSO equipment) {
+    public static Equipment Create(EquipmentSO equipment, bool isActive = false) {
         if (equipment == null) return null;
+        InventoryItem i = InventoryItem.Create(equipment.itemSO);
+        i.isActive = isActive;
+        // InventoryManager.Instance.AddItem(i, 1);
 
         return new Equipment {
             slot = equipment.slot,
@@ -41,7 +43,6 @@ public class Equipment {
             range = equipment.range,
             weild = equipment.weild,
             validClasses = equipment.validClasses,
-            // icon = equipment.icon,
             equipmentName = equipment.equipmentName,
             hpBuff = equipment.hpBuff,
             atkBuff = equipment.atkBuff,
@@ -50,8 +51,9 @@ public class Equipment {
             mdefBuff = equipment.mdefBuff,
             agiBuff = equipment.agiBuff,
             luckBuff = equipment.luckBuff,
-            item = equipment.item != null ? InventoryItem.Create(equipment.item) : null,
             isEquiped = false,
+
+            item = i,
         };
     }
 }

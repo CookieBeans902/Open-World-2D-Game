@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3746e49dd0d986142aa56eb4d36a623b, type: 3}
-  m_Name: Amulet
+  m_Name: GoldBoots
   m_EditorClassIdentifier: 
-  slot: 3
+  slot: 2
   type: 1
   range: 0
   weild: 0
   validClasses: 0000000002000000
-  equipmentName: Amulet
-  itemSO: {fileID: 11400000, guid: a66f482a79128884a9746c432f30af34, type: 2}
-  hpBuff: 15
+  equipmentName: Gold Boots
+  itemSO: {fileID: 11400000, guid: adb93eef158dfc440be5024acdad8ab8, type: 2}
+  hpBuff: 0
   atkBuff: 0
   matkBuff: 0
   defBuff: 5

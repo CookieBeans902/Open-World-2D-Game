@@ -17,8 +17,8 @@ MonoBehaviour:
   range: 0
   weild: 0
   validClasses: 0000000002000000
-  icon: {fileID: -1880120661550918566, guid: 7206d387f88b3d74187195f619fd0265, type: 3}
   equipmentName: Steel Armor
+  itemSO: {fileID: 11400000, guid: ee2b139ce87a03045b677a511ccb5266, type: 2}
   hpBuff: 30
   atkBuff: 0
   matkBuff: 0
@@ -26,4 +26,3 @@ MonoBehaviour:
   mdefBuff: 0
   agiBuff: 0
   luckBuff: 0
-  item: {fileID: 11400000, guid: ee2b139ce87a03045b677a511ccb5266, type: 2}

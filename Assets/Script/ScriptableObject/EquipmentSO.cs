@@ -10,8 +10,8 @@ public class EquipmentSO : ScriptableObject {
     public EquipmentRange range;
     public EquipmentWield weild;
     public List<Class> validClasses;
-    public Sprite icon;
     public string equipmentName;
+    public ItemSO itemSO;
     public int hpBuff;
     public int atkBuff;
     public int matkBuff;
@@ -19,5 +19,4 @@ public class EquipmentSO : ScriptableObject {
     public int mdefBuff;
     public int agiBuff;
     public int luckBuff;
-    public ItemSO item;
 }

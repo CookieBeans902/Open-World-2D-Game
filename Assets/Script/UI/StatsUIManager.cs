@@ -425,7 +425,7 @@ public class StatsUIManager : MonoBehaviour {
                 exchangeSlot.item = newSlot.item;
             }
             else {
-                RemoveActiveItem(item);
+                
             }
         }
 

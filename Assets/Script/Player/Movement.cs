@@ -3,7 +3,7 @@ using UnityEngine;
 using States;
 using Unity.VisualScripting;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour, IDataPersistence {
     [Header("References")]
     private GameInputManager input;
     private PlayerShared shared;
@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour {
     public Vector2 currDir;
     private Vector2 prevInput;
     private bool m_Dash;
-    private PlayerStateManager PlayerState;
     private PlayerState state;
     public Vector2 playerDir;
     public bool canMove { get; private set; }
@@ -30,19 +29,18 @@ public class Movement : MonoBehaviour {
     private void Start() {
         input = GameInputManager.Instance;
         shared = GetComponent<PlayerShared>(); // Referencing the player shared component for common data
-        PlayerState = GetComponent<PlayerStateManager>(); // Referencing the State Manager component
 
         /*Initializing all the setup for each state to prevent null reference exceptions. Passing the class 
         instance to handle the inputs which change every frame, and hence we need a reference and not a 
         value(which remains constant)*/
-        PlayerState.Setup(shared);
+        // PlayerState.Setup(shared);
     }
 
     private void Update() {
         FixDirection(); //Removes diagonal movement by checking with previous direction inputs
         m_Dash = input.GetDashBool();   //To check whether the button is pressed or not
         if (canDash && m_Dash) inDash = true; //Player enters DashState only when he presses button and cooldown finishes
-        PlayerState.SelectState(ref state); //Selects the state depending on which state the player is present in
+        // PlayerState.SelectState(ref state); //Selects the state depending on which state the player is present in
     }
 
     private void FixedUpdate() {
@@ -81,5 +79,13 @@ public class Movement : MonoBehaviour {
 
     public void EnableMovement() {
         canMove = true;
+    }
+
+    public void LoadData(GameData gameData) {
+        gameObject.transform.position = gameData.pos;
+    }
+
+    public void SaveData(GameData gameData) {
+        gameData.pos = gameObject.transform.position;
     }
 }

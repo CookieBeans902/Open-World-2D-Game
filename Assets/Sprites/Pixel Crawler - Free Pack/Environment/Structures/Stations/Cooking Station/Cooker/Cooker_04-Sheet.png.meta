@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cooker_04-Sheet_0: 3038358365003689039
+      Cooker_04-Sheet_1: -2703935248542393568
+      Cooker_04-Sheet_2: 5318394905570466365
+      Cooker_04-Sheet_3: -5604835159015574960
+      Cooker_04-Sheet_4: -1129150917593903282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

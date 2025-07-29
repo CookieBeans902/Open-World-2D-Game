@@ -34,8 +34,4 @@ namespace States {
         Down,
         Up,
     }
-    public abstract class NPCstate : MonoBehaviour // NPC states for future, if they exist
-    {
-
-    }
 }

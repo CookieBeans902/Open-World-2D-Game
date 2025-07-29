@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Anvil_03-Sheet_0: 843681670158836910
+      Anvil_03-Sheet_1: -6346267097173356474
+      Anvil_03-Sheet_2: 364026592621638672
+      Anvil_03-Sheet_3: -6249484780688353986
+      Anvil_03-Sheet_4: 2271022978109529463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

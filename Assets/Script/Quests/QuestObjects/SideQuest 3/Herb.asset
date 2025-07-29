@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eadff24322fddbf49b5ac117a6139a0c, type: 3}
-  m_Name: CountTo10
+  m_Name: Herb
   m_EditorClassIdentifier: 
-  objectiveDesc: Collect 10 Flowers
+  objectiveDesc: just testing
   targetNpcID: 1
-  collectibleID: People
+  collectibleID: Herb
   desiredAmount: 10

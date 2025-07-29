@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-[Serializable]
+[System.Serializable]
 public class QuestInstance
 {
     public QuestSO questData;
@@ -36,7 +36,7 @@ public class QuestInstance
         if (runtimeObj[currentObjectiveIndex].isComplete)
         {
             currentObjectiveIndex++;
-            QuestManager.Instance.CurrentQuestUpdateUI();
+            QuestManager.Instance.UpdateCurrentQuestUI();
         }
         if (currentObjectiveIndex >= runtimeObj.Count)
         {
@@ -67,14 +67,14 @@ public class QuestInstance
             }
         }
     }
-    public void SetObjectiveStates(int[] info)
+    public void SetObjectiveStates(QuestSaveData saveData)
     {
-        currentObjectiveIndex = info[0];
+        currentObjectiveIndex = saveData.currObjIndex;
         for (int k = 0; k < currentObjectiveIndex; k++)
         {
             runtimeObj[k].isComplete = true;
         }
-        runtimeObj[currentObjectiveIndex].currentAmount = info[1];
+        runtimeObj[currentObjectiveIndex].currentAmount = saveData.savedAmount;
     }
 }
 

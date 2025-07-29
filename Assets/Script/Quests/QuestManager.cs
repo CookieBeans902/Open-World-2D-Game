@@ -3,8 +3,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem;
+using Unity.Collections.LowLevel.Unsafe;
 
-public class QuestManager : MonoBehaviour,IDataPersistence
+public class QuestManager : MonoBehaviour, IDataPersistence
 {
     public static QuestManager Instance { get; private set; } //Global Instance
     private Dictionary<QuestID, QuestInstance> availableSideQuests;  //List of All SideQuests
@@ -43,6 +44,7 @@ public class QuestManager : MonoBehaviour,IDataPersistence
             activeMainQuest = new QuestInstance(mainQuestList[0]);
             questUI.MainQuestUpdate(activeMainQuest);
             currentQuest = activeMainQuest;
+            questUI.CurrentQuestUpdateUI();
         }
     }
     QuestInstance GetQuestByID(QuestID questID)
@@ -79,6 +81,14 @@ public class QuestManager : MonoBehaviour,IDataPersistence
             questUI.SideQuestUpdate(sideQuest);
         }
     }
+    [ContextMenu("Begin All")]
+    public void TestingBeginAllSideQuests()
+    {
+        foreach (KeyValuePair<QuestID, QuestInstance> pair in availableSideQuests)
+        {
+            BeginSideQuest(pair.Key);
+        }
+    }
     /// <summary>
     /// This function starts the next MainQuest with its QuestID while verifying previous completed
     /// main quests.
@@ -107,10 +117,12 @@ public class QuestManager : MonoBehaviour,IDataPersistence
     public void SetAsActiveQuest()
     {
         currentQuest = selectedQuest;
+        questUI.CurrentQuestUpdateUI();
     }
-    public void IncrementCount(Countables id)
+    [ContextMenu("Increment")]
+    public void IncrementCount()
     {
-        currentQuest.CurrObjective.Increment(id);
+        currentQuest.CurrObjective.Increment();
         currentQuest.MarkObjectiveComplete();
         questUI.CurrentQuestUpdateUI();
     }
@@ -123,21 +135,16 @@ public class QuestManager : MonoBehaviour,IDataPersistence
         }
         return false;
     }
-    public void CurrentQuestUpdateUI()
-    {
-        questUI.CurrentQuestUpdateUI();
-    }
-
     public void LoadData(GameData gameData)
     {
         sideQuestList.Clear();
-        foreach (KeyValuePair<int, int[]> pair in gameData.sideQuestInfo)
+        foreach (var savedQuest in gameData.sideQuestInfo)
         {
-            QuestInstance quest = GetQuestByID((QuestID)pair.Key);
-            quest.SetObjectiveStates(pair.Value);
+            QuestInstance quest = GetQuestByID(savedQuest.questID);
+            quest.SetObjectiveStates(savedQuest);
             activeSideQuests.Add(quest);
+            questUI.SideQuestUpdate(quest);
         }
-        //TO-DO, LOAD THE TO-DO STUFF THAT HAS BEEN SAVED
     }
 
     public void SaveData(GameData gameData)
@@ -145,10 +152,14 @@ public class QuestManager : MonoBehaviour,IDataPersistence
         gameData.sideQuestInfo.Clear();
         foreach (var quest in activeSideQuests)
         {
-            int[] info = { quest.currObjIndex,quest.CurrObjective.currentAmount};
-            gameData.sideQuestInfo.Add((int)quest.QuestID,info);
+            QuestSaveData saveData = new()
+            {
+                questID = quest.QuestID,
+                currObjIndex = quest.currObjIndex,
+                savedAmount = quest.CurrObjective.currentAmount
+            };
+            gameData.sideQuestInfo.Add(saveData);
         }
-        
-        
     }
+    public void UpdateCurrentQuestUI() => questUI.CurrentQuestUpdateUI();
 }

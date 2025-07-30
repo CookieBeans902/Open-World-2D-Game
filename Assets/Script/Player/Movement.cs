@@ -6,8 +6,8 @@ using Unity.VisualScripting;
 public class Movement : MonoBehaviour, IDataPersistence {
     [Header("References")]
     private GameInputManager input;
-    private PlayerShared shared;
     private Rigidbody2D rb;
+    private PlayerShared shared;
     [Header("Variables")]
     public Vector2 newDir;
     public Vector2 currDir;
@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour, IDataPersistence {
     public float moveSpeed;
 
     private void Awake() {
+        rb = GetComponent<Rigidbody2D>();
         newDir = Vector2.right;
         currDir = Vector2.right;
         playerDir = Vector2.right;

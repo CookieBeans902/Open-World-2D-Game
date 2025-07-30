@@ -456,7 +456,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &169551113
@@ -1012,8 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08807fe15cc20bd4db8b49c9213f074a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPref: {fileID: 9003059126476450597, guid: 7f6569a6eb44d07499f4eef2a0f4846c, type: 3}
-  slotPref: {fileID: 3709760918247548227, guid: bfbd1a167a4255042aedd87b47f45feb, type: 3}
 --- !u!4 &430161155
 Transform:
   m_ObjectHideFlags: 0
@@ -1881,10 +1879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ed31c9afad24ca2fff5bbc8e66f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashCooldownSeconds: 2
-  dashDuration: 0.1
-  dashDistanceMul: 1
-  ModifiedLerp: 0
 --- !u!114 &936297244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,9 +1891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa64bb6d1c12b340bac9f1dd6f66757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashState: {fileID: 936297243}
-  moveState: {fileID: 936297242}
-  idleState: {fileID: 936297241}
 --- !u!114 &936297245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2295,10 +2286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ed31c9afad24ca2fff5bbc8e66f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashCooldownSeconds: 2
-  dashDuration: 0.1
-  dashDistanceMul: 1
-  ModifiedLerp: 0
 --- !u!114 &1100474351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2311,9 +2298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa64bb6d1c12b340bac9f1dd6f66757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashState: {fileID: 1100474350}
-  moveState: {fileID: 1100474349}
-  idleState: {fileID: 1100474348}
 --- !u!114 &1100474352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,7 +2564,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 404273597}
@@ -3550,11 +3534,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1051f27d5bbebb24e8c503532552957b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotPref: {fileID: 0}
+  skillSlotPref: {fileID: 0}
   uiPref: {fileID: 4809984651871472251, guid: 7778901bbb971a44fa5134fe694f5eb7, type: 3}
-  headerTextPref: {fileID: 1622385709245155212, guid: 411849ef3813af74bbc02b4e9057f4b9, type: 3}
   fieldPref: {fileID: 1622385709245155212, guid: 05784d49a9122644e94a08baaa2c1351, type: 3}
-  pickupPref: {fileID: 5515052164568182019, guid: b4e0e2bb381564f4a9360fb9811fd717, type: 3}
-  descPref: {fileID: 9083754153136134654, guid: 84a6e5b6a3b977847a2e0fc898054b57, type: 3}
+  itemUiPref: {fileID: 0}
+  skillUiPref: {fileID: 0}
 --- !u!4 &1707520487
 Transform:
   m_ObjectHideFlags: 0

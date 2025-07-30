@@ -63,23 +63,23 @@ public class StatsUIManager : MonoBehaviour {
                 equipSlots[(int)SlotType.Hand1] = statsUI.GetComponent<StatsUI>().hand1Slot;
                 equipSlots[(int)SlotType.Hand2] = statsUI.GetComponent<StatsUI>().hand2Slot;
 
-                Button prevButton = statsUI.GetComponent<StatsUI>().prevButton;
-                Button nextButton = statsUI.GetComponent<StatsUI>().nextButton;
-                nextButton.onClick.AddListener(() => {
-                    int length = CharacterManager.Instance.characters.Count;
-                    if (currIndex < length - 1) {
-                        currIndex++;
-                        statsUI.GetComponent<StatsUI>().desc.text = "";
-                        UpdateUI();
-                    }
-                });
-                prevButton.onClick.AddListener(() => {
-                    if (currIndex > 0) {
-                        currIndex--;
-                        statsUI.GetComponent<StatsUI>().desc.text = "";
-                        UpdateUI();
-                    }
-                });
+                // Button prevButton = statsUI.GetComponent<StatsUI>().prevButton;
+                // Button nextButton = statsUI.GetComponent<StatsUI>().nextButton;
+                // nextButton.onClick.AddListener(() => {
+                //     int length = CharacterManager.Instance.characters.Count;
+                //     if (currIndex < length - 1) {
+                //         currIndex++;
+                //         statsUI.GetComponent<StatsUI>().desc.text = "";
+                //         UpdateUI();
+                //     }
+                // });
+                // prevButton.onClick.AddListener(() => {
+                //     if (currIndex > 0) {
+                //         currIndex--;
+                //         statsUI.GetComponent<StatsUI>().desc.text = "";
+                //         UpdateUI();
+                //     }
+                // });
 
                 Button close = statsUI.GetComponent<StatsUI>().closeButton;
                 close.onClick.RemoveAllListeners();
@@ -425,7 +425,7 @@ public class StatsUIManager : MonoBehaviour {
                 exchangeSlot.item = newSlot.item;
             }
             else {
-                
+
             }
         }
 

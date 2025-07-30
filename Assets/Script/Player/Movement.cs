@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 public class Movement : MonoBehaviour, IDataPersistence {
     [Header("References")]
     private GameInputManager input;
+    private Rigidbody2D rb;
     private PlayerShared shared;
     [Header("Variables")]
     public Vector2 newDir;
@@ -21,6 +22,7 @@ public class Movement : MonoBehaviour, IDataPersistence {
     public float moveSpeed;
 
     private void Awake() {
+        rb = GetComponent<Rigidbody2D>();
         newDir = Vector2.right;
         currDir = Vector2.right;
         playerDir = Vector2.right;
@@ -38,14 +40,11 @@ public class Movement : MonoBehaviour, IDataPersistence {
 
     private void Update() {
         FixDirection(); //Removes diagonal movement by checking with previous direction inputs
-        m_Dash = input.GetDashBool();   //To check whether the button is pressed or not
-        if (canDash && m_Dash) inDash = true; //Player enters DashState only when he presses button and cooldown finishes
-        // PlayerState.SelectState(ref state); //Selects the state depending on which state the player is present in
     }
 
     private void FixedUpdate() {
-
-        if (state != null && canMove) state.Execute(); //Call the execute method to execute the necessary functions
+        Vector2 dir = input.GetMovementVectorNormalized();
+        rb.MovePosition((Vector2)transform.position + dir * Time.fixedDeltaTime * moveSpeed);
     }
 
 

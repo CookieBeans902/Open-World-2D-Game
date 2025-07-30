@@ -593,13 +593,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f4b61bca3b70144bfaaeb6586de428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  anim: {fileID: 0}
   newDir: {x: 0, y: 0}
   currDir: {x: 0, y: 0}
-  playerDirection: 0
+  playerDir: {x: 0, y: 0}
   canDash: 1
   inDash: 0
+  baseMoveSpeed: 0
   moveSpeed: 6
 --- !u!114 &699642128
 MonoBehaviour:
@@ -613,9 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa64bb6d1c12b340bac9f1dd6f66757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashState: {fileID: 1433732360}
-  moveState: {fileID: 336688264}
-  idleState: {fileID: 733231387}
 --- !u!95 &699642129
 Animator:
   serializedVersion: 7
@@ -716,8 +712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainQuestContainer: {fileID: 0}
   sideQuestContainer: {fileID: 0}
-  displayName: {fileID: 0}
-  displayDesc: {fileID: 0}
+  displayName: {fileID: 7089712959677778198}
+  displayDesc: {fileID: 183050081218509638}
   buttonPrefab: {fileID: 8353881882618026066, guid: a71613bbf9e13d947b71cf82ffa35094, type: 3}
   buttonScript: {fileID: 0}
   CurrentQuestNameText: {fileID: 0}
@@ -854,10 +850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ed31c9afad24ca2fff5bbc8e66f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashCooldownSeconds: 2
-  dashDuration: 0.1
-  dashDistanceMul: 1
-  ModifiedLerp: 0
 --- !u!1 &1864035755
 GameObject:
   m_ObjectHideFlags: 0

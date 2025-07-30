@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour, IDataPersistence {
     public Vector2 currDir;
     private Vector2 prevInput;
     private bool m_Dash;
-    private PlayerState state;
     public Vector2 playerDir;
     public bool canMove { get; private set; }
     public bool canDash = true;
@@ -31,7 +30,7 @@ public class Movement : MonoBehaviour, IDataPersistence {
     private void Start() {
         input = GameInputManager.Instance;
         shared = GetComponent<PlayerShared>(); // Referencing the player shared component for common data
-
+        rb = GetComponent<Rigidbody2D>();
         /*Initializing all the setup for each state to prevent null reference exceptions. Passing the class 
         instance to handle the inputs which change every frame, and hence we need a reference and not a 
         value(which remains constant)*/
@@ -40,13 +39,15 @@ public class Movement : MonoBehaviour, IDataPersistence {
 
     private void Update() {
         FixDirection(); //Removes diagonal movement by checking with previous direction inputs
+        m_Dash = input.GetDashBool();   //To check whether the button is pressed or not
+        if (canDash && m_Dash) inDash = true;
+        // PlayerState.SelectState(ref state); //Selects the state depending on which state the player is present in
     }
 
     private void FixedUpdate() {
-        Vector2 dir = input.GetMovementVectorNormalized();
-        rb.MovePosition((Vector2)transform.position + dir * Time.fixedDeltaTime * moveSpeed);
+        float moveDist = moveSpeed * Time.fixedDeltaTime;
+        if(canMove) rb.MovePosition(rb.position + (newDir * moveDist));
     }
-
 
     void FixDirection() {
         newDir = input.GetMovementVectorNormalized(); //Getting the direction of the input

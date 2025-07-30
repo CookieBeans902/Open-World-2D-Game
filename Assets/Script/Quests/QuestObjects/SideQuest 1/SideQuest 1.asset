@@ -19,5 +19,7 @@ MonoBehaviour:
   experienceReward: 5000
   extraReward: {fileID: 0}
   extraRewardQuantity: 0
-  objectives: []
+  objectives:
+  - {fileID: 11400000, guid: 68f7ba5b8851d7d408d86235c501af76, type: 2}
+  - {fileID: 11400000, guid: bbfac3fcf473a6c4581fe5c961501f5f, type: 2}
   questDependancies: 

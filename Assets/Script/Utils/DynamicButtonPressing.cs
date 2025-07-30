@@ -35,7 +35,6 @@ public class DynamicButtonPressing : MonoBehaviour, IPointerDownHandler, IPointe
 
     public void OnSelect(BaseEventData eventData)
     {
-        Debug.Log("what?");
         if (style)
         {
             image.sprite = selectedSprite;

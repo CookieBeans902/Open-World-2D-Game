@@ -15,12 +15,15 @@ public class ObjectiveState
     public ObjectiveSO objective;
     public int currentAmount = 0; //only used for the collectible type quests
     public bool isComplete;
-    public Countables CountableType;
     //Some Helper methods for easier access.
     public string Name => objective.name;
-    public void Increment(Countables id)
+    public void Increment()
     {
-        if (id == CountableType) currentAmount++;
+        if (objective is CountableObjSO collectible)
+        {
+            currentAmount++;
+        }
+        else Debug.Log("Tried to Increment a non-collectible Objective");
     }
     public string GetObjectiveDesc()
     {
@@ -43,6 +46,14 @@ public enum Countables
     Crystal,
     Herb,
 }
+[System.Serializable]
+public struct QuestSaveData
+{
+    public QuestID questID;
+    public int currObjIndex;
+    public int savedAmount;
+}
+[System.Serializable]
 public enum QuestID
 {
     //Using 0-99 for Main Quests

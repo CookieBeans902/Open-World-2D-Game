@@ -133,6 +133,25 @@ public class StatsUIManager : MonoBehaviour {
         isActive = false;
     }
 
+
+    /// <summary> To set field positions and pickups </summary>
+    private void InitFields() {
+        if (statsUI == null) {
+            return;
+        }
+
+        if (fields == null || fields.Count == 0) {
+            fields = new Dictionary<string, GameObject>();
+            fields["Max Health"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Attack"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Magic Attack"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Defence"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Magic Defence"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Agility"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+            fields["Luck"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
+        }
+    }
+
     public void UpdateInventory() {
         Dictionary<string, InventoryItem> dict = InventoryManager.Instance.items;
         if (dict == null) return;
@@ -208,21 +227,6 @@ public class StatsUIManager : MonoBehaviour {
         }
     }
 
-    public void UpdateStats() {
-        string charName = charData.characterName;
-        statsUI.GetComponent<StatsUI>().nameText.text = charName;
-        string charLevel = $"{charData.characterClass} (Level {charData.curLvl})";
-        statsUI.GetComponent<StatsUI>().levelText.text = charLevel;
-
-        UpdateField("Max Health", charData.BaseMHP, charData.MHP);
-        UpdateField("Attack", charData.BaseATK, charData.ATK);
-        UpdateField("Magic Attack", charData.BaseMATK, charData.MATK);
-        UpdateField("Defence", charData.BaseDEF, charData.DEF);
-        UpdateField("Magic Defence", charData.BaseMDEF, charData.MDEF);
-        UpdateField("Agility", charData.BaseAGI, charData.AGI);
-        UpdateField("Luck", charData.BaseLUCK, charData.LUCK);
-    }
-
     public void UpdateSkills() {
         SkillSlot slot1 = statsUI.GetComponent<StatsUI>().slot1;
         SkillSlot slot2 = statsUI.GetComponent<StatsUI>().slot2;
@@ -263,6 +267,21 @@ public class StatsUIManager : MonoBehaviour {
         }
     }
 
+    public void UpdateStats() {
+        string charName = charData.characterName;
+        statsUI.GetComponent<StatsUI>().nameText.text = charName;
+        string charLevel = $"{charData.characterClass} (Level {charData.curLvl})";
+        statsUI.GetComponent<StatsUI>().levelText.text = charLevel;
+
+        UpdateField("Max Health", charData.BaseMHP, charData.MHP);
+        UpdateField("Attack", charData.BaseATK, charData.ATK);
+        UpdateField("Magic Attack", charData.BaseMATK, charData.MATK);
+        UpdateField("Defence", charData.BaseDEF, charData.DEF);
+        UpdateField("Magic Defence", charData.BaseMDEF, charData.MDEF);
+        UpdateField("Agility", charData.BaseAGI, charData.AGI);
+        UpdateField("Luck", charData.BaseLUCK, charData.LUCK);
+    }
+
     /// <summary> To update the value of a field </summary>
     /// <params name="name">name of the field</params>
     /// <params name="baseValue">value without equipment buffs</params>
@@ -281,24 +300,6 @@ public class StatsUIManager : MonoBehaviour {
         fields[name] = field;
     }
 
-
-    /// <summary> To set field positions and pickups </summary>
-    private void InitFields() {
-        if (statsUI == null) {
-            return;
-        }
-
-        if (fields == null || fields.Count == 0) {
-            fields = new Dictionary<string, GameObject>();
-            fields["Max Health"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Attack"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Magic Attack"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Defence"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Magic Defence"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Agility"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-            fields["Luck"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
-        }
-    }
 
     /// <summary>To show an item description when it is clicked</summary>
     public void ShowItemDesc(InventoryItem item) {

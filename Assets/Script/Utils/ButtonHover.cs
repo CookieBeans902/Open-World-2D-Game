@@ -16,7 +16,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonTransform.localScale = originalScale*scale; 
+        buttonTransform.localScale = originalScale * scale;
     }
 
     public void OnPointerExit(PointerEventData eventData)

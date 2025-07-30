@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7da8d14c410bec44fb58f9c783c1fd1d
+guid: f96d6a78efde02a4588281524fa8fe02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5098970193524275362
-    second: Tileset_48x48_16_0
+      213: 3051807238603390531
+    second: backgroundImage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tileset_48x48_16_0
+      name: backgroundImage_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 576
-        height: 672
+        width: 2816
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e574eaedf91dc39b0800000000000000
-      internalID: -5098970193524275362
+      spriteID: 34ebbeba3823a5a20800000000000000
+      internalID: 3051807238603390531
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tileset_48x48_16_0: -5098970193524275362
+      backgroundImage_0: 3051807238603390531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

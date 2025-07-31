@@ -17,7 +17,6 @@ public class GameUIManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
     void Start()

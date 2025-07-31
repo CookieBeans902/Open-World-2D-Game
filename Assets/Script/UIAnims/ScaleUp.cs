@@ -10,7 +10,7 @@ public class ScaleUp : MonoBehaviour {
     }
     public void OnEnable() {
         background.LeanAlpha(1, animTime);
-        panelToOpen.LeanScale(Vector2.one, animTime).setEaseOutCubic().setDelay(0.3f);
+        panelToOpen.LeanScale(Vector2.one, animTime).setEaseOutCubic().setDelay(0.1f);
     }
 
     public void OnClose() {

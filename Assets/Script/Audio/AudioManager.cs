@@ -3,12 +3,14 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioManager Instance { get; set; }
+    public static AudioManager Instance { get; set; }
     [Header("-----------Audio Source-------------")]
     public AudioSource music;
     public AudioSource SFX;
-    [Header("-----------Audio Clips--------------")]
-    public AudioClip backgroundMusic;
+    [Header("-----------Audio Clips(Ambient)--------------")]
+    public AudioClip mainMenuMusic;
+    public AudioClip gameBackgroundMusic;
+    [Header("-----------Audio Clips(SFX)--------------")]
     public AudioClip attackSword;
     public AudioClip attackProjectile;
     public AudioClip walk;
@@ -26,5 +28,19 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+    void Start()
+    {
+        music.clip = mainMenuMusic;
+        music.Play();
+    }
+    public void PlaySFX(AudioClip clip)
+    {
+        SFX.PlayOneShot(clip);
+    }
+    public void InGameMusic()
+    {
+        music.clip = gameBackgroundMusic;
+        music.Play();
     }
 }

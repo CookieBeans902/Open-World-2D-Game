@@ -41,6 +41,7 @@ public class QuestInstance
         if (currentObjectiveIndex >= runtimeObj.Count)
         {
             QuestComplete();
+            currentObjectiveIndex = 0;
         }
     }
     public void MarkObjectiveComplete()

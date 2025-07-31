@@ -99,6 +99,7 @@ public class QuestManager : MonoBehaviour, IDataPersistence
         QuestID currentQuestID = activeMainQuest.QuestID;
         if ((int)currentQuestID + 1 < mainQuestList.Count)
         {
+            questUI.UIDestroy(activeMainQuest);
             var newMainQuest = new QuestInstance(mainQuestList[(int)currentQuestID + 1]);
             activeMainQuest = newMainQuest;
             questUI.MainQuestUpdate(activeMainQuest);
@@ -107,7 +108,6 @@ public class QuestManager : MonoBehaviour, IDataPersistence
         {
             questUI.AllMainQuestsComplete();
         }
-        questUI.MainQuestUpdate(activeMainQuest);
     }
     public void SideQuestComplete(QuestID questID)
     {
@@ -137,7 +137,8 @@ public class QuestManager : MonoBehaviour, IDataPersistence
     }
     public void LoadData(GameData gameData)
     {
-        sideQuestList.Clear();
+        activeSideQuests.Clear(); //clearing any existing SideQuests when loading the data
+        //Loading SideQuests
         foreach (var savedQuest in gameData.sideQuestInfo)
         {
             QuestInstance quest = GetQuestByID(savedQuest.questID);
@@ -145,11 +146,16 @@ public class QuestManager : MonoBehaviour, IDataPersistence
             activeSideQuests.Add(quest);
             questUI.SideQuestUpdate(quest);
         }
+        //Loading MainQuest
+        QuestID id = gameData.mainQuestInfo.questID;
+        activeMainQuest = new QuestInstance(mainQuestList[(int)id]);
+        activeMainQuest.SetObjectiveStates(gameData.mainQuestInfo);
     }
 
     public void SaveData(GameData gameData)
     {
-        gameData.sideQuestInfo.Clear();
+        gameData.sideQuestInfo.Clear(); //Clearing existing gameData to start anew
+        //Saving SideQuests
         foreach (var quest in activeSideQuests)
         {
             QuestSaveData saveData = new()
@@ -160,6 +166,14 @@ public class QuestManager : MonoBehaviour, IDataPersistence
             };
             gameData.sideQuestInfo.Add(saveData);
         }
+        //Saving MainQuest
+        QuestSaveData mainQuestSave = new()
+        {
+            questID = activeMainQuest.QuestID,
+            currObjIndex = activeMainQuest.currObjIndex,
+            savedAmount = activeMainQuest.CurrObjective.currentAmount
+        };
+        gameData.mainQuestInfo = mainQuestSave;
     }
     public void UpdateCurrentQuestUI() => questUI.CurrentQuestUpdateUI();
 }

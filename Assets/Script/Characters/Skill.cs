@@ -6,6 +6,7 @@ public class Skill {
     public string skillName;
     public string skillDesc;
 
+    public float cooldownTime;
     public int slot = -1;
 
     public static Skill Create(SkillSO skillSO) {
@@ -16,6 +17,7 @@ public class Skill {
             icon = skillSO.icon,
             skillName = skillSO.skillName,
             skillDesc = skillSO.skillDesc,
+            cooldownTime = skillSO.cooldownTime
         };
     }
 }

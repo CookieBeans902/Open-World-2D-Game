@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using System.Linq;
+using System;
 
 public class StatsUIManager : MonoBehaviour {
+    public event EventHandler OnSkillChange;
+    public event EventHandler OnStatChange;
+
     public static StatsUIManager Instance;
 
     // prefab of the inventoryUI slot
@@ -198,6 +202,8 @@ public class StatsUIManager : MonoBehaviour {
                 itemUI.isActive = true;
             }
         }
+
+        InventoryManager.Instance.TriggerChange();
     }
 
 
@@ -217,9 +223,6 @@ public class StatsUIManager : MonoBehaviour {
                 ItemUI itemUI = Instantiate(itemUiPref, slot.contentBox).GetComponent<ItemUI>();
                 itemUI.GetComponent<Image>().sprite = equip.item.icon;
                 itemUI.item = equip.item;
-                // itemUI.isActive = true;
-
-                // equip.item.isActive = true;
             }
             else {
                 slot.item = null;
@@ -265,6 +268,8 @@ public class StatsUIManager : MonoBehaviour {
                 skillUI.GetComponent<Image>().sprite = skill.icon;
             }
         }
+
+        OnSkillChange?.Invoke(this, EventArgs.Empty);
     }
 
     public void UpdateStats() {
@@ -280,6 +285,8 @@ public class StatsUIManager : MonoBehaviour {
         UpdateField("Magic Defence", charData.BaseMDEF, charData.MDEF);
         UpdateField("Agility", charData.BaseAGI, charData.AGI);
         UpdateField("Luck", charData.BaseLUCK, charData.LUCK);
+
+        OnStatChange?.Invoke(this, EventArgs.Empty);
     }
 
     /// <summary> To update the value of a field </summary>
@@ -491,5 +498,13 @@ public class StatsUIManager : MonoBehaviour {
         foreach (Transform ui in s.contentBox) Destroy(ui.gameObject);
         slot.gameObject.SetActive(false);
         skillSlotPool.Enqueue(slot);
+    }
+
+    public void TriggerSkillChange() {
+        OnSkillChange?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void TriggerStatChange() {
+        OnStatChange?.Invoke(this, EventArgs.Empty);
     }
 }

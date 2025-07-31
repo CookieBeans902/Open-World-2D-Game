@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
+    public event EventHandler OnInventoryChange;
     public static InventoryManager Instance { get; private set; }
 
     /* A scriptable Object which has a list of items already defined for easy addition and removal of items,
@@ -78,6 +80,8 @@ public class InventoryManager : MonoBehaviour {
             }
         }
         StatsUIManager.Instance.UpdateUI();
+
+        TriggerChange();
     }
 
 
@@ -96,6 +100,8 @@ public class InventoryManager : MonoBehaviour {
             Debug.Log(name + " ins't in the inventory");
         }
         StatsUIManager.Instance.UpdateUI();
+
+        TriggerChange();
     }
 
 
@@ -126,5 +132,9 @@ public class InventoryManager : MonoBehaviour {
         foreach (KeyValuePair<string, InventoryItem> i in items) {
             Debug.Log(i.Key + " " + i.Value.count);
         }
+    }
+
+    public void TriggerChange() {
+        OnInventoryChange?.Invoke(this, EventArgs.Empty);
     }
 }

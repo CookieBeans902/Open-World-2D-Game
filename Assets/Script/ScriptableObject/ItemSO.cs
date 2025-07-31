@@ -11,6 +11,7 @@ public class ItemSO : ScriptableObject {
     public int maxStack;
     public int buyPrice;
     public int sellPrice;
+    public float cooldownTime;
     public EquipmentSO equipment;
 
     [TextArea]

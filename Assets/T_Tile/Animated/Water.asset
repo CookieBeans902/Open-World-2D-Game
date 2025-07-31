@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f294a93a380468e42845211790cb4fa1, type: 3}
-  m_Name: Poke
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Water
   m_EditorClassIdentifier: 
-  element: 0
-  icon: {fileID: 21300000, guid: c51afa706b02a044694b30f33f81d239, type: 3}
-  skillName: Poke
-  skillDesc: Poke, poke.
+  m_AnimatedSprites: []
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

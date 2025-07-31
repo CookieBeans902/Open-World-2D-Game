@@ -13,6 +13,7 @@ public class InventoryItem {
     public int count;
     public int buyPrice;
     public int sellPrice;
+    public float cooldownTIme;
 
     public int slotNumber = -1;
     public bool isActive = false;
@@ -37,7 +38,8 @@ public class InventoryItem {
             count = 1, // default item count
             buyPrice = item.buyPrice,
             sellPrice = item.sellPrice,
-            equipment = item.equipment
+            equipment = item.equipment,
+            cooldownTIme = item.cooldownTime
         };
 
         return i;

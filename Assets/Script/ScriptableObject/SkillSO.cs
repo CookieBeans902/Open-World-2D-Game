@@ -7,4 +7,6 @@ public class SkillSO : ScriptableObject {
     public string skillName;
     [TextArea]
     public string skillDesc;
+
+    public float cooldownTime;
 }

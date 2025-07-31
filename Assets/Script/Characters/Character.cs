@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -136,7 +137,6 @@ public class Character {
                 equipments["accessory"] = equipment;
                 break;
         }
-        // equipment.isEquiped = true;
     }
 
     /// <summary>To unequip an equipment</summary>
@@ -255,48 +255,6 @@ public class Character {
         equipments["hand2"] = Equipment.Create(character.hand2, true);
         equipments["boots"] = Equipment.Create(character.boots, true);
         equipments["accessory"] = Equipment.Create(character.accessory, true);
-
-        // if (character.head != null) {
-        //     InventoryItem headItem = InventoryItem.Create(character.head.itemSO);
-        //     headItem.isActive = true;
-        //     InventoryManager.Instance.AddItem(headItem, 1);
-        //     equipments["head"] = Equipment.Create(character.head);
-        // }
-
-        // if (character.body != null) {
-        //     InventoryItem bodyItem = InventoryItem.Create(character.body.itemSO);
-        //     bodyItem.isActive = true;
-        //     InventoryManager.Instance.AddItem(bodyItem, 1);
-        //     equipments["body"] = Equipment.Create(character.body);
-        // }
-
-        // if (character.hand1 != null) {
-        //     InventoryItem hand1Item = InventoryItem.Create(character.hand1.itemSO);
-        //     hand1Item.isActive = true;
-        //     InventoryManager.Instance.AddItem(hand1Item, 1);
-        //     equipments["hand1"] = Equipment.Create(character.hand1);
-        // }
-
-        // if (character.hand2 != null) {
-        //     InventoryItem hand2Item = InventoryItem.Create(character.hand2.itemSO);
-        //     hand2Item.isActive = true;
-        //     InventoryManager.Instance.AddItem(hand2Item, 1);
-        //     equipments["hand2"] = Equipment.Create(character.hand2);
-        // }
-
-        // if (character.boots != null) {
-        //     InventoryItem bootsItem = InventoryItem.Create(character.boots.itemSO);
-        //     bootsItem.isActive = true;
-        //     InventoryManager.Instance.AddItem(bootsItem, 1);
-        //     equipments["boots"] = Equipment.Create(character.boots);
-        // }
-
-        // if (character.accessory != null) {
-        //     InventoryItem accessoryItem = InventoryItem.Create(character.accessory.itemSO);
-        //     accessoryItem.isActive = true;
-        //     InventoryManager.Instance.AddItem(accessoryItem, 1);
-        //     equipments["accessory"] = Equipment.Create(character.accessory);
-        // }
     }
 
     public List<Equipment> GetEquipmentsList() {

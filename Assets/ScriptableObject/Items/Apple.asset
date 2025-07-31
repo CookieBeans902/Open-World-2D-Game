@@ -21,5 +21,6 @@ MonoBehaviour:
   maxStack: 10
   buyPrice: 10
   sellPrice: 5
+  cooldownTime: 0.4
   equipment: {fileID: 0}
   itemDesc: It could recover hp when consumed.

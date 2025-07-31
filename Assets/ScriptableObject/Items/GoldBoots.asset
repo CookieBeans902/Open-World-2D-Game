@@ -21,5 +21,6 @@ MonoBehaviour:
   maxStack: 1
   buyPrice: 10
   sellPrice: 5
+  cooldownTime: 0.4
   equipment: {fileID: 11400000, guid: d94634b746a4be5468b8d3c84133cf85, type: 2}
   itemDesc: Steel boots which provides buffs.

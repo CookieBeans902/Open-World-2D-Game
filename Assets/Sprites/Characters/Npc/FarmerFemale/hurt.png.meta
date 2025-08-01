@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 9e8c47e5b88e81549a52cda9c9c1480e
+guid: f4369a6dbf3516e4ea26961eb7786a58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5573376936623731945
-    second: FarmerFemale_hurt_0
+      213: -3582916166963785052
+    second: hurt_0
   - first:
-      213: -4769605049874578429
-    second: FarmerFemale_hurt_1
+      213: 1642290761556927327
+    second: hurt_1
   - first:
-      213: -8141949768690588985
-    second: FarmerFemale_hurt_2
+      213: 6819390902422994280
+    second: hurt_2
   - first:
-      213: -7048276597592841361
-    second: FarmerFemale_hurt_3
+      213: 6079887152930431857
+    second: hurt_3
   - first:
-      213: -8768252224779293976
-    second: FarmerFemale_hurt_4
+      213: 6351682349791027127
+    second: hurt_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hurt_000
+      name: hurt_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 64
-        height: 64
+        width: 42
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: 4a29e10babce64ec0800000000000000
+      internalID: -3582916166963785052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt_001
+      name: hurt_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 75
         y: 0
-        width: 64
-        height: 64
+        width: 38
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: f53a1841fb69ac610800000000000000
+      internalID: 1642290761556927327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt_002
+      name: hurt_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 141
         y: 0
-        width: 64
-        height: 64
+        width: 38
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: 86df37325e753ae50800000000000000
+      internalID: 6819390902422994280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt_003
+      name: hurt_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 206
         y: 0
-        width: 64
-        height: 64
+        width: 38
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: 17321e82729106450800000000000000
+      internalID: 6079887152930431857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hurt_004
+      name: hurt_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 271
         y: 0
-        width: 64
-        height: 64
+        width: 38
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: 7bf9969c175b52850800000000000000
+      internalID: 6351682349791027127
       vertices: []
       indices: 
       edges: []
@@ -238,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1c4ee410e18c49a42a36f1d90fd7c42f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -247,17 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      hurt_0: 2039463546
-      hurt_000: 0
-      hurt_001: 0
-      hurt_002: 0
-      hurt_003: 0
-      hurt_004: 0
-      hurt_1: -946554149
-      hurt_2: -1970479772
-      hurt_3: 1309959789
-      hurt_4: 840720710
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 59cdccc5d96fbc945911831704def98a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7186761885911159936
+    second: Cyclops_walk_0
+  - first:
+      213: -8064230513267929256
+    second: Cyclops_walk_1
+  - first:
+      213: -359902674782535607
+    second: Cyclops_walk_2
+  - first:
+      213: -7051044125442469785
+    second: Cyclops_walk_3
+  - first:
+      213: 1720195760199265525
+    second: Cyclops_walk_4
+  - first:
+      213: 7714008191865374439
+    second: Cyclops_walk_5
+  - first:
+      213: -4242620915084183931
+    second: Cyclops_walk_6
+  - first:
+      213: -4463834008384320319
+    second: Cyclops_walk_7
+  - first:
+      213: 2688716993990818104
+    second: Cyclops_walk_8
+  - first:
+      213: 4486736702126504389
+    second: Cyclops_walk_9
+  - first:
+      213: -4553589441181297775
+    second: Cyclops_walk_10
+  - first:
+      213: 2162210041104828168
+    second: Cyclops_walk_11
+  - first:
+      213: 2186789437257436528
+    second: Cyclops_walk_12
+  - first:
+      213: 8732077684727733876
+    second: Cyclops_walk_13
+  - first:
+      213: 7026678598744737223
+    second: Cyclops_walk_14
+  - first:
+      213: -4855033780548545846
+    second: Cyclops_walk_15
+  - first:
+      213: 4589230680753798222
+    second: Cyclops_walk_16
+  - first:
+      213: 4877975762502299654
+    second: Cyclops_walk_17
+  - first:
+      213: 3777923756092849405
+    second: Cyclops_walk_18
+  - first:
+      213: -6310819357532397295
+    second: Cyclops_walk_19
+  - first:
+      213: 3313921426376550569
+    second: Cyclops_walk_20
+  - first:
+      213: 7742218711857472780
+    second: Cyclops_walk_21
+  - first:
+      213: -5081139762398306597
+    second: Cyclops_walk_22
+  - first:
+      213: -2882881300608288649
+    second: Cyclops_walk_23
+  - first:
+      213: 4614634497217224133
+    second: Cyclops_walk_24
+  - first:
+      213: -4026407927316159403
+    second: Cyclops_walk_25
+  - first:
+      213: 7402725975330841250
+    second: Cyclops_walk_26
+  - first:
+      213: 828655939754017313
+    second: Cyclops_walk_27
+  - first:
+      213: 7247059541707504675
+    second: Cyclops_walk_28
+  - first:
+      213: 1775678994859519625
+    second: Cyclops_walk_29
+  - first:
+      213: -4559713211829758155
+    second: Cyclops_walk_30
+  - first:
+      213: -1803637510286816291
+    second: Cyclops_walk_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cyclops_walk_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 194
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08be2f0542e734c90800000000000000
+      internalID: -7186761885911159936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 193
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f8cc50319161090800000000000000
+      internalID: -8064230513267929256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 192
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940cfd39c6e510bf0800000000000000
+      internalID: -359902674782535607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 193
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7609567d9b8a52e90800000000000000
+      internalID: -7051044125442469785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 194
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc6fce0eec5fd710800000000000000
+      internalID: 1720195760199265525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 193
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6c6967499ad0b60800000000000000
+      internalID: 7714008191865374439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 192
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586b3cf81ce2f15c0800000000000000
+      internalID: -4242620915084183931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_7
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 193
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ccc1f9ae964d02c0800000000000000
+      internalID: -4463834008384320319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839f0605cdd305520800000000000000
+      internalID: 2688716993990818104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 130
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c935f24247144e30800000000000000
+      internalID: 4486736702126504389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 130
+        width: 57
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1935b6977866ec0c0800000000000000
+      internalID: -4553589441181297775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 129
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80706d59396b10e10800000000000000
+      internalID: 2162210041104828168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_12
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 129
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d4e463869095e10800000000000000
+      internalID: 2186789437257436528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_13
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 129
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47edf45c3629e2970800000000000000
+      internalID: 8732077684727733876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_14
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 129
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c50505e4f6c38160800000000000000
+      internalID: 7026678598744737223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_15
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 129
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2d1e9ef747f9cb0800000000000000
+      internalID: -4855033780548545846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 65
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c77a64df830bf30800000000000000
+      internalID: 4589230680753798222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_17
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 64
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6003ae28c1d02b340800000000000000
+      internalID: 4877975762502299654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_18
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 64
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc7c6ec3a1ed6430800000000000000
+      internalID: 3777923756092849405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_19
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 64
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1116f900b377b68a0800000000000000
+      internalID: -6310819357532397295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_20
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 65
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8eab8baf96dfd20800000000000000
+      internalID: 3313921426376550569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_21
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 64
+        width: 56
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05a5adf5e2e17b60800000000000000
+      internalID: 7742218711857472780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_22
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 64
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bded220ae4a2c79b0800000000000000
+      internalID: -5081139762398306597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_23
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 64
+        width: 56
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77870a33bb2fdf7d0800000000000000
+      internalID: -2882881300608288649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd55e630a97a0040800000000000000
+      internalID: 4614634497217224133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_25
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 2
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554e08ba2535f18c0800000000000000
+      internalID: -4026407927316159403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_26
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 57
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2e621ad04cbb660800000000000000
+      internalID: 7402725975330841250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_27
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1224e02df2aff7b00800000000000000
+      internalID: 828655939754017313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_28
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cb491b14ab29460800000000000000
+      internalID: 7247059541707504675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_29
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e69bb43aa74a810800000000000000
+      internalID: 1775678994859519625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_30
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5375b330ef4a8b0c0800000000000000
+      internalID: -4559713211829758155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_walk_31
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbc8cf8d3138f6e0800000000000000
+      internalID: -1803637510286816291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

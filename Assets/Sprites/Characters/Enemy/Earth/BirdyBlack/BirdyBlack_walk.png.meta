@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: bfe31a3751b63374ea171ccab9bbabf2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 26909255162856476
+    second: BirdyBlack_walk_0
+  - first:
+      213: 2221708882642091631
+    second: BirdyBlack_walk_1
+  - first:
+      213: 3228950690547253227
+    second: BirdyBlack_walk_2
+  - first:
+      213: -4802378139455575781
+    second: BirdyBlack_walk_3
+  - first:
+      213: 7523276514952548007
+    second: BirdyBlack_walk_4
+  - first:
+      213: -7896421815620224994
+    second: BirdyBlack_walk_5
+  - first:
+      213: -2278271820462758056
+    second: BirdyBlack_walk_6
+  - first:
+      213: 6007150353712536820
+    second: BirdyBlack_walk_7
+  - first:
+      213: 1623696905422623842
+    second: BirdyBlack_walk_8
+  - first:
+      213: 8439480418208278811
+    second: BirdyBlack_walk_9
+  - first:
+      213: -202323138723775547
+    second: BirdyBlack_walk_10
+  - first:
+      213: 1986581211303603378
+    second: BirdyBlack_walk_11
+  - first:
+      213: 9110734738006915040
+    second: BirdyBlack_walk_12
+  - first:
+      213: -6175419243271853315
+    second: BirdyBlack_walk_13
+  - first:
+      213: 3743521640505226638
+    second: BirdyBlack_walk_14
+  - first:
+      213: -9072243034424045551
+    second: BirdyBlack_walk_15
+  - first:
+      213: -3186803696255266350
+    second: BirdyBlack_walk_16
+  - first:
+      213: 1750999262399965791
+    second: BirdyBlack_walk_17
+  - first:
+      213: -1444302597765302466
+    second: BirdyBlack_walk_18
+  - first:
+      213: 6173659072332151095
+    second: BirdyBlack_walk_19
+  - first:
+      213: -3023889454756000910
+    second: BirdyBlack_walk_20
+  - first:
+      213: -6720109832862109097
+    second: BirdyBlack_walk_21
+  - first:
+      213: -1107304630302517657
+    second: BirdyBlack_walk_22
+  - first:
+      213: -7952512936001933849
+    second: BirdyBlack_walk_23
+  - first:
+      213: -442681391771122410
+    second: BirdyBlack_walk_24
+  - first:
+      213: 8138199467633799470
+    second: BirdyBlack_walk_25
+  - first:
+      213: -1615230900393850036
+    second: BirdyBlack_walk_26
+  - first:
+      213: -8994322727601426842
+    second: BirdyBlack_walk_27
+  - first:
+      213: 1044042954496523331
+    second: BirdyBlack_walk_28
+  - first:
+      213: 2710753264562026293
+    second: BirdyBlack_walk_29
+  - first:
+      213: 8864907465064383344
+    second: BirdyBlack_walk_30
+  - first:
+      213: -6316142736283788338
+    second: BirdyBlack_walk_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BirdyBlack_walk_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14072333d99f5000800000000000000
+      internalID: 26909255162856476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e3638257815de10800000000000000
+      internalID: 2221708882642091631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 191
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef325b9b898fcc20800000000000000
+      internalID: 3228950690547253227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1926a8b6868a5db0800000000000000
+      internalID: -4802378139455575781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae09cc512c086860800000000000000
+      internalID: 7523276514952548007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18bf4b12364a6290800000000000000
+      internalID: -7896421815620224994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 191
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857e88f99d3f160e0800000000000000
+      internalID: -2278271820462758056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fcd5616b6fad5350800000000000000
+      internalID: 6007150353712536820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264dd969bb7888610800000000000000
+      internalID: 1623696905422623842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b196b20e9be0f1570800000000000000
+      internalID: 8439480418208278811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 129
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbf6826d24313df0800000000000000
+      internalID: -202323138723775547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc67391611c19b10800000000000000
+      internalID: 1986581211303603378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_12
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 128
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7b6b539f4df6e70800000000000000
+      internalID: 9110734738006915040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_13
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 127
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa6ba1cae08c4aa0800000000000000
+      internalID: -6175419243271853315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_14
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 128
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e853d471919a3f330800000000000000
+      internalID: 3743521640505226638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 128
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1109429e60be81280800000000000000
+      internalID: -9072243034424045551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d19dc33ce236c3d0800000000000000
+      internalID: -3186803696255266350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 63
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a225d4d8ccc4810800000000000000
+      internalID: 1750999262399965791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_18
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 63
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e377608807ec4fbe0800000000000000
+      internalID: -1444302597765302466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 63
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739b9b2873e3da550800000000000000
+      internalID: 6173659072332151095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b0839ef8cf806d0800000000000000
+      internalID: -3023889454756000910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 63
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752f4a036bf5db2a0800000000000000
+      internalID: -6720109832862109097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_22
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 63
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7665ca43e4012a0f0800000000000000
+      internalID: -1107304630302517657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 63
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ede7e17e9ff2a190800000000000000
+      internalID: -7952512936001933849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6158ece9e974bd9f0800000000000000
+      internalID: -442681391771122410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_25
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21f59b3c41b0f070800000000000000
+      internalID: 8138199467633799470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_26
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b4acfcd0c8599e0800000000000000
+      internalID: -1615230900393850036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_27
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e281a122fbd2380800000000000000
+      internalID: -8994322727601426842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_28
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34cb309198f2d7e00800000000000000
+      internalID: 1044042954496523331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_29
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 0
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53733ff5bb78e9520800000000000000
+      internalID: 2710753264562026293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_30
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 0
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0730fd50f5a760b70800000000000000
+      internalID: 8864907465064383344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_walk_31
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 0
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb142d45ad8858a0800000000000000
+      internalID: -6316142736283788338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

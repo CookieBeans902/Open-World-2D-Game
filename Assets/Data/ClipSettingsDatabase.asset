@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b7275008f52af49bb6d2dc336aa4c2, type: 3}
+  m_Name: ClipSettingsDatabase
+  m_EditorClassIdentifier: 
+  idle:
+    columns: 2
+    rows: 4
+    height: 64
+    width: 64
+    frameRate: 4
+    canLoop: 1
+  walk:
+    columns: 8
+    rows: 4
+    height: 192
+    width: 192
+    frameRate: 12
+    canLoop: 1
+  slash:
+    columns: 5
+    rows: 4
+    height: 192
+    width: 192
+    frameRate: 12
+    canLoop: 0
+  islash:
+    columns: 5
+    rows: 4
+    height: 64
+    width: 64
+    frameRate: 12
+    canLoop: 0
+  thrust:
+    columns: 8
+    rows: 4
+    height: 192
+    width: 192
+    frameRate: 12
+    canLoop: 0
+  smash:
+    columns: 5
+    rows: 4
+    height: 192
+    width: 192
+    frameRate: 12
+    canLoop: 0
+  shoot:
+    columns: 10
+    rows: 4
+    height: 64
+    width: 64
+    frameRate: 12
+    canLoop: 0
+  hurt:
+    columns: 5
+    rows: 1
+    height: 64
+    width: 64
+    frameRate: 4
+    canLoop: 0

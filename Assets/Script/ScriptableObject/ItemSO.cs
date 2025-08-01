@@ -1,0 +1,19 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "ItemSO", menuName = "Scriptable Objects/ItemSO")]
+public class ItemSO : ScriptableObject {
+    public ItemType itemType;
+    public Sprite icon;
+    public string itemName;
+    public bool canConsume;
+    public bool canDestroy;
+    public bool canSell;
+    public int maxStack;
+    public int buyPrice;
+    public int sellPrice;
+    public float cooldownTime;
+    public EquipmentSO equipment;
+
+    [TextArea]
+    public string itemDesc;
+}

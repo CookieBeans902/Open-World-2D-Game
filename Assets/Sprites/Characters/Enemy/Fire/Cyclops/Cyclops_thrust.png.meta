@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: ddacc040a96f948418b73f801de4c1aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1953940632157203884
+    second: Cyclops_thrust_0
+  - first:
+      213: 2854648999798938448
+    second: Cyclops_thrust_1
+  - first:
+      213: -7591445332992859955
+    second: Cyclops_thrust_2
+  - first:
+      213: 520261944899141364
+    second: Cyclops_thrust_3
+  - first:
+      213: 7036944806839496707
+    second: Cyclops_thrust_4
+  - first:
+      213: -4226424151502505004
+    second: Cyclops_thrust_5
+  - first:
+      213: 4141845296743056354
+    second: Cyclops_thrust_6
+  - first:
+      213: -7509396170104063075
+    second: Cyclops_thrust_7
+  - first:
+      213: 556614319176088077
+    second: Cyclops_thrust_8
+  - first:
+      213: 8792092171667026000
+    second: Cyclops_thrust_9
+  - first:
+      213: -6859421805305968523
+    second: Cyclops_thrust_10
+  - first:
+      213: 7625173812546802108
+    second: Cyclops_thrust_11
+  - first:
+      213: -4080830738331479008
+    second: Cyclops_thrust_12
+  - first:
+      213: -5510562040166365124
+    second: Cyclops_thrust_13
+  - first:
+      213: 794975794832301070
+    second: Cyclops_thrust_14
+  - first:
+      213: 3965422070894390761
+    second: Cyclops_thrust_15
+  - first:
+      213: 2441519718809178652
+    second: Cyclops_thrust_16
+  - first:
+      213: -2979821189859171305
+    second: Cyclops_thrust_17
+  - first:
+      213: -69861126609627156
+    second: Cyclops_thrust_18
+  - first:
+      213: 7389570343258495933
+    second: Cyclops_thrust_19
+  - first:
+      213: 7587240390566630840
+    second: Cyclops_thrust_20
+  - first:
+      213: -3259624221358389394
+    second: Cyclops_thrust_21
+  - first:
+      213: -1993906616978767058
+    second: Cyclops_thrust_22
+  - first:
+      213: -850887301123462420
+    second: Cyclops_thrust_23
+  - first:
+      213: 5069895292224596912
+    second: Cyclops_thrust_24
+  - first:
+      213: -6526528475292511096
+    second: Cyclops_thrust_25
+  - first:
+      213: -1417753135135581901
+    second: Cyclops_thrust_26
+  - first:
+      213: -2758040918255417293
+    second: Cyclops_thrust_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cyclops_thrust_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 639
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4525114f85532e4e0800000000000000
+      internalID: -1953940632157203884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 639
+        width: 44
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b90770420cd9720800000000000000
+      internalID: 2854648999798938448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_2
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 639
+        width: 24
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0e92bd0b4c5a690800000000000000
+      internalID: -7591445332992859955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_3
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 639
+        width: 24
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fefddf7b77583700800000000000000
+      internalID: 520261944899141364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_4
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 639
+        width: 24
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300b2bbb40048a160800000000000000
+      internalID: 7036944806839496707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_5
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 639
+        width: 24
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbbf8370a9b855c0800000000000000
+      internalID: -4226424151502505004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_6
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 639
+        width: 24
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e30efa5a5aca7930800000000000000
+      internalID: 4141845296743056354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_7
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bb44348f349c790800000000000000
+      internalID: -7509396170104063075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_8
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0af26336cd79b700800000000000000
+      internalID: 556614319176088077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_9
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050b4b46f39c30a70800000000000000
+      internalID: 8792092171667026000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_10
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5784b2af5307ec0a0800000000000000
+      internalID: -6859421805305968523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_11
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1967fbe2f02d960800000000000000
+      internalID: 7625173812546802108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_12
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024d14d801afd57c0800000000000000
+      internalID: -4080830738331479008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_13
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 449
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38c12b450d8683b0800000000000000
+      internalID: -5510562040166365124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_14
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 258
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c53000642580b00800000000000000
+      internalID: 794975794832301070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_15
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 253
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed67202d52080730800000000000000
+      internalID: 3965422070894390761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_16
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 251
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c129bbf9f3502e120800000000000000
+      internalID: 2441519718809178652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_17
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 248
+        width: 24
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71423446a6c85a6d0800000000000000
+      internalID: -2979821189859171305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_18
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 243
+        width: 24
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce713dcecadc70ff0800000000000000
+      internalID: -69861126609627156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_19
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 248
+        width: 24
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb1fa853170d8660800000000000000
+      internalID: 7389570343258495933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_20
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 251
+        width: 27
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b55831bfea4b4960800000000000000
+      internalID: 7587240390566630840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e678ca87a0d73c2d0800000000000000
+      internalID: -3259624221358389394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_22
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e230eabfe783454e0800000000000000
+      internalID: -1993906616978767058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_23
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea25a0028a0134f0800000000000000
+      internalID: -850887301123462420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_24
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbe87528e2eb5640800000000000000
+      internalID: 5069895292224596912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_25
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 884d7b54eec1d65a0800000000000000
+      internalID: -6526528475292511096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_26
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3391c010901235ce0800000000000000
+      internalID: -1417753135135581901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_thrust_27
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 65
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338c467c56879b9d0800000000000000
+      internalID: -2758040918255417293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cyclops_thrust_0: -1953940632157203884
+      Cyclops_thrust_1: 2854648999798938448
+      Cyclops_thrust_10: -6859421805305968523
+      Cyclops_thrust_11: 7625173812546802108
+      Cyclops_thrust_12: -4080830738331479008
+      Cyclops_thrust_13: -5510562040166365124
+      Cyclops_thrust_14: 794975794832301070
+      Cyclops_thrust_15: 3965422070894390761
+      Cyclops_thrust_16: 2441519718809178652
+      Cyclops_thrust_17: -2979821189859171305
+      Cyclops_thrust_18: -69861126609627156
+      Cyclops_thrust_19: 7389570343258495933
+      Cyclops_thrust_2: -7591445332992859955
+      Cyclops_thrust_20: 7587240390566630840
+      Cyclops_thrust_21: -3259624221358389394
+      Cyclops_thrust_22: -1993906616978767058
+      Cyclops_thrust_23: -850887301123462420
+      Cyclops_thrust_24: 5069895292224596912
+      Cyclops_thrust_25: -6526528475292511096
+      Cyclops_thrust_26: -1417753135135581901
+      Cyclops_thrust_27: -2758040918255417293
+      Cyclops_thrust_3: 520261944899141364
+      Cyclops_thrust_4: 7036944806839496707
+      Cyclops_thrust_5: -4226424151502505004
+      Cyclops_thrust_6: 4141845296743056354
+      Cyclops_thrust_7: -7509396170104063075
+      Cyclops_thrust_8: 556614319176088077
+      Cyclops_thrust_9: 8792092171667026000
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

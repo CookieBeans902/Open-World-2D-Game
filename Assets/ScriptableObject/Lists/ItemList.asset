@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2667a745a4b6294e8e95839bcd38f68, type: 3}
+  m_Name: ItemList
+  m_EditorClassIdentifier: 
+  Apple: {fileID: 11400000, guid: 58d82446a22586c4798fcc34ab72d1f1, type: 2}
+  Banana: {fileID: 11400000, guid: 10531f3c5e94a824b8ccbab89ec7aed9, type: 2}
+  SteelHelmet: {fileID: 11400000, guid: c9c6c68fd8d10114bb6d1b46cb0688a0, type: 2}
+  SteelArmor: {fileID: 11400000, guid: ee2b139ce87a03045b677a511ccb5266, type: 2}
+  SteelBoots: {fileID: 11400000, guid: bafab5996c9605c44888d54d9c4ec57b, type: 2}
+  SteelShield: {fileID: 11400000, guid: f4948921b9429c44ba3d52d63910b27f, type: 2}
+  SteelSword: {fileID: 11400000, guid: 2e690fad8eabb964b8ec64b6eafdcbe4, type: 2}
+  Amulet: {fileID: 11400000, guid: a66f482a79128884a9746c432f30af34, type: 2}

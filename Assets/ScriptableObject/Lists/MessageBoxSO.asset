@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd423277f6c0ee4289775cdf06f8967, type: 3}
+  m_Name: MessageBoxSO
+  m_EditorClassIdentifier: 
+  bottom: {fileID: 4650557599955071079, guid: c2d211112bbcc804e9abca0d2cf28452, type: 3}
+  middle: {fileID: 4650557599955071079, guid: e2db16ce1b783a44a968afe30070e137, type: 3}
+  top: {fileID: 4650557599955071079, guid: 3585bdde08bf20b4cac18c5328bfff0c, type: 3}
+  floating: {fileID: 3053942877082490646, guid: ffc9739188f88dc4a840a75db95bd7a1, type: 3}

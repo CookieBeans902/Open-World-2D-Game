@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3746e49dd0d986142aa56eb4d36a623b, type: 3}
+  m_Name: Amulet
+  m_EditorClassIdentifier: 
+  slot: 3
+  type: 1
+  range: 0
+  weild: 0
+  validClasses: 0000000002000000
+  equipmentName: Amulet
+  itemSO: {fileID: 11400000, guid: a66f482a79128884a9746c432f30af34, type: 2}
+  hpBuff: 15
+  atkBuff: 0
+  matkBuff: 0
+  defBuff: 5
+  mdefBuff: 0
+  agiBuff: 0
+  luckBuff: 0

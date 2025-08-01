@@ -11,8 +11,16 @@ Logs/
 UserSettings/
 MemoryCaptures/
 Builds/
+Assets/TextMesh Pro
+Assets/ArtAssetsOnline/*
+*.pdf
+Freeui/*.unity
+Assets/25 Rpg Game tracks/*
 # Do not ignore these things as we track them using Git LFS (just in case):
 !*.png
 !*.jpg
 !*.psd
 !*.wav
+.editorconfig
+.config
+!Assets/ArtAssetsOnline/Links.txt

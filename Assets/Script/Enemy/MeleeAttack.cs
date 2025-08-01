@@ -12,17 +12,31 @@ public class MeleeAttack : AttackBase {
         anim = GetComponent<EnemyAnimation>();
     }
 
-    private void Update() {
-        if (!canAttack || !movement.canMove) return;
+    // private void Update() {
+    //     // if (!canAttack || !movement.canMove) return;
 
+    //     Vector2 dir = movement.GetMoveDir();
+    //     if (dir == Vector2.zero) return;
+    // Rigidbody2D rb = GetComponent<Rigidbody2D>();
+    // rb.AddForce(dir * 3, ForceMode2D.Impulse);
+
+    //     int layerMask = LayerMask.GetMask("Player");
+
+    //     PerformSlash(dir, spread, layerMask);
+    //     anim.PlaySlashAnimation(waitTime);
+    // }
+
+
+    public void Slash() {
         Vector2 dir = movement.GetMoveDir();
         if (dir == Vector2.zero) return;
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * 3, ForceMode2D.Impulse);
 
         int layerMask = LayerMask.GetMask("Player");
 
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(dir * 3, ForceMode2D.Impulse);
+
         PerformSlash(dir, spread, layerMask);
-        anim.PlaySlashAnimation(waitTime);
+        anim.PlaySlashAnimation();
     }
 }

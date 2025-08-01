@@ -1,0 +1,730 @@
+fileFormatVersion: 2
+guid: 1ad24510df8c5224a89d2144e46181d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7369012967004726547
+    second: BirdyWhite_cast_0
+  - first:
+      213: -1802412034396370237
+    second: BirdyWhite_cast_1
+  - first:
+      213: 3117369539119342052
+    second: BirdyWhite_cast_2
+  - first:
+      213: -802444926416077128
+    second: BirdyWhite_cast_3
+  - first:
+      213: 4760483698310192190
+    second: BirdyWhite_cast_4
+  - first:
+      213: -6810580201352027539
+    second: BirdyWhite_cast_5
+  - first:
+      213: 4611999464449965813
+    second: BirdyWhite_cast_6
+  - first:
+      213: -7080416085498693131
+    second: BirdyWhite_cast_7
+  - first:
+      213: -2807444716623951677
+    second: BirdyWhite_cast_8
+  - first:
+      213: 8165307792658449686
+    second: BirdyWhite_cast_9
+  - first:
+      213: -6926082363610722209
+    second: BirdyWhite_cast_10
+  - first:
+      213: 4586689085523244565
+    second: BirdyWhite_cast_11
+  - first:
+      213: 3742179229252253636
+    second: BirdyWhite_cast_12
+  - first:
+      213: 8682017159491805043
+    second: BirdyWhite_cast_13
+  - first:
+      213: -6491406239154587699
+    second: BirdyWhite_cast_14
+  - first:
+      213: 2124627092021240752
+    second: BirdyWhite_cast_15
+  - first:
+      213: -5763113186156730331
+    second: BirdyWhite_cast_16
+  - first:
+      213: -8361698180777460391
+    second: BirdyWhite_cast_17
+  - first:
+      213: 2237737738991712987
+    second: BirdyWhite_cast_18
+  - first:
+      213: 8313173517210726332
+    second: BirdyWhite_cast_19
+  - first:
+      213: 2246690208053997201
+    second: BirdyWhite_cast_20
+  - first:
+      213: -6546289838772669710
+    second: BirdyWhite_cast_21
+  - first:
+      213: -561302215189606254
+    second: BirdyWhite_cast_22
+  - first:
+      213: 8487383032827238827
+    second: BirdyWhite_cast_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BirdyWhite_cast_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3156093304ef34660800000000000000
+      internalID: 7369012967004726547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca4ae6edcb8cf6e0800000000000000
+      internalID: -1802412034396370237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1e4dc441f134b20800000000000000
+      internalID: 3117369539119342052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8beb72947942dd4f0800000000000000
+      internalID: -802444926416077128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3c11d493b2a01240800000000000000
+      internalID: 4760483698310192190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 192
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62aa101465fb71a0800000000000000
+      internalID: -6810580201352027539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 128
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fef4d6d31d110040800000000000000
+      internalID: 4611999464449965813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 128
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f973e9751f4dbd90800000000000000
+      internalID: -7080416085498693131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 128
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8051b97e3f909d0800000000000000
+      internalID: -2807444716623951677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_9
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 128
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615c22ffc20015170800000000000000
+      internalID: 8165307792658449686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_10
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 128
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5092e749cc91ef90800000000000000
+      internalID: -6926082363610722209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_11
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 128
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51636c50c6137af30800000000000000
+      internalID: 4586689085523244565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7fc6d9e24eee330800000000000000
+      internalID: 3742179229252253636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fda557b98bc7870800000000000000
+      internalID: 8682017159491805043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_14
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7bf6e1b64e9e5a0800000000000000
+      internalID: -6491406239154587699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3e81c55113c7d10800000000000000
+      internalID: 2124627092021240752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_16
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52822ca671f4500b0800000000000000
+      internalID: -5763113186156730331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_17
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95dbab78ec745fb80800000000000000
+      internalID: -8361698180777460391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_18
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda36191e9a0e0f10800000000000000
+      internalID: 2237737738991712987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_19
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfa781d4435e5370800000000000000
+      internalID: 8313173517210726332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_20
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e286b37d8dd2f10800000000000000
+      internalID: 2246690208053997201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_21
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2b43b4318e625a0800000000000000
+      internalID: -6546289838772669710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_22
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290dbf3fb9ad538f0800000000000000
+      internalID: -561302215189606254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_cast_23
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9585876ed39c570800000000000000
+      internalID: 8487383032827238827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

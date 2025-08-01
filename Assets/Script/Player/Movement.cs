@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour, IDataPersistence {
 
     private void FixedUpdate() {
         float moveDist = moveSpeed * Time.fixedDeltaTime;
-        if(canMove) rb.MovePosition(rb.position + (newDir * moveDist));
+        if (canMove && newDir != Vector2.zero) rb.MovePosition(rb.position + (newDir * moveDist));
     }
 
     void FixDirection() {
@@ -54,17 +54,17 @@ public class Movement : MonoBehaviour, IDataPersistence {
 
         if (prevInput.x != 0 && prevInput.y != 0) {
             if (newDir.x != 0 && newDir.y != 0) {
-                if (currDir.x != 0)
+                if (playerDir.x != 0)
                     newDir.y = 0;
-                else if (currDir.y != 0)
+                else if (playerDir.y != 0)
                     newDir.x = 0;
             }
         }
         else {
             if (newDir.x != 0 && newDir.y != 0) {
-                if (currDir.x != 0)
+                if (playerDir.x != 0)
                     newDir.x = 0;
-                else if (currDir.y != 0)
+                else if (playerDir.y != 0)
                     newDir.y = 0;
             }
         }

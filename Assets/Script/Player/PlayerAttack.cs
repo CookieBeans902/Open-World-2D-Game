@@ -29,6 +29,7 @@ public class PlayerAttack : AttackBase {
     private void Slash() {
         if (!shared.playerMove.canMove) return;
         Vector2 dir = shared.playerMove.playerDir;
+        shared.rb.AddForce(dir * 10, ForceMode2D.Impulse);
         float spread = 1.5f;
         float range = 1.8f;
         int layerMask = LayerMask.GetMask("Enemy");

@@ -61,7 +61,15 @@ public abstract class MovementBase : MonoBehaviour {
             Vector3 targetPos = target.position;
             seeker.StartPath(transform.position, targetPos, UpdatePathData);
         }, updateTime, timerName);
+    }
 
+    protected void RunFromTarget(Transform target, float radius, float updateTime, ref FunctionTimer timer, string timerName = "RunTimer") {
+        if (timer != null && timer.TimeLeft() > 0) return;
+
+        timer = FunctionTimer.CreateSceneTimer(() => {
+            Vector3 targetPos = GenerateRunAwayTarget(target.position, 60, radius);
+            seeker.StartPath(transform.position, targetPos, UpdatePathData);
+        }, updateTime, timerName);
     }
 
     /// <summary>To force a new path to a target</summary>
@@ -98,15 +106,17 @@ public abstract class MovementBase : MonoBehaviour {
 
 
     /// <summary>To get target away from an different object</summary>
-    ///<param name="start">position the object you want to run away</param>
+    ///<param name="start">position of the object you want to run away</param>
     ///<param name="runAwayTarget">Position of target you want to run away form</param>
     ///<param name="spread">Angular spread of the valid runaway zone in degrees</param>
     ///<param name="radius">Radius of the valid run away zone</param>
     /// <returns>A run away target</returns>
-    protected Vector3 GenerateRunAwayTarget(Vector3 start, Vector3 runAwayTarget, float spread, float radius) {
-        Vector2 dir = (start - runAwayTarget).normalized;
-        float r = Random.Range(radius, radius + 1);
-        Vector3 target = start + VectorHandler.GenerateRandomDir(dir, spread) * r;
+    protected Vector2 GenerateRunAwayTarget(Vector3 runAwayTarget, float spread, float radius) {
+        float r = Random.Range(radius - 1, radius + 1);
+        Vector2 dir = -(runAwayTarget - transform.position).normalized;
+        float angle = Random.Range(-spread, spread);
+
+        Vector2 target = transform.position + Quaternion.Euler(0, 0, angle) * dir * r;
 
         float nsize = grid.nodeSize / 2;
 
@@ -214,14 +224,23 @@ public abstract class MovementBase : MonoBehaviour {
 
     /// <summary>To get the current move direction of the object</summary>
     ///<returns>Current move direction of the object</returns>
-    public Vector2 GetMoveDir() {
+    virtual public Vector2 GetMoveDir() {
         if (agent != null && agent.hasPath) {
             Vector3 dir = agent.desiredVelocity;
-            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y)) dir.y = 0;
-            else dir.x = 0;
 
+            if (!agent.canMove) return Vector2.zero;
             if (dir.magnitude < 0.3) return Vector2.zero;
-            else return dir.normalized;
+
+            if (Vector2.Angle(Vector2.left, dir) <= 45)
+                dir = Vector2.left;
+            if (Vector2.Angle(Vector2.right, dir) <= 45)
+                dir = Vector2.right;
+            if (Vector2.Angle(Vector2.up, dir) <= 45)
+                dir = Vector2.up;
+            if (Vector2.Angle(Vector2.down, dir) <= 45)
+                dir = Vector2.down;
+
+            return dir;
         }
         return Vector2.zero;
     }

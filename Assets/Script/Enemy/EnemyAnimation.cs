@@ -8,6 +8,7 @@ public class EnemyAnimation : MonoBehaviour {
     private string currAnimation;
     private string newAnimation;
     private bool isMoving;
+    private bool isAttacking;
 
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationsSO animationData;
@@ -25,7 +26,7 @@ public class EnemyAnimation : MonoBehaviour {
     private void HandleMoveAnimation() {
         Vector2 dir = enemyMovement.GetMoveDir();
         isMoving = dir != Vector2.zero;
-        if (!enemyMovement.canMove) return;
+        if (isAttacking) return;
 
         if (!isMoving) {
             if (prevDir == Vector2.down) newAnimation = animationData.IdleDown.name;
@@ -42,8 +43,10 @@ public class EnemyAnimation : MonoBehaviour {
         }
     }
 
-    public void PlaySlashAnimation(float waitTime) {
-        enemyMovement.DisableMovement();
+    public void PlaySlashAnimation() {
+        if (isAttacking) return;
+        isAttacking = true;
+
         float animTime = 0;
         Vector2 dir = enemyMovement.GetMoveDir();
 
@@ -65,9 +68,8 @@ public class EnemyAnimation : MonoBehaviour {
         }
 
         FunctionTimer.CreateSceneTimer(() => {
-            enemyMovement.EnableMovement();
-            // enemyMovement.targetReached = false;
-        }, animTime + waitTime);
+            isAttacking = false;
+        }, animTime);
     }
 
     private void UpdateAnimation() {

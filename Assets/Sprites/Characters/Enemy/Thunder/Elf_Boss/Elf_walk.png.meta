@@ -1,0 +1,930 @@
+fileFormatVersion: 2
+guid: 2014b237f86e39341936776536cb6fb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5694385537523807169
+    second: Elf_walk_0
+  - first:
+      213: -2702056812825865240
+    second: Elf_walk_1
+  - first:
+      213: 3191406116574717087
+    second: Elf_walk_2
+  - first:
+      213: -4861495104832370686
+    second: Elf_walk_3
+  - first:
+      213: -1177237670532364249
+    second: Elf_walk_4
+  - first:
+      213: 2387841677558194066
+    second: Elf_walk_5
+  - first:
+      213: -802019101481707923
+    second: Elf_walk_6
+  - first:
+      213: -5563414621568182691
+    second: Elf_walk_7
+  - first:
+      213: 4558043835847248492
+    second: Elf_walk_8
+  - first:
+      213: -868016609757079468
+    second: Elf_walk_9
+  - first:
+      213: -6145249161346471759
+    second: Elf_walk_10
+  - first:
+      213: 7255488931358259393
+    second: Elf_walk_11
+  - first:
+      213: -3059004024889039305
+    second: Elf_walk_12
+  - first:
+      213: 8264733550982185395
+    second: Elf_walk_13
+  - first:
+      213: 1203356007226150931
+    second: Elf_walk_14
+  - first:
+      213: 2698467581756602247
+    second: Elf_walk_15
+  - first:
+      213: -2442852180523026505
+    second: Elf_walk_16
+  - first:
+      213: 8507192583325866256
+    second: Elf_walk_17
+  - first:
+      213: -5796979518398459012
+    second: Elf_walk_18
+  - first:
+      213: 5942690855197386613
+    second: Elf_walk_19
+  - first:
+      213: -7356801986770198268
+    second: Elf_walk_20
+  - first:
+      213: -4305291055996511283
+    second: Elf_walk_21
+  - first:
+      213: -3935226815550188787
+    second: Elf_walk_22
+  - first:
+      213: -7336338558486465461
+    second: Elf_walk_23
+  - first:
+      213: -4902644862476793578
+    second: Elf_walk_24
+  - first:
+      213: -3622177814317259088
+    second: Elf_walk_25
+  - first:
+      213: 7820307741721865642
+    second: Elf_walk_26
+  - first:
+      213: -71108389494895726
+    second: Elf_walk_27
+  - first:
+      213: -1446343854436241757
+    second: Elf_walk_28
+  - first:
+      213: 2499368265457158596
+    second: Elf_walk_29
+  - first:
+      213: 7767345724672340140
+    second: Elf_walk_30
+  - first:
+      213: -3174760538554775382
+    second: Elf_walk_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elf_walk_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 641
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c85c5168a79f0b0800000000000000
+      internalID: -5694385537523807169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_1
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 640
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e3179415ad508ad0800000000000000
+      internalID: -2702056812825865240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 639
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94e17844f62a4c20800000000000000
+      internalID: 3191406116574717087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_3
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 640
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2088a2f95ff788cb0800000000000000
+      internalID: -4861495104832370686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_4
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 641
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728c5bf639c99afe0800000000000000
+      internalID: -1177237670532364249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 640
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f9ababa51532120800000000000000
+      internalID: 2387841677558194066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 639
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66da1160e7aed4f0800000000000000
+      internalID: -802019101481707923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_7
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 640
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56d63fb0e7cac2b0800000000000000
+      internalID: -5563414621568182691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 448
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a855a18bc614f30800000000000000
+      internalID: 4558043835847248492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 448
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4585a4c0e7f24f3f0800000000000000
+      internalID: -868016609757079468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_10
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 449
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b82da95270b7baa0800000000000000
+      internalID: -6145249161346471759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_11
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 448
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c83369edbca0b460800000000000000
+      internalID: 7255488931358259393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_12
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 447
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 736aff1fb0c3c85d0800000000000000
+      internalID: -3059004024889039305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_13
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 447
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b1cb8d406b32b270800000000000000
+      internalID: 8264733550982185395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_14
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 448
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3101c05b9ed23b010800000000000000
+      internalID: 1203356007226150931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_15
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 448
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7877280f7f1e27520800000000000000
+      internalID: 2698467581756602247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_16
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 256
+        width: 72
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7f22572ee391ed0800000000000000
+      internalID: -2442852180523026505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_17
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 256
+        width: 72
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019d9fcd49e9f0670800000000000000
+      internalID: 8507192583325866256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_18
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 255
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7315ab77ddfc8fa0800000000000000
+      internalID: -5796979518398459012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_19
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 256
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577a00ad8dda87250800000000000000
+      internalID: 5942690855197386613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_20
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 256
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401acaf229367e990800000000000000
+      internalID: -7356801986770198268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_21
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 256
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb59a058988044c0800000000000000
+      internalID: -4305291055996511283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_22
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 255
+        width: 72
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d031a8c9f044369c0800000000000000
+      internalID: -3935226815550188787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_23
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 256
+        width: 72
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44b96d53f6103a90800000000000000
+      internalID: -7336338558486465461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_24
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 64
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6194d20197e46fbb0800000000000000
+      internalID: -4902644862476793578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6a15018707bbdc0800000000000000
+      internalID: -3622177814317259088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_26
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 65
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aada1931570578c60800000000000000
+      internalID: 7820307741721865642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_27
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 64
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b4b97eb4f530ff0800000000000000
+      internalID: -71108389494895726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_28
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 63
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae224d6ded8debe0800000000000000
+      internalID: -1446343854436241757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_29
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 63
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c94579f13a8fa220800000000000000
+      internalID: 2499368265457158596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_30
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 64
+        width: 71
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca07ebe88c72bcb60800000000000000
+      internalID: 7767345724672340140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_walk_31
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 64
+        width: 72
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8c38c5c1cf0f3d0800000000000000
+      internalID: -3174760538554775382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

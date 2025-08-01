@@ -1,0 +1,830 @@
+fileFormatVersion: 2
+guid: 50aa7b7e513524941937a1e9658b814b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5951754810432364
+    second: BirdyWhite_thrust_0
+  - first:
+      213: -5525907935542935624
+    second: BirdyWhite_thrust_1
+  - first:
+      213: 6494656257431837393
+    second: BirdyWhite_thrust_2
+  - first:
+      213: -2059784398849049751
+    second: BirdyWhite_thrust_3
+  - first:
+      213: -3485850520955437442
+    second: BirdyWhite_thrust_4
+  - first:
+      213: -3698338568854946785
+    second: BirdyWhite_thrust_5
+  - first:
+      213: -906870048239975052
+    second: BirdyWhite_thrust_6
+  - first:
+      213: 4950619477357006740
+    second: BirdyWhite_thrust_7
+  - first:
+      213: 6267216204242818520
+    second: BirdyWhite_thrust_8
+  - first:
+      213: 4879967170660914155
+    second: BirdyWhite_thrust_9
+  - first:
+      213: 5374769937349725392
+    second: BirdyWhite_thrust_10
+  - first:
+      213: 7369676390944966586
+    second: BirdyWhite_thrust_11
+  - first:
+      213: 103739862963665776
+    second: BirdyWhite_thrust_12
+  - first:
+      213: 1751024574697688404
+    second: BirdyWhite_thrust_13
+  - first:
+      213: -7233646344789512894
+    second: BirdyWhite_thrust_14
+  - first:
+      213: -8605864001008245660
+    second: BirdyWhite_thrust_15
+  - first:
+      213: -8025205139722075818
+    second: BirdyWhite_thrust_16
+  - first:
+      213: 8921989741388112045
+    second: BirdyWhite_thrust_17
+  - first:
+      213: 1842323938543896449
+    second: BirdyWhite_thrust_18
+  - first:
+      213: -3287055980002589152
+    second: BirdyWhite_thrust_19
+  - first:
+      213: 185540054503878878
+    second: BirdyWhite_thrust_20
+  - first:
+      213: 6822999896041521677
+    second: BirdyWhite_thrust_21
+  - first:
+      213: 5367446336417093458
+    second: BirdyWhite_thrust_22
+  - first:
+      213: -3178168353524522395
+    second: BirdyWhite_thrust_23
+  - first:
+      213: -8203598705870892356
+    second: BirdyWhite_thrust_24
+  - first:
+      213: 196584530147327247
+    second: BirdyWhite_thrust_25
+  - first:
+      213: -5321043034745386033
+    second: BirdyWhite_thrust_26
+  - first:
+      213: -1576537351893902534
+    second: BirdyWhite_thrust_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6b1447e615251000800000000000000
+      internalID: 5951754810432364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf737892080053b0800000000000000
+      internalID: -5525907935542935624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 191
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da1e7ab477a12a50800000000000000
+      internalID: 6494656257431837393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 191
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96bf5b0a00d2a63e0800000000000000
+      internalID: -2059784398849049751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 191
+        width: 55
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e37568b65cf9fc0800000000000000
+      internalID: -3485850520955437442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 191
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c36409aacdcacc0800000000000000
+      internalID: -3698338568854946785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 191
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4750735fe762a63f0800000000000000
+      internalID: -906870048239975052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f8ef56f2224b440800000000000000
+      internalID: 4950619477357006740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d51770ceef99f650800000000000000
+      internalID: 6267216204242818520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 129
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3dfca594029b340800000000000000
+      internalID: 4879967170660914155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dccd2108c4079a40800000000000000
+      internalID: 5374769937349725392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 128
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab78bdf91a9564660800000000000000
+      internalID: 7369676390944966586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_12
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b3ff01bde807100800000000000000
+      internalID: 103739862963665776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_13
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 129
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45dc5d7c293ec4810800000000000000
+      internalID: 1751024574697688404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24da40499fcec9b90800000000000000
+      internalID: -7233646344789512894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 65
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464e4927944d19880800000000000000
+      internalID: -8605864001008245660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 65
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6510a3dd17eb0a090800000000000000
+      internalID: -8025205139722075818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_17
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 65
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da02e19266641db70800000000000000
+      internalID: 8921989741388112045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_18
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 63
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1878b1e6cdf319910800000000000000
+      internalID: 1842323938543896449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_19
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 65
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0264f1370080262d0800000000000000
+      internalID: -3287055980002589152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_20
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 65
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed07f4052bb239200800000000000000
+      internalID: 185540054503878878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_21
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d020512714a20be50800000000000000
+      internalID: 6822999896041521677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257dc1941000d7a40800000000000000
+      internalID: 5367446336417093458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56268cb98b0e4e3d0800000000000000
+      internalID: -3178168353524522395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_24
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb216b80176f62e80800000000000000
+      internalID: -8203598705870892356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_25
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0db4cfa6986ab200800000000000000
+      internalID: 196584530147327247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_26
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb4f6f4d8bd726b0800000000000000
+      internalID: -5321043034745386033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyWhite_thrust_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b9a3d91a30f1ae0800000000000000
+      internalID: -1576537351893902534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

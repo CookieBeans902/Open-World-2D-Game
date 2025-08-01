@@ -1,0 +1,830 @@
+fileFormatVersion: 2
+guid: 3944fae913073b1468def3beb9315300
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7368074225123961525
+    second: Marked_thrust_0
+  - first:
+      213: 7438244954811614243
+    second: Marked_thrust_1
+  - first:
+      213: -5076159730839749066
+    second: Marked_thrust_2
+  - first:
+      213: -5650665745519677585
+    second: Marked_thrust_3
+  - first:
+      213: 1900843772770888219
+    second: Marked_thrust_4
+  - first:
+      213: -152768554622109061
+    second: Marked_thrust_5
+  - first:
+      213: -30448155687774422
+    second: Marked_thrust_6
+  - first:
+      213: 6033042986027607907
+    second: Marked_thrust_7
+  - first:
+      213: -6588997423111736915
+    second: Marked_thrust_8
+  - first:
+      213: 5494664840895752514
+    second: Marked_thrust_9
+  - first:
+      213: -1354640326439416140
+    second: Marked_thrust_10
+  - first:
+      213: -2066896595803061935
+    second: Marked_thrust_11
+  - first:
+      213: 6530367103598781359
+    second: Marked_thrust_12
+  - first:
+      213: -3645492764187634581
+    second: Marked_thrust_13
+  - first:
+      213: 3304362650247221389
+    second: Marked_thrust_14
+  - first:
+      213: -2222149141004216537
+    second: Marked_thrust_15
+  - first:
+      213: 2825991502353745257
+    second: Marked_thrust_16
+  - first:
+      213: 5908055511288081690
+    second: Marked_thrust_17
+  - first:
+      213: 2903483314222883985
+    second: Marked_thrust_18
+  - first:
+      213: -2113331007799349130
+    second: Marked_thrust_19
+  - first:
+      213: -3146787605367556174
+    second: Marked_thrust_20
+  - first:
+      213: -2071019457662828186
+    second: Marked_thrust_21
+  - first:
+      213: 4508353260106504879
+    second: Marked_thrust_22
+  - first:
+      213: 9168382573875239041
+    second: Marked_thrust_23
+  - first:
+      213: -8673007029757291776
+    second: Marked_thrust_24
+  - first:
+      213: -3631669345590849817
+    second: Marked_thrust_25
+  - first:
+      213: 5652887572500241601
+    second: Marked_thrust_26
+  - first:
+      213: 8013085494348183303
+    second: Marked_thrust_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Marked_thrust_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 191
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4556cca7875fb990800000000000000
+      internalID: -7368074225123961525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 191
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32443eb7064f93760800000000000000
+      internalID: 7438244954811614243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 191
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e77249e9bdd89b0800000000000000
+      internalID: -5076159730839749066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 191
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6fe4d5617dc491b0800000000000000
+      internalID: -5650665745519677585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 191
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1aa5891757216a10800000000000000
+      internalID: 1900843772770888219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 191
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a36e81fc141edf0800000000000000
+      internalID: -152768554622109061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 191
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a271a205093d39ff0800000000000000
+      internalID: -30448155687774422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_7
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 129
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36766d0a1aca9b350800000000000000
+      internalID: 6033042986027607907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 129
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1f571f0cd2f84a0800000000000000
+      internalID: -6588997423111736915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 129
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2496b619f88f04c40800000000000000
+      internalID: 5494664840895752514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_10
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 129
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bec820ecc9533de0800000000000000
+      internalID: -1354640326439416140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 129
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151c1bb3f78e053e0800000000000000
+      internalID: -2066896595803061935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_12
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 129
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3e6e6084680aa50800000000000000
+      internalID: 6530367103598781359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 129
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64d65745ab986dc0800000000000000
+      internalID: -3645492764187634581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 66
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80dd09b2547bdd20800000000000000
+      internalID: 3304362650247221389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_15
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 66
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727118431275921e0800000000000000
+      internalID: -2222149141004216537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 66
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96541147c40f73720800000000000000
+      internalID: 2825991502353745257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_17
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 66
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d6d9f6f21adf150800000000000000
+      internalID: 5908055511288081690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_18
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 66
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1946783e0be3b4820800000000000000
+      internalID: 2903483314222883985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_19
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 66
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6703d4335a0fba2e0800000000000000
+      internalID: -2113331007799349130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_20
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 66
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7f676685d5454d0800000000000000
+      internalID: -3146787605367556174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_21
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661c517a6c24243e0800000000000000
+      internalID: -2071019457662828186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa5f9e5763e09e30800000000000000
+      internalID: 4508353260106504879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18817b0ff53ac3f70800000000000000
+      internalID: 9168382573875239041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_24
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003d9d8de0a43a780800000000000000
+      internalID: -8673007029757291776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_25
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eec16ab8f7b99dc0800000000000000
+      internalID: -3631669345590849817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_26
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1
+        width: 29
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ccd8120c47137e40800000000000000
+      internalID: 5652887572500241601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marked_thrust_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707757d4dc2343f60800000000000000
+      internalID: 8013085494348183303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

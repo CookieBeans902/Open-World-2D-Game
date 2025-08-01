@@ -1,0 +1,830 @@
+fileFormatVersion: 2
+guid: 5b55ab1e053a9084fb35b2ba5e08d9f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4123362918908083650
+    second: BirdyBlack_thrust_0
+  - first:
+      213: 879229474005151044
+    second: BirdyBlack_thrust_1
+  - first:
+      213: 5394890583383824106
+    second: BirdyBlack_thrust_2
+  - first:
+      213: -4164949971509148498
+    second: BirdyBlack_thrust_3
+  - first:
+      213: -8438557739808009693
+    second: BirdyBlack_thrust_4
+  - first:
+      213: 143091166311548462
+    second: BirdyBlack_thrust_5
+  - first:
+      213: 2177629155554961876
+    second: BirdyBlack_thrust_6
+  - first:
+      213: 6001926933631415029
+    second: BirdyBlack_thrust_7
+  - first:
+      213: 3399315407671510944
+    second: BirdyBlack_thrust_8
+  - first:
+      213: 8275325046066230975
+    second: BirdyBlack_thrust_9
+  - first:
+      213: -8624736573436378065
+    second: BirdyBlack_thrust_10
+  - first:
+      213: -6378594012505089961
+    second: BirdyBlack_thrust_11
+  - first:
+      213: -4672729184539730216
+    second: BirdyBlack_thrust_12
+  - first:
+      213: -247873122671565675
+    second: BirdyBlack_thrust_13
+  - first:
+      213: -8792416005156454681
+    second: BirdyBlack_thrust_14
+  - first:
+      213: -2405503783558760268
+    second: BirdyBlack_thrust_15
+  - first:
+      213: 7160761031957505333
+    second: BirdyBlack_thrust_16
+  - first:
+      213: -8809385927730067204
+    second: BirdyBlack_thrust_17
+  - first:
+      213: 5469966882189730529
+    second: BirdyBlack_thrust_18
+  - first:
+      213: -4127442108689673733
+    second: BirdyBlack_thrust_19
+  - first:
+      213: -6597512830354687623
+    second: BirdyBlack_thrust_20
+  - first:
+      213: -3831755223986721604
+    second: BirdyBlack_thrust_21
+  - first:
+      213: 9138449843458020744
+    second: BirdyBlack_thrust_22
+  - first:
+      213: 835285957063779848
+    second: BirdyBlack_thrust_23
+  - first:
+      213: -5346459716039444801
+    second: BirdyBlack_thrust_24
+  - first:
+      213: -8090193810449757681
+    second: BirdyBlack_thrust_25
+  - first:
+      213: 435318301620384350
+    second: BirdyBlack_thrust_26
+  - first:
+      213: -1284694223929333197
+    second: BirdyBlack_thrust_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e324772954fd6c6c0800000000000000
+      internalID: -4123362918908083650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 191
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d612a5c86a33c00800000000000000
+      internalID: 879229474005151044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 191
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae651b8f6608eda40800000000000000
+      internalID: 5394890583383824106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 191
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea48ce851102336c0800000000000000
+      internalID: -4164949971509148498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 191
+        width: 55
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322de1ee17834ea80800000000000000
+      internalID: -8438557739808009693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 191
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e260f7a58ac5cf100800000000000000
+      internalID: 143091166311548462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 191
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9236ded2e783e10800000000000000
+      internalID: 2177629155554961876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f233fe1fb02b4350800000000000000
+      internalID: 6001926933631415029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7c5c95a5bcc2f20800000000000000
+      internalID: 3399315407671510944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 129
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6bbabe84cd7d270800000000000000
+      internalID: 8275325046066230975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24410348c7ce4880800000000000000
+      internalID: -8624736573436378065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_11
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 128
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75853367a8eaa77a0800000000000000
+      internalID: -6378594012505089961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_12
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 128
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de98e75091272fb0800000000000000
+      internalID: -4672729184539730216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_13
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 129
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5946bcd45b06f8cf0800000000000000
+      internalID: -247873122671565675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eeb03f3a301bf580800000000000000
+      internalID: -8792416005156454681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 65
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b83f13cd0fed9ed0800000000000000
+      internalID: -2405503783558760268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 65
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535694f1832206360800000000000000
+      internalID: 7160761031957505333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_17
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 65
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf803504c26ceb580800000000000000
+      internalID: -8809385927730067204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_18
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 63
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2e112f5e939eb40800000000000000
+      internalID: 5469966882189730529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_19
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 65
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf11090354168b6c0800000000000000
+      internalID: -4127442108689673733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_20
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 65
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97970a1390de074a0800000000000000
+      internalID: -6597512830354687623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_21
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc2600eceed2dac0800000000000000
+      internalID: -3831755223986721604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8851a0d07bb42de70800000000000000
+      internalID: 9138449843458020744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806a8a40728879b00800000000000000
+      internalID: 835285957063779848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_24
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6788b073f8dc5b0800000000000000
+      internalID: -5346459716039444801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_25
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a0414d79bd9bf80800000000000000
+      internalID: -8090193810449757681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_26
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e523f4c50bf8a0600800000000000000
+      internalID: 435318301620384350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdyBlack_thrust_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a22b1f869db2ee0800000000000000
+      internalID: -1284694223929333197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -22,15 +22,15 @@ MonoBehaviour:
   walk:
     columns: 8
     rows: 4
-    height: 64
-    width: 64
+    height: 192
+    width: 192
     frameRate: 12
     canLoop: 1
   slash:
     columns: 5
     rows: 4
-    height: 64
-    width: 64
+    height: 192
+    width: 192
     frameRate: 12
     canLoop: 0
   islash:

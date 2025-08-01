@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 
 public class SpriteToAnimationWindow : EditorWindow {
-    private string sourcePathRoot = "Assets/Sprites/";
+    private string sourcePathRoot = "Assets/Sprites/Characters/";
     private string savePathRoot = "Assets/Animations/";
     private string sourceFolder = "";
     private string saveFolder = "";
@@ -86,6 +86,7 @@ public class SpriteToAnimationWindow : EditorWindow {
     private void CreateAllClips() {
         string animatorFolderPath = Path.Combine(savePathRoot, saveFolder);
         string baseName = char.ToLower(sourceFolder[0]) + sourceFolder.Substring(1);
+        Debug.Log(baseName);
 
         // Ensure folder exists
         if (!AssetDatabase.IsValidFolder(animatorFolderPath)) {
@@ -93,7 +94,7 @@ public class SpriteToAnimationWindow : EditorWindow {
         }
 
         // Create Animator Controller
-        string controllerPath = Path.Combine(animatorFolderPath, $"{baseName}_controller.controller");
+        string controllerPath = Path.Combine(animatorFolderPath, $"controller.controller");
         var controller = AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
         if (controller.layers.Length == 0) controller.AddLayer("Base Layer");
         var stateMachine = controller.layers[0].stateMachine;
@@ -101,7 +102,7 @@ public class SpriteToAnimationWindow : EditorWindow {
         foreach (string s in subfolders) {
             ClipSettings settings = settingsDatabase.Get(s);
             if (s != "hurt") {
-                string spriteSheetPath = $"{sourcePathRoot}/{sourceFolder}/{baseName}_{s}.png";
+                string spriteSheetPath = $"{sourcePathRoot}/{sourceFolder}/{s}.png";
                 SliceSpriteSheet(spriteSheetPath, s, settings);
 
                 List<Sprite> sprites = new List<Sprite>();
@@ -133,7 +134,7 @@ public class SpriteToAnimationWindow : EditorWindow {
                 if (s == "idle") stateMachine.defaultState = state_right;
             }
             else {
-                string spriteSheetPath = $"{sourcePathRoot}/{sourceFolder}/{baseName}_{s}.png";
+                string spriteSheetPath = $"{sourcePathRoot}/{sourceFolder}/{s}.png";
                 SliceSpriteSheet(spriteSheetPath, s, settings);
 
                 List<Sprite> sprites = new List<Sprite>();
@@ -200,6 +201,8 @@ public class SpriteToAnimationWindow : EditorWindow {
     public static void SliceSpriteSheet(string path, string name, ClipSettings settings) {
         TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
         if (importer == null) return;
+
+        Debug.Log("Slicing started");
 
         importer.spriteImportMode = SpriteImportMode.Single;
         AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);

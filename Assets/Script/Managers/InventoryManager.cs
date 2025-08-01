@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-
+using Game.Utils;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour {
+public class InventoryManager : MonoBehaviour,IDataPersistence {
     public event EventHandler OnInventoryChange;
     public static InventoryManager Instance { get; private set; }
 
     /* A scriptable Object which has a list of items already defined for easy addition and removal of items,
        you define it in the editor and assign the ItemSO objects to it's feilds. (Check the Scripts/ScriptableObject folder) */
-    [SerializeField] private ItemListSO initItemList;
+    [SerializeField] private List<ItemSO> initItemList;
     public int maxSlots { get; private set; }
-
+    public Dictionary<string, ItemSO> initItemDict;
     // to mantain a dictionary of current items in the inventory
     public Dictionary<string, InventoryItem> items { get; private set; }
 
-    private void Awake() {
-        if (InventoryManager.Instance == null) {
+    private void Awake()
+    {
+        if (InventoryManager.Instance == null)
+        {
             // this is to make this object persist across scenes
             DontDestroyOnLoad(gameObject);
             Instance = this;
@@ -25,20 +27,27 @@ public class InventoryManager : MonoBehaviour {
             items = new Dictionary<string, InventoryItem>();
             maxSlots = 10;
         }
-        else if (InventoryManager.Instance != this) {
+        else if (InventoryManager.Instance != this)
+        {
             // destroy self if an instance is already present to ensure there is only one manager
             Destroy(gameObject);
             return;
+        }
+        //Initialize the Dictionary for references
+        initItemDict ??= new();
+        foreach (var item in initItemList)
+        {
+            initItemDict.Add(item.itemName, item);
         }
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.A)) {
-            InventoryItem item = InventoryItem.Create(initItemList.Apple);
+            InventoryItem item = InventoryItem.Create(initItemDict["Apple"]);
             AddItem(item, 1);
         }
         if (Input.GetKeyDown(KeyCode.B)) {
-            InventoryItem item = InventoryItem.Create(initItemList.Banana);
+            InventoryItem item = InventoryItem.Create(initItemDict["Banana"]);
             AddItem(item, 1);
         }
         if (Input.GetKeyDown(KeyCode.R)) {
@@ -80,7 +89,6 @@ public class InventoryManager : MonoBehaviour {
             }
         }
         StatsUIManager.Instance.UpdateUI();
-
         TriggerChange();
     }
 
@@ -136,5 +144,35 @@ public class InventoryManager : MonoBehaviour {
 
     public void TriggerChange() {
         OnInventoryChange?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        items.Clear();
+        foreach (var item in gameData.inventoryItems)
+        {
+            InventoryItem inventoryItem = InventoryItem.Create(initItemDict[item.itemName]);
+            inventoryItem.count = item.count;
+            inventoryItem.slotNumber = item.slot;
+            items.Add(item.itemName, inventoryItem);
+        }
+        Debug.Log("Loaded Data");
+        FunctionTimer.CreateGlobalTimer(()=>OnInventoryChange?.Invoke(this, EventArgs.Empty),0.01f);
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        //Saving inventory Items
+        gameData.inventoryItems.Clear();
+        foreach (KeyValuePair<string, InventoryItem> pair in items)
+        {
+            ItemSaveData data = new()
+            {
+                itemName = pair.Key,
+                count = pair.Value.count,
+                slot = pair.Value.slotNumber
+            };
+            gameData.inventoryItems.Add(data);
+        }
     }
 }

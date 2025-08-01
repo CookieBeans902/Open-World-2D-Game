@@ -1303,7 +1303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7562119564511255580
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2620,10 +2620,10 @@ RectTransform:
   - {fileID: 5729898564220997560}
   m_Father: {fileID: 7245415602934136850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 213.3313, y: -113.34492}
+  m_SizeDelta: {x: 326.6626, y: 126.689835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3559191125682929603
 CanvasRenderer:
@@ -2792,10 +2792,10 @@ RectTransform:
   - {fileID: 9177056397507814136}
   m_Father: {fileID: 7245415602934136850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 213.3313, y: -566.72455}
+  m_SizeDelta: {x: 326.6626, y: 126.689835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &769884840926318248
 CanvasRenderer:
@@ -5534,10 +5534,10 @@ RectTransform:
   - {fileID: 578636426765574909}
   m_Father: {fileID: 7245415602934136850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 213.3313, y: -340.03473}
+  m_SizeDelta: {x: 326.6626, y: 126.689835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5655249618222220146
 CanvasRenderer:
@@ -6276,15 +6276,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 670021512896029742}
     - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetAsActiveQuest
       objectReference: {fileID: 0}
     - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: QuestManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795448510712721099, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SlideUp, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8103297169744671633, guid: 1117a686825c9dd49bd13ab96080d890, type: 3}
       propertyPath: m_Name

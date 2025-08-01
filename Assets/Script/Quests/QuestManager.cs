@@ -44,13 +44,19 @@ public class QuestManager : MonoBehaviour, IDataPersistence
             activeMainQuest = new QuestInstance(mainQuestList[0]);
             questUI.MainQuestUpdate(activeMainQuest);
             currentQuest = activeMainQuest;
-            questUI.CurrentQuestUpdateUI();
         }
     }
     QuestInstance GetQuestByID(QuestID questID)
     {
-        availableSideQuests.TryGetValue(questID, out QuestInstance quest);
-        return quest;
+        if ((int)questID < 100)
+        {
+            return activeMainQuest;
+        }
+        else
+        {
+            availableSideQuests.TryGetValue(questID, out QuestInstance quest);
+            return quest;
+        }
     }
     /// <summary>
     /// Uses the QuestID of the list of Sidequests to begin the sidequest
@@ -72,7 +78,7 @@ public class QuestManager : MonoBehaviour, IDataPersistence
         }
         if (previousIncomplete)
         {
-            // QuestError();
+            Debug.Log("Error dependancies not satisified");
             return;
         }
         if (!activeSideQuests.Contains(sideQuest))
@@ -150,6 +156,10 @@ public class QuestManager : MonoBehaviour, IDataPersistence
         QuestID id = gameData.mainQuestInfo.questID;
         activeMainQuest = new QuestInstance(mainQuestList[(int)id]);
         activeMainQuest.SetObjectiveStates(gameData.mainQuestInfo);
+        questUI.MainQuestUpdate(activeMainQuest);
+        //Loading Current Quest
+        currentQuest = GetQuestByID(gameData.currentQuestID);
+        questUI.CurrentQuestUpdateUI();
     }
 
     public void SaveData(GameData gameData)
@@ -174,6 +184,8 @@ public class QuestManager : MonoBehaviour, IDataPersistence
             savedAmount = activeMainQuest.CurrObjective.currentAmount
         };
         gameData.mainQuestInfo = mainQuestSave;
+        //Saving QuestID
+        gameData.currentQuestID = currentQuest.QuestID;
     }
     public void UpdateCurrentQuestUI() => questUI.CurrentQuestUpdateUI();
 }

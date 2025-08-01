@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using TMPro;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +36,7 @@ public class HudManager : MonoBehaviour {
 
     private void Start() {
         InventoryManager.Instance.OnInventoryChange += UpdateActiveItems;
+        Debug.Log("Added the function");
         StatsUIManager.Instance.OnSkillChange += UpdateActiveSkills;
         StatsUIManager.Instance.OnStatChange += UpdatePlayerStats;
     }

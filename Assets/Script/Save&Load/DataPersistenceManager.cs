@@ -34,9 +34,12 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         gameData = new GameData();
+    }
+    public void NewSaveGame()
+    {
+        gameData = new GameData();
         SaveGame();
         Debug.Log("Destroyed previous save and creating a new one");
-        LoadGame();
     }
     public void LoadGame()
     {

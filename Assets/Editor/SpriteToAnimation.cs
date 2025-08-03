@@ -6,11 +6,11 @@ using System.IO;
 
 public class SpriteToAnimationWindow : EditorWindow {
     private string sourcePathRoot = "Assets/Sprites/Characters/";
-    private string savePathRoot = "Assets/Animations/";
+    private string savePathRoot = "Assets/Animations/Characters/";
     private string sourceFolder = "";
     private string saveFolder = "";
 
-    private string[] subfolders = { "idle", "walk", "slash", "islash", "thrust", "smash", "shoot", "hurt" };
+    private string[] subfolders = { "idle", "walk", "slash", "islash", "thrust", "smash", "shoot", "hurt", "cast" };
     static private int ppu = 64;
 
     private ClipSettingsDatabase settingsDatabase;
@@ -84,17 +84,22 @@ public class SpriteToAnimationWindow : EditorWindow {
 
     [System.Obsolete]
     private void CreateAllClips() {
-        string animatorFolderPath = Path.Combine(savePathRoot, saveFolder);
-        string baseName = char.ToLower(sourceFolder[0]) + sourceFolder.Substring(1);
-        Debug.Log(baseName);
+        string fullFolderPath = Path.Combine(savePathRoot, saveFolder).Replace("\\", "/");
+        string[] folders = saveFolder.Split('/');
 
-        // Ensure folder exists
-        if (!AssetDatabase.IsValidFolder(animatorFolderPath)) {
-            AssetDatabase.CreateFolder(savePathRoot.TrimEnd('/'), saveFolder);
+        string currentPath = savePathRoot;
+        foreach (string folder in folders) {
+            string newPath = Path.Combine(currentPath, folder).Replace("\\", "/");
+            if (!AssetDatabase.IsValidFolder(newPath)) {
+                AssetDatabase.CreateFolder(currentPath, folder);
+            }
+            currentPath = newPath;
         }
 
+
+
         // Create Animator Controller
-        string controllerPath = Path.Combine(animatorFolderPath, $"controller.controller");
+        string controllerPath = Path.Combine(fullFolderPath, $"controller.controller");
         var controller = AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
         if (controller.layers.Length == 0) controller.AddLayer("Base Layer");
         var stateMachine = controller.layers[0].stateMachine;
@@ -154,7 +159,7 @@ public class SpriteToAnimationWindow : EditorWindow {
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log("Assets created at " + animatorFolderPath);
+        Debug.Log("Assets created at " + fullFolderPath);
     }
 
     private AnimationClip CreateAnimationClip(string clipName, List<Sprite> sprites, ClipSettings clipSettings) {

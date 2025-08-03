@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
   m_Name: DrakeAnimations
   m_EditorClassIdentifier: 
-  IdleDown: {fileID: 7400000, guid: 3029068582173584688739071eafdf42, type: 2}
-  IdleLeft: {fileID: 7400000, guid: 0f0de665b11c5b54fa96c6c9c0a4bd2b, type: 2}
-  IdleRight: {fileID: 7400000, guid: 32a044e33833fb74782ebd44ae871acb, type: 2}
-  IdleUp: {fileID: 7400000, guid: 339959701ccef5f4a8031dd61de912ad, type: 2}
-  MoveDown: {fileID: 7400000, guid: e6633f13f247b15478ae5089de66c249, type: 2}
-  MoveLeft: {fileID: 7400000, guid: cd531aa4b5997b846a94b2df7c519c77, type: 2}
-  MoveRight: {fileID: 7400000, guid: 49be3ee7f0adb6c44b488e0775ab4de2, type: 2}
-  MoveUp: {fileID: 7400000, guid: 25129d2254ac0dd4ca44d15e65a8d084, type: 2}
-  SlashDown: {fileID: 7400000, guid: eeb8af696465d4946b1f1e249d2f1044, type: 2}
-  SlashLeft: {fileID: 7400000, guid: 32b0ec8db58a4ad4190b56e709c48371, type: 2}
-  SlashRight: {fileID: 7400000, guid: f07e34533bcd96c46a95c3dd413df9f8, type: 2}
-  SlashUp: {fileID: 7400000, guid: 7c86452352ecae842a7d15804c32977e, type: 2}
+  IdleDown: {fileID: 7400000, guid: eecb2ddea5492624993e22939d4daaf3, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 15a1531387033c049aa105e0f0f6989c, type: 2}
+  IdleRight: {fileID: 7400000, guid: 5499a716962112b44a7cf529280292d2, type: 2}
+  IdleUp: {fileID: 7400000, guid: e39b13f5225d22847a38ecc3cf507408, type: 2}
+  MoveDown: {fileID: 7400000, guid: 3e45e0b421ded3a44b4fb2bb1306b265, type: 2}
+  MoveLeft: {fileID: 7400000, guid: fa0923381177fa54f9f3f72702c50cf5, type: 2}
+  MoveRight: {fileID: 7400000, guid: 50a59b8165f74db43bde15501636c547, type: 2}
+  MoveUp: {fileID: 7400000, guid: da05d423b92c35c41aaa49aeacd486ff, type: 2}
+  SlashDown: {fileID: 7400000, guid: 21d3be2d29f23c448bb9a2d0d9e01e6b, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 8af3260836491ed4094bab0133850f8c, type: 2}
+  SlashRight: {fileID: 7400000, guid: ca25600952ae8ca459bea42489b23cd7, type: 2}
+  SlashUp: {fileID: 7400000, guid: c9951dd94294db146b107eec1f344713, type: 2}
   ISlashDown: {fileID: 0}
   ISlashLeft: {fileID: 0}
   ISlashRight: {fileID: 0}

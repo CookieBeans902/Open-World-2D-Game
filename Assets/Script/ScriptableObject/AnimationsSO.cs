@@ -31,4 +31,9 @@ public class AnimationsSO : ScriptableObject {
     public AnimationClip ShootLeft;
     public AnimationClip ShootRight;
     public AnimationClip ShootUp;
+
+    public AnimationClip CastDown;
+    public AnimationClip CastLeft;
+    public AnimationClip CastRight;
+    public AnimationClip CastUp;
 }

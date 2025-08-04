@@ -4,11 +4,16 @@ using Pathfinding;
 
 using UnityEngine;
 
-public class StayAndAttack : MovementBase {
+public class StandAndAttack : MovementBase {
     private enum EnemyState {
         Random,
         Chase,
         Attack,
+    }
+
+    public enum AttackType {
+        Slash,
+        Thrust,
     }
 
     private Transform player;
@@ -18,12 +23,13 @@ public class StayAndAttack : MovementBase {
     private string waitTimerName;
     private string attackTimerName;
 
+    private int attackPhase = 0;
     private bool isAttacking;
     private float elapsed = 0;
 
     private EnemyState state;
 
-    [SerializeField] private bool moveBackToCentre;
+    [SerializeField] private AttackType attackType;
     [SerializeField] private bool moveInSteps;
 
     [SerializeField] private float speed;
@@ -69,7 +75,19 @@ public class StayAndAttack : MovementBase {
                 MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
                 break;
             case EnemyState.Attack:
-                AttackPlayer();
+                if (attackPhase != 2) {
+                    float dist = Vector2.Distance(player.position, transform.position);
+
+                    if (dist <= 2 && attackPhase != 1) attackPhase = 1;
+                    if (dist > 2 && attackPhase != 0) attackPhase = 0;
+
+                    if (attackPhase == 0) {
+                        MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
+                    }
+                    else if (attackPhase == 1) {
+                        AttackPlayer();
+                    }
+                }
                 break;
         }
 
@@ -115,20 +133,43 @@ public class StayAndAttack : MovementBase {
     }
 
     private void AttackPlayer() {
-        if (isAttacking) return;
-
-        meleeAttack.Slash();
-        agent.canMove = false;
-        isAttacking = true;
-
-        // Vector2 dir = player.position - transform.position;
-        // Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
-        // playerRb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
+        float time = 0.3f;
+        attackPhase = 2;
 
         FunctionTimer.CreateSceneTimer(() => {
-            agent.canMove = true;
-            isAttacking = false;
-        }, attackDelay);
+            agent.SetPath(null);
+            agent.canMove = false;
+            ExecuteAttack();
+
+            FunctionTimer.CreateSceneTimer(() => {
+                agent.canMove = true;
+                Vector2 c = player.position;
+                Vector2 dir = ((Vector2)transform.position - c).normalized;
+                Vector2 target = c + (dir * (attackRadius * 0.9f));
+                agent.canMove = true;
+                seeker.StartPath(transform.position, target);
+
+                FunctionTimer.CreateSceneTimer(() => {
+                    attackPhase = 0;
+                }, time);
+            }, time);
+        }, time);
+    }
+
+    private void ExecuteAttack() {
+        Vector2 faceDir = player.position - transform.position;
+
+        if (Vector2.Angle(Vector2.right, faceDir) <= 45)
+            faceDir = Vector2.right;
+        else if (Vector2.Angle(Vector2.left, faceDir) <= 45)
+            faceDir = Vector2.left;
+        else if (Vector2.Angle(Vector2.up, faceDir) <= 45)
+            faceDir = Vector2.up;
+        else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
+            faceDir = Vector2.down;
+
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, 2);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, 2);
     }
 
     private void ClearTimers() {

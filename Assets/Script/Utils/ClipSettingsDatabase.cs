@@ -10,6 +10,7 @@ public class ClipSettingsDatabase : ScriptableObject {
     public ClipSettings smash;
     public ClipSettings shoot;
     public ClipSettings hurt;
+    public ClipSettings cast;
 
     public ClipSettings Get(string key) {
         switch (key) {
@@ -21,6 +22,7 @@ public class ClipSettingsDatabase : ScriptableObject {
             case "smash": return smash;
             case "shoot": return shoot;
             case "hurt": return hurt;
+            case "cast": return cast;
             default:
                 Debug.LogWarning($"ClipSettingsDatabase: Unknown key '{key}'");
                 return null;
@@ -37,6 +39,7 @@ public class ClipSettingsDatabase : ScriptableObject {
             case "smash": smash = value; break;
             case "shoot": shoot = value; break;
             case "hurt": hurt = value; break;
+            case "cast": cast = value; break;
             default:
                 Debug.LogWarning($"ClipSettingsDatabase: Unknown key '{key}'");
                 break;

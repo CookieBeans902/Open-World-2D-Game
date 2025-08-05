@@ -6,13 +6,17 @@ public class CircleAndAttack : MovementBase {
     private enum EnemyState {
         Random,
         Chase,
-        Circle,
+        Attack,
+    }
+
+    public enum AttackType {
+        Slash,
+        Thrust,
     }
 
     private Transform player;
     private MeleeAttack meleeAttack;
     private FunctionTimer chaseTimer;
-    private FunctionTimer circleTimer;
     private string chaseTimerName;
     private string waitTimerName;
     private string circleTimerName;
@@ -27,7 +31,7 @@ public class CircleAndAttack : MovementBase {
 
     private EnemyState state;
 
-    [SerializeField] private bool moveBackToCentre;
+    [SerializeField] AttackType attackType;
 
     [SerializeField] private float speed;
     [SerializeField] private float chaseSpeed;
@@ -70,7 +74,7 @@ public class CircleAndAttack : MovementBase {
             case EnemyState.Chase:
                 MoveToTarget(player, updateTime, ref chaseTimer, chaseTimerName);
                 break;
-            case EnemyState.Circle:
+            case EnemyState.Attack:
                 CirclePlayer();
                 break;
         }
@@ -90,12 +94,12 @@ public class CircleAndAttack : MovementBase {
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist <= circleRadius && state != EnemyState.Circle) {
+        else if (dist <= circleRadius && state != EnemyState.Attack) {
             ClearTimers();
             agent.SetPath(null);
             seeker.StartPath(transform.position, transform.position);
             agent.maxSpeed = circleSpeed;
-            state = EnemyState.Circle;
+            state = EnemyState.Attack;
 
             AttackPlayer();
         }
@@ -124,17 +128,18 @@ public class CircleAndAttack : MovementBase {
 
     private void AttackPlayer() {
         if (!agent.canMove) agent.canMove = true;
+
         if (attackPhase == 0) {
             Vector2 c = player.position;
             float angle = Random.Range(-120, 120);
             Vector2 dir = Quaternion.Euler(0, 0, angle) * ((Vector2)transform.position - c).normalized;
-            Vector2 target = c + dir;
+            Vector2 target = c + dir * 1.5f;
 
             seeker.StartPath(transform.position, target);
             attackPhase = 1;
 
             FunctionTimer.CreateSceneTimer(() => {
-                GetComponent<MeleeAttack>().Slash();
+                ExecuteAttack();
 
                 FunctionTimer.CreateSceneTimer(() => {
                     Vector2 target = c + (dir * (circleRadius - 0.3f));
@@ -155,8 +160,24 @@ public class CircleAndAttack : MovementBase {
             }, 0.3f);
         }
     }
+
+    private void ExecuteAttack() {
+        Vector2 faceDir = player.position - transform.position;
+
+        if (Vector2.Angle(Vector2.right, faceDir) <= 45)
+            faceDir = Vector2.right;
+        else if (Vector2.Angle(Vector2.left, faceDir) <= 45)
+            faceDir = Vector2.left;
+        else if (Vector2.Angle(Vector2.up, faceDir) <= 45)
+            faceDir = Vector2.up;
+        else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
+            faceDir = Vector2.down;
+
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, 2);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, 2);
+    }
     public override Vector2 GetMoveDir() {
-        if (state == EnemyState.Circle) {
+        if (state == EnemyState.Attack) {
             Vector2 dir = player.position - transform.position;
 
             if (Vector2.Angle(Vector2.right, dir) <= 45)

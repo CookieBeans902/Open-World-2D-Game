@@ -13,14 +13,11 @@ public class RunAndHeal : MovementBase {
     private FunctionTimer runTimer;
     private string runTimerName;
     private string waitTimerName;
-    // private string attackTimerName;
 
-    // private bool isAttacking;
     private float elapsed = 0;
 
     private EnemyState state;
 
-    [SerializeField] private bool moveBackToCentre;
 
     [SerializeField] private float speed;
     [SerializeField] private float runSpeed;
@@ -37,7 +34,7 @@ public class RunAndHeal : MovementBase {
     private void Awake() {
         InitBasicComponents();
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
-        runTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        runTimerName = "RunTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         agent.maxSpeed = speed;
         updateTime = 0.02f;
@@ -98,7 +95,22 @@ public class RunAndHeal : MovementBase {
             elapsed += Time.deltaTime;
         }
         else {
-            // Heal Logic
+            Vector2 dir = player.position - transform.position;
+            if (Vector2.Angle(Vector2.right, dir) <= 45)
+                dir = Vector2.right;
+            else if (Vector2.Angle(Vector2.left, dir) <= 45)
+                dir = Vector2.left;
+            else if (Vector2.Angle(Vector2.up, dir) <= 45)
+                dir = Vector2.up;
+            else if (Vector2.Angle(Vector2.down, dir) <= 45)
+                dir = Vector2.down;
+
+            EnemyAnimation anim = GetComponent<EnemyAnimation>();
+            anim.PlayCastAnimation(dir);
+
+            FunctionTimer.CreateSceneTimer(() => {
+            }, anim.GetCastAnimationTime());
+            elapsed = 0;
         }
     }
 }

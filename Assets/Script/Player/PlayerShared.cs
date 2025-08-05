@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerShared : MonoBehaviour {
     public Transform visual;
-    public Transform healthbar;
+    public Healthbar healthbar;
     public Rigidbody2D rb;
     public Collider2D collider2d;
     public Animator animator;

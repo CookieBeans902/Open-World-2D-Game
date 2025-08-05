@@ -10,7 +10,7 @@ public class DragonBehaviour : MovementBase {
     }
 
     private Transform player;
-    // private MeleeAttack meleeAttack;
+    private MeleeAttack meleeAttack;
     private FunctionTimer chaseTimer;
     private string chaseTimerName;
     private string waitTimerName;
@@ -32,6 +32,7 @@ public class DragonBehaviour : MovementBase {
     [SerializeField] private float attackRadius;
 
     [SerializeField] private float attackDelay;
+    [SerializeField] private float spread;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
 
@@ -53,7 +54,7 @@ public class DragonBehaviour : MovementBase {
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        // meleeAttack = GetComponent<MeleeAttack>();
+        meleeAttack = GetComponent<MeleeAttack>();
     }
 
     private void Update() {
@@ -164,8 +165,10 @@ public class DragonBehaviour : MovementBase {
         attackPhase = 2;
 
         FunctionTimer.CreateSceneTimer(() => {
+            EnemyStats stats = GetComponent<EnemyStats>();
+
             FireBreath fireBreath = Instantiate(fireBreathPref).GetComponent<FireBreath>();
-            fireBreath.Setup(firePoint.position, dir);
+            fireBreath.Setup(firePoint.position, dir, stats.atk * 0.7f, stats.luck, LayerMask.GetMask("Player"));
 
             FunctionTimer.CreateSceneTimer(() => {
                 fixDir = false;
@@ -187,7 +190,9 @@ public class DragonBehaviour : MovementBase {
             faceDir = Vector2.up;
         else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
             faceDir = Vector2.down;
-        GetComponent<MeleeAttack>().Slash(faceDir, 3);
+
+        EnemyStats stats = GetComponent<EnemyStats>();
+        GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
     }
 
     private void ClearTimers() {

@@ -5,6 +5,9 @@ using Game.Utils;
 using UnityEngine;
 
 public class FireBreath : MonoBehaviour {
+    private int targetMasks;
+    private float atk;
+    private float luck;
     [SerializeField] private Animator anim;
     [SerializeField] private AnimationClip start;
     [SerializeField] private AnimationClip end;
@@ -12,9 +15,11 @@ public class FireBreath : MonoBehaviour {
     [SerializeField] private SpriteRenderer sprite;
     private float elapsed = 0;
 
-    private void OnTriggerStay2D(Collider2D collision) {
-        IStats stats = collision.GetComponent<IStats>();
-        if (collision.CompareTag("Player") && stats != null) DealDamage(stats);
+    private void OnTriggerStay2D(Collider2D collider) {
+        IStats stats = collider.GetComponent<IStats>();
+        int curMask = 1 << collider.gameObject.layer;
+
+        if (stats != null && (curMask & targetMasks) != 0) DealDamage(stats);
     }
 
     private void DealDamage(IStats stats) {
@@ -22,15 +27,19 @@ public class FireBreath : MonoBehaviour {
             elapsed += Time.deltaTime;
         }
         else {
-            stats.TakeDamage(10, 10);
+            stats.TakeDamage(atk, luck);
             elapsed = 0;
         }
     }
 
-    public void Setup(Vector2 s, Vector2 dir) {
+    public void Setup(Vector2 s, Vector2 dir, float atk, float luck, int targetMasks) {
         sprite = GetComponent<SpriteRenderer>();
         if (Vector2.Angle(Vector2.up, dir) <= 45) sprite.sortingOrder = -1;
         else sprite.sortingOrder = 1;
+
+        this.targetMasks = targetMasks;
+        this.atk = atk;
+        this.luck = luck;
 
         transform.position = s;
         transform.right = dir;

@@ -35,7 +35,10 @@ public class StandAndThrow : MovementBase {
     [SerializeField] private float throwTime;
     [SerializeField] private Transform centre;
 
+    [SerializeField] private Transform hand;
     [SerializeField] private Transform boomarangPref;
+
+    [SerializeField] private SpriteRenderer visual;
 
     private float updateTime;
 
@@ -132,13 +135,24 @@ public class StandAndThrow : MovementBase {
             else if (Vector2.Angle(Vector2.down, dir) <= 45)
                 dir = Vector2.down;
 
+            hand.right = dir;
+            if (dir == Vector2.up) visual.sortingLayerID = SortingLayer.NameToID("AboveChar");
+
             EnemyAnimation anim = GetComponent<EnemyAnimation>();
             anim.PlayShootAnimation(dir);
 
             FunctionTimer.CreateSceneTimer(() => {
-                Boomarang boomarang = Instantiate(boomarangPref).GetComponent<Boomarang>();
-                boomarang.transform.position = transform.position;
-                boomarang.Setup((player.position - transform.position).normalized, 14, 12, LayerMask.GetMask("Player"));
+                Projectile boomarang = Instantiate(boomarangPref).GetComponent<Projectile>();
+                boomarang.transform.position = hand.GetChild(0).position;
+
+                Vector2 dir = (player.position - hand.GetChild(0).position).normalized;
+                EnemyStats stats = GetComponent<EnemyStats>();
+
+                boomarang.Setup(dir, 14, 12, stats.atk, stats.luck, LayerMask.GetMask("Player"));
+
+                FunctionTimer.CreateSceneTimer(() => {
+                    if (dir == Vector2.up) visual.sortingLayerID = SortingLayer.NameToID("Character");
+                }, 0.3f);
             }, anim.GetShootAnimationTime() * 0.3f);
 
             elapsed = 0;

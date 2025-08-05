@@ -33,8 +33,6 @@ public class CharacterManager : MonoBehaviour {
     void Start() {
         characters = new List<Character>();
         AddCharacter(initCharacterList.Character1);
-        // AddCharacter(initCharacterList.Character2);
-        // AddCharacter(initCharacterList.Character3);
     }
 
     private void Update() {

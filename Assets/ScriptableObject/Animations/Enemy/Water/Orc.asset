@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Orc
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 51b907f2487d5294b99870ec100a867c, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 75aef8ed960161e4db79fccee40dca1e, type: 2}
+  IdleRight: {fileID: 7400000, guid: 34c30f71bd789724281935ac771b86c3, type: 2}
+  IdleUp: {fileID: 7400000, guid: 1a9703a2d68c9f147a1208e3ed339365, type: 2}
+  MoveDown: {fileID: 7400000, guid: d646c934a83e07141ba8e6b9c3b51e03, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 6f64a94fe10c6cc4cbcff5bcf513fefd, type: 2}
+  MoveRight: {fileID: 7400000, guid: 0c99ea07a81333d4eb13da9547b21a63, type: 2}
+  MoveUp: {fileID: 7400000, guid: 83a725ac5c7666343b782be1fda22a78, type: 2}
+  SlashDown: {fileID: 7400000, guid: e71b0e1e41084894a9c7c13a84c26e19, type: 2}
+  SlashLeft: {fileID: 7400000, guid: d727406d6e3427f4493b1a38d7e3f8f7, type: 2}
+  SlashRight: {fileID: 7400000, guid: 7505d93233db92b4391035cbab6b48df, type: 2}
+  SlashUp: {fileID: 7400000, guid: 1077a61a906d50e4bb115baf3b81b598, type: 2}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}

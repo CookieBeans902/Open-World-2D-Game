@@ -41,6 +41,8 @@ public class CircleAndAttack : MovementBase {
     [SerializeField] private float chaseRadius;
     [SerializeField] private float circleRadius;
 
+    [SerializeField] private float spread;
+    [SerializeField] private float range;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
 
@@ -142,7 +144,7 @@ public class CircleAndAttack : MovementBase {
                 ExecuteAttack();
 
                 FunctionTimer.CreateSceneTimer(() => {
-                    Vector2 target = c + (dir * (circleRadius - 0.3f));
+                    Vector2 target = c + (dir * (circleRadius * 0.9f));
                     seeker.StartPath(transform.position, target);
 
                     FunctionTimer.CreateSceneTimer(() => {
@@ -173,8 +175,11 @@ public class CircleAndAttack : MovementBase {
         else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
             faceDir = Vector2.down;
 
-        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, 2);
-        else GetComponent<MeleeAttack>().Thrust(faceDir, 2);
+        EnemyStats stats = GetComponent<EnemyStats>();
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck);
+
+        Debug.Log("Attacked");
     }
     public override Vector2 GetMoveDir() {
         if (state == EnemyState.Attack) {

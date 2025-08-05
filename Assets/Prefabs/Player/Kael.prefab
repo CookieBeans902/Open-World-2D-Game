@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 4979293041993571704}
   - component: {fileID: 3144363624258621555}
   - component: {fileID: 1266152904495348236}
-  - component: {fileID: 353191225047325355}
   - component: {fileID: 4688288137888162124}
   - component: {fileID: 8437628701304965331}
   - component: {fileID: 3392787165050767196}
@@ -268,22 +267,11 @@ MonoBehaviour:
   rb: {fileID: 5545554928546188360}
   collider2d: {fileID: 2906791807905362707}
   animator: {fileID: 6014681454999749089}
-  playerMove: {fileID: 8649004592994887518}
-  playerAnim: {fileID: 4979293041993571704}
-  playerInteract: {fileID: 3144363624258621555}
+  move: {fileID: 0}
+  anim: {fileID: 0}
+  interact: {fileID: 0}
   attack: {fileID: 8437628701304965331}
---- !u!114 &353191225047325355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383181712952733690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ad178bdf020a9479479fe6dbae5919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  charId: 0
 --- !u!114 &4688288137888162124
 MonoBehaviour:
   m_ObjectHideFlags: 0

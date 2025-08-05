@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba11866266cee94a8ae894ba58fe755, type: 3}
+  m_Name: Kael
+  m_EditorClassIdentifier: 
+  characterName: Kael
+  characterClass: 0
+  canDualWeild: 0
+  curLvl: 1
+  maxLvl: 50
+  currExp: 0
+  maxExp:
+    init: 100
+    final: 200
+    pow: 1
+  baseMhp:
+    init: 100
+    final: 150
+    pow: 1
+  baseAtk:
+    init: 3
+    final: 12
+    pow: 1
+  baseMatk:
+    init: 3
+    final: 12
+    pow: 1
+  baseDef:
+    init: 2
+    final: 8
+    pow: 1
+  baseMdef:
+    init: 2
+    final: 8
+    pow: 1
+  baseAgi:
+    init: 2
+    final: 7
+    pow: 1
+  baseLuck:
+    init: 3
+    final: 7
+    pow: 1
+  head: {fileID: 0}
+  body: {fileID: 0}
+  boots: {fileID: 0}
+  hand1: {fileID: 0}
+  hand2: {fileID: 0}
+  accessory: {fileID: 0}
+  skills: []

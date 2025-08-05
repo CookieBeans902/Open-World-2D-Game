@@ -5,37 +5,32 @@ using Game.Utils;
 using UnityEngine;
 
 public class LightningStrike : MonoBehaviour {
-    // [SerializeField] private Animator anim;
-    [SerializeField] private AnimationClip start;
-    // [SerializeField] private AnimationClip end;
-    // [SerializeField] private float damageRate = 0.01f;
-    // [SerializeField] private SpriteRenderer sprite;
-    // private float elapsed = 0;
+    private int targetMasks;
+    private float atk;
+    private float luck;
+    [SerializeField] private AnimationClip clip;
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        IStats stats = collision.GetComponent<IStats>();
-        if (collision.CompareTag("Player") && stats != null) stats.TakeDamage(10, 10);
+    void OnTriggerEnter2D(Collider2D collider) {
+        IStats stats = collider.GetComponent<IStats>();
+        int curMask = 1 << collider.gameObject.layer;
+        if (stats != null && (curMask & targetMasks) != 0) {
+            stats.TakeDamage(atk, luck);
+        }
     }
 
-    // private void DealDamage(IStats stats) {
-    //     if (elapsed < damageRate) {
-    //         elapsed += Time.deltaTime;
-    //     }
-    //     else {
-    //         stats.TakeDamage(10, 10);
-    //         elapsed = 0;
-    //     }
-    // }
+    public void Setup(Vector2 pos, float atk, float luck, int targetMasks) {
+        transform.position = pos;
 
-    public void Setup(Vector2 s, Action onCOmplete) {
-        transform.position = s;
-        SetDestroy(onCOmplete);
+        this.targetMasks = targetMasks;
+        this.atk = atk;
+        this.luck = luck;
+
+        SetDestroy();
     }
 
-    private void SetDestroy(Action onCOmplete) {
+    private void SetDestroy() {
         FunctionTimer.CreateSceneTimer(() => {
-            onCOmplete();
             Destroy(gameObject);
-        }, start.length);
+        }, clip.length);
     }
 }

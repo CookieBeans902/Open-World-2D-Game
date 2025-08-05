@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Gaurd
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 786108dae46764d4fbb3fe507915c023, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 99bfd4f183e8e76438a1099fd10d2ec1, type: 2}
+  IdleRight: {fileID: 7400000, guid: f4b49159733a68d4b9ae64a54e2fc57b, type: 2}
+  IdleUp: {fileID: 7400000, guid: 06887c6a113dc34478a033d36d3087e7, type: 2}
+  MoveDown: {fileID: 7400000, guid: 8311b29eb4809ad4e8585e6e23d1c35c, type: 2}
+  MoveLeft: {fileID: 7400000, guid: cca6cdf64ea19984498293398e9ba887, type: 2}
+  MoveRight: {fileID: 7400000, guid: 909735db58757fa4bb0c127aac2266be, type: 2}
+  MoveUp: {fileID: 7400000, guid: 30f3e9d1c38bd2c4ebba6816d4f434f8, type: 2}
+  SlashDown: {fileID: 0}
+  SlashLeft: {fileID: 0}
+  SlashRight: {fileID: 0}
+  SlashUp: {fileID: 0}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 7400000, guid: 11bbeed3c2ec1ee4eb5572efe2b4375b, type: 2}
+  ThrustLeft: {fileID: 7400000, guid: 5412b91f22cd101499b7d43e788649f6, type: 2}
+  ThrustRight: {fileID: 7400000, guid: ea85103637a2f0d4fa95dac5786108c5, type: 2}
+  ThrustUp: {fileID: 7400000, guid: 9437bf0585d53284bad7ddd1a8b6a471, type: 2}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}

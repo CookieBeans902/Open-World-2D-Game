@@ -17,14 +17,13 @@ public class StandAndAttack : MovementBase {
     }
 
     private Transform player;
-    private MeleeAttack meleeAttack;
+
     private FunctionTimer chaseTimer;
     private string chaseTimerName;
     private string waitTimerName;
     private string attackTimerName;
 
     private int attackPhase = 0;
-    private bool isAttacking;
     private float elapsed = 0;
 
     private EnemyState state;
@@ -40,6 +39,8 @@ public class StandAndAttack : MovementBase {
     [SerializeField] private float attackRadius;
 
     [SerializeField] private float attackDelay;
+    [SerializeField] private float spread;
+    [SerializeField] private float range;
     [SerializeField] private float waitTime;
     [SerializeField] private float stepTime;
     [SerializeField] private Transform centre;
@@ -58,7 +59,6 @@ public class StandAndAttack : MovementBase {
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        meleeAttack = GetComponent<MeleeAttack>();
     }
 
     private void Update() {
@@ -168,8 +168,9 @@ public class StandAndAttack : MovementBase {
         else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
             faceDir = Vector2.down;
 
-        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, 2);
-        else GetComponent<MeleeAttack>().Thrust(faceDir, 2);
+        EnemyStats stats = GetComponent<EnemyStats>();
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck);
     }
 
     private void ClearTimers() {

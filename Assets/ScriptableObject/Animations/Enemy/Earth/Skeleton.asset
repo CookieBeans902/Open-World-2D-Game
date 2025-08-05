@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Skeleton
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 02c597bf600ae4f45be46cdd1c2cf483, type: 2}
+  IdleLeft: {fileID: 7400000, guid: cd16dfeb1f68ec044beb33acb855edfe, type: 2}
+  IdleRight: {fileID: 7400000, guid: e8ba543e1962cb742ad39bb002240f78, type: 2}
+  IdleUp: {fileID: 7400000, guid: 9650e69e7a2f8d64195bf6cd4aa5c559, type: 2}
+  MoveDown: {fileID: 7400000, guid: 4f933a0d7767e934bb66b4bc4c0e9162, type: 2}
+  MoveLeft: {fileID: 7400000, guid: f9ac7a44dbe8de8469927b24aba66300, type: 2}
+  MoveRight: {fileID: 7400000, guid: be21ec226b47fc94f8813037a28e2c69, type: 2}
+  MoveUp: {fileID: 7400000, guid: 3d650e5283cf9ea498fb780853aaae99, type: 2}
+  SlashDown: {fileID: 7400000, guid: 68a52c1556d30f04c8ebd5563ff91ebc, type: 2}
+  SlashLeft: {fileID: 7400000, guid: f7e715b2520259d4d9759139ffa6c7b0, type: 2}
+  SlashRight: {fileID: 7400000, guid: 1e9fae196b3de7a4faf08591adfd343f, type: 2}
+  SlashUp: {fileID: 7400000, guid: e5dccbe423fb4cb4e80986a00ad943fa, type: 2}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 7400000, guid: 6f5fb8d201288f84cbe88b2bda96bc15, type: 2}
+  CastLeft: {fileID: 7400000, guid: 4def90636abb3014c9e612abb8506a79, type: 2}
+  CastRight: {fileID: 7400000, guid: fc031edd8de95ff49886b5ac9681533a, type: 2}
+  CastUp: {fileID: 7400000, guid: 6f6a5d06d75358b4faefc41cff3693c8, type: 2}

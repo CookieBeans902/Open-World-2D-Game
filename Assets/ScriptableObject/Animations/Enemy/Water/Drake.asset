@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Drake
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 2a9d777669527394a9a5656d7dc32f36, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 8d448aa5872c0344ab97c92777519818, type: 2}
+  IdleRight: {fileID: 7400000, guid: 8140c3a208a122a4daf53a4ae258dac9, type: 2}
+  IdleUp: {fileID: 7400000, guid: 3b6b60dc1661160429558042c9357d09, type: 2}
+  MoveDown: {fileID: 7400000, guid: 433b794a58d466d4f95f523e630ee779, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 8542f9b211f06bf47bd096eb0ff79179, type: 2}
+  MoveRight: {fileID: 7400000, guid: 0f5bf6df49f8ba144a0870e77a468bba, type: 2}
+  MoveUp: {fileID: 7400000, guid: 1808b341f3ab5ce4b8358ed8fa143475, type: 2}
+  SlashDown: {fileID: 0}
+  SlashLeft: {fileID: 0}
+  SlashRight: {fileID: 0}
+  SlashUp: {fileID: 0}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 7400000, guid: 0b43a9dcf10bd8b42a26f8f7bc3d1a48, type: 2}
+  ShootLeft: {fileID: 7400000, guid: 8fe1d27eaf5d0bd4782afc092e1e7cc1, type: 2}
+  ShootRight: {fileID: 7400000, guid: 55f85a0fe0b6bf847817cbba13c56f6b, type: 2}
+  ShootUp: {fileID: 7400000, guid: 51478bc26866c744baabbadffc8edbb7, type: 2}
+  CastDown: {fileID: 7400000, guid: 71fa92fc9066a9049acb4f63d0b81cb2, type: 2}
+  CastLeft: {fileID: 7400000, guid: 3fee565e328c15e4789616e0c90aac67, type: 2}
+  CastRight: {fileID: 7400000, guid: bc3aced03c94c7249a293a334ff0f715, type: 2}
+  CastUp: {fileID: 7400000, guid: ae6ed745e645beb4c92dddabb0c8a677, type: 2}

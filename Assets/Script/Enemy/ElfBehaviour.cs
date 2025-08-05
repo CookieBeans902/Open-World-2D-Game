@@ -99,7 +99,7 @@ public class ElfBehaviour : MovementBase {
                     dir = Vector2.down;
 
                 float chance = Random.Range(0, 10);
-                if (chance < 4) LightningStrike(dir);
+                if (chance < 3) LightningStrike(dir);
                 else Shoot(dir);
                 break;
 
@@ -150,9 +150,13 @@ public class ElfBehaviour : MovementBase {
             wand.right = dir;
 
             FunctionTimer.CreateSceneTimer(() => {
-                Arrow lightning = Instantiate(lightningPref).GetComponent<Arrow>();
+                Projectile lightning = Instantiate(lightningPref).GetComponent<Projectile>();
                 lightning.transform.position = wand.GetChild(0).position;
-                lightning.Setup((player.position - wand.GetChild(0).position).normalized, 14, 12, LayerMask.GetMask("Player"));
+
+                Vector2 dir = (player.position - wand.GetChild(0).position).normalized;
+                EnemyStats stats = GetComponent<EnemyStats>();
+
+                lightning.Setup(dir, 14, 12, stats.atk, stats.luck, LayerMask.GetMask("Player"));
             }, anim.GetThrustAnimationTime());
 
             elapsed = 0;
@@ -170,7 +174,9 @@ public class ElfBehaviour : MovementBase {
             FunctionTimer.CreateSceneTimer(() => {
                 Vector2 pos = player.position;
                 LightningStrike lightningStrike = Instantiate(lightningStrikePref).GetComponent<LightningStrike>();
-                lightningStrike.Setup(pos, () => { });
+
+                EnemyStats stats = GetComponent<EnemyStats>();
+                lightningStrike.Setup(pos, stats.atk * 3, stats.luck, LayerMask.GetMask("Player"));
             }, anim.GetCastAnimationTime());
             elapsed = 0;
         }
@@ -202,8 +208,17 @@ public class ElfBehaviour : MovementBase {
         hasShield = true;
 
         FunctionTimer.CreateSceneTimer(() => {
+            float destroyTIme = 3;
+            EnemyStats stats = GetComponent<EnemyStats>();
+
             Shield shield = Instantiate(shieldPref, centrePoint).GetComponent<Shield>();
-            shield.Setup(3, () => hasShield = false);
+            shield.Setup(destroyTIme, stats.atk * 0.4f, stats.luck * 0.6f, LayerMask.GetMask("Player"));
+
+            stats.def *= 1.5f;
+            FunctionTimer.CreateSceneTimer(() => {
+                hasShield = false;
+                stats.def /= 1.5f;
+            }, destroyTIme);
         }, anim.GetCastAnimationTime());
     }
 

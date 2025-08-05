@@ -13,6 +13,11 @@ public class DisappearAndAttack : MovementBase {
         Attack,
     }
 
+    public enum AttackType {
+        Slash,
+        Thrust,
+    }
+
     private Transform player;
     private MeleeAttack meleeAttack;
     private FunctionTimer chaseTimer;
@@ -28,11 +33,11 @@ public class DisappearAndAttack : MovementBase {
     private int attackPhase = 0;
     private int sign = 1;
 
-    private EnemyState state;
     private Coroutine fadeCoroutine;
 
-    [SerializeField] private bool moveBackToCentre;
+    private EnemyState state;
 
+    [SerializeField] private AttackType attackType;
     [SerializeField] private float speed;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float circleSpeed;
@@ -41,6 +46,8 @@ public class DisappearAndAttack : MovementBase {
     [SerializeField] private float chaseRadius;
     [SerializeField] private float circleRadius;
 
+    [SerializeField] private float spread;
+    [SerializeField] private float range;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
 
@@ -205,8 +212,13 @@ public class DisappearAndAttack : MovementBase {
             seeker.StartPath(transform.position, target);
             attackPhase = 1;
 
+            Vector2 d = -player.GetComponent<Movement>().playerDir;
+            Vector2 pos = player.position + (Vector3)(d * 1.5f);
+
+            Collider2D collider = Physics2D.OverlapPoint(pos);
+
             float chance = Random.Range(0, 10);
-            if (chance < 3) {
+            if (collider == null && chance < 3) {
                 FunctionTimer.CreateSceneTimer(() => {
                     fadeCoroutine = StartCoroutine(fadein());
                 }, 0.2f);
@@ -247,7 +259,10 @@ public class DisappearAndAttack : MovementBase {
             faceDir = Vector2.up;
         else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
             faceDir = Vector2.down;
-        GetComponent<MeleeAttack>().Slash(faceDir);
+
+        EnemyStats stats = GetComponent<EnemyStats>();
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck);
     }
 
     public override Vector2 GetMoveDir() {

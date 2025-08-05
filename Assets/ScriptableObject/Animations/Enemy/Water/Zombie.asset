@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Zombie
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 71c16bad7c5f3b84c9a46606dfeeeeb6, type: 2}
+  IdleLeft: {fileID: 7400000, guid: f255ed452a65fd846899a98c1dd3cd0f, type: 2}
+  IdleRight: {fileID: 7400000, guid: a88fca464e9d30d48acb09eb1b964ea7, type: 2}
+  IdleUp: {fileID: 7400000, guid: 52954b4c9edc59c4d8f94d927285f6b9, type: 2}
+  MoveDown: {fileID: 7400000, guid: 8c72705f8698e9e4ab0f5fe0c6fd8010, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 8ad16d738c326014a996bf95a9107658, type: 2}
+  MoveRight: {fileID: 7400000, guid: f3171982f93ae59428081cb7ec3b5dbe, type: 2}
+  MoveUp: {fileID: 7400000, guid: b9aa768161af1f2479fe682d586b83f4, type: 2}
+  SlashDown: {fileID: 7400000, guid: 1578876005a167c42add0b6b4c47e81a, type: 2}
+  SlashLeft: {fileID: 7400000, guid: b06477ae3e79de5488b89332c0b1ba30, type: 2}
+  SlashRight: {fileID: 7400000, guid: 2a4a6ffdad9b5bb45a0078200099e3b1, type: 2}
+  SlashUp: {fileID: 7400000, guid: 23e5afc4a00507442a4b55ec28d78c53, type: 2}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}

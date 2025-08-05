@@ -1,6 +1,5 @@
 using Game.Utils;
 using UnityEngine;
-using States;
 using Unity.VisualScripting;
 
 public class Movement : MonoBehaviour, IDataPersistence {

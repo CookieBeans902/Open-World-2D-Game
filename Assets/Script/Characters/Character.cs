@@ -269,4 +269,9 @@ public class Character {
 
         return e;
     }
+
+    public void SetCurHp(float hp) {
+        hp = Mathf.Clamp(hp, 0, MHP);
+        curHp = (int)hp;
+    }
 }

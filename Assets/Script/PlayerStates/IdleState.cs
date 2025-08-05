@@ -1,14 +1,14 @@
-using UnityEngine;
-using States;
+// using UnityEngine;
+// using States;
 
-public class IdleState : PlayerState
-{
-    public override void Enter()
-    {
+// public class IdleState : PlayerState
+// {
+//     public override void Enter()
+//     {
         
-    }
-    public override void Exit()
-    {
+//     }
+//     public override void Exit()
+//     {
 
-    }
-}
+//     }
+// }

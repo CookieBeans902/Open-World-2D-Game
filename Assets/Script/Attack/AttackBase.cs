@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class AttackBase : MonoBehaviour {
-    protected void PerformSlash(Vector2 dir, float spread, int layerMask) {
+    protected void PerformSlash(Vector2 dir, float spread, float atk, float luck, int layerMask) {
         float height = 0, width = 0;
         float elongationFactor = 1.2f;
 
@@ -26,19 +26,13 @@ public class AttackBase : MonoBehaviour {
 
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0, layerMask);
 
-        // MeshHandler.DrawLineMesh(center - Vector2.right * width / 2, center + Vector2.right * width / 2, 1, 0.01f, 0.01f);
-        // MeshHandler.DrawLineMesh(center - Vector2.up * height / 2, center + Vector2.up * height / 2, 1, 0.01f, 0.01f);
-
         foreach (var hit in hits) {
             Debug.Log("Hit enemy: " + hit.name);
             IStats stats = hit.GetComponent<IStats>();
             Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
 
             if (stats != null) {
-                stats.TakeDamage(10, 10);
-            }
-            else {
-                Debug.Log("Stats component not attached");
+                stats.TakeDamage(atk, luck);
             }
 
             if (rb != null) {
@@ -50,7 +44,7 @@ public class AttackBase : MonoBehaviour {
 
     }
 
-    protected void PerformThrust(Vector2 dir, float range, int layerMask) {
+    protected void PerformThrust(Vector2 dir, float range, float atk, float luck, int layerMask) {
         float height = 0, width = 0;
         float compressionFactor = 0.3f;
 
@@ -75,18 +69,12 @@ public class AttackBase : MonoBehaviour {
 
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0, layerMask);
 
-        // MeshHandler.DrawLineMesh(center - Vector2.right * width / 2, center + Vector2.right * width / 2, 1, 0.01f, 0.01f);
-        // MeshHandler.DrawLineMesh(center - Vector2.up * height / 2, center + Vector2.up * height / 2, 1, 0.01f, 0.01f);
-
         foreach (var hit in hits) {
             IStats stats = hit.GetComponent<IStats>();
             Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
 
             if (stats != null) {
-                stats.TakeDamage(10, 10);
-            }
-            else {
-                Debug.Log("Stats component not attached");
+                stats.TakeDamage(atk, luck);
             }
 
             if (rb != null) {
@@ -97,11 +85,11 @@ public class AttackBase : MonoBehaviour {
         }
     }
 
-    protected void PerformShoot(GameObject ammo, Vector2 velocity, Vector3 start, float range, int layerMask) {
-        Arrow arrow = Instantiate(ammo).GetComponent<Arrow>();
-        arrow.transform.position = start;
-        if (arrow == null) return;
+    // protected void PerformShoot(GameObject ammo, Vector2 velocity, Vector3 start, float range, int layerMask) {
+    //     Arrow arrow = Instantiate(ammo).GetComponent<Arrow>();
+    //     arrow.transform.position = start;
+    //     if (arrow == null) return;
 
-        arrow.Setup(velocity.normalized, velocity.magnitude, range, layerMask);
-    }
+    //     arrow.Setup(velocity.normalized, velocity.magnitude, range, layerMask);
+    // }
 }

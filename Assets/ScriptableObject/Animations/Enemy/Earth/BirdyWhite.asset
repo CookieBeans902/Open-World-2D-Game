@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: BirdyWhite
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: cd2634fb628e71641b2252bdff1f5f52, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 70f03ad346ad82742897c09d67b7bd13, type: 2}
+  IdleRight: {fileID: 7400000, guid: cf6ffe95707e3bd429405c41b0b994ce, type: 2}
+  IdleUp: {fileID: 7400000, guid: fadfc62d8d8e1bf49b5a766f9fdcf4d0, type: 2}
+  MoveDown: {fileID: 7400000, guid: 850fd09d9dfbad146be4e2babf94d80b, type: 2}
+  MoveLeft: {fileID: 7400000, guid: ea174f8a32b171a4f90ed21f38ad15b4, type: 2}
+  MoveRight: {fileID: 7400000, guid: 83ecd7160ed6de84ca7690c58623bdcf, type: 2}
+  MoveUp: {fileID: 7400000, guid: 758d7d1f09e6d0342a66f3f8a52dfdef, type: 2}
+  SlashDown: {fileID: 0}
+  SlashLeft: {fileID: 0}
+  SlashRight: {fileID: 0}
+  SlashUp: {fileID: 0}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 7400000, guid: ddde70b239b40ba4cbccda5b61e0b232, type: 2}
+  ThrustLeft: {fileID: 7400000, guid: 9081d67323a9d6b4897897892adf2448, type: 2}
+  ThrustRight: {fileID: 7400000, guid: a41575d90b54b164f89dc34fddc69d3e, type: 2}
+  ThrustUp: {fileID: 7400000, guid: 099e8a9992309b246b007acaabdb5f77, type: 2}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}

@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Minotaur_hurt_0
+      name: hurt_000
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 40
-        height: 56
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ca2979ef9cfcd510800000000000000
-      internalID: 1575411733419862727
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minotaur_hurt_1
+      name: hurt_001
       rect:
         serializedVersion: 2
-        x: 82
+        x: 64
         y: 0
-        width: 39
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca0cb62903e0b8540800000000000000
-      internalID: 5011114612157563052
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minotaur_hurt_2
+      name: hurt_002
       rect:
         serializedVersion: 2
-        x: 146
+        x: 128
         y: 0
-        width: 39
-        height: 43
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4809c7b4a5e5f0e0800000000000000
-      internalID: -2236629144298780597
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minotaur_hurt_3
+      name: hurt_003
       rect:
         serializedVersion: 2
-        x: 210
+        x: 192
         y: 0
-        width: 35
-        height: 35
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fe05acddd248fb50800000000000000
-      internalID: 6627120372332695283
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Minotaur_hurt_4
+      name: hurt_004
       rect:
         serializedVersion: 2
-        x: 273
+        x: 256
         y: 0
-        width: 36
-        height: 37
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3132b159a56375d10800000000000000
-      internalID: 2114218312750277395
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -253,6 +253,11 @@ TextureImporter:
       Minotaur_hurt_2: -2236629144298780597
       Minotaur_hurt_3: 6627120372332695283
       Minotaur_hurt_4: 2114218312750277395
+      hurt_000: 0
+      hurt_001: 0
+      hurt_002: 0
+      hurt_003: 0
+      hurt_004: 0
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -167,6 +167,10 @@ public class EnemyAnimation : MonoBehaviour {
         return animationData.ShootDown?.length ?? 0;
     }
 
+    public float GetSlashAnimationTime() {
+        return animationData.SlashDown?.length ?? 0;
+    }
+
     public float GetThrustAnimationTime() {
         return animationData.ThrustDown?.length ?? 0;
     }

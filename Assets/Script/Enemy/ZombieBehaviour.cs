@@ -4,7 +4,7 @@ using Pathfinding;
 
 using UnityEngine;
 
-public class StandAndAttack : MovementBase {
+public class ZombieBehaviour : MovementBase {
     private enum EnemyState {
         Random,
         Chase,
@@ -26,7 +26,6 @@ public class StandAndAttack : MovementBase {
     private bool isAttacking;
 
     private EnemyState state;
-    private Vector2 prevPos;
 
     [SerializeField] private AttackType attackType;
 
@@ -37,7 +36,6 @@ public class StandAndAttack : MovementBase {
     [SerializeField] private float chaseRadius;
     [SerializeField] private float attackRadius;
 
-    [SerializeField] private float attackDelay;
     [SerializeField] private float spread;
     [SerializeField] private float range;
     [SerializeField] private float waitTime;
@@ -47,6 +45,19 @@ public class StandAndAttack : MovementBase {
     private float pathUpdateCooldown = 0.5f;
     private Vector2 lastPlayerPos;
 
+    // --- Step movement variables ---
+    [SerializeField] private float stepMin = 0.3f;
+    [SerializeField] private float stepMax = 0.5f;
+    [SerializeField] private float pauseMin = 0.2f;
+    [SerializeField] private float pauseMax = 0.4f;
+
+    [SerializeField] private float attackCooldown = 1.5f;
+
+    private float stepTimer = 0f;
+    private float currentStepDuration;
+    private float currentPauseDuration;
+    private bool isStepping = true;
+
     private void Awake() {
         InitBasicComponents();
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
@@ -54,7 +65,9 @@ public class StandAndAttack : MovementBase {
         attackTimerName = "AttackTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         agent.maxSpeed = speed;
-        prevPos = transform.position;
+
+        currentStepDuration = Random.Range(stepMin, stepMax);
+        currentPauseDuration = Random.Range(pauseMin, pauseMax);
     }
 
     private void Start() {
@@ -63,6 +76,7 @@ public class StandAndAttack : MovementBase {
     }
 
     private void Update() {
+        HandleStepTiming();
         HandleStates();
         UpdateState();
     }
@@ -74,9 +88,9 @@ public class StandAndAttack : MovementBase {
                 break;
 
             case EnemyState.Chase:
-                if (Time.time - lastPathUpdateTime >= pathUpdateCooldown &&
+                if (Time.time - lastPathUpdateTime >= pathUpdateCooldown ||
                     Vector2.Distance(player.position, lastPlayerPos) > 0.5f) {
-                    MoveToTarget(player, 0f, ref chaseTimer, chaseTimerName);
+                    MoveToTarget(player, 0.5f, ref chaseTimer, chaseTimerName);
                     lastPathUpdateTime = Time.time;
                     lastPlayerPos = player.position;
                 }
@@ -86,6 +100,8 @@ public class StandAndAttack : MovementBase {
                 if (!isAttacking) AttackPlayer();
                 break;
         }
+
+        Debug.Log(state);
     }
 
     private void UpdateState() {
@@ -107,11 +123,10 @@ public class StandAndAttack : MovementBase {
         else if (dist <= attackRadius - buffer && state != EnemyState.Attack) {
             ClearTimers();
             agent.SetPath(null);
-            seeker.StartPath(transform.position, transform.position);
             state = EnemyState.Attack;
-            prevPos = transform.position;
-            AttackPlayer();
         }
+
+
     }
 
     private void AttackPlayer() {
@@ -122,32 +137,42 @@ public class StandAndAttack : MovementBase {
     private void ExecuteAttack() {
         Vector2 faceDir = SnapToNearestDirection(player.position - transform.position);
 
-        agent.SetPath(null);
+        seeker.StartPath(transform.position, transform.position);
         agent.canMove = false;
 
-        EnemyAnimation anim = GetComponent<EnemyAnimation>();
-        EnemyStats stats = GetComponent<EnemyStats>();
+        var stats = GetComponent<EnemyStats>();
         var attack = GetComponent<MeleeAttack>();
 
-        if (attackType == AttackType.Slash)
-            attack.Slash(faceDir, spread, stats.atk, stats.luck);
-        else
-            attack.Thrust(faceDir, range, stats.atk, stats.luck);
-
-        float animTime = anim.GetSlashAnimationTime();
+        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck);
+        else attack.Thrust(faceDir, range, stats.atk, stats.luck);
 
         FunctionTimer.CreateSceneTimer(() => {
-            Vector2 retreatDir = (transform.position - player.position).normalized;
+            isAttacking = false;
             agent.canMove = true;
+        }, attackCooldown);
+    }
 
-            float diff = attackRadius - (prevPos - (Vector2)player.position).magnitude;
-            Vector2 pos = prevPos + retreatDir * ((diff > 0 ? diff : 0) - 0.2f);
 
-            seeker.StartPath(transform.position, pos);
+    private void HandleStepTiming() {
+        if (state == EnemyState.Attack) return;
+        stepTimer += Time.deltaTime;
 
-            float time = (pos - (Vector2)transform.position).magnitude / speed;
-            FunctionTimer.CreateSceneTimer(() => isAttacking = false, time + 0.2f);
-        }, animTime, attackTimerName);
+        if (isStepping) {
+            if (stepTimer >= currentStepDuration) {
+                isStepping = false;
+                stepTimer = 0f;
+                agent.canMove = false;
+                currentPauseDuration = Random.Range(pauseMin, pauseMax);
+            }
+        }
+        else {
+            if (stepTimer >= currentPauseDuration) {
+                isStepping = true;
+                stepTimer = 0f;
+                agent.canMove = true;
+                currentStepDuration = Random.Range(stepMin, stepMax);
+            }
+        }
     }
 
     private void ClearTimers() {

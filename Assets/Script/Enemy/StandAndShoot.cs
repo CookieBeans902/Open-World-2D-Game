@@ -126,15 +126,7 @@ public class StandAndShoot : MovementBase {
         }
         else {
             Vector2 dir = (player.position - transform.position).normalized;
-
-            if (Vector2.Angle(Vector2.right, dir) <= 45)
-                dir = Vector2.right;
-            else if (Vector2.Angle(Vector2.left, dir) <= 45)
-                dir = Vector2.left;
-            else if (Vector2.Angle(Vector2.up, dir) <= 45)
-                dir = Vector2.up;
-            else if (Vector2.Angle(Vector2.down, dir) <= 45)
-                dir = Vector2.down;
+            dir = SnapToNearestDirection(dir);
 
             if (dir == Vector2.up)
                 visual.sortingLayerID = SortingLayer.NameToID("AboveChar");
@@ -193,16 +185,7 @@ public class StandAndShoot : MovementBase {
     public override Vector2 GetMoveDir() {
         if (state == EnemyState.Attack) {
             Vector2 dir = player.position - transform.position;
-            Vector2 fixedDir = Vector2.right; ;
-
-            if (Vector2.Angle(Vector2.right, dir) <= 45)
-                fixedDir = Vector2.right;
-            else if (Vector2.Angle(Vector2.left, dir) <= 45)
-                fixedDir = Vector2.left;
-            else if (Vector2.Angle(Vector2.up, dir) <= 45)
-                fixedDir = Vector2.up;
-            else if (Vector2.Angle(Vector2.down, dir) <= 45)
-                fixedDir = Vector2.down;
+            Vector2 fixedDir = SnapToNearestDirection(dir);
 
             if (prevDir != fixedDir) {
                 prevDir = fixedDir;
@@ -214,5 +197,22 @@ public class StandAndShoot : MovementBase {
         }
 
         return base.GetMoveDir();
+    }
+
+    private Vector2 SnapToNearestDirection(Vector2 dir) {
+        dir.Normalize();
+        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
+        float maxDot = float.MinValue;
+        Vector2 bestDir = Vector2.right;
+
+        foreach (var d in directions) {
+            float dot = Vector2.Dot(dir, d);
+            if (dot > maxDot) {
+                maxDot = dot;
+                bestDir = d;
+            }
+        }
+
+        return bestDir;
     }
 }

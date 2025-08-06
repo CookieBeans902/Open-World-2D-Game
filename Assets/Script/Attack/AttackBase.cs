@@ -38,7 +38,7 @@ public class AttackBase : MonoBehaviour {
             if (rb != null) {
                 Vector2 forceDir = hit.transform.position - transform.position;
                 float forceMag = 4;
-                rb.AddForce(forceDir * forceMag, ForceMode2D.Impulse);
+                rb.AddForce(forceDir * forceMag * rb.mass, ForceMode2D.Impulse);
             }
         }
 

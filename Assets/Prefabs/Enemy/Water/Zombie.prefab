@@ -152,10 +152,11 @@ GameObject:
   - component: {fileID: 5793427791019570788}
   - component: {fileID: 1661636258749968301}
   - component: {fileID: 256674520745203258}
-  - component: {fileID: 6882864788022801178}
+  - component: {fileID: 5287850251345372166}
   - component: {fileID: 8848289868567617623}
   - component: {fileID: 5700149839189061738}
   - component: {fileID: 1562364573086990225}
+  - component: {fileID: 5594126314030358827}
   m_Layer: 11
   m_Name: Zombie
   m_TagString: Untagged
@@ -247,7 +248,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6882864788022801178
+--- !u!114 &5287850251345372166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,25 +257,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 4255067786661528904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4d9e221951e294f8da3d128d58cad9, type: 3}
+  m_Script: {fileID: 11500000, guid: a46d24a39d87ba54198744795fcc502c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endSep: 0.1
+  endSep: 0.3
   canMove: 0
   targetReached: 0
   attackType: 0
-  moveInSteps: 1
-  speed: 4
-  chaseSpeed: 4
-  randomRadius: 14
-  chaseRadius: 12
-  attackRadius: 3
-  attackDelay: 1
-  spread: 1
+  speed: 2
+  chaseSpeed: 2
+  randomRadius: 12
+  chaseRadius: 8
+  attackRadius: 1.5
+  spread: 1.5
   range: 0
   waitTime: 1
-  stepTime: 0.2
   centre: {fileID: 5793427791019570788}
+  stepMin: 0.4
+  stepMax: 0.6
+  pauseMin: 0.2
+  pauseMax: 0.4
+  attackCooldown: 1
 --- !u!114 &8848289868567617623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +323,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7701d6ba9c05b2a41aa4d4df375fe270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5594126314030358827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255067786661528904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5d1fcb6fbf5804aa058970ebc5d7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8564825705991250516
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +362,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 13, y: 13, z: 13}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5793427791019570788}

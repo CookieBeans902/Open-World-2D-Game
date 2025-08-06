@@ -95,24 +95,27 @@ public class DragonBehaviour : MovementBase {
     }
 
     private void UpdateState() {
-        float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist <= chaseRadius && dist > attackRadius && state != EnemyState.Chase) {
-            ClearTimers();
-            agent.maxSpeed = chaseSpeed;
-            agent.canMove = true;
-            state = EnemyState.Chase;
-        }
-        else if (dist > chaseRadius && state != EnemyState.Random) {
+        float dist = Vector2.Distance(player.position, transform.position);
+        float buffer = 0.1f;
+
+        if (dist > chaseRadius + buffer && state != EnemyState.Random) {
             ClearTimers();
             agent.maxSpeed = speed;
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist <= attackRadius && state != EnemyState.Attack) {
+        else if (dist <= chaseRadius - buffer && dist > attackRadius + buffer && state != EnemyState.Chase) {
+            ClearTimers();
+            agent.maxSpeed = chaseSpeed;
+            agent.canMove = true;
+            state = EnemyState.Chase;
+        }
+        else if (dist <= attackRadius - buffer && state != EnemyState.Attack) {
             ClearTimers();
             agent.SetPath(null);
             seeker.StartPath(transform.position, transform.position);
             state = EnemyState.Attack;
+            AttackPlayer();
         }
     }
 
@@ -181,15 +184,7 @@ public class DragonBehaviour : MovementBase {
 
     private void ExecuteAttack() {
         Vector2 faceDir = player.position - transform.position;
-
-        if (Vector2.Angle(Vector2.right, faceDir) <= 45)
-            faceDir = Vector2.right;
-        else if (Vector2.Angle(Vector2.left, faceDir) <= 45)
-            faceDir = Vector2.left;
-        else if (Vector2.Angle(Vector2.up, faceDir) <= 45)
-            faceDir = Vector2.up;
-        else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
-            faceDir = Vector2.down;
+        faceDir = SnapToNearestDirection(faceDir);
 
         EnemyStats stats = GetComponent<EnemyStats>();
         GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
@@ -206,17 +201,28 @@ public class DragonBehaviour : MovementBase {
             if (fixDir) return Vector2.zero;
 
             Vector2 dir = player.position - transform.position;
+            dir = SnapToNearestDirection(dir);
 
-            if (Vector2.Angle(Vector2.right, dir) <= 45)
-                return Vector2.right;
-            else if (Vector2.Angle(Vector2.left, dir) <= 45)
-                return Vector2.left;
-            else if (Vector2.Angle(Vector2.up, dir) <= 45)
-                return Vector2.up;
-            else if (Vector2.Angle(Vector2.down, dir) <= 45)
-                return Vector2.down;
+            return dir;
         }
 
         return base.GetMoveDir();
+    }
+
+    private Vector2 SnapToNearestDirection(Vector2 dir) {
+        dir.Normalize();
+        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
+        float maxDot = float.MinValue;
+        Vector2 bestDir = Vector2.right;
+
+        foreach (var d in directions) {
+            float dot = Vector2.Dot(dir, d);
+            if (dot > maxDot) {
+                maxDot = dot;
+                bestDir = d;
+            }
+        }
+
+        return bestDir;
     }
 }

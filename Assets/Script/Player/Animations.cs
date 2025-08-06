@@ -63,7 +63,8 @@ public class Animations : MonoBehaviour {
     public void PlaySlashAnimation(float waitTime) {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = 0;
+        float animTime = playerAnimations.SlashRight.length;
+        isAttacking = true;
 
         if (dir == Vector2.right) {
             newAnimation = playerAnimations.SlashRight.name;
@@ -80,13 +81,14 @@ public class Animations : MonoBehaviour {
 
         FunctionTimer.CreateSceneTimer(() => {
             shared.move.EnableMovement();
-        }, animTime + waitTime);
+            isAttacking = false;
+        }, animTime);
     }
 
     public void PlayISlashAnimation(float waitTime) {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = 0;
+        float animTime = playerAnimations.ISlashRight.length;
         isAttacking = true;
 
         if (dir == Vector2.right) {
@@ -111,7 +113,7 @@ public class Animations : MonoBehaviour {
     public void PlayThrustAnimation(float waitTime) {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = 0;
+        float animTime = playerAnimations.ThrustRight.length;
         isAttacking = true;
 
         if (dir == Vector2.right) {

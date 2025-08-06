@@ -31,7 +31,6 @@ public class PlayerAttack : AttackBase {
 
     private void Slash() {
         if (isAttacking) return;
-        Debug.Log(isAttacking);
 
         Character charData = CharacterManager.Instance?.characters[shared.charId];
         if (charData == null) return;

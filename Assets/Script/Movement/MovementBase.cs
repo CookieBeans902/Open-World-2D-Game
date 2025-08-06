@@ -20,7 +20,7 @@ public abstract class MovementBase : MonoBehaviour {
     protected float pathLength;
 
     // Final separation between from the target
-    [SerializeField] protected float endSep = 0.1f;
+    [SerializeField] protected float endSep = 0.3f;
 
     public bool canMove;
     public bool targetReached;

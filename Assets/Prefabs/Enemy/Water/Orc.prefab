@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 8848289868567617623}
   - component: {fileID: 5700149839189061738}
   - component: {fileID: 1562364573086990225}
+  - component: {fileID: -3296613653286969667}
   m_Layer: 11
   m_Name: Orc
   m_TagString: Untagged
@@ -263,7 +264,6 @@ MonoBehaviour:
   canMove: 0
   targetReached: 0
   attackType: 0
-  moveInSteps: 0
   speed: 4
   chaseSpeed: 6
   randomRadius: 10
@@ -273,7 +273,6 @@ MonoBehaviour:
   spread: 2
   range: 0
   waitTime: 1
-  stepTime: 0
   centre: {fileID: 5793427791019570788}
 --- !u!114 &8848289868567617623
 MonoBehaviour:
@@ -318,6 +317,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7701d6ba9c05b2a41aa4d4df375fe270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3296613653286969667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255067786661528904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5d1fcb6fbf5804aa058970ebc5d7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8564825705991250516

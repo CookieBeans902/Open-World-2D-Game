@@ -265,13 +265,13 @@ MonoBehaviour:
   targetReached: 0
   attackType: 0
   moveInSteps: 1
-  speed: 4
-  chaseSpeed: 6
+  speed: 2
+  chaseSpeed: 4
   randomRadius: 14
   chaseRadius: 10
   attackRadius: 1.5
   attackDelay: 1
-  spread: 1.5
+  spread: 1
   range: 0
   waitTime: 1
   stepTime: 0.2

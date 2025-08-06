@@ -165,15 +165,7 @@ public class CircleAndAttack : MovementBase {
 
     private void ExecuteAttack() {
         Vector2 faceDir = player.position - transform.position;
-
-        if (Vector2.Angle(Vector2.right, faceDir) <= 45)
-            faceDir = Vector2.right;
-        else if (Vector2.Angle(Vector2.left, faceDir) <= 45)
-            faceDir = Vector2.left;
-        else if (Vector2.Angle(Vector2.up, faceDir) <= 45)
-            faceDir = Vector2.up;
-        else if (Vector2.Angle(Vector2.down, faceDir) <= 45)
-            faceDir = Vector2.down;
+        faceDir = SnapToNearestDirection(faceDir);
 
         EnemyStats stats = GetComponent<EnemyStats>();
         if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
@@ -184,17 +176,27 @@ public class CircleAndAttack : MovementBase {
     public override Vector2 GetMoveDir() {
         if (state == EnemyState.Attack) {
             Vector2 dir = player.position - transform.position;
-
-            if (Vector2.Angle(Vector2.right, dir) <= 45)
-                return Vector2.right;
-            else if (Vector2.Angle(Vector2.left, dir) <= 45)
-                return Vector2.left;
-            else if (Vector2.Angle(Vector2.up, dir) <= 45)
-                return Vector2.up;
-            else if (Vector2.Angle(Vector2.down, dir) <= 45)
-                return Vector2.down;
+            dir = SnapToNearestDirection(dir);
+            return dir;
         }
 
         return base.GetMoveDir();
+    }
+
+    private Vector2 SnapToNearestDirection(Vector2 dir) {
+        dir.Normalize();
+        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
+        float maxDot = float.MinValue;
+        Vector2 bestDir = Vector2.right;
+
+        foreach (var d in directions) {
+            float dot = Vector2.Dot(dir, d);
+            if (dot > maxDot) {
+                maxDot = dot;
+                bestDir = d;
+            }
+        }
+
+        return bestDir;
     }
 }

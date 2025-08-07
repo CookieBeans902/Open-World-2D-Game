@@ -187,7 +187,7 @@ public class DragonBehaviour : MovementBase {
         faceDir = SnapToNearestDirection(faceDir);
 
         EnemyStats stats = GetComponent<EnemyStats>();
-        GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
+        GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
     }
 
     private void ClearTimers() {

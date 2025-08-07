@@ -20,10 +20,10 @@ MonoBehaviour:
   MoveLeft: {fileID: 7400000, guid: 8542f9b211f06bf47bd096eb0ff79179, type: 2}
   MoveRight: {fileID: 7400000, guid: 0f5bf6df49f8ba144a0870e77a468bba, type: 2}
   MoveUp: {fileID: 7400000, guid: 1808b341f3ab5ce4b8358ed8fa143475, type: 2}
-  SlashDown: {fileID: 0}
-  SlashLeft: {fileID: 0}
-  SlashRight: {fileID: 0}
-  SlashUp: {fileID: 0}
+  SlashDown: {fileID: 7400000, guid: 0b43a9dcf10bd8b42a26f8f7bc3d1a48, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 8fe1d27eaf5d0bd4782afc092e1e7cc1, type: 2}
+  SlashRight: {fileID: 7400000, guid: 55f85a0fe0b6bf847817cbba13c56f6b, type: 2}
+  SlashUp: {fileID: 7400000, guid: 51478bc26866c744baabbadffc8edbb7, type: 2}
   ISlashDown: {fileID: 0}
   ISlashLeft: {fileID: 0}
   ISlashRight: {fileID: 0}
@@ -32,10 +32,10 @@ MonoBehaviour:
   ThrustLeft: {fileID: 0}
   ThrustRight: {fileID: 0}
   ThrustUp: {fileID: 0}
-  ShootDown: {fileID: 7400000, guid: 0b43a9dcf10bd8b42a26f8f7bc3d1a48, type: 2}
-  ShootLeft: {fileID: 7400000, guid: 8fe1d27eaf5d0bd4782afc092e1e7cc1, type: 2}
-  ShootRight: {fileID: 7400000, guid: 55f85a0fe0b6bf847817cbba13c56f6b, type: 2}
-  ShootUp: {fileID: 7400000, guid: 51478bc26866c744baabbadffc8edbb7, type: 2}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
   CastDown: {fileID: 7400000, guid: 71fa92fc9066a9049acb4f63d0b81cb2, type: 2}
   CastLeft: {fileID: 7400000, guid: 3fee565e328c15e4789616e0c90aac67, type: 2}
   CastRight: {fileID: 7400000, guid: bc3aced03c94c7249a293a334ff0f715, type: 2}

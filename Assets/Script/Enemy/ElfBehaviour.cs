@@ -16,6 +16,7 @@ public class ElfBehaviour : MovementBase {
     private string runTimerName;
     private string chaseTimerName;
     private string waitTimerName;
+    private string attackTimerName;
 
     private float elapsed = 0;
 
@@ -31,7 +32,7 @@ public class ElfBehaviour : MovementBase {
 
     [SerializeField] private float randomRadius;
     [SerializeField] private float chaseRadius;
-    [SerializeField] private float shootRadius;
+    [SerializeField] private float attackRadius;
     [SerializeField] private float runRadius;
 
     [SerializeField] private float waitTime;
@@ -51,6 +52,7 @@ public class ElfBehaviour : MovementBase {
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
         runTimerName = "RunTimer" + gameObject.GetInstanceID();
         chaseTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        attackTimerName = "ChaseTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         canShield = true;
         agent.maxSpeed = speed;
@@ -100,36 +102,40 @@ public class ElfBehaviour : MovementBase {
 
     private void UpdateState() {
         float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist > chaseRadius && state != EnemyState.Random) {
+        float buffer = 0.1f;
+
+        if (dist > chaseRadius + buffer && state != EnemyState.Random) {
             ClearTimers();
+            seeker.StartPath(transform.position, transform.position);
             agent.maxSpeed = speed;
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist < chaseRadius && dist > shootRadius && state != EnemyState.Chase) {
+        else if (dist < chaseRadius - buffer && dist > attackRadius + buffer && state != EnemyState.Chase) {
             ClearTimers();
-            agent.maxSpeed = speed;
+            agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Chase;
         }
-        else if (dist <= shootRadius && dist > runRadius && state != EnemyState.Attack) {
+        else if (dist <= attackRadius - buffer && dist > runRadius + buffer && state != EnemyState.Attack) {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+            elapsed = 0;
+
             ClearTimers();
             agent.maxSpeed = speed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Attack;
         }
-        else if (dist <= runRadius && state != EnemyState.Run) {
+        else if (dist <= runRadius - buffer && state != EnemyState.Run) {
             ClearTimers();
             agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Run;
         }
-    }
-
-    private void ClearTimers() {
-        FunctionTimer.DestroySceneTimer(waitTimerName);
-        FunctionTimer.DestroySceneTimer(runTimerName);
-        FunctionTimer.DestroySceneTimer(chaseTimerName);
     }
 
     private void Shoot(Vector2 dir) {
@@ -149,7 +155,7 @@ public class ElfBehaviour : MovementBase {
                 EnemyStats stats = GetComponent<EnemyStats>();
 
                 lightning.Setup(dir, 14, 12, stats.atk, stats.luck, LayerMask.GetMask("Player"));
-            }, anim.GetThrustAnimationTime());
+            }, anim.GetThrustAnimationTime(), attackTimerName);
 
             elapsed = 0;
         }
@@ -169,7 +175,7 @@ public class ElfBehaviour : MovementBase {
 
                 EnemyStats stats = GetComponent<EnemyStats>();
                 lightningStrike.Setup(pos, stats.atk * 3, stats.luck, LayerMask.GetMask("Player"));
-            }, anim.GetCastAnimationTime());
+            }, anim.GetCastAnimationTime(), attackTimerName);
             elapsed = 0;
         }
     }
@@ -239,5 +245,12 @@ public class ElfBehaviour : MovementBase {
         }
 
         return bestDir;
+    }
+
+    private void ClearTimers() {
+        FunctionTimer.DestroySceneTimer(waitTimerName);
+        FunctionTimer.DestroySceneTimer(runTimerName);
+        FunctionTimer.DestroySceneTimer(chaseTimerName);
+        FunctionTimer.DestroySceneTimer(attackTimerName);
     }
 }

@@ -263,18 +263,16 @@ MonoBehaviour:
   endSep: 0.1
   canMove: 0
   targetReached: 0
-  attackType: 0
-  moveInSteps: 0
+  attackType: 1
   speed: 4
   chaseSpeed: 6
   randomRadius: 12
   chaseRadius: 6
-  attackRadius: 3
+  attackRadius: 1.5
   attackDelay: 1
   spread: 1.5
   range: 0
   waitTime: 1
-  stepTime: 0
   centre: {fileID: 5793427791019570788}
 --- !u!114 &8848289868567617623
 MonoBehaviour:
@@ -320,6 +318,7 @@ MonoBehaviour:
   def: 2
   agi: 6
   luck: 6
+  pushbackForce: 0
   healthbar: {fileID: 2978185981872290559}
 --- !u!114 &1562364573086990225
 MonoBehaviour:

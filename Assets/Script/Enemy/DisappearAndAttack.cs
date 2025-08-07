@@ -93,19 +93,21 @@ public class DisappearAndAttack : MovementBase {
 
     private void UpdateState() {
         float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist > chaseRadius && state != EnemyState.Random) {
+        float buffer = 0.1f;
+
+        if (dist > chaseRadius + buffer && state != EnemyState.Random) {
             ClearTimers();
             agent.maxSpeed = speed;
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist <= chaseRadius && dist > circleRadius && state != EnemyState.Chase) {
+        else if (dist <= chaseRadius - buffer && dist > circleRadius + buffer && state != EnemyState.Chase) {
             ClearTimers();
             agent.maxSpeed = chaseSpeed;
             agent.canMove = true;
             state = EnemyState.Chase;
         }
-        else if (dist <= circleRadius && state != EnemyState.Attack) {
+        else if (dist <= circleRadius - buffer && state != EnemyState.Attack) {
             ClearTimers();
             agent.SetPath(null);
             seeker.StartPath(transform.position, transform.position);
@@ -253,8 +255,8 @@ public class DisappearAndAttack : MovementBase {
         faceDir = SnapToNearestDirection(faceDir);
 
         EnemyStats stats = GetComponent<EnemyStats>();
-        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck);
-        else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck);
+        if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
+        else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
     }
 
     public override Vector2 GetMoveDir() {

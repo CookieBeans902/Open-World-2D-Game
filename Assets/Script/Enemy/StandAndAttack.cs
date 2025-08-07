@@ -129,12 +129,10 @@ public class StandAndAttack : MovementBase {
         EnemyStats stats = GetComponent<EnemyStats>();
         var attack = GetComponent<MeleeAttack>();
 
-        if (attackType == AttackType.Slash)
-            attack.Slash(faceDir, spread, stats.atk, stats.luck);
-        else
-            attack.Thrust(faceDir, range, stats.atk, stats.luck);
+        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
+        else attack.Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
 
-        float animTime = anim.GetSlashAnimationTime();
+        float animTime = attackType == AttackType.Slash ? anim.GetSlashAnimationTime() : anim.GetThrustAnimationTime();
 
         FunctionTimer.CreateSceneTimer(() => {
             Vector2 retreatDir = (transform.position - player.position).normalized;
@@ -148,12 +146,6 @@ public class StandAndAttack : MovementBase {
             float time = (pos - (Vector2)transform.position).magnitude / speed;
             FunctionTimer.CreateSceneTimer(() => isAttacking = false, time + 0.2f);
         }, animTime, attackTimerName);
-    }
-
-    private void ClearTimers() {
-        FunctionTimer.DestroySceneTimer(waitTimerName);
-        FunctionTimer.DestroySceneTimer(chaseTimerName);
-        FunctionTimer.DestroySceneTimer(attackTimerName);
     }
 
     public override Vector2 GetMoveDir() {
@@ -180,5 +172,11 @@ public class StandAndAttack : MovementBase {
         }
 
         return bestDir;
+    }
+
+    private void ClearTimers() {
+        FunctionTimer.DestroySceneTimer(waitTimerName);
+        FunctionTimer.DestroySceneTimer(chaseTimerName);
+        FunctionTimer.DestroySceneTimer(attackTimerName);
     }
 }

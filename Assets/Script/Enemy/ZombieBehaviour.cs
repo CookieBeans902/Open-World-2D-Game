@@ -100,8 +100,6 @@ public class ZombieBehaviour : MovementBase {
                 if (!isAttacking) AttackPlayer();
                 break;
         }
-
-        Debug.Log(state);
     }
 
     private void UpdateState() {
@@ -143,8 +141,8 @@ public class ZombieBehaviour : MovementBase {
         var stats = GetComponent<EnemyStats>();
         var attack = GetComponent<MeleeAttack>();
 
-        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck);
-        else attack.Thrust(faceDir, range, stats.atk, stats.luck);
+        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck,stats.pushbackForce);
+        else attack.Thrust(faceDir, range, stats.atk, stats.luck,stats.pushbackForce);
 
         FunctionTimer.CreateSceneTimer(() => {
             isAttacking = false;

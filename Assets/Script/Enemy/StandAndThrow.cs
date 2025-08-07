@@ -7,16 +7,16 @@ public class StandAndThrow : MovementBase {
         Random,
         Chase,
         Run,
-        Attack,
+        Throw,
     }
 
     private Transform player;
-    private MeleeAttack meleeAttack;
     private FunctionTimer runTimer;
     private FunctionTimer chaseTimer;
     private string runTimerName;
     private string chaseTimerName;
     private string waitTimerName;
+    private string attackTimerName;
 
     private float elapsed = 0;
 
@@ -47,6 +47,7 @@ public class StandAndThrow : MovementBase {
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
         runTimerName = "RunTimer" + gameObject.GetInstanceID();
         chaseTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        attackTimerName = "AttackTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         agent.maxSpeed = speed;
         updateTime = 0.02f;
@@ -54,7 +55,6 @@ public class StandAndThrow : MovementBase {
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        meleeAttack = GetComponent<MeleeAttack>();
     }
 
     private void Update() {
@@ -78,7 +78,7 @@ public class StandAndThrow : MovementBase {
 
                 RunFromTarget(player, runRadius, updateTime, ref runTimer, runTimerName);
                 break;
-            case EnemyState.Attack:
+            case EnemyState.Throw:
                 if (agent.canMove) agent.canMove = false;
                 Throw();
                 break;
@@ -87,36 +87,40 @@ public class StandAndThrow : MovementBase {
 
     private void UpdateState() {
         float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist > randomRadius && state != EnemyState.Random) {
+        float buffer = 0.1f;
+
+        if (dist > chaseRadius + buffer && state != EnemyState.Random) {
             ClearTimers();
+            seeker.StartPath(transform.position, transform.position);
             agent.maxSpeed = speed;
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist < randomRadius && dist > throwRadius && state != EnemyState.Chase) {
+        else if (dist < chaseRadius - buffer && dist > throwRadius + buffer && state != EnemyState.Chase) {
             ClearTimers();
-            agent.maxSpeed = speed;
+            agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Chase;
         }
-        else if (dist <= throwRadius && dist > runRadius && state != EnemyState.Attack) {
+        else if (dist <= throwRadius - buffer && dist > runRadius + buffer && state != EnemyState.Throw) {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+            elapsed = 0;
+
             ClearTimers();
             agent.maxSpeed = speed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
-            state = EnemyState.Attack;
+            state = EnemyState.Throw;
         }
-        else if (dist <= runRadius && state != EnemyState.Run) {
+        else if (dist <= runRadius - buffer && state != EnemyState.Run) {
             ClearTimers();
             agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Run;
         }
-    }
-
-    private void ClearTimers() {
-        FunctionTimer.DestroySceneTimer(waitTimerName);
-        FunctionTimer.DestroySceneTimer(runTimerName);
-        FunctionTimer.DestroySceneTimer(chaseTimerName);
     }
 
     private void Throw() {
@@ -126,9 +130,6 @@ public class StandAndThrow : MovementBase {
         else {
             Vector2 dir = player.position - transform.position;
             dir = SnapToNearestDirection(dir);
-
-            hand.right = dir;
-            if (dir == Vector2.up) visual.sortingLayerID = SortingLayer.NameToID("AboveChar");
 
             EnemyAnimation anim = GetComponent<EnemyAnimation>();
             anim.PlayShootAnimation(dir);
@@ -141,18 +142,14 @@ public class StandAndThrow : MovementBase {
                 EnemyStats stats = GetComponent<EnemyStats>();
 
                 boomarang.Setup(dir, 14, 12, stats.atk, stats.luck, LayerMask.GetMask("Player"));
-
-                FunctionTimer.CreateSceneTimer(() => {
-                    if (dir == Vector2.up) visual.sortingLayerID = SortingLayer.NameToID("Character");
-                }, 0.3f);
-            }, anim.GetShootAnimationTime() * 0.3f);
+            }, anim.GetShootAnimationTime() * 0.3f, attackTimerName);
 
             elapsed = 0;
         }
     }
 
     public override Vector2 GetMoveDir() {
-        if (state == EnemyState.Attack) {
+        if (state == EnemyState.Throw) {
             Vector2 dir = player.position - transform.position;
             Vector2 fixedDir = SnapToNearestDirection(dir);
 
@@ -183,5 +180,12 @@ public class StandAndThrow : MovementBase {
         }
 
         return bestDir;
+    }
+
+    private void ClearTimers() {
+        FunctionTimer.DestroySceneTimer(waitTimerName);
+        FunctionTimer.DestroySceneTimer(runTimerName);
+        FunctionTimer.DestroySceneTimer(chaseTimerName);
+        FunctionTimer.DestroySceneTimer(attackTimerName);
     }
 }

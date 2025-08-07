@@ -9,7 +9,7 @@ public class StandAndShoot : MovementBase {
         Random,
         Chase,
         Run,
-        Attack,
+        Shoot,
     }
 
     private Transform player;
@@ -17,6 +17,7 @@ public class StandAndShoot : MovementBase {
     private FunctionTimer chaseTimer;
     private string runTimerName;
     private string chaseTimerName;
+    private string attackTimerName;
     private string waitTimerName;
 
     private float elapsed = 0;
@@ -49,6 +50,7 @@ public class StandAndShoot : MovementBase {
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
         runTimerName = "RunTimer" + gameObject.GetInstanceID();
         chaseTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        attackTimerName = "AttackTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         agent.maxSpeed = speed;
         updateTime = 0.02f;
@@ -77,9 +79,9 @@ public class StandAndShoot : MovementBase {
                 extraSpeed = Mathf.Clamp(extraSpeed, 0, runSpeed * 0.4f);
                 agent.maxSpeed = runSpeed + extraSpeed;
 
-                RunFromTarget(player, runRadius, updateTime, ref runTimer, runTimerName);
+                RunFromTarget(player, runRadius * 0.4f, updateTime, ref runTimer, runTimerName);
                 break;
-            case EnemyState.Attack:
+            case EnemyState.Shoot:
                 if (agent.canMove) agent.canMove = false;
                 Shoot();
                 break;
@@ -88,36 +90,40 @@ public class StandAndShoot : MovementBase {
 
     private void UpdateState() {
         float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist > randomRadius && state != EnemyState.Random) {
+        float buffer = 0.1f;
+
+        if (dist > chaseRadius + buffer && state != EnemyState.Random) {
             ClearTimers();
+            seeker.StartPath(transform.position, transform.position);
             agent.maxSpeed = speed;
             agent.canMove = true;
             state = EnemyState.Random;
         }
-        else if (dist < randomRadius && dist > shootRadius && state != EnemyState.Chase) {
+        else if (dist < chaseRadius - buffer && dist > shootRadius + buffer && state != EnemyState.Chase) {
             ClearTimers();
-            agent.maxSpeed = speed;
+            agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Chase;
         }
-        else if (dist <= shootRadius && dist > runRadius && state != EnemyState.Attack) {
+        else if (dist <= shootRadius - buffer && dist > runRadius + buffer && state != EnemyState.Shoot) {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+            elapsed = 0;
+
             ClearTimers();
             agent.maxSpeed = speed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
-            state = EnemyState.Attack;
+            state = EnemyState.Shoot;
         }
-        else if (dist <= runRadius && state != EnemyState.Run) {
+        else if (dist <= runRadius - buffer && state != EnemyState.Run) {
             ClearTimers();
             agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Run;
         }
-    }
-
-    private void ClearTimers() {
-        FunctionTimer.DestroySceneTimer(waitTimerName);
-        FunctionTimer.DestroySceneTimer(runTimerName);
-        FunctionTimer.DestroySceneTimer(chaseTimerName);
     }
 
     private void Shoot() {
@@ -128,10 +134,10 @@ public class StandAndShoot : MovementBase {
             Vector2 dir = (player.position - transform.position).normalized;
             dir = SnapToNearestDirection(dir);
 
-            if (dir == Vector2.up)
-                visual.sortingLayerID = SortingLayer.NameToID("AboveChar");
-
             bow.right = dir;
+
+            seeker.StartPath(transform.position, transform.position);
+            agent.canMove = false;
 
             EnemyAnimation anim = GetComponent<EnemyAnimation>();
             anim.PlayShootAnimation(dir);
@@ -140,50 +146,19 @@ public class StandAndShoot : MovementBase {
                 Projectile arrow = Instantiate(arrowPref).GetComponent<Projectile>();
                 arrow.transform.position = bow.GetChild(0).position;
 
+                agent.canMove = true;
+
                 Vector2 targetDir = (player.position - bow.GetChild(0).position).normalized;
                 EnemyStats stats = GetComponent<EnemyStats>();
 
-                arrow.Setup(targetDir, 14, 42, stats.atk, stats.luck, LayerMask.GetMask("Player"));
-
-                FunctionTimer.CreateSceneTimer(() => {
-                    if (dir == Vector2.up)
-                        visual.sortingLayerID = SortingLayer.NameToID("Character");
-                }, 0.3f);
-            }, anim.GetShootAnimationTime());
-
+                arrow.Setup(targetDir, 14, 52, stats.atk, stats.luck, LayerMask.GetMask("Player"));
+            }, anim.GetShootAnimationTime(), attackTimerName);
             elapsed = 0;
         }
     }
 
-    private IEnumerator FlyToPlayer(Vector3 start, Vector3 target, Transform arrow) {
-        Vector2 dir = (target - start).normalized;
-        float t = 0;
-        float u = 10, a = 9.8f;
-        float reachTime = Vector2.Distance(target, start) / u;
-
-        while (t < reachTime) {
-            Vector2 p = (Vector2)start + (dir * u * t);
-
-            Vector3 vp = dir * u;
-            Vector3 vz = new Vector3(0, 0, u - 3 * a * t);
-
-            arrow.position = p;
-            arrow.right = (vp - vz).normalized;
-
-            float i = 1f, f = 0.5f;
-            float s = i + f * (u - vz.magnitude) / u;
-            arrow.localScale = Vector3.one * s;
-
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        arrow.position = target;
-        Destroy(arrow.gameObject);
-    }
-
     public override Vector2 GetMoveDir() {
-        if (state == EnemyState.Attack) {
+        if (state == EnemyState.Shoot) {
             Vector2 dir = player.position - transform.position;
             Vector2 fixedDir = SnapToNearestDirection(dir);
 
@@ -214,5 +189,12 @@ public class StandAndShoot : MovementBase {
         }
 
         return bestDir;
+    }
+
+    private void ClearTimers() {
+        FunctionTimer.DestroySceneTimer(waitTimerName);
+        FunctionTimer.DestroySceneTimer(runTimerName);
+        FunctionTimer.DestroySceneTimer(chaseTimerName);
+        FunctionTimer.DestroySceneTimer(attackTimerName);
     }
 }

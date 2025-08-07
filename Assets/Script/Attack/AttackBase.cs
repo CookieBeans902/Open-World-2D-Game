@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class AttackBase : MonoBehaviour {
-    protected void PerformSlash(Vector2 dir, float spread, float atk, float luck, int layerMask) {
+    protected void PerformSlash(Vector2 dir, float spread, float atk, float luck, int layerMask, float forceMag = 0) {
         float height = 0, width = 0;
         float elongationFactor = 1.2f;
 
@@ -37,14 +37,13 @@ public class AttackBase : MonoBehaviour {
 
             if (rb != null) {
                 Vector2 forceDir = hit.transform.position - transform.position;
-                float forceMag = 4;
                 rb.AddForce(forceDir * forceMag * rb.mass, ForceMode2D.Impulse);
             }
         }
 
     }
 
-    protected void PerformThrust(Vector2 dir, float range, float atk, float luck, int layerMask) {
+    protected void PerformThrust(Vector2 dir, float range, float atk, float luck, int layerMask, float forceMag = 0) {
         float height = 0, width = 0;
         float compressionFactor = 0.3f;
 
@@ -79,7 +78,6 @@ public class AttackBase : MonoBehaviour {
 
             if (rb != null) {
                 Vector2 forceDir = hit.transform.position - transform.position;
-                float forceMag = 4;
                 rb.AddForce(forceDir * forceMag, ForceMode2D.Impulse);
             }
         }

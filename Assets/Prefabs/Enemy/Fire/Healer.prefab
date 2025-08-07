@@ -260,15 +260,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7345dfadcff5d7e40b0849cd4480d253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endSep: 0.1
+  endSep: 0.3
   canMove: 0
   targetReached: 0
   speed: 4
   runSpeed: 6
-  randomRadius: 12
-  runRadius: 6
+  healAmount: 20
+  randomRadius: 6
+  runRadius: 4
+  healRadius: 8
   waitTime: 1
-  healTime: 1
+  healDelay: 2
   centre: {fileID: 5793427791019570788}
 --- !u!114 &8848289868567617623
 MonoBehaviour:
@@ -314,6 +316,7 @@ MonoBehaviour:
   def: 2
   agi: 6
   luck: 6
+  pushbackForce: 0
   healthbar: {fileID: 2978185981872290559}
 --- !u!114 &1562364573086990225
 MonoBehaviour:

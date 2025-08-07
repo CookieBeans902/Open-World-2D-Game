@@ -22,7 +22,36 @@ public class PlayerStats : MonoBehaviour, IStats {
             float hp = charData.curHp - dmg;
             charData.SetCurHp(hp);
 
-            Debug.Log(dmg);
+            PopupManager.RequestPopup(dmg.ToString(), transform.position, 10, Color.red);
+        }
+        else {
+            PopupManager.RequestPopup("miss", transform.position, 8, Color.white); ;
+        }
+
+        shared.healthbar.SetFill((float)charData.curHp / charData.MHP);
+    }
+
+    public void RecoverHp(float amount) {
+        Character charData = CharacterManager.Instance?.characters[shared.charId];
+        if (charData == null) return;
+
+        float luck = charData.LUCK;
+        float a = amount - charData.DEF * 2 + charData.MHP * 0.2f;
+        float chance = Random.Range(0, luck + 10);
+
+        if (chance <= luck) {
+            a *= Random.Range(1.1f, 1.4f);
+            a = Mathf.Clamp(a, 0, charData.MHP - charData.curHp);
+            float hp = charData.curHp + a;
+            charData.SetCurHp(hp);
+            PopupManager.RequestPopup(a.ToString(), transform.position, 10, Color.green);
+        }
+        else {
+            a *= Random.Range(0.8f, 1f);
+            a = Mathf.Clamp(a, 0, charData.MHP - charData.curHp);
+            float hp = charData.curHp + a;
+            charData.SetCurHp(hp);
+            PopupManager.RequestPopup(a.ToString(), transform.position, 10, Color.green);
         }
 
         shared.healthbar.SetFill((float)charData.curHp / charData.MHP);

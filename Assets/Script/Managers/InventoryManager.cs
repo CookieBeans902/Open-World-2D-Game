@@ -135,7 +135,7 @@ public class InventoryManager : MonoBehaviour,IDataPersistence {
     }
 
 
-    /// <summary>Show all the items in the distionary, useful while debugging</summary>
+    /// <summary>Show all the items in the dictionary, useful while debugging</summary>
     private void ShowItems() {
         foreach (KeyValuePair<string, InventoryItem> i in items) {
             Debug.Log(i.Key + " " + i.Value.count);
@@ -174,5 +174,12 @@ public class InventoryManager : MonoBehaviour,IDataPersistence {
             };
             gameData.inventoryItems.Add(data);
         }
+    }
+
+    public int GetAmountFromInventory(string id)
+    {
+        items.TryGetValue(id, out InventoryItem item);
+        if (item == null) return 0;
+        return item.count;
     }
 }

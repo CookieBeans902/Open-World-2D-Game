@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Collectible", menuName = "Scriptable Objects/Collectible")]
+[CreateAssetMenu(fileName = "CollectibleSO", menuName = "Scriptable Objects/CollectibleSO")]
 public class CollectibleSO : ScriptableObject
 {
     public Countables collectibleID;

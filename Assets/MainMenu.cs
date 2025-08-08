@@ -5,11 +5,23 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour, IDataPersistence
 {
+    public static MainMenu Instance { get; set; }
     public int sceneIndex;
     [SerializeField] Button newGame;
     [SerializeField] Button loadGame;
     [SerializeField] Button options;
     [SerializeField] Button quit;
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void Start()
     {
         if (!DataPersistenceManager.Instance.HasGameData())
@@ -19,11 +31,7 @@ public class MainMenu : MonoBehaviour, IDataPersistence
     }
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
         Application.Quit();
-#endif
     }
 
     public void OnNewGame()
@@ -32,20 +40,10 @@ public class MainMenu : MonoBehaviour, IDataPersistence
         DataPersistenceManager.Instance.NewGame();
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
     }
-    public void LoadData(GameData gameData)
-    {
-        this.sceneIndex = gameData.sceneIndex;
-    }
-
-    public void SaveData(GameData gameData)
-    {
-        gameData.sceneIndex = this.sceneIndex;
-    }
     public void OnLoadGame()
     {
         DisableMenuButtons();
         DataPersistenceManager.Instance.LoadGame();
-        SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
     }
     void DisableMenuButtons()
     {
@@ -53,5 +51,15 @@ public class MainMenu : MonoBehaviour, IDataPersistence
         loadGame.interactable = false;
         options.interactable = false;
         quit.interactable = false;
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        this.sceneIndex = gameData.sceneIndex;
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        //Nothing to save here
     }
 }

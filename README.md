@@ -8,11 +8,11 @@ Follow the link below to install the game -
 
 **Will be updated soon**
 
-After installing the file, unzip it to get the build file. Open the folder and you will find a Unity Executable. Run the Unity executetable.
+After installing the file, unzip it to get the build file. Open the folder and you will find a Unity Executable. Run the Unity executable.
 Note that Windows might warn about the application being an unauthorized app running the game, but you can safely ignore the warning.
 
 ## Unity Project
 If you want to open the Unity project, simply clone this repo into your local storage. It should have all the necessary componenents. However, if you do face any issues, please raise an issue.
 ## Contributing
 
-Pull requests are welcome, with a proper description of what you have changed and are contributing . For major changes, please open an issue so we can discuss on the changes that you wish to make.
+Pull requests are welcome, with a proper description of what you have changed and are contributing. For major changes, please open an issue so we can discuss on the changes that you wish to make.

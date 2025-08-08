@@ -282,6 +282,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117827133}
   m_CullTransparentMesh: 1
+--- !u!1001 &208318241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2138683427}
+    m_Modifications:
+    - target: {fileID: 220725562648845366, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -204.84515
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.307739
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.1550045
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
 --- !u!1 &220761829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1978,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028462026}
   m_CullTransparentMesh: 1
+--- !u!4 &1139270831 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6096062021245404812, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+  m_PrefabInstance: {fileID: 208318241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1187494034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,6 +2112,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 300292640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188910784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4820626534262960450, guid: 226b93c440389c24fa7511fc9ee8c8b2, type: 3}
+  m_PrefabInstance: {fileID: 208318241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbb5ea87138e454fb04f47128905fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1256879671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,6 +3198,7 @@ RectTransform:
   - {fileID: 1028462027}
   - {fileID: 220761831}
   - {fileID: 1873499677}
+  - {fileID: 1139270831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3348,6 +3422,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5633416558611185646}
         m_TargetAssemblyTypeName: ButtonHover, Assembly-CSharp
         m_MethodName: SFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1188910784}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: StartExistTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

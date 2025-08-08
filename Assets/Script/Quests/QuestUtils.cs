@@ -27,8 +27,16 @@ public class ObjectiveState
     }
     public string GetObjectiveDesc()
     {
-        if(objective is CountableObjSO countable) {
-            return countable.objectiveDesc + $" <{currentAmount}/{countable.desiredAmount}>";
+        if (objective is CountableObjSO countable)
+        {
+            if (countable.CountableType == Countables.Enemy)
+            {
+                return countable.objectiveDesc + $" <{currentAmount}/{countable.desiredAmount}>";
+            }
+            else
+            {
+                currentAmount = InventoryManager.Instance.GetAmountFromInventory(countable.CountableType.ToString());
+            }
         }
         return objective.objectiveDesc;
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterManager : MonoBehaviour {
+public class CharacterManager : MonoBehaviour,IDataPersistence {
     public static CharacterManager Instance { get; private set; }
 
     /* A scriptable Object which has a list of characters already defined for easy addition and removal of characters,
@@ -68,5 +68,15 @@ public class CharacterManager : MonoBehaviour {
         if (index < 0 || index >= characters.Count)
             return;
         characters.RemoveAt(index);
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        
     }
 }

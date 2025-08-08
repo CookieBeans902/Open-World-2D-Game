@@ -3,6 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class InventoryItem {
     public ItemType itemType;
+    public EffectType effectType;
     public Sprite icon;
     public string itemName;
     public string itemDesc;
@@ -13,6 +14,7 @@ public class InventoryItem {
     public int count;
     public int buyPrice;
     public int sellPrice;
+    public int effectValue;
     public float cooldownTIme;
 
     public int slotNumber = -1;
@@ -28,6 +30,7 @@ public class InventoryItem {
 
         InventoryItem i = new InventoryItem {
             itemType = item.itemType,
+            effectType = item.effectType,
             icon = item.icon,
             itemName = item.itemName,
             itemDesc = item.itemDesc,
@@ -35,9 +38,10 @@ public class InventoryItem {
             canDestroy = item.canDestroy,
             canSell = item.canSell,
             maxStack = item.maxStack,
-            count = 1, // default item count
+            count = 1,
             buyPrice = item.buyPrice,
             sellPrice = item.sellPrice,
+            effectValue = item.effectValue,
             equipment = item.equipment,
             cooldownTIme = item.cooldownTime
         };

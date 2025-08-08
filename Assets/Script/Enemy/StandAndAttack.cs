@@ -133,6 +133,7 @@ public class StandAndAttack : MovementBase {
         else attack.Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
 
         float animTime = attackType == AttackType.Slash ? anim.GetSlashAnimationTime() : anim.GetThrustAnimationTime();
+        player.GetComponent<PlayerMove>().DisableMovement();
 
         FunctionTimer.CreateSceneTimer(() => {
             Vector2 retreatDir = (transform.position - player.position).normalized;
@@ -142,6 +143,7 @@ public class StandAndAttack : MovementBase {
             Vector2 pos = prevPos + retreatDir * ((diff > 0 ? diff : 0) - 0.2f);
 
             seeker.StartPath(transform.position, pos);
+            player.GetComponent<PlayerMove>().EnableMovement();
 
             float time = (pos - (Vector2)transform.position).magnitude / speed;
             FunctionTimer.CreateSceneTimer(() => isAttacking = false, time + 0.2f);

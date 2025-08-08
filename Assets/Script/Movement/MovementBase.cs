@@ -255,4 +255,9 @@ public abstract class MovementBase : MonoBehaviour {
         canMove = true;
         agent.canMove = true;
     }
+
+    public void FreezeMovement() {
+        seeker.StartPath(transform.position, transform.position);
+        agent.canMove = false;
+    }
 }

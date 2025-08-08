@@ -8,7 +8,11 @@ public class Collectible : MonoBehaviour {
     private float elapsed = 0;
     private float increaseFactor = 7;
     private float flightTime;
-    void OnTriggerEnter2D(Collider2D collider) {
+
+    [SerializeField] private int count = 1;
+    [SerializeField] private ItemSO item;
+    void OnTriggerStay2D(Collider2D collider) {
+        if (!reached) return;
         if (collider != null) {
             int l = 1 << collider.gameObject.layer;
             if ((l & LayerMask.GetMask("Player")) != 0) target = collider.transform;
@@ -23,7 +27,12 @@ public class Collectible : MonoBehaviour {
             transform.position += (Vector3)dir * (Time.deltaTime * increaseFactor);
             increaseFactor += Time.deltaTime * 2f;
 
-            if ((transform.position - target.position).magnitude <= 0.3f) Destroy(gameObject);
+            if ((transform.position - target.position).magnitude <= 0.3f) {
+                PopupManager.RequestItemPopup(item.name, count, item.icon, transform.position, Color.white, 4);
+                InventoryManager.Instance?.AddItem(InventoryItem.Create(item), count);
+
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -39,11 +48,11 @@ public class Collectible : MonoBehaviour {
         }
     }
 
-    public void Jump(float xrange, float yrange, float flightTime) {
+    public void Setup(float speed, float flightTime) {
         this.flightTime = flightTime;
 
-        float vx = Random.Range(-xrange, xrange);
-        float vy = Random.Range(-yrange * 0.3f, yrange);
+        float vx = Random.Range(-speed, speed);
+        float vy = Random.Range(-speed, speed);
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;

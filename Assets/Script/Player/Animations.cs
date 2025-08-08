@@ -13,6 +13,9 @@ public class Animations : MonoBehaviour {
     private string newAnimation;
     private bool isMoving;
     private bool isAttacking;
+
+    private const string attack_speed_multiplier = "attack_speed_multiplier";
+    private const string move_speed_multiplier = "move_speed_multiplier";
     private void Start() {
         input = GameInputManager.Instance;
         shared = GetComponent<PlayerShared>();
@@ -29,6 +32,7 @@ public class Animations : MonoBehaviour {
         if (isAttacking) return;
 
         isMoving = input.GetMovementVectorNormalized() != Vector2.zero;
+        shared.animator.SetFloat(move_speed_multiplier, shared.moveSpeedFactor);
         Vector2 dir = shared.move.playerDir;
         if (!isMoving) {
             if (dir == Vector2.right) {
@@ -60,10 +64,11 @@ public class Animations : MonoBehaviour {
         }
     }
 
-    public void PlaySlashAnimation(float waitTime) {
+    public void PlaySlashAnimation() {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = playerAnimations.SlashRight.length;
+        float animTime = playerAnimations.SlashRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
         isAttacking = true;
 
         if (dir == Vector2.right) {
@@ -85,10 +90,11 @@ public class Animations : MonoBehaviour {
         }, animTime);
     }
 
-    public void PlayISlashAnimation(float waitTime) {
+    public void PlayISlashAnimation() {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = playerAnimations.ISlashRight.length;
+        float animTime = playerAnimations.ISlashRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
         isAttacking = true;
 
         if (dir == Vector2.right) {
@@ -110,10 +116,11 @@ public class Animations : MonoBehaviour {
         }, animTime);
     }
 
-    public void PlayThrustAnimation(float waitTime) {
+    public void PlayThrustAnimation() {
         shared.move.DisableMovement();
         Vector2 dir = shared.move.playerDir;
-        float animTime = playerAnimations.ThrustRight.length;
+        float animTime = playerAnimations.ThrustRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
         isAttacking = true;
 
         if (dir == Vector2.right) {
@@ -169,10 +176,10 @@ public class Animations : MonoBehaviour {
     }
 
     public float GetSlashAnimationTime() {
-        return playerAnimations.SlashDown?.length ?? 0;
+        return playerAnimations.SlashDown?.length / shared.attackSpeedFactor ?? 0;
     }
 
     public float GetThrustAnimationTime() {
-        return playerAnimations.ThrustDown?.length ?? 0;
+        return playerAnimations.ThrustDown?.length / shared.attackSpeedFactor ?? 0;
     }
 }

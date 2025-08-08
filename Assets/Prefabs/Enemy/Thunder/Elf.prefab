@@ -332,7 +332,7 @@ MonoBehaviour:
   runSpeed: 4
   randomRadius: 12
   chaseRadius: 10
-  shootRadius: 8
+  attackRadius: 0
   runRadius: 4
   waitTime: 1
   shootTime: 1.5
@@ -386,6 +386,7 @@ MonoBehaviour:
   def: 2
   agi: 6
   luck: 6
+  pushbackForce: 0
   healthbar: {fileID: 2978185981872290559}
 --- !u!114 &1562364573086990225
 MonoBehaviour:

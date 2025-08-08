@@ -9,6 +9,7 @@ public class EnemyAnimation : MonoBehaviour {
     private string newAnimation;
     private bool isMoving;
     private bool isAttacking;
+    private bool isDefeated;
 
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationsSO animationData;
@@ -26,6 +27,7 @@ public class EnemyAnimation : MonoBehaviour {
     private void HandleMoveAnimation() {
         Vector2 dir = enemyMovement.GetMoveDir();
         isMoving = dir != Vector2.zero;
+        if (isDefeated) return;
         if (isAttacking) return;
 
         if (!isMoving) {
@@ -156,6 +158,13 @@ public class EnemyAnimation : MonoBehaviour {
         }, animTime);
     }
 
+    public void PlayHurtAnimation() {
+        if (isDefeated) return;
+        isDefeated = true;
+
+        newAnimation = animationData.Hurt.name;
+    }
+
     private void UpdateAnimation() {
         if (newAnimation != currAnimation) {
             currAnimation = newAnimation;
@@ -177,5 +186,8 @@ public class EnemyAnimation : MonoBehaviour {
 
     public float GetCastAnimationTime() {
         return animationData.CastDown?.length ?? 0;
+    }
+    public float GetHurtAnimationTime() {
+        return animationData.Hurt?.length ?? 0;
     }
 }

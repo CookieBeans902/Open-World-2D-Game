@@ -12,6 +12,7 @@ public class GameData
     public List<int> completedSideQuests;
     public List<ItemSaveData> inventoryItems;
     public List<SkillSaveData> skillItems;
+    public SerializableDictionary<string, bool> collectibleInformation;
     public GameData()
     {
         sceneIndex = 0;

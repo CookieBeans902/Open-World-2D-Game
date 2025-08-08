@@ -54,9 +54,5 @@ public class AudioManager : MonoBehaviour
         {
             SFX.PlayOneShot(clip);
         }
-        else
-        {
-            Debug.Log("The if-else works");
-        }
     }
 }

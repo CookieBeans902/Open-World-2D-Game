@@ -6,11 +6,7 @@ using Unity.VisualScripting;
 using System.Linq;
 using System;
 
-public class StatsUIManager : MonoBehaviour
-{
-    public event EventHandler OnSkillChange;
-    public event EventHandler OnStatChange;
-
+public class StatsUIManager : MonoBehaviour {
     public static StatsUIManager Instance;
 
     // prefab of the inventoryUI slot
@@ -74,24 +70,6 @@ public class StatsUIManager : MonoBehaviour
                 equipSlots[(int)SlotType.Hand1] = statsUI.GetComponent<StatsUI>().hand1Slot;
                 equipSlots[(int)SlotType.Hand2] = statsUI.GetComponent<StatsUI>().hand2Slot;
 
-                // Button prevButton = statsUI.GetComponent<StatsUI>().prevButton;
-                // Button nextButton = statsUI.GetComponent<StatsUI>().nextButton;
-                // nextButton.onClick.AddListener(() => {
-                //     int length = CharacterManager.Instance.characters.Count;
-                //     if (currIndex < length - 1) {
-                //         currIndex++;
-                //         statsUI.GetComponent<StatsUI>().desc.text = "";
-                //         UpdateUI();
-                //     }
-                // });
-                // prevButton.onClick.AddListener(() => {
-                //     if (currIndex > 0) {
-                //         currIndex--;
-                //         statsUI.GetComponent<StatsUI>().desc.text = "";
-                //         UpdateUI();
-                //     }
-                // });
-
                 Button close = statsUI.GetComponent<StatsUI>().closeButton;
                 close.onClick.RemoveAllListeners();
                 close.onClick.AddListener(() => ClearUI());
@@ -122,12 +100,9 @@ public class StatsUIManager : MonoBehaviour
 
         InitFields();
         UpdateInventory();
-
         UpdateEquipments();
         UpdateStats();
-
         UpdateSkills();
-
 
         Canvas.ForceUpdateCanvases();
     }
@@ -139,9 +114,7 @@ public class StatsUIManager : MonoBehaviour
         statsUI = null;
         toDestroy.SetActive(false);
         Destroy(toDestroy);
-        // descPool = new Queue<Transform>();
         fields = new Dictionary<string, GameObject>();
-        // pickups = new List<GameObject>();
         slotPool = new Queue<Transform>();
         skillSlotPool = new Queue<Transform>();
         isActive = false;
@@ -193,6 +166,7 @@ public class StatsUIManager : MonoBehaviour
             int count = i.count;
             int maxStack = i.maxStack;
             Sprite icon = i.icon;
+            if (maxStack < 1) continue;
 
             while (count > 0)
             {
@@ -221,7 +195,7 @@ public class StatsUIManager : MonoBehaviour
             }
         }
 
-        InventoryManager.Instance.TriggerChange();
+        HudManager.Instance?.RequestItemUpdate();
     }
 
 
@@ -295,7 +269,7 @@ public class StatsUIManager : MonoBehaviour
             }
         }
 
-        OnSkillChange?.Invoke(this, EventArgs.Empty);
+        HudManager.Instance?.RequestSkillUpdate();
     }
 
     public void UpdateStats()
@@ -313,7 +287,7 @@ public class StatsUIManager : MonoBehaviour
         UpdateField("Agility", charData.BaseAGI, charData.AGI);
         UpdateField("Luck", charData.BaseLUCK, charData.LUCK);
 
-        OnStatChange?.Invoke(this, EventArgs.Empty);
+        HudManager.Instance.RequestStatUpdate();
     }
 
     /// <summary> To update the value of a field </summary>
@@ -553,15 +527,5 @@ public class StatsUIManager : MonoBehaviour
         foreach (Transform ui in s.contentBox) Destroy(ui.gameObject);
         slot.gameObject.SetActive(false);
         skillSlotPool.Enqueue(slot);
-    }
-
-    public void TriggerSkillChange()
-    {
-        OnSkillChange?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void TriggerStatChange()
-    {
-        OnStatChange?.Invoke(this, EventArgs.Empty);
     }
 }

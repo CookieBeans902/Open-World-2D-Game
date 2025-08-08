@@ -43,6 +43,7 @@ public class CircleAndAttack : MovementBase {
 
     [SerializeField] private float spread;
     [SerializeField] private float range;
+    [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
 
@@ -173,7 +174,11 @@ public class CircleAndAttack : MovementBase {
         if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
         else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
 
-        Debug.Log("Attacked");
+        player.GetComponent<PlayerMove>().DisableMovement();
+
+        FunctionTimer.CreateSceneTimer(() => {
+            player.GetComponent<PlayerMove>().EnableMovement();
+        }, attackCooldown);
     }
     public override Vector2 GetMoveDir() {
         if (state == EnemyState.Attack) {

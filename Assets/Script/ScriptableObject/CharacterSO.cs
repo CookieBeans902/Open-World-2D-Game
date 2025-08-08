@@ -9,9 +9,9 @@ public class CharacterSO : ScriptableObject {
     public bool canDualWeild;
     public int curLvl;
     public int maxLvl;
-    public int currExp;
+    public float currExp;
 
-    public StatField<int, int> maxExp;
+    public StatField<float, float> maxExp;
     public StatField<int, int> baseMhp;
     public StatField<int, int> baseAtk;
     public StatField<int, int> baseMatk;

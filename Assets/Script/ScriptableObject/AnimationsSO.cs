@@ -36,4 +36,6 @@ public class AnimationsSO : ScriptableObject {
     public AnimationClip CastLeft;
     public AnimationClip CastRight;
     public AnimationClip CastUp;
+
+    public AnimationClip Hurt;
 }

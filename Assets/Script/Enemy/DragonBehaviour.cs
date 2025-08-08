@@ -31,7 +31,7 @@ public class DragonBehaviour : MovementBase {
     [SerializeField] private float chaseRadius;
     [SerializeField] private float attackRadius;
 
-    [SerializeField] private float attackDelay;
+    [SerializeField] private float attackCooldown;
     [SerializeField] private float spread;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
@@ -187,7 +187,11 @@ public class DragonBehaviour : MovementBase {
         faceDir = SnapToNearestDirection(faceDir);
 
         EnemyStats stats = GetComponent<EnemyStats>();
-        GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
+        player.GetComponent<PlayerMove>().DisableMovement();
+
+        FunctionTimer.CreateSceneTimer(() => {
+            player.GetComponent<PlayerMove>().EnableMovement();
+        }, attackCooldown);
     }
 
     private void ClearTimers() {

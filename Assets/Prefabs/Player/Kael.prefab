@@ -102,10 +102,9 @@ GameObject:
   - component: {fileID: 4979293041993571704}
   - component: {fileID: 3144363624258621555}
   - component: {fileID: 1266152904495348236}
-  - component: {fileID: 4688288137888162124}
   - component: {fileID: 8437628701304965331}
   - component: {fileID: 3392787165050767196}
-  - component: {fileID: 6746801381728191915}
+  - component: {fileID: 3970193321732330264}
   m_Layer: 6
   m_Name: Kael
   m_TagString: Player
@@ -223,8 +222,8 @@ MonoBehaviour:
   playerDir: {x: 0, y: 0}
   canDash: 1
   inDash: 0
-  baseMoveSpeed: 6
   moveSpeed: 6
+  speedNerf: 0
 --- !u!114 &4979293041993571704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,32 +262,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visual: {fileID: 3916672696193233197}
+  lvlUpEffect: {fileID: 3789199174041601812, guid: ea6d7d1e033a92d45acbf3fd1b61116b, type: 3}
   healthbar: {fileID: 8976869945901699332}
   rb: {fileID: 5545554928546188360}
   collider2d: {fileID: 2906791807905362707}
   animator: {fileID: 6014681454999749089}
-  move: {fileID: 0}
-  anim: {fileID: 0}
-  interact: {fileID: 0}
+  move: {fileID: 8649004592994887518}
+  anim: {fileID: 4979293041993571704}
+  interact: {fileID: 3144363624258621555}
   attack: {fileID: 8437628701304965331}
+  attackSpeedFactor: 1
+  moveSpeedFactor: 1
   charId: 0
---- !u!114 &4688288137888162124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383181712952733690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9073413185f964aaf62edc940b18c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MessagePoint: {fileID: 3022946252411522522}
-  CharacterName: Player
-  messageType: 3
-  messageBoxes: {fileID: 11400000, guid: 155383aa8fa840143a7e268d85f0f5d5, type: 2}
-  dialogs: []
 --- !u!114 &8437628701304965331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,16 +305,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d6d488957b5bf49a9fd68550cace28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6746801381728191915
+--- !u!114 &3970193321732330264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2383181712952733690}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7701d6ba9c05b2a41aa4d4df375fe270, type: 3}
+  m_Script: {fileID: 11500000, guid: f5ba6d5913d106e49962fd5200a76f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5530175882400201640

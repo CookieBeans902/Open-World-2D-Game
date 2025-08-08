@@ -141,10 +141,13 @@ public class ZombieBehaviour : MovementBase {
         var stats = GetComponent<EnemyStats>();
         var attack = GetComponent<MeleeAttack>();
 
-        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck,stats.pushbackForce);
-        else attack.Thrust(faceDir, range, stats.atk, stats.luck,stats.pushbackForce);
+        if (attackType == AttackType.Slash) attack.Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
+        else attack.Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
+
+        player.GetComponent<PlayerMove>().DisableMovement();
 
         FunctionTimer.CreateSceneTimer(() => {
+            player.GetComponent<PlayerMove>().EnableMovement();
             isAttacking = false;
             agent.canMove = true;
         }, attackCooldown);

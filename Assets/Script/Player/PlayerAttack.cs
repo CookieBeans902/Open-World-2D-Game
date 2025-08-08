@@ -42,34 +42,34 @@ public class PlayerAttack : AttackBase {
         int layerMask = LayerMask.GetMask("Enemy");
         switch (state) {
             case 1:
-                PerformSlash(dir, spread, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
-                shared.anim.PlaySlashAnimation(waitTime);
+                shared.anim.PlaySlashAnimation();
                 isAttacking = true;
                 state = 2;
 
                 FunctionTimer.CreateSceneTimer(() => {
+                    PerformSlash(dir, spread, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
                     isAttacking = false;
-                }, shared.anim.GetSlashAnimationTime());
+                }, shared.anim.GetSlashAnimationTime() * 0.6f);
                 break;
             case 2:
-                PerformSlash(dir, spread, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
-                shared.anim.PlayISlashAnimation(waitTime);
+                shared.anim.PlayISlashAnimation();
                 isAttacking = true;
                 state = 3;
 
                 FunctionTimer.CreateSceneTimer(() => {
+                    PerformSlash(dir, spread, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
                     isAttacking = false;
-                }, shared.anim.GetSlashAnimationTime());
+                }, shared.anim.GetSlashAnimationTime() * 0.6f);
                 break;
             case 3:
-                PerformThrust(dir, range, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
-                shared.anim.PlayThrustAnimation(waitTime);
+                shared.anim.PlayThrustAnimation();
                 isAttacking = true;
                 state = 1;
 
                 FunctionTimer.CreateSceneTimer(() => {
+                    PerformThrust(dir, range, charData.ATK, charData.LUCK, LayerMask.GetMask("Enemy"));
                     isAttacking = false;
-                }, shared.anim.GetThrustAnimationTime());
+                }, shared.anim.GetThrustAnimationTime() * 0.6f);
                 break;
         }
     }

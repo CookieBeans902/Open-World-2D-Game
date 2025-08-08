@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1799121946817344791, guid: fb249afeb0ff95a438e6aec12fdf762c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemType: 0
+    effectType: 0
     icon: {fileID: 0}
     itemName: 
     itemDesc: 
@@ -155,37 +156,10 @@ MonoBehaviour:
     count: 0
     buyPrice: 0
     sellPrice: 0
+    effectValue: 0
+    cooldownTIme: 0
+    slotNumber: -1
+    isActive: 0
     equipment: {fileID: 0}
-  equipment:
-    slot: 0
-    type: 2
-    range: 0
-    weild: 0
-    equipmentUI: {fileID: 0}
-    validClasses: 
-    equipmentName: 
-    isEquiped: 0
-    hpBuff: 0
-    atkBuff: 0
-    matkBuff: 0
-    defBuff: 0
-    mdefBuff: 0
-    agiBuff: 0
-    luckBuff: 0
-    buyPrice: 0
-    sellPrice: 0
-    item:
-      itemType: 0
-      icon: {fileID: 0}
-      itemName: 
-      itemDesc: 
-      canConsume: 0
-      canDestroy: 0
-      canSell: 0
-      maxStack: 0
-      count: 0
-      buyPrice: 0
-      sellPrice: 0
-      equipment: {fileID: 0}
-  inInventory: 0
+  isActive: 0
   goBack: 0

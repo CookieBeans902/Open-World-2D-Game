@@ -22,7 +22,6 @@ public class HudItemSlot : MonoBehaviour {
         key.text = index.ToString();
         count.text = "";
         item = null;
-        // UpdateSlot(item);
     }
 
     private void Update() {
@@ -47,7 +46,9 @@ public class HudItemSlot : MonoBehaviour {
 
     public void UseItem() {
         if (item != null && canUse) {
-            StartCoroutine(ShowCooldown(item.cooldownTIme));
+            ItemEffectManager.Instance?.ExecuteEffect(item.effectType, item.effectValue);
+            if (item.count != 1) StartCoroutine(ShowCooldown(item.cooldownTIme));
+            RemoveItem();
             canUse = false;
         }
     }
@@ -65,7 +66,6 @@ public class HudItemSlot : MonoBehaviour {
         }
 
         cooldown.fillAmount = 0;
-        RemoveItem();
         canUse = true;
         yield return null;
     }
@@ -75,6 +75,8 @@ public class HudItemSlot : MonoBehaviour {
 
         InventoryManager.Instance.RemoveItem(item.itemName, 1);
         if (item.count <= 0) UpdateSlot(null);
+
+        HudManager.Instance.UpdateActiveItems();
     }
 
     private KeyCode GetKeyCode() {

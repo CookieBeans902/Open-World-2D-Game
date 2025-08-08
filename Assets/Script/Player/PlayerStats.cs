@@ -7,6 +7,16 @@ public class PlayerStats : MonoBehaviour, IStats {
         shared = GetComponent<PlayerShared>();
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.C)) {
+            Character charData = CharacterManager.Instance?.characters[shared.charId];
+            if (charData == null) return;
+
+            charData.AddExp(60);
+            HudManager.Instance?.RequestStatUpdate();
+        }
+    }
+
     public void TakeDamage(float atk, float luck) {
         Character charData = CharacterManager.Instance?.characters[shared.charId];
         if (charData == null) return;
@@ -19,16 +29,18 @@ public class PlayerStats : MonoBehaviour, IStats {
             float dmg = 3 * atk - 2 * def;
             if (dmg < 0) dmg = 1;
 
+            dmg = (int)dmg;
             float hp = charData.curHp - dmg;
             charData.SetCurHp(hp);
 
-            PopupManager.RequestPopup(dmg.ToString(), transform.position, 10, Color.red);
+            PopupManager.RequestDamagePopup(dmg.ToString(), transform.position, 6, Color.red);
         }
         else {
-            PopupManager.RequestPopup("miss", transform.position, 8, Color.white); ;
+            PopupManager.RequestDamagePopup("miss", transform.position, 4, Color.white); ;
         }
 
         shared.healthbar.SetFill((float)charData.curHp / charData.MHP);
+        HudManager.Instance?.RequestStatUpdate();
     }
 
     public void RecoverHp(float amount) {
@@ -40,20 +52,21 @@ public class PlayerStats : MonoBehaviour, IStats {
         float chance = Random.Range(0, luck + 10);
 
         if (chance <= luck) {
-            a *= Random.Range(1.1f, 1.4f);
+            a *= (int)(Random.Range(1.1f, 1.4f) * amount);
             a = Mathf.Clamp(a, 0, charData.MHP - charData.curHp);
-            float hp = charData.curHp + a;
+            int hp = charData.curHp + (int)a;
             charData.SetCurHp(hp);
-            PopupManager.RequestPopup(a.ToString(), transform.position, 10, Color.green);
+            PopupManager.RequestDamagePopup(a.ToString(), transform.position, 6, Color.green);
         }
         else {
-            a *= Random.Range(0.8f, 1f);
+            a *= (int)(Random.Range(0.8f, 1f) * amount);
             a = Mathf.Clamp(a, 0, charData.MHP - charData.curHp);
-            float hp = charData.curHp + a;
+            int hp = charData.curHp + (int)a;
             charData.SetCurHp(hp);
-            PopupManager.RequestPopup(a.ToString(), transform.position, 10, Color.green);
+            PopupManager.RequestDamagePopup(a.ToString(), transform.position, 6, Color.green);
         }
 
         shared.healthbar.SetFill((float)charData.curHp / charData.MHP);
+        HudManager.Instance?.RequestStatUpdate();
     }
 }

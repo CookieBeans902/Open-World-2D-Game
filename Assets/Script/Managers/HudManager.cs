@@ -1,14 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using Game.Utils;
+
 using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HudManager : MonoBehaviour
-{
-    public HudManager Instance { get; private set; }
 
+public class HudManager : MonoBehaviour {
+    public event Action OnStatChange;
+    public event Action OnSkillChange;
+    public event Action OnItemChange;
+    public static HudManager Instance { get; private set; }
     [SerializeField] private TextMeshProUGUI playerName;
     [SerializeField] private Image healthFill;
     [SerializeField] private Image expFill;
@@ -29,6 +35,8 @@ public class HudManager : MonoBehaviour
 
             currIndex = 0;
             isActive = true;
+
+            OnStatChange += UpdatePlayerStats;
         }
         else if (StatsUIManager.Instance != this)
         {
@@ -38,18 +46,15 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        InventoryManager.Instance.OnInventoryChange += UpdateActiveItems;
-        Debug.Log("Added the function");
-        StatsUIManager.Instance.OnSkillChange += UpdateActiveSkills;
-        StatsUIManager.Instance.OnStatChange += UpdatePlayerStats;
+    private void Start() {
+        OnItemChange += UpdateActiveItems;
+        OnSkillChange += UpdateActiveSkills;
+        OnStatChange += UpdatePlayerStats;
     }
 
 
-    public void UpdateActiveItems(System.Object sender, EventArgs e)
-    {
-        List<InventoryItem> items = InventoryManager.Instance.items?.Values.ToList();
+    public void UpdateActiveItems() {
+        List<InventoryItem> items = InventoryManager.Instance?.items?.Values.ToList();
         if (items == null) return;
 
         foreach (HudItemSlot slot in itemSlots) slot.UpdateSlot(null);
@@ -60,9 +65,10 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    public void UpdateActiveSkills(System.Object sender, EventArgs e)
-    {
+
+    public void UpdateActiveSkills() {
         charData = CharacterManager.Instance.characters[currIndex];
+        if (charData == null) return;
         List<Skill> skills = charData.skills;
 
         foreach (HudSkillSlot slot in skillSlots) slot.UpdateSlot(null);
@@ -76,12 +82,24 @@ public class HudManager : MonoBehaviour
         }
     }
 
-    public void UpdatePlayerStats(System.Object sender, EventArgs e)
-    {
+    public void UpdatePlayerStats() {
         charData = CharacterManager.Instance.characters[currIndex];
+        if (charData == null) return;
         playerName.text = $"{charData.characterName} Lv {charData.curLvl}";
 
         healthFill.fillAmount = (float)charData.curHp / charData.MHP;
         expFill.fillAmount = (float)charData.curExp / charData.MaxExp;
+    }
+
+    public void RequestStatUpdate() {
+        OnStatChange?.Invoke();
+    }
+
+    public void RequestSkillUpdate() {
+        OnSkillChange?.Invoke();
+    }
+
+    public void RequestItemUpdate() {
+        OnItemChange?.Invoke();
     }
 }

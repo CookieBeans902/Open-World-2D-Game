@@ -48,6 +48,7 @@ public class DisappearAndAttack : MovementBase {
 
     [SerializeField] private float spread;
     [SerializeField] private float range;
+    [SerializeField] private float attackCooldown = 0.2f;
     [SerializeField] private float waitTime;
     [SerializeField] private Transform centre;
 
@@ -156,7 +157,7 @@ public class DisappearAndAttack : MovementBase {
         }
 
         visual.color = Color.white.WithAlpha(0);
-        Vector2 dir = -player.GetComponent<Movement>().playerDir;
+        Vector2 dir = -player.GetComponent<PlayerMove>().playerDir;
         transform.position = player.position + (Vector3)(dir * 1.5f);
 
         StartCoroutine(fadeout());
@@ -214,7 +215,7 @@ public class DisappearAndAttack : MovementBase {
             seeker.StartPath(transform.position, target);
             attackPhase = 1;
 
-            Vector2 d = -player.GetComponent<Movement>().playerDir;
+            Vector2 d = -player.GetComponent<PlayerMove>().playerDir;
             Vector2 pos = player.position + (Vector3)(d * 1.5f);
 
             Collider2D collider = Physics2D.OverlapPoint(pos);
@@ -257,6 +258,12 @@ public class DisappearAndAttack : MovementBase {
         EnemyStats stats = GetComponent<EnemyStats>();
         if (attackType == AttackType.Slash) GetComponent<MeleeAttack>().Slash(faceDir, spread, stats.atk, stats.luck, stats.pushbackForce);
         else GetComponent<MeleeAttack>().Thrust(faceDir, range, stats.atk, stats.luck, stats.pushbackForce);
+
+        player.GetComponent<PlayerMove>().DisableMovement();
+
+        FunctionTimer.CreateSceneTimer(() => {
+            player.GetComponent<PlayerMove>().EnableMovement();
+        }, attackCooldown);
     }
 
     public override Vector2 GetMoveDir() {

@@ -250,8 +250,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.38610953}
-  m_Size: {x: 0.5, y: 1.0376693}
+  m_Offset: {x: 0.014192224, y: 0.395571}
+  m_Size: {x: 0.71761394, y: 1.1701312}
   m_Direction: 0
 --- !u!50 &256674520745203258
 Rigidbody2D:
@@ -295,8 +295,8 @@ MonoBehaviour:
   endSep: 0.1
   canMove: 0
   targetReached: 0
-  speed: 4
-  runSpeed: 6
+  speed: 2
+  runSpeed: 2
   randomRadius: 12
   chaseRadius: 10
   shootRadius: 8
@@ -339,7 +339,16 @@ MonoBehaviour:
   def: 2
   agi: 6
   luck: 6
+  pushbackForce: 0
   healthbar: {fileID: 2978185981872290559}
+  collectibles:
+  - {fileID: 77456743093495870, guid: 8812da39b39ab6d49815deb06d2b15ef, type: 3}
+  - {fileID: 77456743093495870, guid: cac997a63d2dbd74c902c3a4e2b71b26, type: 3}
+  - {fileID: 77456743093495870, guid: b3c7e44b124696e4c8ec57785dc60b91, type: 3}
+  minCount: 000000000000000000000000
+  maxCount: 020000000200000002000000
+  dropSpeed: 6
+  dropTime: 0.4
 --- !u!114 &1562364573086990225
 MonoBehaviour:
   m_ObjectHideFlags: 0

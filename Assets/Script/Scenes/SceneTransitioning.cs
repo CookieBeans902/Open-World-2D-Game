@@ -25,7 +25,7 @@ public class SceneTransitioning : MonoBehaviour
                 popUp.SetActive(true);
                 if (isInteracting)
                 {
-                    popUp.SetActive(false);
+                    
                     DataPersistenceManager.Instance.SaveGame();
                     transition.SetTrigger("Exit");
                     StartCoroutine(SceneManaging.Instance.LoadNextScene(sceneIndexToTransition));
@@ -33,7 +33,6 @@ public class SceneTransitioning : MonoBehaviour
                 playerLeft = false;
             }
         }
-        if (playerLeft) popUp.GetComponent<ScaleUp>().OnClose();
+        if (playerLeft) popUp.SetActive(false);
     }
-    
 }

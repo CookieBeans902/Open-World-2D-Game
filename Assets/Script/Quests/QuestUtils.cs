@@ -35,7 +35,7 @@ public class ObjectiveState
             }
             else
             {
-                currentAmount = InventoryManager.Instance.GetAmountFromInventory(countable.CountableType.ToString());
+                // currentAmount = InventoryManager.Instance.GetAmountFromInventory(countable.CountableType.ToString());
             }
         }
         return objective.objectiveDesc;

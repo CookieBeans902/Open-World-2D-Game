@@ -3,7 +3,6 @@ using UnityEngine;
 public class ScaleUp : MonoBehaviour {
     public GameObject panelToOpen;
     public CanvasGroup background;
-    public bool inactiveParent = false;
     public float animTime = 0.5f;
     void Awake() {
         background.alpha = 0;

@@ -44,6 +44,7 @@ public class MainMenu : MonoBehaviour, IDataPersistence
     {
         DisableMenuButtons();
         DataPersistenceManager.Instance.LoadGame();
+        AudioManager.Instance.InGameMusic();
     }
     void DisableMenuButtons()
     {

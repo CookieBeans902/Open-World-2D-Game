@@ -20,6 +20,5 @@ public class ScaleUp : MonoBehaviour {
     void OnComplete()
     {
         GameUIManager.Instance.CloseUI(panelToOpen.transform.parent.gameObject);
-        GameUIManager.Instance.CloseUI(panelToOpen.gameObject);
     }
 }

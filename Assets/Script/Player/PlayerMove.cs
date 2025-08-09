@@ -1,6 +1,8 @@
 using Game.Utils;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour, IDataPersistence {
     [Header("References")]
@@ -92,12 +94,18 @@ public class PlayerMove : MonoBehaviour, IDataPersistence {
         speedBuff = amount;
         shared.moveSpeedFactor = 1 + ((float)amount / moveSpeed);
     }
-
     public void LoadData(GameData gameData) {
-        gameObject.transform.position = gameData.pos;
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        gameData.position.TryGetValue(sceneIndex, out Vector2 pos);
+        gameObject.transform.position = pos;
     }
 
     public void SaveData(GameData gameData) {
-        gameData.pos = gameObject.transform.position;
-    }
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (gameData.position.ContainsKey(sceneIndex))
+        {
+            gameData.position.Remove(sceneIndex);
+        }
+        gameData.position.Add(sceneIndex, transform.position);
+}
 }

@@ -43,16 +43,22 @@ public class ObjectiveState
 }
 public enum NpcID
 {
-    Mayor = 0,
-    Villager1 = 1,
+    None,
+    Priestess = 0,
+    Farmer = 1,
+    Kid1 = 2,
+    Kid2 = 3
 }
 public enum Countables
 {
     None,
     Enemy,
-    Flower,
-    Crystal,
-    Herb,
+    EarthKey,
+    WaterKey,
+    FireKey,
+    LightningKey,
+    Fertilizer,
+    Gem,
 }
 [System.Serializable]
 public struct QuestSaveData
@@ -65,16 +71,13 @@ public struct QuestSaveData
 public enum QuestID
 {
     //Using 0-99 for Main Quests
-    VolatileMemory = 0,
-    Exhaustion = 1,
-    Illness = 2,
-    HerbSearch = 3,
-    Prince = 4,
-    Evidence = 5,
-    
+    Earth = 0,
+    Water = 1,
+    Fire = 2,
+    Lightning = 3,
     
     //Using 100+ for Side Quests
-    FlowerCollection = 100,
-    CrytalMining = 101,
+    Fertilizer = 100,
+    GemCollection = 101,
 }
 

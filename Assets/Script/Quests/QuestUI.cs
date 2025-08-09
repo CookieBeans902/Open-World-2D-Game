@@ -2,15 +2,22 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] private Transform mainQuestContainer;
     [SerializeField] private Transform sideQuestContainer;
     [Header("Display In Quest Window")]
-    [SerializeField] private TMP_Text displayName;
-    [SerializeField] private TMP_Text displayDesc;
-    [SerializeField] private GameObject buttonPrefab;
+    public TMP_Text displayName;
+    public TMP_Text displayDesc;
+    public TMP_Text displayObjective;
+    public TMP_Text coinDisplayAmount;
+    public TMP_Text expDisplayAmount;
+    public Image extraRewardIcon;
+    public TMP_Text extraRewardQuantity;
+    public GameObject buttonPrefab;
     [SerializeField] private QuestButton buttonScript;
     [Header("Displaying as Current Quest")]
     [SerializeField] private TMP_Text CurrentQuestNameText;
@@ -24,7 +31,7 @@ public class QuestUI : MonoBehaviour
         button.transform.SetAsFirstSibling();
         sideQuestContainer.SetParent(button.transform);
         buttonScript = button.GetComponent<QuestButton>();
-        buttonScript.Setup(quest, displayName, displayDesc);
+        buttonScript.Setup(quest, this);
         sideButtonList.Add(quest.QuestID, button);
     }
     public void MainQuestUpdate(QuestInstance quest)
@@ -38,7 +45,7 @@ public class QuestUI : MonoBehaviour
         }
         button.name = quest.questData.questName;
         buttonScript = button.GetComponent<QuestButton>();
-        buttonScript.Setup(quest, displayName, displayDesc);
+        buttonScript.Setup(quest, this);
     }
     /// <summary>
     /// Takes input of a QuestInstance object referencing the side quest to be deleted
@@ -61,7 +68,36 @@ public class QuestUI : MonoBehaviour
     public void CurrentQuestUpdateUI()
     {
         var currentQuest = QuestManager.Instance.currentQuest;
-        CurrentQuestNameText.text = currentQuest.questData.questName;
+        CurrentQuestNameText.text = displayName.text = currentQuest.questData.questName;
         CurrrentObjectiveDesc.text = currentQuest.CurrObjective.GetObjectiveDesc();
+    }
+    public void InitialQuestUpdateUI(QuestInstance quest)
+    {
+        CurrentQuestNameText.text = displayName.text = quest.questData.questName;
+        CurrrentObjectiveDesc.text = quest.CurrObjective.GetObjectiveDesc();
+        displayObjective.text = quest.CurrObjective.objective.FullLengthObjectiveDesc;
+        displayDesc.text = quest.questData.questDesc;
+        coinDisplayAmount.text = quest.questData.coinReward.ToString();
+        expDisplayAmount.text = quest.questData.experienceReward.ToString();
+        if (quest.questData.extraReward == null) ExtraItemNull(true);
+        else
+        {
+            extraRewardIcon.sprite = quest.questData.extraReward.icon;
+            extraRewardQuantity.text = quest.questData.extraRewardQuantity.ToString();
+        }
+        
+    }
+    public void ExtraItemNull(bool isNull)
+    {
+        if (isNull)
+        {
+            extraRewardIcon.gameObject.GetComponent<CanvasGroup>().alpha = 0;
+            extraRewardQuantity.gameObject.SetActive(false);
+        }
+        else
+        {
+            extraRewardQuantity.gameObject.SetActive(true);
+            extraRewardIcon.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+        }
     }
 }

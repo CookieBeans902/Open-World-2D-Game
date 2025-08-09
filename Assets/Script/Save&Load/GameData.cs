@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameData
 {
     public int sceneIndex;
-    public Vector2 pos;
+    public SerializableDictionary<int, Vector2> position;
     public int playerLevel;
     public int playerExp;
     public QuestID currentQuestID;
@@ -20,7 +20,8 @@ public class GameData
         playerLevel = 0;
         playerExp = 0;
         sceneIndex = 1;
-        pos = Vector2.zero;
+        position = new();
+        position[1] = new Vector2();
         sideQuestInfo = new();
         mainQuestInfo = new();
         completedSideQuests = new();

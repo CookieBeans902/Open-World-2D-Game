@@ -59,6 +59,6 @@ public class QuestCollectible : MonoBehaviour, IDataPersistence
     {
         InventoryItem newItem = InventoryItem.Create(collectibleSO.item);
         InventoryManager.Instance.AddItem(newItem, 1);
-        //Play SFX here   
+        //Play SFX here
     }
 }

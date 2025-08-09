@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour, IDataPersistence
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
     }
-    public void StartExistTransition()
+    public void StartExitTransition()
     {
         StartCoroutine(LoadGameFromMainMenu());
     }

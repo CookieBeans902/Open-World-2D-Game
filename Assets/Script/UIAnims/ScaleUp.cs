@@ -3,6 +3,7 @@ using UnityEngine;
 public class ScaleUp : MonoBehaviour {
     public GameObject panelToOpen;
     public CanvasGroup background;
+    public bool inactiveParent = false;
     public float animTime = 0.5f;
     void Awake() {
         background.alpha = 0;
@@ -17,7 +18,9 @@ public class ScaleUp : MonoBehaviour {
         panelToOpen.LeanScale(Vector2.zero, animTime).setEaseInBack().setOnComplete(OnComplete);
         background.LeanAlpha(0, animTime).setDelay(0.1f);
     }
-    void OnComplete() {
+    void OnComplete()
+    {
         GameUIManager.Instance.CloseUI(panelToOpen.transform.parent.gameObject);
+        GameUIManager.Instance.CloseUI(panelToOpen.gameObject);
     }
 }

@@ -17,7 +17,8 @@ public class ScaleUp : MonoBehaviour {
         panelToOpen.LeanScale(Vector2.zero, animTime).setEaseInBack().setOnComplete(OnComplete);
         background.LeanAlpha(0, animTime).setDelay(0.1f);
     }
-    void OnComplete() {
+    void OnComplete()
+    {
         GameUIManager.Instance.CloseUI(panelToOpen.transform.parent.gameObject);
     }
 }

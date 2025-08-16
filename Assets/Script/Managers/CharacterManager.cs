@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 
+using Game.Utils;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterManager : MonoBehaviour {
+public class CharacterManager : MonoBehaviour,IDataPersistence {
     public static CharacterManager Instance { get; private set; }
 
     /* A scriptable Object which has a list of characters already defined for easy addition and removal of characters,
@@ -33,8 +35,9 @@ public class CharacterManager : MonoBehaviour {
     void Start() {
         characters = new List<Character>();
         AddCharacter(initCharacterList.Character1);
-        // AddCharacter(initCharacterList.Character2);
-        // AddCharacter(initCharacterList.Character3);
+
+        FunctionTimer.CreateGlobalTimer(() => HudManager.Instance?.RequestStatUpdate(), 0.01f);
+        FunctionTimer.CreateGlobalTimer(() => HudManager.Instance?.RequestSkillUpdate(), 0.01f);
     }
 
     private void Update() {
@@ -49,7 +52,6 @@ public class CharacterManager : MonoBehaviour {
     /// <param name="cahracter">The character you want to add</param>
     private void AddCharacter(CharacterSO character) {
         Character c = new Character(character);
-
         characters.Add(c);
     }
 
@@ -70,5 +72,15 @@ public class CharacterManager : MonoBehaviour {
         if (index < 0 || index >= characters.Count)
             return;
         characters.RemoveAt(index);
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        
     }
 }

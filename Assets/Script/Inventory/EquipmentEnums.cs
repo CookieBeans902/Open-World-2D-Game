@@ -22,7 +22,9 @@ public enum EquipmentWield {
     Dual,
 }
 
-public enum Class {
+[System.Serializable]
+public enum Class
+{
     Warrior,
     Assassin,
     Knight,

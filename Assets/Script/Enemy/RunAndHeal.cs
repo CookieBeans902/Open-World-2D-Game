@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 using Game.Utils;
 
 using UnityEngine;
@@ -9,27 +12,25 @@ public class RunAndHeal : MovementBase {
     }
 
     private Transform player;
-    private MeleeAttack meleeAttack;
     private FunctionTimer runTimer;
     private string runTimerName;
     private string waitTimerName;
-    // private string attackTimerName;
 
-    // private bool isAttacking;
     private float elapsed = 0;
 
     private EnemyState state;
 
-    [SerializeField] private bool moveBackToCentre;
 
     [SerializeField] private float speed;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float healAmount;
 
     [SerializeField] private float randomRadius;
     [SerializeField] private float runRadius;
+    [SerializeField] private float healRadius;
 
     [SerializeField] private float waitTime;
-    [SerializeField] private float healTime;
+    [SerializeField] private float healDelay;
     [SerializeField] private Transform centre;
 
     private float updateTime;
@@ -37,7 +38,7 @@ public class RunAndHeal : MovementBase {
     private void Awake() {
         InitBasicComponents();
         waitTimerName = "WaitTimer" + gameObject.GetInstanceID();
-        runTimerName = "ChaseTimer" + gameObject.GetInstanceID();
+        runTimerName = "RunTimer" + gameObject.GetInstanceID();
         state = EnemyState.Random;
         agent.maxSpeed = speed;
         updateTime = 0.02f;
@@ -45,7 +46,6 @@ public class RunAndHeal : MovementBase {
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        meleeAttack = GetComponent<MeleeAttack>();
     }
 
     private void Update() {
@@ -73,17 +73,26 @@ public class RunAndHeal : MovementBase {
 
     private void UpdateState() {
         float dist = Vector2.Distance(player.transform.position, transform.position);
-        if (dist <= runRadius && state != EnemyState.Run) {
-            ClearTimers();
-            agent.maxSpeed = runSpeed;
-            agent.canMove = true;
-            state = EnemyState.Run;
-        }
-        else if (dist > runRadius && state != EnemyState.Random) {
+        float buffer = 0.1f;
+
+
+        if (dist > runRadius + buffer && state != EnemyState.Random) {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+            elapsed = 0;
+
             ClearTimers();
             agent.maxSpeed = speed;
+            seeker.StartPath(transform.position, transform.position);
             agent.canMove = true;
             state = EnemyState.Random;
+        }
+        else if (dist <= runRadius - buffer && state != EnemyState.Run) {
+            ClearTimers();
+            agent.maxSpeed = runSpeed;
+            seeker.StartPath(transform.position, transform.position);
+            agent.canMove = true;
+            state = EnemyState.Run;
         }
     }
 
@@ -94,11 +103,51 @@ public class RunAndHeal : MovementBase {
 
     private void HealAllies() {
         if (state == EnemyState.Run) return;
-        if (elapsed < healTime) {
+        if (elapsed < healDelay) {
             elapsed += Time.deltaTime;
         }
         else {
-            // Heal Logic
+            Vector2 dir = player.position - transform.position;
+            dir = SnapToNearestDirection(dir);
+
+            seeker.StartPath(transform.position, transform.position);
+            agent.canMove = false;
+
+            EnemyAnimation anim = GetComponent<EnemyAnimation>();
+            anim.PlayCastAnimation(dir);
+
+            FunctionTimer.CreateSceneTimer(() => {
+                Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, healRadius);
+
+                foreach (Collider2D e in enemies) {
+                    int layer = 1 << e.gameObject.layer;
+
+                    if ((layer & LayerMask.GetMask("Enemy")) != 0) {
+                        IStats stats = e.GetComponent<IStats>();
+                        stats?.RecoverHp(healAmount);
+                    }
+                }
+
+                agent.canMove = true;
+            }, anim.GetCastAnimationTime());
+            elapsed = 0;
         }
+    }
+
+    private Vector2 SnapToNearestDirection(Vector2 dir) {
+        dir.Normalize();
+        Vector2[] directions = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
+        float maxDot = float.MinValue;
+        Vector2 bestDir = Vector2.right;
+
+        foreach (var d in directions) {
+            float dot = Vector2.Dot(dir, d);
+            if (dot > maxDot) {
+                maxDot = dot;
+                bestDir = d;
+            }
+        }
+
+        return bestDir;
     }
 }

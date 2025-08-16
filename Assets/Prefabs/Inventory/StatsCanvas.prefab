@@ -3379,7 +3379,7 @@ GameObject:
   - component: {fileID: 8028875096438724339}
   - component: {fileID: 506430834867975968}
   - component: {fileID: 3614047598694791133}
-  - component: {fileID: 4089187737277082767}
+  - component: {fileID: 110254714570212464}
   m_Layer: 5
   m_Name: StatsCanvas
   m_TagString: Untagged
@@ -3477,7 +3477,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4089187737277082767
+--- !u!114 &110254714570212464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3486,11 +3486,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8184509578041113585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d4f1d14a8436f488ce9947cd1380fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b5d248ee571fe54194bbd64dde2b963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prevButton: {fileID: 7182442683581868042}
-  nextButton: {fileID: 6486656856861914848}
+  prevButton: {fileID: 0}
+  nextButton: {fileID: 0}
   closeButton: {fileID: 2261217118132268460}
   nameText: {fileID: 3182647163185526649}
   levelText: {fileID: 8136871200031793701}

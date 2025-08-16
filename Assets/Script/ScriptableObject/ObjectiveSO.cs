@@ -4,5 +4,6 @@ using UnityEngine;
 public class ObjectiveSO : ScriptableObject
 {
     public string objectiveDesc;
+    public string FullLengthObjectiveDesc;
     public NpcID targetNpcID;
 }

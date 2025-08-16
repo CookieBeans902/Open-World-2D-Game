@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: WolfK
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: db5b288165253314091e816bca2f364d, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 9b7de97758cf87d4bb3c2e0a01dbbb6f, type: 2}
+  IdleRight: {fileID: 7400000, guid: 17727b938c7aca842aff9dd52a9555ad, type: 2}
+  IdleUp: {fileID: 7400000, guid: 757b076e4725bc54696c1684762dbe46, type: 2}
+  MoveDown: {fileID: 7400000, guid: 94f8a046a31d3d54582015ee3bed0d08, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 2eaf266febe96f04282644a29ba97fed, type: 2}
+  MoveRight: {fileID: 7400000, guid: e70ab881adcd07342a9a84b12c9ce230, type: 2}
+  MoveUp: {fileID: 7400000, guid: 7530c414cfaa256428f4e6dcbe1a7b84, type: 2}
+  SlashDown: {fileID: 7400000, guid: 8f8f853a064b552489909632f6b4df8e, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 49e7ecbd72eaa47499f15ba84c794087, type: 2}
+  SlashRight: {fileID: 7400000, guid: 1e7398168b0e238488dbdddf8133daeb, type: 2}
+  SlashUp: {fileID: 7400000, guid: a79772504160fd44495bf1c44969d9be, type: 2}
+  ISlashDown: {fileID: 7400000, guid: dabe95e9f34cc384fa38571aa61ffc10, type: 2}
+  ISlashLeft: {fileID: 7400000, guid: 1daba10a05f0a8e4e8db8a292697171e, type: 2}
+  ISlashRight: {fileID: 7400000, guid: 26008bb0fdb67d147a78c6031ef84f8a, type: 2}
+  ISlashUp: {fileID: 7400000, guid: e0e0e46e5b1c48c41895f4b96456391b, type: 2}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}
+  Hurt: {fileID: 7400000, guid: d4d13d00b87706f4d94895f11d37d47c, type: 2}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Dragon
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 1c37eb97547f8b94fa023d8de63d2226, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 5a237ca0d9ae833428e3664c0fbe6a3c, type: 2}
+  IdleRight: {fileID: 7400000, guid: 21c242b16f7341b4386405dd6b98f85c, type: 2}
+  IdleUp: {fileID: 7400000, guid: 6aa41ac97fbb5cd46b4a56da5183b419, type: 2}
+  MoveDown: {fileID: 7400000, guid: e27ef293c37c0b34e9d577449fb0d8c1, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 22191230f30ea4f4e91a1e218f2a6e5c, type: 2}
+  MoveRight: {fileID: 7400000, guid: 29e2db4f17f54e64d8a2f44d9d814bc8, type: 2}
+  MoveUp: {fileID: 7400000, guid: e2699dd18d42a6a4fb1c6c449be1abf0, type: 2}
+  SlashDown: {fileID: 7400000, guid: 87cd3ba92c1aa4b4283070214677cb03, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 9620f071b35c6224c828b863f16d09c7, type: 2}
+  SlashRight: {fileID: 7400000, guid: ddeb6fa10949bac4088a05772d92fff5, type: 2}
+  SlashUp: {fileID: 7400000, guid: c118282a0bcc1984f937ac4fb06ee6ec, type: 2}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 7400000, guid: 79db63b4a4265b7478a3d49e3b93df9b, type: 2}
+  CastLeft: {fileID: 7400000, guid: 2894635d4682ecb4caa609918f9c772e, type: 2}
+  CastRight: {fileID: 7400000, guid: 4b52037370dcdff43bbe6ef5efc96e50, type: 2}
+  CastUp: {fileID: 7400000, guid: 0075a7c719b172b42b9868ee8b3cd5dc, type: 2}
+  Hurt: {fileID: 7400000, guid: e2383400163cd7c499d96e4df5bcd460, type: 2}

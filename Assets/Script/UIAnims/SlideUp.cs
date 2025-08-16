@@ -3,10 +3,11 @@ using UnityEngine;
 public class SlideUp : MonoBehaviour
 {
     public GameObject panelToOpen;
-    public float animTime = 0.5f;
+    public float animTime = 1f;
+    [SerializeField] float screenDisplaceFactor = 0.75f;
     void Awake()
     {
-        panelToOpen.transform.localPosition = new Vector2(0, -Screen.height/2);
+        panelToOpen.transform.localPosition = new Vector2(0, -Screen.height*screenDisplaceFactor);
     }
     public void OnOpen()
     {
@@ -15,7 +16,7 @@ public class SlideUp : MonoBehaviour
 
     public void OnClose()
     {
-        panelToOpen.LeanMoveLocalY(-Screen.height/2, animTime).setEaseInCubic().setOnComplete(OnComplete);
+        panelToOpen.LeanMoveLocalY(-Screen.height*screenDisplaceFactor, animTime).setEaseInCubic().setOnComplete(OnComplete);
     }
     public void OnComplete()
     {

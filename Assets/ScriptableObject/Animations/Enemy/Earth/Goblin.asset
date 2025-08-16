@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Goblin
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: efd0d29a9d84a61469eaa4ce795841cf, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 7b1b33cafa7226f489a90ce289fd7b0d, type: 2}
+  IdleRight: {fileID: 7400000, guid: 85510ad65c4cf4e40a7206e711d04259, type: 2}
+  IdleUp: {fileID: 7400000, guid: e589c3837c0e3d94e9873afd9f50eee4, type: 2}
+  MoveDown: {fileID: 7400000, guid: 401673599f3ef264787b654259b135e2, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 4b14f7e4473c8ce49ab8c6a19eb6166f, type: 2}
+  MoveRight: {fileID: 7400000, guid: 2cd2bb640c29d234ba84b72c48f5c783, type: 2}
+  MoveUp: {fileID: 7400000, guid: 8747df9654541ed48aeb7a39ece66d7a, type: 2}
+  SlashDown: {fileID: 7400000, guid: 6555f2678afaae34c897f07aebf18178, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 87ee94af709641149a272b0b5cde4755, type: 2}
+  SlashRight: {fileID: 7400000, guid: 7f2150cd2dfc54543bea45f3c8c72e54, type: 2}
+  SlashUp: {fileID: 7400000, guid: c7381dbd0f1e7c24ab1fe0ff9e02180f, type: 2}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 0}
+  ThrustLeft: {fileID: 0}
+  ThrustRight: {fileID: 0}
+  ThrustUp: {fileID: 0}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}
+  Hurt: {fileID: 7400000, guid: 850928eb9138c2e429dfd223292ad45f, type: 2}

@@ -1,42 +1,29 @@
+using Game.Utils;
+
 using UnityEngine;
 
 public class MeleeAttack : AttackBase {
-    [SerializeField] private float spread;
-    [SerializeField] private float waitTime;
-    public bool canAttack;
-    private MovementBase movement;
-    private EnemyAnimation anim;
-
-    private void Start() {
-        movement = GetComponent<MovementBase>();
-        anim = GetComponent<EnemyAnimation>();
-    }
-
-    // private void Update() {
-    //     // if (!canAttack || !movement.canMove) return;
-
-    //     Vector2 dir = movement.GetMoveDir();
-    //     if (dir == Vector2.zero) return;
-    // Rigidbody2D rb = GetComponent<Rigidbody2D>();
-    // rb.AddForce(dir * 3, ForceMode2D.Impulse);
-
-    //     int layerMask = LayerMask.GetMask("Player");
-
-    //     PerformSlash(dir, spread, layerMask);
-    //     anim.PlaySlashAnimation(waitTime);
-    // }
-
-
-    public void Slash() {
-        Vector2 dir = movement.GetMoveDir();
+    public void Slash(Vector2 dir, float spread, float atk, float luck, float forceMag) {
         if (dir == Vector2.zero) return;
 
-        int layerMask = LayerMask.GetMask("Player");
+        EnemyAnimation anim = GetComponent<EnemyAnimation>();
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(dir * 3, ForceMode2D.Impulse);
+        anim.PlaySlashAnimation(dir);
+        FunctionTimer.CreateSceneTimer(() => {
+            int layerMask = LayerMask.GetMask("Player");
+            PerformSlash(dir, spread, atk, luck, layerMask, forceMag);
+        }, anim.GetSlashAnimationTime() * 0.6f);
+    }
 
-        PerformSlash(dir, spread, layerMask);
-        anim.PlaySlashAnimation();
+    public void Thrust(Vector2 dir, float range, float atk, float luck, float forceMag) {
+        if (dir == Vector2.zero) return;
+
+        EnemyAnimation anim = GetComponent<EnemyAnimation>();
+
+        anim.PlayThrustAnimation(dir);
+        FunctionTimer.CreateSceneTimer(() => {
+            int layerMask = LayerMask.GetMask("Player");
+            PerformThrust(dir, range, atk, luck, layerMask, forceMag);
+        }, anim.GetThrustAnimationTime() * 0.6f);
     }
 }

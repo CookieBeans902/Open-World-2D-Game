@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: Cyclops
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: e67a8aabec96a604f9323d021f342e46, type: 2}
+  IdleLeft: {fileID: 7400000, guid: cfcf5b3a833db4d43a53f33f6d65110f, type: 2}
+  IdleRight: {fileID: 7400000, guid: dfc3f13e331f00c4a87630d63da816d4, type: 2}
+  IdleUp: {fileID: 7400000, guid: 890a8f5de6dbb914a81786383ddd7cf6, type: 2}
+  MoveDown: {fileID: 7400000, guid: 9ebf2f2afb7e9ab42897a49a11f8b9be, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 39072cab58599404bbdda1b13e7cbe1f, type: 2}
+  MoveRight: {fileID: 7400000, guid: 6133f02a79fe4c944be9ca1be72c56fa, type: 2}
+  MoveUp: {fileID: 7400000, guid: 78313b1cb19abee43b8e59940e80109c, type: 2}
+  SlashDown: {fileID: 0}
+  SlashLeft: {fileID: 0}
+  SlashRight: {fileID: 0}
+  SlashUp: {fileID: 0}
+  ISlashDown: {fileID: 0}
+  ISlashLeft: {fileID: 0}
+  ISlashRight: {fileID: 0}
+  ISlashUp: {fileID: 0}
+  ThrustDown: {fileID: 7400000, guid: b0d2fc31c21ff7e4592f5f0f8b898d97, type: 2}
+  ThrustLeft: {fileID: 7400000, guid: 1c46093455349f046927431d82510d4e, type: 2}
+  ThrustRight: {fileID: 7400000, guid: 7a2f91dd8d386ee45a8ae05d873aaea8, type: 2}
+  ThrustUp: {fileID: 7400000, guid: 92d40d98efc7a7348b257a16d00852a9, type: 2}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}
+  CastDown: {fileID: 0}
+  CastLeft: {fileID: 0}
+  CastRight: {fileID: 0}
+  CastUp: {fileID: 0}
+  Hurt: {fileID: 7400000, guid: af368cc6735259e4f80481b6504b44f2, type: 2}

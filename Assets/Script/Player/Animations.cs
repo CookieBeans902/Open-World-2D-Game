@@ -2,8 +2,6 @@ using System;
 
 using Game.Utils;
 
-using States;
-
 using UnityEngine;
 
 public class Animations : MonoBehaviour {
@@ -14,6 +12,10 @@ public class Animations : MonoBehaviour {
     private string currAnimation;
     private string newAnimation;
     private bool isMoving;
+    private bool isAttacking;
+
+    private const string attack_speed_multiplier = "attack_speed_multiplier";
+    private const string move_speed_multiplier = "move_speed_multiplier";
     private void Start() {
         input = GameInputManager.Instance;
         shared = GetComponent<PlayerShared>();
@@ -26,160 +28,143 @@ public class Animations : MonoBehaviour {
     }
 
     private void HandleMoveAnimation() {
-        if (!shared.playerMove.canMove) return;
+        if (!shared.move.canMove) return;
+        if (isAttacking) return;
 
         isMoving = input.GetMovementVectorNormalized() != Vector2.zero;
-        PlayerDirection dir = ConvertToEnum(shared.playerMove.playerDir);
+        shared.animator.SetFloat(move_speed_multiplier, shared.moveSpeedFactor);
+        Vector2 dir = shared.move.playerDir;
         if (!isMoving) {
-            switch (dir) {
-                case PlayerDirection.Right:
-                    newAnimation = playerAnimations.IdleRight.name;
-                    break;
-                case PlayerDirection.Left:
-                    newAnimation = playerAnimations.IdleLeft.name;
-                    break;
-                case PlayerDirection.Down:
-                    newAnimation = playerAnimations.IdleDown.name;
-                    break;
-                case PlayerDirection.Up:
-                    newAnimation = playerAnimations.IdleUp.name;
-                    break;
+            if (dir == Vector2.right) {
+                newAnimation = playerAnimations.IdleRight.name;
+            }
+            else if (dir == Vector2.left) {
+                newAnimation = playerAnimations.IdleLeft.name;
+            }
+            else if (dir == Vector2.up) {
+                newAnimation = playerAnimations.IdleUp.name;
+            }
+            else if (dir == Vector2.down) {
+                newAnimation = playerAnimations.IdleDown.name;
             }
         }
         else {
-            switch (dir) {
-                case PlayerDirection.Right:
-                    newAnimation = playerAnimations.MoveRight.name;
-                    break;
-                case PlayerDirection.Left:
-                    newAnimation = playerAnimations.MoveLeft.name;
-                    break;
-                case PlayerDirection.Down:
-                    newAnimation = playerAnimations.MoveDown.name;
-                    break;
-                case PlayerDirection.Up:
-                    newAnimation = playerAnimations.MoveUp.name;
-                    break;
+            if (dir == Vector2.right) {
+                newAnimation = playerAnimations.MoveRight.name;
+            }
+            else if (dir == Vector2.left) {
+                newAnimation = playerAnimations.MoveLeft.name;
+            }
+            else if (dir == Vector2.up) {
+                newAnimation = playerAnimations.MoveUp.name;
+            }
+            else if (dir == Vector2.down) {
+                newAnimation = playerAnimations.MoveDown.name;
             }
         }
     }
 
-    public void PlaySlashAnimation(float waitTime) {
-        shared.playerMove.DisableMovement();
-        PlayerDirection dir = ConvertToEnum(shared.playerMove.playerDir);
-        float animTime = 0;
+    public void PlaySlashAnimation() {
+        shared.move.DisableMovement();
+        Vector2 dir = shared.move.playerDir;
+        float animTime = playerAnimations.SlashRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
+        isAttacking = true;
 
-        switch (dir) {
-            case PlayerDirection.Right:
-                newAnimation = playerAnimations.SlashRight.name;
-                animTime = playerAnimations.SlashRight.length;
-                break;
-            case PlayerDirection.Left:
-                newAnimation = playerAnimations.SlashLeft.name;
-                animTime = playerAnimations.SlashLeft.length;
-                break;
-            case PlayerDirection.Down:
-                newAnimation = playerAnimations.SlashDown.name;
-                animTime = playerAnimations.SlashDown.length;
-                break;
-            case PlayerDirection.Up:
-                newAnimation = playerAnimations.SlashUp.name;
-                animTime = playerAnimations.SlashUp.length;
-                break;
+        if (dir == Vector2.right) {
+            newAnimation = playerAnimations.SlashRight.name;
+        }
+        else if (dir == Vector2.left) {
+            newAnimation = playerAnimations.SlashLeft.name;
+        }
+        else if (dir == Vector2.up) {
+            newAnimation = playerAnimations.SlashUp.name;
+        }
+        else if (dir == Vector2.down) {
+            newAnimation = playerAnimations.SlashDown.name;
         }
 
         FunctionTimer.CreateSceneTimer(() => {
-            shared.playerMove.EnableMovement();
-        }, animTime + waitTime);
+            shared.move.EnableMovement();
+            isAttacking = false;
+        }, animTime);
     }
 
-    public void PlayISlashAnimation(float waitTime) {
-        shared.playerMove.DisableMovement();
-        PlayerDirection dir = ConvertToEnum(shared.playerMove.playerDir);
-        float animTime = 0;
+    public void PlayISlashAnimation() {
+        shared.move.DisableMovement();
+        Vector2 dir = shared.move.playerDir;
+        float animTime = playerAnimations.ISlashRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
+        isAttacking = true;
 
-        switch (dir) {
-            case PlayerDirection.Right:
-                newAnimation = playerAnimations.ISlashRight.name;
-                animTime = playerAnimations.ISlashRight.length;
-                break;
-            case PlayerDirection.Left:
-                newAnimation = playerAnimations.ISlashLeft.name;
-                animTime = playerAnimations.ISlashLeft.length;
-                break;
-            case PlayerDirection.Down:
-                newAnimation = playerAnimations.ISlashDown.name;
-                animTime = playerAnimations.ISlashDown.length;
-                break;
-            case PlayerDirection.Up:
-                newAnimation = playerAnimations.ISlashUp.name;
-                animTime = playerAnimations.ISlashUp.length;
-                break;
+        if (dir == Vector2.right) {
+            newAnimation = playerAnimations.ISlashRight.name;
+        }
+        else if (dir == Vector2.left) {
+            newAnimation = playerAnimations.ISlashLeft.name;
+        }
+        else if (dir == Vector2.up) {
+            newAnimation = playerAnimations.ISlashUp.name;
+        }
+        else if (dir == Vector2.down) {
+            newAnimation = playerAnimations.ISlashDown.name;
         }
 
         FunctionTimer.CreateSceneTimer(() => {
-            shared.playerMove.EnableMovement();
-        }, animTime + waitTime);
+            shared.move.EnableMovement();
+            isAttacking = false;
+        }, animTime);
     }
 
-    public void PlayThrustAnimation(float waitTime) {
-        shared.playerMove.DisableMovement();
-        PlayerDirection dir = ConvertToEnum(shared.playerMove.playerDir);
-        float animTime = 0;
+    public void PlayThrustAnimation() {
+        shared.move.DisableMovement();
+        Vector2 dir = shared.move.playerDir;
+        float animTime = playerAnimations.ThrustRight.length / shared.attackSpeedFactor;
+        shared.animator.SetFloat(attack_speed_multiplier, shared.attackSpeedFactor);
+        isAttacking = true;
 
-        switch (dir) {
-            case PlayerDirection.Right:
-                newAnimation = playerAnimations.ThrustRight.name;
-                animTime = playerAnimations.ThrustRight.length;
-                break;
-            case PlayerDirection.Left:
-                newAnimation = playerAnimations.ThrustLeft.name;
-                animTime = playerAnimations.ThrustLeft.length;
-                break;
-            case PlayerDirection.Down:
-                newAnimation = playerAnimations.ThrustDown.name;
-                animTime = playerAnimations.ThrustDown.length;
-                break;
-            case PlayerDirection.Up:
-                newAnimation = playerAnimations.ThrustUp.name;
-                animTime = playerAnimations.ThrustUp.length;
-                break;
+        if (dir == Vector2.right) {
+            newAnimation = playerAnimations.ThrustRight.name;
+        }
+        else if (dir == Vector2.left) {
+            newAnimation = playerAnimations.ThrustLeft.name;
+        }
+        else if (dir == Vector2.up) {
+            newAnimation = playerAnimations.ThrustUp.name;
+        }
+        else if (dir == Vector2.down) {
+            newAnimation = playerAnimations.ThrustDown.name;
         }
 
         FunctionTimer.CreateSceneTimer(() => {
-            shared.playerMove.EnableMovement();
-        }, animTime + waitTime);
+            shared.move.EnableMovement();
+            isAttacking = false;
+        }, animTime);
     }
 
     public void PlayShootAnimation(float waitTime, Action animDone) {
-        shared.playerMove.DisableMovement();
-        PlayerDirection dir = ConvertToEnum(shared.playerMove.playerDir);
+        shared.move.DisableMovement();
+        Vector2 dir = shared.move.playerDir;
         float animTime = 0;
 
-        switch (dir) {
-            case PlayerDirection.Right:
-                newAnimation = playerAnimations.ShootRight.name;
-                animTime = playerAnimations.ShootRight.length;
-                break;
-            case PlayerDirection.Left:
-                newAnimation = playerAnimations.ShootLeft.name;
-                animTime = playerAnimations.ShootLeft.length;
-                break;
-            case PlayerDirection.Down:
-                newAnimation = playerAnimations.ShootDown.name;
-                animTime = playerAnimations.ShootDown.length;
-                break;
-            case PlayerDirection.Up:
-                newAnimation = playerAnimations.ShootUp.name;
-                animTime = playerAnimations.ShootUp.length;
-                break;
+        if (dir == Vector2.right) {
+            newAnimation = playerAnimations.ShootRight.name;
+        }
+        else if (dir == Vector2.left) {
+            newAnimation = playerAnimations.ShootLeft.name;
+        }
+        else if (dir == Vector2.up) {
+            newAnimation = playerAnimations.ShootUp.name;
+        }
+        else if (dir == Vector2.down) {
+            newAnimation = playerAnimations.ShootDown.name;
         }
 
         FunctionTimer.CreateSceneTimer(() => {
             animDone();
         }, animTime - 0.12f);
         FunctionTimer.CreateSceneTimer(() => {
-            shared.playerMove.EnableMovement();
+            shared.move.EnableMovement();
         }, animTime + waitTime);
     }
 
@@ -190,10 +175,11 @@ public class Animations : MonoBehaviour {
         }
     }
 
-    private PlayerDirection ConvertToEnum(Vector2 dir) {
-        if (dir == Vector2.left) return PlayerDirection.Left;
-        else if (dir == Vector2.right) return PlayerDirection.Right;
-        else if (dir == Vector2.down) return PlayerDirection.Down;
-        else return PlayerDirection.Up;
+    public float GetSlashAnimationTime() {
+        return playerAnimations.SlashDown?.length / shared.attackSpeedFactor ?? 0;
+    }
+
+    public float GetThrustAnimationTime() {
+        return playerAnimations.ThrustDown?.length / shared.attackSpeedFactor ?? 0;
     }
 }

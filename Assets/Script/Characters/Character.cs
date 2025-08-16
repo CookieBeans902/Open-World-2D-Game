@@ -10,11 +10,11 @@ public class Character {
     public string characterName { get; private set; }
     public int curLvl { get; private set; }
     public int maxLvl { get; private set; }
-    public int curExp { get; private set; }
+    public float curExp { get; private set; }
     public int curHp { get; private set; }
     public bool canDualWeild { get; private set; }
 
-    public StatField<int, int> maxExp { get; private set; }
+    public StatField<float, float> maxExp { get; private set; }
     public StatField<int, int> baseMhp { get; private set; }
     public StatField<int, int> baseAtk { get; private set; }
     public StatField<int, int> baseMatk { get; private set; }
@@ -90,17 +90,6 @@ public class Character {
 
         curExp = 0;
         curHp = MHP;
-    }
-
-
-    /// <summary>To take damage on hit</summary>
-    /// <param name="damage">Value of damage</param>
-    public void TakeDamage(int damage) {
-        if (damage < 0) return;
-        if (damage == 0) damage = 1;
-
-        curHp -= damage;
-        if (curHp < 0) curHp = 0;
     }
 
 
@@ -268,5 +257,40 @@ public class Character {
         e[(int)SlotType.Hand2] = equipments.ContainsKey("hand2") ? equipments["hand2"] : null;
 
         return e;
+    }
+
+    public void SetCurHp(float hp) {
+        hp = Mathf.Clamp(hp, 0, MHP);
+        curHp = (int)hp;
+    }
+
+    private void LevelUp() {
+        if (curLvl < maxLvl) {
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            if (player != null) {
+                Vector2 pos = (Vector2)player.position + new Vector2(0, -0.8f);
+                player.GetComponent<PlayerMove>().DisableMovement();
+                Transform effect = GameObject.Instantiate(player.GetComponent<PlayerShared>().lvlUpEffect);
+                effect.position = pos;
+            }
+            curLvl++;
+            curExp = 0;
+        }
+        else if (curExp > MaxExp) {
+            curExp = MaxExp;
+            HudManager.Instance?.RequestStatUpdate();
+        }
+    }
+
+    public void AddExp(float amount) {
+        if (curExp + amount >= MaxExp) {
+            LevelUp();
+        }
+        else {
+            curExp += amount;
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            if (player != null) PopupManager.RequestDamagePopup(amount.ToString(), player.position, 6, Color.grey);
+            HudManager.Instance?.RequestStatUpdate();
+        }
     }
 }

@@ -7,9 +7,6 @@ using System.Linq;
 using System;
 
 public class StatsUIManager : MonoBehaviour {
-    public event EventHandler OnSkillChange;
-    public event EventHandler OnStatChange;
-
     public static StatsUIManager Instance;
 
     // prefab of the inventoryUI slot
@@ -35,8 +32,10 @@ public class StatsUIManager : MonoBehaviour {
     private Animator activeAnimator;
     private GameObject curSelected;
 
-    private void Awake() {
-        if (StatsUIManager.Instance == null) {
+    private void Awake()
+    {
+        if (StatsUIManager.Instance == null)
+        {
             // this is to make this object persist across scenes
             DontDestroyOnLoad(gameObject);
             Instance = this;
@@ -44,16 +43,20 @@ public class StatsUIManager : MonoBehaviour {
             currIndex = 0;
             isActive = false;
         }
-        else if (StatsUIManager.Instance != this) {
+        else if (StatsUIManager.Instance != this)
+        {
             // destroy self if an instance is already present to ensure there is only one manager
             Destroy(gameObject);
             return;
         }
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            if (!isActive) {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!isActive)
+            {
                 statsUI = Instantiate(uiPref);
 
                 statsUI.GetComponent<StatsUI>().slot1.slot = 1;
@@ -67,24 +70,6 @@ public class StatsUIManager : MonoBehaviour {
                 equipSlots[(int)SlotType.Hand1] = statsUI.GetComponent<StatsUI>().hand1Slot;
                 equipSlots[(int)SlotType.Hand2] = statsUI.GetComponent<StatsUI>().hand2Slot;
 
-                // Button prevButton = statsUI.GetComponent<StatsUI>().prevButton;
-                // Button nextButton = statsUI.GetComponent<StatsUI>().nextButton;
-                // nextButton.onClick.AddListener(() => {
-                //     int length = CharacterManager.Instance.characters.Count;
-                //     if (currIndex < length - 1) {
-                //         currIndex++;
-                //         statsUI.GetComponent<StatsUI>().desc.text = "";
-                //         UpdateUI();
-                //     }
-                // });
-                // prevButton.onClick.AddListener(() => {
-                //     if (currIndex > 0) {
-                //         currIndex--;
-                //         statsUI.GetComponent<StatsUI>().desc.text = "";
-                //         UpdateUI();
-                //     }
-                // });
-
                 Button close = statsUI.GetComponent<StatsUI>().closeButton;
                 close.onClick.RemoveAllListeners();
                 close.onClick.AddListener(() => ClearUI());
@@ -92,7 +77,8 @@ public class StatsUIManager : MonoBehaviour {
                 isActive = true;
                 UpdateUI();
             }
-            else {
+            else
+            {
                 ClearUI();
             }
         }
@@ -100,7 +86,8 @@ public class StatsUIManager : MonoBehaviour {
 
 
     /// <summary> To update the ui </summary>
-    public void UpdateUI() {
+    public void UpdateUI()
+    {
         if (statsUI == null)
             return;
         if (fields == null)
@@ -113,25 +100,21 @@ public class StatsUIManager : MonoBehaviour {
 
         InitFields();
         UpdateInventory();
-
         UpdateEquipments();
         UpdateStats();
-
         UpdateSkills();
-
 
         Canvas.ForceUpdateCanvases();
     }
 
     /// <summary> To remove the ui from the screen</summary>
-    private void ClearUI() {
+    private void ClearUI()
+    {
         GameObject toDestroy = statsUI;
         statsUI = null;
         toDestroy.SetActive(false);
         Destroy(toDestroy);
-        // descPool = new Queue<Transform>();
         fields = new Dictionary<string, GameObject>();
-        // pickups = new List<GameObject>();
         slotPool = new Queue<Transform>();
         skillSlotPool = new Queue<Transform>();
         isActive = false;
@@ -139,12 +122,15 @@ public class StatsUIManager : MonoBehaviour {
 
 
     /// <summary> To set field positions and pickups </summary>
-    private void InitFields() {
-        if (statsUI == null) {
+    private void InitFields()
+    {
+        if (statsUI == null)
+        {
             return;
         }
 
-        if (fields == null || fields.Count == 0) {
+        if (fields == null || fields.Count == 0)
+        {
             fields = new Dictionary<string, GameObject>();
             fields["Max Health"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
             fields["Attack"] = Instantiate(fieldPref, statsUI.GetComponent<StatsUI>().fieldsContent);
@@ -156,29 +142,34 @@ public class StatsUIManager : MonoBehaviour {
         }
     }
 
-    public void UpdateInventory() {
+    public void UpdateInventory()
+    {
         Dictionary<string, InventoryItem> dict = InventoryManager.Instance.items;
         if (dict == null) return;
 
         foreach (Transform islot in statsUI.GetComponent<StatsUI>().inventoryContent) ReturnSlotToPool(islot);
         List<ActiveItemSlot> activeSlots = statsUI.GetComponent<StatsUI>().activeSlots;
 
-        for (int i = 0; i < activeSlots.Count; i++) {
+        for (int i = 0; i < activeSlots.Count; i++)
+        {
             foreach (Transform ui in activeSlots[i].contentBox) Destroy(ui.gameObject);
             activeSlots[i].count.text = "";
             activeSlots[i].item = null;
         }
 
         ItemSlot slot;
-        foreach (KeyValuePair<string, InventoryItem> p in dict) {
+        foreach (KeyValuePair<string, InventoryItem> p in dict)
+        {
             InventoryItem i = p.Value;
             if (i.isActive) continue;
 
             int count = i.count;
             int maxStack = i.maxStack;
             Sprite icon = i.icon;
+            if (maxStack < 1) continue;
 
-            while (count > 0) {
+            while (count > 0)
+            {
                 slot = GetSlotFromPool().GetComponent<ItemSlot>();
                 slot.item = i;
 
@@ -191,7 +182,8 @@ public class StatsUIManager : MonoBehaviour {
                 count -= maxStack;
             }
 
-            if (i.slotNumber != -1) {
+            if (i.slotNumber != -1)
+            {
                 ActiveItemSlot activeSlot = statsUI.GetComponent<StatsUI>().activeSlots[i.slotNumber - 1];
                 activeSlot.item = i;
                 activeSlot.count.text = i.count.ToString();
@@ -203,34 +195,39 @@ public class StatsUIManager : MonoBehaviour {
             }
         }
 
-        InventoryManager.Instance.TriggerChange();
+        HudManager.Instance?.RequestItemUpdate();
     }
 
 
     /// <summary> To update the equpments ui in the slots</summary>
-    public void UpdateEquipments() {
+    public void UpdateEquipments()
+    {
         List<Equipment> equips = charData.GetEquipmentsList();
 
-        for (int i = 0; i < equips.Count; i++) {
+        for (int i = 0; i < equips.Count; i++)
+        {
             EquipmentSlot slot = equipSlots[i].GetComponent<EquipmentSlot>();
             foreach (Transform ui in slot.contentBox) Destroy(ui.gameObject);
 
             Equipment equip = equips[i];
 
-            if (equip != null) {
+            if (equip != null)
+            {
                 slot.item = equip.item;
 
                 ItemUI itemUI = Instantiate(itemUiPref, slot.contentBox).GetComponent<ItemUI>();
                 itemUI.GetComponent<Image>().sprite = equip.item.icon;
                 itemUI.item = equip.item;
             }
-            else {
+            else
+            {
                 slot.item = null;
             }
         }
     }
 
-    public void UpdateSkills() {
+    public void UpdateSkills()
+    {
         SkillSlot slot1 = statsUI.GetComponent<StatsUI>().slot1;
         SkillSlot slot2 = statsUI.GetComponent<StatsUI>().slot2;
         SkillSlot slot3 = statsUI.GetComponent<StatsUI>().slot3;
@@ -241,8 +238,10 @@ public class StatsUIManager : MonoBehaviour {
         foreach (Transform ui in slot3.contentBox) Destroy(ui.gameObject);
         List<Skill> skills = charData.skills;
 
-        foreach (Skill skill in skills) {
-            if (skill.slot == -1) {
+        foreach (Skill skill in skills)
+        {
+            if (skill.slot == -1)
+            {
                 SkillSlot slot = GetSkillSlotFromPool().GetComponent<SkillSlot>();
                 slot.skill = skill;
 
@@ -251,7 +250,8 @@ public class StatsUIManager : MonoBehaviour {
                 skillUI.slot = -1;
                 skillUI.GetComponent<Image>().sprite = skill.icon;
             }
-            else {
+            else
+            {
                 SkillSlot slot = null;
 
                 if (skill.slot == 1) slot = slot1;
@@ -269,10 +269,11 @@ public class StatsUIManager : MonoBehaviour {
             }
         }
 
-        OnSkillChange?.Invoke(this, EventArgs.Empty);
+        HudManager.Instance?.RequestSkillUpdate();
     }
 
-    public void UpdateStats() {
+    public void UpdateStats()
+    {
         string charName = charData.characterName;
         statsUI.GetComponent<StatsUI>().nameText.text = charName;
         string charLevel = $"{charData.characterClass} (Level {charData.curLvl})";
@@ -286,14 +287,15 @@ public class StatsUIManager : MonoBehaviour {
         UpdateField("Agility", charData.BaseAGI, charData.AGI);
         UpdateField("Luck", charData.BaseLUCK, charData.LUCK);
 
-        OnStatChange?.Invoke(this, EventArgs.Empty);
+        HudManager.Instance.RequestStatUpdate();
     }
 
     /// <summary> To update the value of a field </summary>
     /// <params name="name">name of the field</params>
     /// <params name="baseValue">value without equipment buffs</params>
     /// <params name="value">finnal value after adding equipment buffs</params>
-    public void UpdateField(string name, int baseValue, int value) {
+    public void UpdateField(string name, int baseValue, int value)
+    {
         if (fields == null)
             fields = new Dictionary<string, GameObject>();
 
@@ -309,12 +311,14 @@ public class StatsUIManager : MonoBehaviour {
 
 
     /// <summary>To show an item description when it is clicked</summary>
-    public void ShowItemDesc(InventoryItem item) {
+    public void ShowItemDesc(InventoryItem item)
+    {
         if (statsUI == null || item == null) return;
 
         string desc = $"{item.itemName}\n";
 
-        if (item.itemType == ItemType.Equipment) {
+        if (item.itemType == ItemType.Equipment)
+        {
             Equipment e = Equipment.Create(item.equipment);
             desc += e.hpBuff != 0 ? $"HP + {e.hpBuff}\n" : "";
             desc += e.defBuff != 0 ? $"DEF + {e.defBuff}\n" : "";
@@ -324,13 +328,15 @@ public class StatsUIManager : MonoBehaviour {
             desc += e.agiBuff != 0 ? $"AGI + {e.agiBuff}\n" : "";
             desc += e.luckBuff != 0 ? $"LUCK + {e.luckBuff}" : "";
         }
-        else {
+        else
+        {
             desc += item.itemDesc;
         }
         statsUI.GetComponent<StatsUI>().desc.text = desc;
     }
 
-    public void ShowSkillDesc(Skill skill) {
+    public void ShowSkillDesc(Skill skill)
+    {
         if (statsUI == null || skill == null) return;
 
         string desc = $"{skill.skillName}\n";
@@ -341,11 +347,13 @@ public class StatsUIManager : MonoBehaviour {
 
 
     /// <summary>To equip an equipment in a slot</summary>
-    public void EquipSlot(Equipment equipment) {
+    public void EquipSlot(Equipment equipment)
+    {
         if (charData == null || equipment == null) return;
 
         Equipment prevEquipment = charData.GetEquipment(equipment.slot);
-        if (prevEquipment != null) {
+        if (prevEquipment != null)
+        {
             prevEquipment.item.isActive = false;
             InventoryManager.Instance.AddItem(prevEquipment.item, 1);
         }
@@ -356,7 +364,8 @@ public class StatsUIManager : MonoBehaviour {
     }
 
     /// <summary>To unequip an equipment from a slot</summary>
-    public void UnequipSlot(Equipment equipment) {
+    public void UnequipSlot(Equipment equipment)
+    {
         if (charData == null || equipment == null) return;
 
         charData.Unequip(equipment.slot);
@@ -366,7 +375,8 @@ public class StatsUIManager : MonoBehaviour {
 
 
     /// <summary>To equip an skill in a slot</summary>
-    public void EquipSkill(Skill skill, int slot) {
+    public void EquipSkill(Skill skill, int slot)
+    {
         if (charData == null || skill == null) return;
 
         SkillSlot skillSlot = null;
@@ -378,13 +388,17 @@ public class StatsUIManager : MonoBehaviour {
         else if (slot == 3)
             skillSlot = statsUI.GetComponent<StatsUI>().slot3;
 
-        if (skillSlot != null) {
+        if (skillSlot != null)
+        {
             Skill prevSkill = skillSlot.skill;
-            if (prevSkill != null) {
-                if (skill.slot == -1) {
+            if (prevSkill != null)
+            {
+                if (skill.slot == -1)
+                {
                     charData.UnequipSkill(slot);
                 }
-                else {
+                else
+                {
                     if (prevSkill.slot == 1) statsUI.GetComponent<StatsUI>().slot1.skill = prevSkill;
                     else if (prevSkill.slot == 2) statsUI.GetComponent<StatsUI>().slot2.skill = prevSkill;
                     else if (prevSkill.slot == 3) statsUI.GetComponent<StatsUI>().slot3.skill = prevSkill;
@@ -400,7 +414,8 @@ public class StatsUIManager : MonoBehaviour {
     }
 
     /// <summary>To unequip an skill from a slot</summary>
-    public void UnequipSkill(Skill skill, int slot) {
+    public void UnequipSkill(Skill skill, int slot)
+    {
         if (charData == null || skill == null) return;
         SkillSlot skillSlot = null;
 
@@ -411,7 +426,8 @@ public class StatsUIManager : MonoBehaviour {
         else if (slot == 3)
             skillSlot = statsUI.GetComponent<StatsUI>().slot3;
 
-        if (skillSlot != null) {
+        if (skillSlot != null)
+        {
             skill.slot = -1;
             skillSlot.skill = null;
             charData.UnequipSkill(slot);
@@ -419,12 +435,15 @@ public class StatsUIManager : MonoBehaviour {
     }
 
     /// <summary>To equip an equipment in a slot</summary>
-    public void SetActiveItem(InventoryItem item, int keyNumber) {
+    public void SetActiveItem(InventoryItem item, int keyNumber)
+    {
         if (charData == null || item == null) return;
         ActiveItemSlot newSlot = statsUI.GetComponent<StatsUI>().activeSlots[keyNumber - 1];
 
-        if (item.slotNumber != -1) {
-            if (newSlot.item != null) {
+        if (item.slotNumber != -1)
+        {
+            if (newSlot.item != null)
+            {
                 ActiveItemSlot exchangeSlot = statsUI.GetComponent<StatsUI>().activeSlots[item.slotNumber - 1];
 
                 newSlot.item.slotNumber = item.slotNumber;
@@ -432,7 +451,8 @@ public class StatsUIManager : MonoBehaviour {
                 exchangeSlot.count.text = newSlot.item.count.ToString();
                 exchangeSlot.item = newSlot.item;
             }
-            else {
+            else
+            {
 
             }
         }
@@ -443,7 +463,8 @@ public class StatsUIManager : MonoBehaviour {
     }
 
     /// <summary>To unequip an equipment from a slot</summary>
-    public void RemoveActiveItem(InventoryItem item) {
+    public void RemoveActiveItem(InventoryItem item)
+    {
         if (charData == null || item == null || item.slotNumber == -1) return;
 
         ActiveItemSlot slot = statsUI.GetComponent<StatsUI>().activeSlots[item.slotNumber - 1];
@@ -455,13 +476,16 @@ public class StatsUIManager : MonoBehaviour {
 
     /// <summary> To get a slot from the slot pool</summary>
     /// <returns>A slot from the slot pool</returns>
-    private Transform GetSlotFromPool() {
-        if (slotPool.Count > 0) {
+    private Transform GetSlotFromPool()
+    {
+        if (slotPool.Count > 0)
+        {
             Transform slot = slotPool.Dequeue();
             slot.gameObject.SetActive(true);
             return slot;
         }
-        else {
+        else
+        {
             return Instantiate(slotPref, statsUI.GetComponent<StatsUI>().inventoryContent).transform;
         }
     }
@@ -469,7 +493,8 @@ public class StatsUIManager : MonoBehaviour {
 
     /// <summary> To return a slot back to the pool </summary>
     /// <params name="slot"> The slot gameobject you want to return </params>
-    private void ReturnSlotToPool(Transform slot) {
+    private void ReturnSlotToPool(Transform slot)
+    {
         ItemSlot s = slot.GetComponent<ItemSlot>();
         s.item = null;
         foreach (Transform ui in s.contentBox) Destroy(ui.gameObject);
@@ -479,32 +504,28 @@ public class StatsUIManager : MonoBehaviour {
 
     /// <summary> To get a skill slot from the slot pool</summary>
     /// <returns>A slot from the slot pool</returns>
-    private Transform GetSkillSlotFromPool() {
-        if (skillSlotPool.Count > 0) {
+    private Transform GetSkillSlotFromPool()
+    {
+        if (skillSlotPool.Count > 0)
+        {
             Transform slot = skillSlotPool.Dequeue();
             slot.gameObject.SetActive(true);
             return slot;
         }
-        else {
+        else
+        {
             return Instantiate(skillSlotPref, statsUI.GetComponent<StatsUI>().skillContent).transform;
         }
     }
 
     /// <summary> To return a skill slot back to the pool </summary>
     /// <params name="slot"> The slot gameobject you want to return </params>
-    private void ReturnSkillSlotToPool(Transform slot) {
+    private void ReturnSkillSlotToPool(Transform slot)
+    {
         SkillSlot s = slot.GetComponent<SkillSlot>();
         s.skill = null;
         foreach (Transform ui in s.contentBox) Destroy(ui.gameObject);
         slot.gameObject.SetActive(false);
         skillSlotPool.Enqueue(slot);
-    }
-
-    public void TriggerSkillChange() {
-        OnSkillChange?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void TriggerStatChange() {
-        OnStatChange?.Invoke(this, EventArgs.Empty);
     }
 }

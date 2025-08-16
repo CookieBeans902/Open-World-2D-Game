@@ -4,6 +4,27 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Settings/Scenes/MainMenu.unity
+    guid: bc341a31b566baa42aaf6de31db89233
+  - enabled: 1
+    path: Assets/Settings/Scenes/NewVillage.unity
+    guid: facbba40061210a40887e90904d941ae
+  - enabled: 1
+    path: Assets/Settings/Scenes/NewForest.unity
+    guid: 502c25cc07c645c49813a5e1699062f1
+  - enabled: 1
+    path: Assets/Settings/Scenes/Dungeon1.unity
+    guid: add9f4bd2a1da1c4c92f113df22b048a
+  - enabled: 1
+    path: Assets/Settings/Scenes/Dungeon2.unity
+    guid: 59e88b70b32e4fb4f82c3639861167c6
+  - enabled: 1
+    path: Assets/Settings/Scenes/Dungeon3.unity
+    guid: 5958d8ef07b9904448707090ff0ddd87
+  - enabled: 1
+    path: Assets/Settings/Scenes/Dungeon4.unity
+    guid: 4b17e3032a4b72142804c45c5af1b65a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

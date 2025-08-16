@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
+  m_Name: SideQuest 1
+  m_EditorClassIdentifier: 
+  questID: 100
+  questName: Farming Simulator
+  questDesc: The farmer might require something.. why don't you find out?
+  coinReward: 40
+  experienceReward: 50
+  extraReward: {fileID: 11400000, guid: 58d82446a22586c4798fcc34ab72d1f1, type: 2}
+  extraRewardQuantity: 3
+  objectives:
+  - {fileID: 11400000, guid: 68f7ba5b8851d7d408d86235c501af76, type: 2}
+  - {fileID: 11400000, guid: bbfac3fcf473a6c4581fe5c961501f5f, type: 2}
+  questDependancies: 

@@ -20,7 +20,7 @@ public abstract class MovementBase : MonoBehaviour {
     protected float pathLength;
 
     // Final separation between from the target
-    [SerializeField] protected float endSep = 0.1f;
+    [SerializeField] protected float endSep = 0.3f;
 
     public bool canMove;
     public bool targetReached;
@@ -63,14 +63,15 @@ public abstract class MovementBase : MonoBehaviour {
         }, updateTime, timerName);
     }
 
-    protected void RunFromTarget(Transform target, float radius, float updateTime, ref FunctionTimer timer, string timerName = "RunTimer") {
+    protected void RunFromTarget(Transform target, float radius, float updateTime, ref FunctionTimer timer, string timerName = "RunTimer", float spread = 60f, float radiusVariation = 1f) {
         if (timer != null && timer.TimeLeft() > 0) return;
 
         timer = FunctionTimer.CreateSceneTimer(() => {
-            Vector3 targetPos = GenerateRunAwayTarget(target.position, 60, radius);
+            Vector2 targetPos = GenerateRunAwayTarget(target.position, spread, radius, radiusVariation);
             seeker.StartPath(transform.position, targetPos, UpdatePathData);
         }, updateTime, timerName);
     }
+
 
     /// <summary>To force a new path to a target</summary>
     ///<param name="target">Transform of the target</param>
@@ -111,28 +112,26 @@ public abstract class MovementBase : MonoBehaviour {
     ///<param name="spread">Angular spread of the valid runaway zone in degrees</param>
     ///<param name="radius">Radius of the valid run away zone</param>
     /// <returns>A run away target</returns>
-    protected Vector2 GenerateRunAwayTarget(Vector3 runAwayTarget, float spread, float radius) {
-        float r = Random.Range(radius - 1, radius + 1);
-        Vector2 dir = -(runAwayTarget - transform.position).normalized;
-        float angle = Random.Range(-spread, spread);
+    protected Vector2 GenerateRunAwayTarget(Vector3 runAwayTarget, float spreadAngle, float radius, float radiusVariation = 1f) {
+        float r = Random.Range(radius - radiusVariation, radius + radiusVariation);
 
-        Vector2 target = transform.position + Quaternion.Euler(0, 0, angle) * dir * r;
+        Vector2 dir = (transform.position - runAwayTarget).normalized;
+
+        float angle = Random.Range(-spreadAngle * 0.5f, spreadAngle * 0.5f);
+        dir = Quaternion.Euler(0, 0, angle) * dir;
+
+        Vector2 target = (Vector2)transform.position + dir * r;
 
         float nsize = grid.nodeSize / 2;
+        float xBound = grid.width * nsize;
+        float yBound = grid.depth * nsize;
 
-        float xbound = grid.width * nsize;
-        float ybound = grid.depth * nsize;
-        if (target.x < -xbound)
-            target.x = runAwayTarget.x + 3;
-        if (target.x > xbound)
-            target.x = (runAwayTarget.x - 3) > -xbound ? (runAwayTarget.x - 3) : -xbound + nsize;
-        if (target.y < -ybound)
-            target.y = runAwayTarget.y + 3;
-        if (target.y > ybound)
-            target.y = (runAwayTarget.y - 3) > -ybound ? (runAwayTarget.y - 3) : -ybound + nsize;
+        target.x = Mathf.Clamp(target.x, -xBound + nsize, xBound - nsize);
+        target.y = Mathf.Clamp(target.y, -yBound + nsize, yBound - nsize);
 
         return target;
     }
+
 
 
     /// <summary>To check is a target is present in a paricular direction and angular range</summary>
@@ -255,5 +254,10 @@ public abstract class MovementBase : MonoBehaviour {
     public void EnableMovement() {
         canMove = true;
         agent.canMove = true;
+    }
+
+    public void FreezeMovement() {
+        seeker.StartPath(transform.position, transform.position);
+        agent.canMove = false;
     }
 }

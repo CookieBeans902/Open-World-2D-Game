@@ -28,14 +28,6 @@ public class ActiveItemSlot : MonoBehaviour, IDropHandler {
 
             StatsUIManager.Instance.UpdateInventory();
             Destroy(obj);
-
-            // if (ch.CanEquip(equipment) && equipment.slot == slotType) {
-            // item = item.item;
-            // StatsUIManager.Instance.EquipSlot(equipment);
-
-            // StatsUIManager.Instance.UpdateUI();
-            // Destroy(obj);
-            // }
         }
     }
 }

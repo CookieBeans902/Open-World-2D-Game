@@ -1,4 +1,5 @@
 using System;
+
 using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour {
@@ -18,14 +19,15 @@ public class PlayerInteractions : MonoBehaviour {
 
     /// <summary>TO check if there is any interactable object infront of the player</summary>
     private void CheckInteractions() {
-        Vector2 dir = shared.playerMove.playerDir;
-        float r = 2;
+        Vector2 dir = shared.move.playerDir;
+        float r = 2f;
         int layerMask = ~LayerMask.GetMask("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, r, layerMask);
         if (hit.collider != null) {
-            InteractionBase target = hit.collider.GetComponent<InteractionBase>();
+            IInteract target = hit.collider.GetComponent<IInteract>();
+            Debug.Log("has collider");
             if (target != null) {
-                target.Interact();
+                target.OnInteract();
             }
         }
     }

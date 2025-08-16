@@ -22,12 +22,12 @@ MonoBehaviour:
   walk:
     columns: 8
     rows: 4
-    height: 192
-    width: 192
+    height: 64
+    width: 64
     frameRate: 12
     canLoop: 1
   slash:
-    columns: 5
+    columns: 4
     rows: 4
     height: 192
     width: 192
@@ -36,12 +36,12 @@ MonoBehaviour:
   islash:
     columns: 5
     rows: 4
-    height: 64
-    width: 64
+    height: 192
+    width: 192
     frameRate: 12
     canLoop: 0
   thrust:
-    columns: 8
+    columns: 7
     rows: 4
     height: 192
     width: 192
@@ -57,8 +57,8 @@ MonoBehaviour:
   shoot:
     columns: 10
     rows: 4
-    height: 64
-    width: 64
+    height: 192
+    width: 192
     frameRate: 12
     canLoop: 0
   hurt:
@@ -67,4 +67,11 @@ MonoBehaviour:
     height: 64
     width: 64
     frameRate: 4
+    canLoop: 0
+  cast:
+    columns: 6
+    rows: 4
+    height: 64
+    width: 64
+    frameRate: 12
     canLoop: 0

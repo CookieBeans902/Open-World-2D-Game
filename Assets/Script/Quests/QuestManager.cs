@@ -135,6 +135,7 @@ public class QuestManager : MonoBehaviour, IDataPersistence
     public bool CanInteract(NpcID npcID)
     {
         NpcID target = currentQuest.CurrObjective.objective.targetNpcID;
+        if (npcID == NpcID.None) return true;
         if (target == npcID)
         {
             return true;
@@ -159,7 +160,7 @@ public class QuestManager : MonoBehaviour, IDataPersistence
         questUI.MainQuestUpdate(activeMainQuest);
         //Loading Current Quest
         currentQuest = GetQuestByID(gameData.currentQuestID);
-        questUI.CurrentQuestUpdateUI();
+        questUI.InitialQuestUpdateUI(currentQuest);
     }
 
     public void SaveData(GameData gameData)

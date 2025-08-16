@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa75e42680359a4498ab088cd8d68234, type: 3}
+  m_Name: Lightning
+  m_EditorClassIdentifier: 
+  questID: 3
+  questName: Last Breath
+  questDesc: Face Kaelen, the thunder-wielding guardian, to claim the final gem and
+    open the path to the Heartgrove.
+  coinReward: 10
+  experienceReward: 20
+  extraReward: {fileID: 0}
+  extraRewardQuantity: 0
+  objectives:
+  - {fileID: 11400000, guid: 947ca688cfc961c4da382f3198ae0405, type: 2}
+  - {fileID: 11400000, guid: 0ba6cadbab1967f4c97c7ef0d68d74f2, type: 2}
+  - {fileID: 11400000, guid: 9f4a03748469fa14190ba2180af6d976, type: 2}
+  questDependancies: 

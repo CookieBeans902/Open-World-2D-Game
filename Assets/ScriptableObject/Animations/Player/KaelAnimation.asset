@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434451e55dd22c141bd05e454518b560, type: 3}
+  m_Name: KaelAnimation
+  m_EditorClassIdentifier: 
+  IdleDown: {fileID: 7400000, guid: 58cfc98ac9c3f804abc8ec48d179075b, type: 2}
+  IdleLeft: {fileID: 7400000, guid: 4ceee929a81e6114780568b5827fe5dd, type: 2}
+  IdleRight: {fileID: 7400000, guid: 4ed459fd573bc6043bb32cfd7a3a9522, type: 2}
+  IdleUp: {fileID: 7400000, guid: bb59aac170c38934da34f981a6a0b28b, type: 2}
+  MoveDown: {fileID: 7400000, guid: c8b14d5fa2e689242a216bd034dd5695, type: 2}
+  MoveLeft: {fileID: 7400000, guid: 1e5466a4d476ab14194de768435c76a6, type: 2}
+  MoveRight: {fileID: 7400000, guid: e8609a86f8ae7f448a3f797dd82dd1a9, type: 2}
+  MoveUp: {fileID: 7400000, guid: 6973c5d7dcb3a664cbd10f5989b89d08, type: 2}
+  SlashDown: {fileID: 7400000, guid: 8c156535ef9efe54b84b34a812c9f97c, type: 2}
+  SlashLeft: {fileID: 7400000, guid: 73720db7aef7eee4bb8891c2f75043b5, type: 2}
+  SlashRight: {fileID: 7400000, guid: 6cb418632c3fc5c42aacb13fad69956d, type: 2}
+  SlashUp: {fileID: 7400000, guid: f6a49a4941ff8024681fcc793f097aaa, type: 2}
+  ISlashDown: {fileID: 7400000, guid: a2bb2180f5a4d77459ece420e9618910, type: 2}
+  ISlashLeft: {fileID: 7400000, guid: 01a673fb115961440b5a1c4113bf1f03, type: 2}
+  ISlashRight: {fileID: 7400000, guid: 5e287742a4dcb8841861c38b9b52b196, type: 2}
+  ISlashUp: {fileID: 7400000, guid: 837fa8e4071250e409b35aa678dc3983, type: 2}
+  ThrustDown: {fileID: 7400000, guid: 8bcc20009bae02441ab245c5c4c8d673, type: 2}
+  ThrustLeft: {fileID: 7400000, guid: 5928ea044d02a9a4a84965c1f97244ec, type: 2}
+  ThrustRight: {fileID: 7400000, guid: e51ccf8b953094b49a29ab9a2003496d, type: 2}
+  ThrustUp: {fileID: 7400000, guid: 99b3be07bf2dd3e48b99a09621f5b434, type: 2}
+  ShootDown: {fileID: 0}
+  ShootLeft: {fileID: 0}
+  ShootRight: {fileID: 0}
+  ShootUp: {fileID: 0}

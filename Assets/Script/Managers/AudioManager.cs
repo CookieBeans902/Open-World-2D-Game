@@ -15,8 +15,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip attackProjectile;
     public AudioClip walk;
     public AudioClip death;
-    public AudioClip interact;
+    public AudioClip playerInteract;
     public AudioClip skillSound;
+    public AudioClip buttonClick;
+    public AudioClip levelUp;
+    public AudioClip EquipSound;
+    public AudioClip questButtonOpen;
+    public AudioClip buttonHover;
     void Awake()
     {
         if (Instance != this && Instance != null)
@@ -42,5 +47,12 @@ public class AudioManager : MonoBehaviour
     {
         music.clip = gameBackgroundMusic;
         music.Play();
+    }
+    public void ButtonSFX(AudioClip clip)
+    {
+        if (!SFX.isPlaying)
+        {
+            SFX.PlayOneShot(clip);
+        }
     }
 }

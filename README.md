@@ -13,3 +13,6 @@ Note that Windows might warn about the application being an unauthorized app run
 
 ## Unity Project
 If you want to open the Unity project, simply clone this repo into your local storage. It should have all the necessary componenents. However, if you do face any issues, please raise an issue.
+
+## Video Demo
+https://drive.google.com/file/d/1AmQsGC9SnWVEyXaMg-m_ivr8gKUCu4yb/view
